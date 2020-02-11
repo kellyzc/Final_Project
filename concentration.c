@@ -10,6 +10,10 @@
 
 #include <xc.h>
 
+//TODO
+#define SCOREBOARD PORTC
+#define GAMEBOARD PORTD
+
 void main(void) {
     return;
 }

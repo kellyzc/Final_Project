@@ -55,25 +55,25 @@
 
 #include	<xc.h>
 
-#define CMD_MODE                0           //(0 for command mode)
-#define DTA_MODE                1           //(1 for data mode)
-#define LCD_RS                  RD2         //rename RD2 	-LCD command/data 
-#define LCD_EN                  RD3         //rename RD3 	-LCD Enable (clocks data into LCD on falling edge) 
-#define LCD_DATA                PORTD       //rename PORTD 	-LCD Data pins (D0 - D7)
+#define CMD_MODE                0x00        //(0 for command mode)
+#define DTA_MODE                0x02        //(1 for data mode)
+                                            //RS is bit 1 of an LCD port
+//rename RD2 	-LCD command/data 
+#define LCD_EN                  0x01        //Enable is bit 0 of an LCD port
+//rename RD3 	-LCD Enable (clocks data into LCD on falling edge)
 #define LCDCMD_ClearDisplay     0x01    //clear display: clear, move cursor home
 #define LCDCMD_EMS              0x06    //entry mode set: auto increment cursor after each char sent
 #define LCDCMD_DisplaySettings  0x0C    //display ON/OFF control: display on, cursor off, blink off
 #define LCDCMD_FunctionSet      0x28    //function set: 4-bit mode, 2 lines, 5x7 dots
 #define LCDCMD_CursorShiftL     0x10    //Shift cursor to the left by 1
-#define CONNECT_STRING "Waiting for Opponent"
 
 void tmr0_init() {
     // T0CS = 0 -- Fosc/4 clock source
     // PSA = 0 -- prescalar set to TMR0
-    // PS = 0 -- 1:2
+    // PS = 0 -- 1:256
     OPTION_REG &= 0xC0;
-    // PS = 1 -- 1:8
-    OPTION_REG |= 0x02;
+    // PS = 4 -- 1:32
+    OPTION_REG |= 0x04;
 }
 
 /*
@@ -83,30 +83,20 @@ void tmr0_init() {
  */
 void DelayMs(unsigned int millis) {
     while (millis != 0) {
-        TMR0 = 9;
-        T0IF = 0;
+        TMR0 = 1;
+        T0IF = 100;
         while(T0IF == 0);
         millis--;
     }
 }
 
 /*
- * Provides delay of ~40 instruction cycles (20us)
- *  assumes 8MHz clock
+ * Provides delay of ~20us
+ *  assumes 20MHz clock
  */
 void Delay20us() {
     unsigned char next;
-    for (next = 0; next < 3; next++);
-}
-
-/*
- * Pulses (strobes) the Enable line making it rise and then fall. This
- *  falling edge writes data on LCD Panel pins DB7:4 into the LCD Panel.
- */
-void LCD_strobe() {
-    LCD_EN = 1;
-    Delay20us();
-    LCD_EN = 0;
+    for (next = 0; next < 8; next++);
 }
 
 /*
@@ -115,34 +105,33 @@ void LCD_strobe() {
  * so that the LCD panel knows whether an instruction byte is being written to it 
  * or an ASCII code is being written to it that is to be displayed on the panel.
  */ 
-void lcd_write(unsigned char mode, unsigned char CmdChar) {
-    LCD_RS = mode;
-    LCD_DATA &= 0x0F;
-    LCD_DATA |= (CmdChar&0xF0);
-    LCD_strobe(); // Write 4 bits of data on D7-4
-    LCD_DATA &= 0x0F;
-    LCD_DATA |= ((CmdChar&0x0F)<<4);
-    LCD_strobe(); // Write 4 bits of data on D7-4
+void lcd_write(unsigned char mode, unsigned char CmdChar, char *port) {
+    //TODO make sure data is upper 4 bits
+    port = (mode|((CmdChar&0xF0)+LCD_EN));  //Sets port to send upper nibble, mode, and enable
     Delay20us();
+    port &= (!LCD_EN);  //Clears enable
+    port = (mode|((CmdChar<<4)+LCD_EN));    //Sets port to send lower nibble, mode, and enable
+    Delay20us();
+    port &= (!LCD_EN);  //Clears enable
 }
 
 /*
  * Clear the LCD and go to home position
  */
-void lcd_clear(void) {
-    lcd_write(CMD_MODE, LCDCMD_ClearDisplay);
+void lcd_clear(char *port) {
+    lcd_write(CMD_MODE, LCDCMD_ClearDisplay, *port);
     DelayMs(2);
 }
 
 /* Write a string of chars to the LCD */
-void lcd_puts(const char *string) {
+void lcd_puts(const char *string, char *port) {
     while (*string != 0) // Last character in a C-language string is alway "0" (ASCII NULL character)
-        lcd_write(DTA_MODE, *string++);
+        lcd_write(DTA_MODE, *string++, *port);
 }
 
 /* Write one character to the LCD */
-void lcd_putch(char character) {
-    lcd_write(DTA_MODE, character);
+void lcd_putch(char character, char *port) {
+    lcd_write(DTA_MODE, character, *port);
 }
 
 /*
@@ -151,8 +140,8 @@ void lcd_putch(char character) {
  *     the columns of Row 1 are 0x00....0x10
  *     the columns of Row 2 are 0x40....0x50
  */
-void lcd_goto(unsigned char position) {
-    lcd_write(CMD_MODE, 0x80 + position); // The "cursor move" command is indicated by MSB=1 (0x80)
+void lcd_goto(unsigned char position, char *port) {
+    lcd_write(CMD_MODE, 0x80 + position, *port); // The "cursor move" command is indicated by MSB=1 (0x80)
     // followed by the panel position address (0x00- 0x7F)
     DelayMs(2);
 }
@@ -160,24 +149,14 @@ void lcd_goto(unsigned char position) {
 /*
  * Initialize the LCD - put into 8 bit mode
  */
-void lcd_init() //See Section 2.2.2.2 of the Optrex LCD DMCman User Manual
+void lcd_init(char *port) //See Section 2.2.2.2 of the Optrex LCD DMCman User Manual
 {
-    unsigned char cmd;
-    TRISD = 0b00000000; //Make PORTD (D7-0) all output
+    TRISD = 0x00; //Make PORTD (D7-0) all output
     tmr0_init();
-    LCD_RS = CMD_MODE;
-    LCD_EN = 0;
+    port = 0;
     DelayMs(15); // wait 15mSec after power applied,
-    lcd_write(CMD_MODE, LCDCMD_FunctionSet); // function set: 4-bit mode, 2 lines, 5x7 dots
-    lcd_write(CMD_MODE, LCDCMD_DisplaySettings); // display ON/OFF control: display on, cursor off, blink off
-    lcd_clear(); // Clear screen
-    lcd_write(CMD_MODE, LCDCMD_EMS); // Set entry Mode
-}
-
-void lcd_cursor_shift_l(void) {
-    lcd_write(CMD_MODE, LCDCMD_CursorShiftL);
-}
-
-void display_connect_search(void) {
-
+    lcd_write(CMD_MODE, LCDCMD_FunctionSet, *port); // function set: 4-bit mode, 2 lines, 5x7 dots
+    lcd_write(CMD_MODE, LCDCMD_DisplaySettings, *port); // display ON/OFF control: display on, cursor off, blink off
+    lcd_clear(*port); // Clear screen
+    lcd_write(CMD_MODE, LCDCMD_EMS, *port); // Set entry Mode
 }
