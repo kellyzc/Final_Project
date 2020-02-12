@@ -2539,22 +2539,70 @@ extern void lcd_putch(char, char *c);
 
 
 
+
+
+
 char *gameboard = &PORTD;
+char *scoreboard = &PORTA;
+int joystick_x_pos = 0;
+int joystick_y_pos =0;
+char cursor_pos = 0x00;
+
+void update_board(void);
 
 void main(void) {
+
     SCS = 0;
+
     TRISD = 0;
+    TRISA = 0;
+    ANSEL = 0;
     lcd_init(gameboard);
+    lcd_init(scoreboard);
+
+    PORTB = 0;
+    nRBPU = 0;
+    WPUB = 0x31;
+    TRISB = 0x31;
+    ANSELH = 0x18;
+    ADCON0 = 0xA5;
+    ADCON1 = 0x80;
+    GIE = 1;
+    PEIE = 1;
+    ADIF = 0;
+    ADIE = 1;
+
+    lcd_putch('X', gameboard);
+    lcd_putch('X', scoreboard);
+    DelayMs(1000);
     while(1) {
-        lcd_clear(gameboard);
-        DelayMs(1000);
-        lcd_putch('T', gameboard);
-        DelayMs(1000);
-        lcd_putch('E', gameboard);
-        DelayMs(1000);
-        lcd_putch('S', gameboard);
-        DelayMs(1000);
-        lcd_putch('T', gameboard);
-        DelayMs(1000);
+        update_board();
+    }
+}
+
+void update_board(void) {
+
+    GO = 1;
+    DelayMs(250);
+    lcd_clear(gameboard);
+    lcd_putch(0x30+(joystick_x_pos/1000), gameboard);
+    lcd_putch(0x30+((joystick_x_pos%1000)/100), gameboard);
+    lcd_putch(0x30+((joystick_x_pos%100)/10), gameboard);
+    lcd_putch(0x30+((joystick_x_pos%10)/1), gameboard);
+    lcd_clear(scoreboard);
+    lcd_putch(0x30+(joystick_x_pos/1000), scoreboard);
+    lcd_putch(0x30+((joystick_x_pos%1000)/100), scoreboard);
+    lcd_putch(0x30+((joystick_x_pos%100)/10), scoreboard);
+    lcd_putch(0x30+((joystick_x_pos%10)/1), scoreboard);
+}
+
+void __attribute__((picinterrupt(("")))) interrupt_handler(void) {
+    if(ADIF) {
+        if(CHS1 == 1) {
+            joystick_x_pos = (ADRESH<<8)+ADRESL;
+        } else {
+            joystick_y_pos = (ADRESH<<8)+ADRESL;
+        }
+        ADIF = 0;
     }
 }

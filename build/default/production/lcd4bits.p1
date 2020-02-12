@@ -331,24 +331,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _CmdChar `uc ~T0 @X0 1 r2 ]
 [v _port `*uc ~T0 @X0 1 r3 ]
 [f ]
+"111
+[; ;lcd4bits.c: 111:     *port = (mode|((CmdChar>>4)+0x20));
+[e = *U _port -> | -> _mode `i + >> -> _CmdChar `i -> 4 `i -> 32 `i `uc ]
 "112
-[; ;lcd4bits.c: 112:     *port = (mode|((CmdChar&0xF0)+0x01));
-[e = *U _port -> | -> _mode `i + & -> _CmdChar `i -> 240 `i -> 1 `i `uc ]
-"113
-[; ;lcd4bits.c: 113:     Delay20us();
+[; ;lcd4bits.c: 112:     Delay20us();
 [e ( _Delay20us ..  ]
-"114
-[; ;lcd4bits.c: 114:     *port = (*port)&(~0x01);
-[e = *U _port -> & -> *U _port `i ~ -> 1 `i `uc ]
+"113
+[; ;lcd4bits.c: 113:     *port = (*port)&(~0x20);
+[e = *U _port -> & -> *U _port `i ~ -> 32 `i `uc ]
 "115
-[; ;lcd4bits.c: 115:     *port = (mode|((CmdChar<<4)+0x01));
-[e = *U _port -> | -> _mode `i + << -> _CmdChar `i -> 4 `i -> 1 `i `uc ]
+[; ;lcd4bits.c: 115:     *port = (mode|((CmdChar&0x0F)+0x20));
+[e = *U _port -> | -> _mode `i + & -> _CmdChar `i -> 15 `i -> 32 `i `uc ]
 "116
 [; ;lcd4bits.c: 116:     Delay20us();
 [e ( _Delay20us ..  ]
 "117
-[; ;lcd4bits.c: 117:     *port = (*port)&(~0x01);
-[e = *U _port -> & -> *U _port `i ~ -> 1 `i `uc ]
+[; ;lcd4bits.c: 117:     *port = (*port)&(~0x20);
+[e = *U _port -> & -> *U _port `i ~ -> 32 `i `uc ]
 "118
 [; ;lcd4bits.c: 118: }
 [e :UE 150 ]
@@ -384,8 +384,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 154 ]
 {
 "131
-[; ;lcd4bits.c: 131:         lcd_write(0x02, *string++, port);
-[e ( _lcd_write (3 , , -> -> 2 `i `uc -> *U ++ _string * -> -> 1 `i `x -> -> # *U _string `i `x `uc _port ]
+[; ;lcd4bits.c: 131:         lcd_write(0x10, *string++, port);
+[e ( _lcd_write (3 , , -> -> 16 `i `uc -> *U ++ _string * -> -> 1 `i `x -> -> # *U _string `i `x `uc _port ]
 "132
 [; ;lcd4bits.c: 132:     }
 }
@@ -407,8 +407,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _port `*uc ~T0 @X0 1 r2 ]
 [f ]
 "137
-[; ;lcd4bits.c: 137:     lcd_write(0x02, character, port);
-[e ( _lcd_write (3 , , -> -> 2 `i `uc -> _character `uc _port ]
+[; ;lcd4bits.c: 137:     lcd_write(0x10, character, port);
+[e ( _lcd_write (3 , , -> -> 16 `i `uc -> _character `uc _port ]
 "138
 [; ;lcd4bits.c: 138: }
 [e :UE 156 ]

@@ -24,23 +24,71 @@
 #include <xc.h>
 #include "lcd4bits.h"
 
+#define JOYSTICK_X 1
+#define JOYSTICK_Y 0
+
 //TODO
 char *gameboard = &PORTD;
+char *scoreboard = &PORTA;
+int joystick_x_pos = 0;
+int joystick_y_pos  =0;
+char cursor_pos = 0x00;
+
+void update_board(void);
 
 void main(void) {
+    //Clocl Setup
     SCS = 0;
+    //LCD Setup
     TRISD = 0;
+    TRISA = 0;
+    ANSEL = 0;
     lcd_init(gameboard);
+    lcd_init(scoreboard);
+    //Joystick Setup
+    PORTB = 0;
+    nRBPU = 0;
+    WPUB = 0x31;
+    TRISB = 0x31;
+    ANSELH = 0x18;  //RB3 (y) and RB4 (x) are analog inputs
+    ADCON0 = 0xA5;  //ADCS = 10 , CHS = 9, GO = 0, ADON = 1
+    ADCON1 = 0x80;  //ADFM = 1, VCFG = 00
+    GIE = 1;
+    PEIE = 1;
+    ADIF = 0;
+    ADIE = 1;
+    //Main Loop
+    lcd_putch('X', gameboard);
+    lcd_putch('X', scoreboard);
+    DelayMs(1000);
     while(1) {
-        lcd_clear(gameboard);
-        DelayMs(1000);
-        lcd_putch('T', gameboard);
-        DelayMs(1000);
-        lcd_putch('E', gameboard);
-        DelayMs(1000);
-        lcd_putch('S', gameboard);
-        DelayMs(1000);
-        lcd_putch('T', gameboard);
-        DelayMs(1000);
+        update_board();
+    }
+}
+
+void update_board(void) {
+    //TODO figure out range of joystick voltage values
+    GO = 1;
+    DelayMs(500);
+    lcd_clear(gameboard);
+    lcd_putch(0x30+(joystick_x_pos/1000), gameboard);
+    lcd_putch(0x30+((joystick_x_pos%1000)/100), gameboard);
+    lcd_putch(0x30+((joystick_x_pos%100)/10), gameboard);
+    lcd_putch(0x30+((joystick_x_pos%10)/1), gameboard);
+    lcd_clear(scoreboard);
+    lcd_putch(0x30+(joystick_x_pos/1000), scoreboard);
+    lcd_putch(0x30+((joystick_x_pos%1000)/100), scoreboard);
+    lcd_putch(0x30+((joystick_x_pos%100)/10), scoreboard);
+    lcd_putch(0x30+((joystick_x_pos%10)/1), scoreboard);
+}
+
+void __interrupt() interrupt_handler(void) {
+    if(ADIF) {
+        if(CHS1 == JOYSTICK_X) {
+            joystick_x_pos = (ADRESH<<8)+ADRESL;
+        } else {
+            joystick_y_pos = (ADRESH<<8)+ADRESL;
+        }
+        ADIF = 0;
     }
 }

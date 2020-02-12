@@ -2563,13 +2563,13 @@ void Delay20us() {
 
 
 void lcd_write(unsigned char mode, unsigned char CmdChar, char *port) {
+    *port = (mode|((CmdChar>>4)+0x20));
+    Delay20us();
+    *port = (*port)&(~0x20);
 
-    *port = (mode|((CmdChar&0xF0)+0x01));
+    *port = (mode|((CmdChar&0x0F)+0x20));
     Delay20us();
-    *port = (*port)&(~0x01);
-    *port = (mode|((CmdChar<<4)+0x01));
-    Delay20us();
-    *port = (*port)&(~0x01);
+    *port = (*port)&(~0x20);
 }
 
 
@@ -2583,13 +2583,13 @@ void lcd_clear(char *port) {
 
 void lcd_puts(const char *string, char *port) {
     while (*string != 0) {
-        lcd_write(0x02, *string++, port);
+        lcd_write(0x10, *string++, port);
     }
 }
 
 
 void lcd_putch(char character, char *port) {
-    lcd_write(0x02, character, port);
+    lcd_write(0x10, character, port);
 }
 
 

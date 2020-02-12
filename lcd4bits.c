@@ -58,10 +58,10 @@
 #include "lcd4bits.h"
 
 #define CMD_MODE                0x00        //(0 for command mode)
-#define DTA_MODE                0x02        //(1 for data mode)
-                                            //RS is bit 1 of an LCD port
+#define DTA_MODE                0x10        //(1 for data mode)
+                                            //RS is bit 4 of an LCD port
 //rename RD2 	-LCD command/data 
-#define LCD_EN                  0x01        //Enable is bit 0 of an LCD port
+#define LCD_EN                  0x20        //Enable is bit 5 of an LCD port
 //rename RD3 	-LCD Enable (clocks data into LCD on falling edge)
 #define LCDCMD_ClearDisplay     0x01    //clear display: clear, move cursor home
 #define LCDCMD_EMS              0x06    //entry mode set: auto increment cursor after each char sent
@@ -108,11 +108,11 @@ void Delay20us() {
  * or an ASCII code is being written to it that is to be displayed on the panel.
  */ 
 void lcd_write(unsigned char mode, unsigned char CmdChar, char *port) {
-    //TODO make sure data is upper 4 bits
-    *port = (mode|((CmdChar&0xF0)+LCD_EN));  //Sets port to send upper nibble, mode, and enable
+    *port = (mode|((CmdChar>>4)+LCD_EN));    //Sets port to send lower nibble, mode, and enable
     Delay20us();
     *port = (*port)&(~LCD_EN);  //Clears enable
-    *port = (mode|((CmdChar<<4)+LCD_EN));    //Sets port to send lower nibble, mode, and enable
+    //TODO make sure data is upper 4 bits
+    *port = (mode|((CmdChar&0x0F)+LCD_EN));  //Sets port to send upper nibble, mode, and enable
     Delay20us();
     *port = (*port)&(~LCD_EN);  //Clears enable
 }

@@ -2,6 +2,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "352 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"166
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
 [p mainexit ]
 "4247
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4247: extern volatile __bit SCS __attribute__((address(0x478)));
@@ -9,18 +12,74 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1602
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"1416
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"3387
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
+[v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
 "24 ./lcd4bits.h
 [; ;./lcd4bits.h: 24: extern void lcd_init(char *);
 [v _lcd_init `(v ~T0 @X0 0 ef1`*uc ]
-"15
-[; ;./lcd4bits.h: 15: extern void lcd_clear(char *);
-[v _lcd_clear `(v ~T0 @X0 0 ef1`*uc ]
+"228 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"4664
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4664: extern volatile __bit nRBPU __attribute__((address(0x40F)));
+[v _nRBPU `Vb ~T0 @X0 0 e@1039 ]
+"2346
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2346: extern volatile unsigned char WPUB __attribute__((address(0x095)));
+[v _WPUB `Vuc ~T0 @X0 0 e@149 ]
+"1478
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"3449
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
+[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"1245
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1245: extern volatile unsigned char ADCON0 __attribute__((address(0x01F)));
+[v _ADCON0 `Vuc ~T0 @X0 0 e@31 ]
+"2977
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2977: extern volatile unsigned char ADCON1 __attribute__((address(0x09F)));
+[v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
+"3896
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3896: extern volatile __bit GIE __attribute__((address(0x5F)));
+[v _GIE `Vb ~T0 @X0 0 e@95 ]
+"4040
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4040: extern volatile __bit PEIE __attribute__((address(0x5E)));
+[v _PEIE `Vb ~T0 @X0 0 e@94 ]
+"3587
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3587: extern volatile __bit ADIF __attribute__((address(0x66)));
+[v _ADIF `Vb ~T0 @X0 0 e@102 ]
+"3584
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3584: extern volatile __bit ADIE __attribute__((address(0x466)));
+[v _ADIE `Vb ~T0 @X0 0 e@1126 ]
+"26 ./lcd4bits.h
+[; ;./lcd4bits.h: 26: extern void lcd_putch(char, char *c);
+[v _lcd_putch `(v ~T0 @X0 0 ef2`uc`*uc ]
 "9
 [; ;./lcd4bits.h: 9: extern void DelayMs(unsigned int);
 [v _DelayMs `(v ~T0 @X0 0 ef1`ui ]
-"26
-[; ;./lcd4bits.h: 26: extern void lcd_putch(char, char *c);
-[v _lcd_putch `(v ~T0 @X0 0 ef2`uc`*uc ]
+"37 concentration.c
+[; ;concentration.c: 37: void update_board(void);
+[v _update_board `(v ~T0 @X0 0 ef ]
+"3899 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3899: extern volatile __bit GO __attribute__((address(0xF9)));
+[v _GO `Vb ~T0 @X0 0 e@249 ]
+"15 ./lcd4bits.h
+[; ;./lcd4bits.h: 15: extern void lcd_clear(char *);
+[v _lcd_clear `(v ~T0 @X0 0 ef1`*uc ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"3821 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3821: extern volatile __bit CHS1 __attribute__((address(0xFB)));
+[v _CHS1 `Vb ~T0 @X0 0 e@251 ]
+"1238
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
+"2970
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2970: extern volatile unsigned char ADRESL __attribute__((address(0x09E)));
+[v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
 "11 concentration.c
 [p x FOSC = HS ]
 "12
@@ -279,69 +338,205 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"28 concentration.c
-[; ;concentration.c: 28: char *gameboard = &PORTD;
+"31 concentration.c
+[; ;concentration.c: 31: char *gameboard = &PORTD;
 [v _gameboard `*uc ~T0 @X0 1 e ]
 [i _gameboard
 -> &U _PORTD `*uc
 ]
+"32
+[; ;concentration.c: 32: char *scoreboard = &PORTA;
+[v _scoreboard `*uc ~T0 @X0 1 e ]
+[i _scoreboard
+-> &U _PORTA `*uc
+]
+"33
+[; ;concentration.c: 33: int joystick_x_pos = 0;
+[v _joystick_x_pos `i ~T0 @X0 1 e ]
+[i _joystick_x_pos
+-> 0 `i
+]
+"34
+[; ;concentration.c: 34: int joystick_y_pos =0;
+[v _joystick_y_pos `i ~T0 @X0 1 e ]
+[i _joystick_y_pos
+-> 0 `i
+]
+"35
+[; ;concentration.c: 35: char cursor_pos = 0x00;
+[v _cursor_pos `uc ~T0 @X0 1 e ]
+[i _cursor_pos
+-> -> 0 `i `uc
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"30
-[; ;concentration.c: 30: void main(void) {
+"39
+[; ;concentration.c: 39: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"31
-[; ;concentration.c: 31:     SCS = 0;
+"41
+[; ;concentration.c: 41:     SCS = 0;
 [e = _SCS -> -> 0 `i `b ]
-"32
-[; ;concentration.c: 32:     TRISD = 0;
+"43
+[; ;concentration.c: 43:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"33
-[; ;concentration.c: 33:     lcd_init(gameboard);
+"44
+[; ;concentration.c: 44:     TRISA = 0;
+[e = _TRISA -> -> 0 `i `uc ]
+"45
+[; ;concentration.c: 45:     ANSEL = 0;
+[e = _ANSEL -> -> 0 `i `uc ]
+"46
+[; ;concentration.c: 46:     lcd_init(gameboard);
 [e ( _lcd_init (1 _gameboard ]
-"34
-[; ;concentration.c: 34:     while(1) {
+"47
+[; ;concentration.c: 47:     lcd_init(scoreboard);
+[e ( _lcd_init (1 _scoreboard ]
+"49
+[; ;concentration.c: 49:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
+"50
+[; ;concentration.c: 50:     nRBPU = 0;
+[e = _nRBPU -> -> 0 `i `b ]
+"51
+[; ;concentration.c: 51:     WPUB = 0x31;
+[e = _WPUB -> -> 49 `i `uc ]
+"52
+[; ;concentration.c: 52:     TRISB = 0x31;
+[e = _TRISB -> -> 49 `i `uc ]
+"53
+[; ;concentration.c: 53:     ANSELH = 0x18;
+[e = _ANSELH -> -> 24 `i `uc ]
+"54
+[; ;concentration.c: 54:     ADCON0 = 0xA5;
+[e = _ADCON0 -> -> 165 `i `uc ]
+"55
+[; ;concentration.c: 55:     ADCON1 = 0x80;
+[e = _ADCON1 -> -> 128 `i `uc ]
+"56
+[; ;concentration.c: 56:     GIE = 1;
+[e = _GIE -> -> 1 `i `b ]
+"57
+[; ;concentration.c: 57:     PEIE = 1;
+[e = _PEIE -> -> 1 `i `b ]
+"58
+[; ;concentration.c: 58:     ADIF = 0;
+[e = _ADIF -> -> 0 `i `b ]
+"59
+[; ;concentration.c: 59:     ADIE = 1;
+[e = _ADIE -> -> 1 `i `b ]
+"61
+[; ;concentration.c: 61:     lcd_putch('X', gameboard);
+[e ( _lcd_putch (2 , -> -> 88 `ui `uc _gameboard ]
+"62
+[; ;concentration.c: 62:     lcd_putch('X', scoreboard);
+[e ( _lcd_putch (2 , -> -> 88 `ui `uc _scoreboard ]
+"63
+[; ;concentration.c: 63:     DelayMs(1000);
+[e ( _DelayMs (1 -> -> 1000 `i `ui ]
+"64
+[; ;concentration.c: 64:     while(1) {
 [e :U 140 ]
 {
-"35
-[; ;concentration.c: 35:         lcd_clear(gameboard);
-[e ( _lcd_clear (1 _gameboard ]
-"36
-[; ;concentration.c: 36:         DelayMs(1000);
-[e ( _DelayMs (1 -> -> 1000 `i `ui ]
-"37
-[; ;concentration.c: 37:         lcd_putch('T', gameboard);
-[e ( _lcd_putch (2 , -> -> 84 `ui `uc _gameboard ]
-"38
-[; ;concentration.c: 38:         DelayMs(1000);
-[e ( _DelayMs (1 -> -> 1000 `i `ui ]
-"39
-[; ;concentration.c: 39:         lcd_putch('E', gameboard);
-[e ( _lcd_putch (2 , -> -> 69 `ui `uc _gameboard ]
-"40
-[; ;concentration.c: 40:         DelayMs(1000);
-[e ( _DelayMs (1 -> -> 1000 `i `ui ]
-"41
-[; ;concentration.c: 41:         lcd_putch('S', gameboard);
-[e ( _lcd_putch (2 , -> -> 83 `ui `uc _gameboard ]
-"42
-[; ;concentration.c: 42:         DelayMs(1000);
-[e ( _DelayMs (1 -> -> 1000 `i `ui ]
-"43
-[; ;concentration.c: 43:         lcd_putch('T', gameboard);
-[e ( _lcd_putch (2 , -> -> 84 `ui `uc _gameboard ]
-"44
-[; ;concentration.c: 44:         DelayMs(1000);
-[e ( _DelayMs (1 -> -> 1000 `i `ui ]
-"45
-[; ;concentration.c: 45:     }
+"65
+[; ;concentration.c: 65:         update_board();
+[e ( _update_board ..  ]
+"66
+[; ;concentration.c: 66:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"46
-[; ;concentration.c: 46: }
+"67
+[; ;concentration.c: 67: }
 [e :UE 138 ]
+}
+"69
+[; ;concentration.c: 69: void update_board(void) {
+[v _update_board `(v ~T0 @X0 1 ef ]
+{
+[e :U _update_board ]
+[f ]
+"71
+[; ;concentration.c: 71:     GO = 1;
+[e = _GO -> -> 1 `i `b ]
+"72
+[; ;concentration.c: 72:     DelayMs(250);
+[e ( _DelayMs (1 -> -> 250 `i `ui ]
+"73
+[; ;concentration.c: 73:     lcd_clear(gameboard);
+[e ( _lcd_clear (1 _gameboard ]
+"74
+[; ;concentration.c: 74:     lcd_putch(0x30+(joystick_x_pos/1000), gameboard);
+[e ( _lcd_putch (2 , -> + -> 48 `i / _joystick_x_pos -> 1000 `i `uc _gameboard ]
+"75
+[; ;concentration.c: 75:     lcd_putch(0x30+((joystick_x_pos%1000)/100), gameboard);
+[e ( _lcd_putch (2 , -> + -> 48 `i / % _joystick_x_pos -> 1000 `i -> 100 `i `uc _gameboard ]
+"76
+[; ;concentration.c: 76:     lcd_putch(0x30+((joystick_x_pos%100)/10), gameboard);
+[e ( _lcd_putch (2 , -> + -> 48 `i / % _joystick_x_pos -> 100 `i -> 10 `i `uc _gameboard ]
+"77
+[; ;concentration.c: 77:     lcd_putch(0x30+((joystick_x_pos%10)/1), gameboard);
+[e ( _lcd_putch (2 , -> + -> 48 `i / % _joystick_x_pos -> 10 `i -> 1 `i `uc _gameboard ]
+"78
+[; ;concentration.c: 78:     lcd_clear(scoreboard);
+[e ( _lcd_clear (1 _scoreboard ]
+"79
+[; ;concentration.c: 79:     lcd_putch(0x30+(joystick_x_pos/1000), scoreboard);
+[e ( _lcd_putch (2 , -> + -> 48 `i / _joystick_x_pos -> 1000 `i `uc _scoreboard ]
+"80
+[; ;concentration.c: 80:     lcd_putch(0x30+((joystick_x_pos%1000)/100), scoreboard);
+[e ( _lcd_putch (2 , -> + -> 48 `i / % _joystick_x_pos -> 1000 `i -> 100 `i `uc _scoreboard ]
+"81
+[; ;concentration.c: 81:     lcd_putch(0x30+((joystick_x_pos%100)/10), scoreboard);
+[e ( _lcd_putch (2 , -> + -> 48 `i / % _joystick_x_pos -> 100 `i -> 10 `i `uc _scoreboard ]
+"82
+[; ;concentration.c: 82:     lcd_putch(0x30+((joystick_x_pos%10)/1), scoreboard);
+[e ( _lcd_putch (2 , -> + -> 48 `i / % _joystick_x_pos -> 10 `i -> 1 `i `uc _scoreboard ]
+"83
+[; ;concentration.c: 83: }
+[e :UE 142 ]
+}
+[v $root$_interrupt_handler `(v ~T0 @X0 0 e ]
+"85
+[; ;concentration.c: 85: void __attribute__((picinterrupt(("")))) interrupt_handler(void) {
+[v _interrupt_handler `(v ~T1 @X0 1 ef ]
+{
+[e :U _interrupt_handler ]
+[f ]
+"86
+[; ;concentration.c: 86:     if(ADIF) {
+[e $ ! _ADIF 144  ]
+{
+"87
+[; ;concentration.c: 87:         if(CHS1 == 1) {
+[e $ ! == -> _CHS1 `i -> 1 `i 145  ]
+{
+"88
+[; ;concentration.c: 88:             joystick_x_pos = (ADRESH<<8)+ADRESL;
+[e = _joystick_x_pos + << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
+"89
+[; ;concentration.c: 89:         } else {
+}
+[e $U 146  ]
+[e :U 145 ]
+{
+"90
+[; ;concentration.c: 90:             joystick_y_pos = (ADRESH<<8)+ADRESL;
+[e = _joystick_y_pos + << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
+"91
+[; ;concentration.c: 91:         }
+}
+[e :U 146 ]
+"92
+[; ;concentration.c: 92:         ADIF = 0;
+[e = _ADIF -> -> 0 `i `b ]
+"93
+[; ;concentration.c: 93:     }
+}
+[e :U 144 ]
+"94
+[; ;concentration.c: 94: }
+[e :UE 143 ]
 }
