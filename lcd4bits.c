@@ -55,6 +55,8 @@
 
 #include	<xc.h>
 
+#include "lcd4bits.h"
+
 #define CMD_MODE                0x00        //(0 for command mode)
 #define DTA_MODE                0x02        //(1 for data mode)
                                             //RS is bit 1 of an LCD port
@@ -83,8 +85,8 @@ void tmr0_init() {
  */
 void DelayMs(unsigned int millis) {
     while (millis != 0) {
-        TMR0 = 1;
-        T0IF = 100;
+        TMR0 = 100;
+        T0IF = 0;
         while(T0IF == 0);
         millis--;
     }
@@ -107,31 +109,32 @@ void Delay20us() {
  */ 
 void lcd_write(unsigned char mode, unsigned char CmdChar, char *port) {
     //TODO make sure data is upper 4 bits
-    port = (mode|((CmdChar&0xF0)+LCD_EN));  //Sets port to send upper nibble, mode, and enable
+    *port = (mode|((CmdChar&0xF0)+LCD_EN));  //Sets port to send upper nibble, mode, and enable
     Delay20us();
-    port &= (!LCD_EN);  //Clears enable
-    port = (mode|((CmdChar<<4)+LCD_EN));    //Sets port to send lower nibble, mode, and enable
+    *port = (*port)&(~LCD_EN);  //Clears enable
+    *port = (mode|((CmdChar<<4)+LCD_EN));    //Sets port to send lower nibble, mode, and enable
     Delay20us();
-    port &= (!LCD_EN);  //Clears enable
+    *port = (*port)&(~LCD_EN);  //Clears enable
 }
 
 /*
  * Clear the LCD and go to home position
  */
 void lcd_clear(char *port) {
-    lcd_write(CMD_MODE, LCDCMD_ClearDisplay, *port);
+    lcd_write(CMD_MODE, LCDCMD_ClearDisplay, port);
     DelayMs(2);
 }
 
 /* Write a string of chars to the LCD */
 void lcd_puts(const char *string, char *port) {
-    while (*string != 0) // Last character in a C-language string is alway "0" (ASCII NULL character)
-        lcd_write(DTA_MODE, *string++, *port);
+    while (*string != 0) { // Last character in a C-language string is alway "0" (ASCII NULL character)
+        lcd_write(DTA_MODE, *string++, port);
+    }
 }
 
 /* Write one character to the LCD */
 void lcd_putch(char character, char *port) {
-    lcd_write(DTA_MODE, character, *port);
+    lcd_write(DTA_MODE, character, port);
 }
 
 /*
@@ -141,7 +144,7 @@ void lcd_putch(char character, char *port) {
  *     the columns of Row 2 are 0x40....0x50
  */
 void lcd_goto(unsigned char position, char *port) {
-    lcd_write(CMD_MODE, 0x80 + position, *port); // The "cursor move" command is indicated by MSB=1 (0x80)
+    lcd_write(CMD_MODE, 0x80 + position, port); // The "cursor move" command is indicated by MSB=1 (0x80)
     // followed by the panel position address (0x00- 0x7F)
     DelayMs(2);
 }
@@ -151,12 +154,11 @@ void lcd_goto(unsigned char position, char *port) {
  */
 void lcd_init(char *port) //See Section 2.2.2.2 of the Optrex LCD DMCman User Manual
 {
-    TRISD = 0x00; //Make PORTD (D7-0) all output
     tmr0_init();
-    port = 0;
+    *port = 0;
     DelayMs(15); // wait 15mSec after power applied,
-    lcd_write(CMD_MODE, LCDCMD_FunctionSet, *port); // function set: 4-bit mode, 2 lines, 5x7 dots
-    lcd_write(CMD_MODE, LCDCMD_DisplaySettings, *port); // display ON/OFF control: display on, cursor off, blink off
-    lcd_clear(*port); // Clear screen
-    lcd_write(CMD_MODE, LCDCMD_EMS, *port); // Set entry Mode
+    lcd_write(CMD_MODE, LCDCMD_FunctionSet, port); // function set: 4-bit mode, 2 lines, 5x7 dots
+    lcd_write(CMD_MODE, LCDCMD_DisplaySettings, port); // display ON/OFF control: display on, cursor off, blink off
+    lcd_clear(port); // Clear screen
+    lcd_write(CMD_MODE, LCDCMD_EMS, port); // Set entry Mode
 }

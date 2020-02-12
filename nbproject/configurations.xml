@@ -21,6 +21,7 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>Board Layout.png</itemPath>
+      <itemPath>ECE230 Final Project Proposal.odt</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -145,6 +146,9 @@
         <property key="program-the-device-with-default-config-words" value="true"/>
         <property key="remove-unused-sections" value="true"/>
       </HI-TECH-LINK>
+      <PICkit3PlatformTool>
+        <property key="firmware.download.all" value="false"/>
+      </PICkit3PlatformTool>
       <XC8-CO>
         <property key="coverage-enable" value=""/>
       </XC8-CO>

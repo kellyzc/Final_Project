@@ -9,21 +9,21 @@ extern void Display( unsigned int );
 extern void DelayMs(unsigned int);
 
 /* write a byte to the LCD in 8 bit mode */
-extern void lcd_write(unsigned char, unsigned char, char *);
+extern void lcd_write(unsigned char, unsigned char, char *c);
 
 /* Clear and home the LCD */
 extern void lcd_clear(char *);
 
 /* write a string of characters to the LCD */
-extern void lcd_puts(const char * s, char *);
+extern void lcd_puts(const char * s, char *c);
 
 /* Go to the specified position */
-extern void lcd_goto(unsigned char pos, char *);
+extern void lcd_goto(unsigned char pos, char *c);
 	
 /* intialize the LCD - call before anything else */
 extern void lcd_init(char *);
 
-extern void lcd_putch(char, char *);
+extern void lcd_putch(char, char *c);
 
 /*	Set the cursor position */
 #define	lcd_cursor(x)	lcd_write(((x)&0x7F)|0x80)
