@@ -2536,19 +2536,15 @@ extern void lcd_init(char *);
 
 extern void lcd_putch(char, char *c);
 # 25 "concentration.c" 2
-
-
-
-
-
-
+# 34 "concentration.c"
 char *gameboard = &PORTD;
 char *scoreboard = &PORTA;
-int joystick_x_pos = 0;
-int joystick_y_pos =0;
+int joystick_x_pos;
+int joystick_y_pos;
 char cursor_pos = 0x00;
+char current_char;
 
-void update_board(void);
+void joystick_init(void);
 
 void main(void) {
 
@@ -2559,50 +2555,89 @@ void main(void) {
     ANSEL = 0;
     lcd_init(gameboard);
     lcd_init(scoreboard);
+    joystick_init();
 
+    const char board_r1[] = "0123456789ABCDEF";
+    const char board_r2[] = "THIS IS ROW 2...";
+    lcd_clear(gameboard);
+    lcd_puts(board_r1, gameboard);
+    lcd_goto(0x40, gameboard);
+    lcd_puts(board_r2, gameboard);
+    cursor_pos = 0x41;
+    while(1) {
+
+        lcd_goto(cursor_pos, gameboard);
+        if((cursor_pos>>4) == 4) {
+            current_char = board_r2[cursor_pos&0x0F];
+        } else {
+            current_char = board_r1[cursor_pos&0x0F];
+        }
+        lcd_putch(0xFF, gameboard);
+        DelayMs(250);
+        lcd_goto(cursor_pos, gameboard);
+        lcd_putch(current_char, gameboard);
+        DelayMs(250);
+        cursor_pos++;
+        switch(cursor_pos) {
+            case 0x10:
+                cursor_pos = 0x40;
+                break;
+            case 0x50:
+                cursor_pos = 0x00;
+                break;
+        }
+    }
+}
+
+void joystick_init(void) {
+    joystick_x_pos = 0;
+    joystick_y_pos = 0;
     PORTB = 0;
     nRBPU = 0;
-    WPUB = 0x31;
-    TRISB = 0x31;
-    ANSELH = 0x18;
-    ADCON0 = 0xA5;
-    ADCON1 = 0x80;
+    WPUB = 0x20;
+    TRISB = 0x38;
+    ANSELH = 0x0A;
     GIE = 1;
     PEIE = 1;
     ADIF = 0;
     ADIE = 1;
+    ADCON1 = 0x80;
+    ADCON0 = 0xA5;
+}
 
-    lcd_putch('X', gameboard);
-    lcd_putch('X', scoreboard);
-    DelayMs(1000);
-    while(1) {
-        update_board();
+void __attribute__((picinterrupt(("")))) interrupt_handler(void) {
+    if(ADIF) {
+        if(CHS1 == 1) {
+            joystick_x_pos = (((int)ADRESH)<<8)+ADRESL;
+            CHS1 = 0;
+        } else {
+            joystick_y_pos = (((int)ADRESH)<<8)+ADRESL;
+            CHS1 = 1;
+        }
+        ADIF = 0;
     }
 }
 
-void update_board(void) {
 
+
+
+void display_joystick_values(void) {
+    while(RB5 == 0) {
+        lcd_clear(gameboard);
+        lcd_putch('P', gameboard);
+        DelayMs(250);
+    }
     GO = 1;
-    DelayMs(250);
+    while(GO == 1);
     lcd_clear(gameboard);
     lcd_putch(0x30+(joystick_x_pos/1000), gameboard);
     lcd_putch(0x30+((joystick_x_pos%1000)/100), gameboard);
     lcd_putch(0x30+((joystick_x_pos%100)/10), gameboard);
     lcd_putch(0x30+((joystick_x_pos%10)/1), gameboard);
     lcd_clear(scoreboard);
-    lcd_putch(0x30+(joystick_x_pos/1000), scoreboard);
-    lcd_putch(0x30+((joystick_x_pos%1000)/100), scoreboard);
-    lcd_putch(0x30+((joystick_x_pos%100)/10), scoreboard);
-    lcd_putch(0x30+((joystick_x_pos%10)/1), scoreboard);
-}
-
-void __attribute__((picinterrupt(("")))) interrupt_handler(void) {
-    if(ADIF) {
-        if(CHS1 == 1) {
-            joystick_x_pos = (ADRESH<<8)+ADRESL;
-        } else {
-            joystick_y_pos = (ADRESH<<8)+ADRESL;
-        }
-        ADIF = 0;
-    }
+    lcd_putch(0x30+(joystick_y_pos/1000), scoreboard);
+    lcd_putch(0x30+((joystick_y_pos%1000)/100), scoreboard);
+    lcd_putch(0x30+((joystick_y_pos%100)/10), scoreboard);
+    lcd_putch(0x30+((joystick_y_pos%10)/1), scoreboard);
+    DelayMs(125);
 }

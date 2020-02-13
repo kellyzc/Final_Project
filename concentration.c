@@ -26,15 +26,19 @@
 
 #define JOYSTICK_X 1
 #define JOYSTICK_Y 0
+#define JOYSTICK_BUTTON RB5
+#define PRESSED 0
+#define RELEASED 1
+#define ROW_2 0x40
 
-//TODO
 char *gameboard = &PORTD;
 char *scoreboard = &PORTA;
-int joystick_x_pos = 0;
-int joystick_y_pos  =0;
+int joystick_x_pos;
+int joystick_y_pos;
 char cursor_pos = 0x00;
+char current_char;
 
-void update_board(void);
+void joystick_init(void);
 
 void main(void) {
     //Clocl Setup
@@ -45,50 +49,89 @@ void main(void) {
     ANSEL = 0;
     lcd_init(gameboard);
     lcd_init(scoreboard);
-    //Joystick Setup
+    joystick_init();
+    //Main Loop
+    const char board_r1[] = "0123456789ABCDEF";
+    const char board_r2[] = "THIS IS ROW 2...";
+    lcd_clear(gameboard);
+    lcd_puts(board_r1, gameboard);
+    lcd_goto(ROW_2, gameboard);
+    lcd_puts(board_r2, gameboard);
+    cursor_pos = 0x41;
+    while(1) {
+        //TODO difference between cursor and goto
+        lcd_goto(cursor_pos, gameboard);
+        if((cursor_pos>>4) == 4) {
+            current_char = board_r2[cursor_pos&0x0F];
+        } else {
+            current_char = board_r1[cursor_pos&0x0F];
+        }
+        lcd_putch(0xFF, gameboard);
+        DelayMs(250);
+        lcd_goto(cursor_pos, gameboard);
+        lcd_putch(current_char, gameboard);
+        DelayMs(250);
+        cursor_pos++;
+        switch(cursor_pos) {
+            case 0x10:
+                cursor_pos = 0x40;
+                break;
+            case 0x50:
+                cursor_pos = 0x00;
+                break;
+        }
+    }
+}
+
+void joystick_init(void) {
+    joystick_x_pos = 0;
+    joystick_y_pos = 0;
     PORTB = 0;
     nRBPU = 0;
-    WPUB = 0x31;
-    TRISB = 0x31;
-    ANSELH = 0x18;  //RB3 (y) and RB4 (x) are analog inputs
-    ADCON0 = 0xA5;  //ADCS = 10 , CHS = 9, GO = 0, ADON = 1
-    ADCON1 = 0x80;  //ADFM = 1, VCFG = 00
+    WPUB = 0x20;
+    TRISB = 0x38;
+    ANSELH = 0x0A;
     GIE = 1;
     PEIE = 1;
     ADIF = 0;
     ADIE = 1;
-    //Main Loop
-    lcd_putch('X', gameboard);
-    lcd_putch('X', scoreboard);
-    DelayMs(1000);
-    while(1) {
-        update_board();
+    ADCON1 = 0x80;  //ADFM = 1, VCFG = 00
+    ADCON0 = 0xA5;  //ADCS = 10 , CHS = 9, GO = 0, ADON = 1
+}
+
+void __interrupt() interrupt_handler(void) {
+    if(ADIF) {
+        if(CHS1 == JOYSTICK_X) {
+            joystick_x_pos = (((int)ADRESH)<<8)+ADRESL;
+            CHS1 = JOYSTICK_Y;
+        } else {
+            joystick_y_pos = (((int)ADRESH)<<8)+ADRESL;
+            CHS1 = JOYSTICK_X;
+        }
+        ADIF = 0;
     }
 }
 
-void update_board(void) {
-    //TODO figure out range of joystick voltage values
+//Testing Functions
+//TODO delete later
+
+void display_joystick_values(void) {
+    while(JOYSTICK_BUTTON == PRESSED) {
+        lcd_clear(gameboard);
+        lcd_putch('P', gameboard);
+        DelayMs(250);
+    }
     GO = 1;
-    DelayMs(500);
+    while(GO == 1);
     lcd_clear(gameboard);
     lcd_putch(0x30+(joystick_x_pos/1000), gameboard);
     lcd_putch(0x30+((joystick_x_pos%1000)/100), gameboard);
     lcd_putch(0x30+((joystick_x_pos%100)/10), gameboard);
     lcd_putch(0x30+((joystick_x_pos%10)/1), gameboard);
     lcd_clear(scoreboard);
-    lcd_putch(0x30+(joystick_x_pos/1000), scoreboard);
-    lcd_putch(0x30+((joystick_x_pos%1000)/100), scoreboard);
-    lcd_putch(0x30+((joystick_x_pos%100)/10), scoreboard);
-    lcd_putch(0x30+((joystick_x_pos%10)/1), scoreboard);
-}
-
-void __interrupt() interrupt_handler(void) {
-    if(ADIF) {
-        if(CHS1 == JOYSTICK_X) {
-            joystick_x_pos = (ADRESH<<8)+ADRESL;
-        } else {
-            joystick_y_pos = (ADRESH<<8)+ADRESL;
-        }
-        ADIF = 0;
-    }
+    lcd_putch(0x30+(joystick_y_pos/1000), scoreboard);
+    lcd_putch(0x30+((joystick_y_pos%1000)/100), scoreboard);
+    lcd_putch(0x30+((joystick_y_pos%100)/10), scoreboard);
+    lcd_putch(0x30+((joystick_y_pos%10)/1), scoreboard);
+    DelayMs(125);
 }
