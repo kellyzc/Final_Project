@@ -39,16 +39,20 @@ char cursor_pos = 0x00;
 char current_char;
 char cursor_solid;
 char delay_loops;
-char joystick_pressed;
 const char board_r1[] = "0123456789ABCDEF";
 const char board_r2[] = "THIS IS ROW 2...";
+char cursor_move_delay_count;
+char cursor_movable;
+char cursor_fast;
 
 void joystick_init(void);
 void time_init(void);
 void update_gameboard(void);
 void get_current_char(void);
 void toggle_cursor(void);
-void update_cursor(void);
+void update_cursor(char);
+void gameboard_init(char);
+void update_gameboard_from_input(void);
 
 void main(void) {
     //Clocl Setup
@@ -60,63 +64,87 @@ void main(void) {
     lcd_init(gameboard);
     lcd_init(scoreboard);
     joystick_init();
+    gameboard_init(0x45);
     //Main Loop
+    while(1) {
+        update_gameboard_from_input();
+    }
+}
+
+void gameboard_init(char cursor_init_pos) {
     time_init();
     lcd_clear(gameboard);
     lcd_puts(board_r1, gameboard);
     lcd_goto(ROW_2, gameboard);
     lcd_puts(board_r2, gameboard);
-    cursor_pos = 0x45;
+    cursor_pos = cursor_init_pos;
     cursor_solid = 0;
     get_current_char();
     delay_loops = 0;
-    joystick_pressed = 0;
+    cursor_movable = 1;
     lcd_goto(cursor_pos, gameboard);
-    while(1) {
-        //Start a new joystick reading if the previous one has finished
-        if(GO == 0) {
-            GO = 1;
-        }
-        //Blink timing
-        if(CCP1IF == 1) {
-            if(delay_loops == 0) {
-                delay_loops = 25;
-                toggle_cursor();
-            } else {
-                delay_loops--;
-            }
-            CCPR1 = TMR1+50000;
-            CCP1IF = 0;
-        }
-        //Move the cursor based on joystick input
-        if(joystick_x_pos > 700) {
-            if(joystick_pressed == 0) {
-                cursor_pos--;
-                update_cursor();
-            }
-        } else if(joystick_x_pos < 300) {
-            if(joystick_pressed == 0) {
-                cursor_pos++;
-                update_cursor();
-            }
-        } else if(joystick_y_pos > 700) {
-            if(joystick_pressed == 0) {
-                cursor_pos ^= 0x40;
-                update_cursor();
-            }
-        } else if(joystick_y_pos < 300) {
-            if(joystick_pressed == 0) {
-                cursor_pos ^= 0x40;
-                update_cursor();
-            }
+    cursor_move_delay_count = 255;
+    PR2 = 250; //TMR2IF triggered after 8ms
+    TMR2IF = 0;
+    TMR2IE = 1;
+    T2CON = 0x56;   //Post-scaler = 1:10, pre-scaler = 1:16,TMR2ON = 1
+}
+
+void update_gameboard_from_input(void) {
+    //Start a new joystick reading if the previous one has finished
+    if(GO == 0) {
+        GO = 1;
+    }
+    //Blink timing
+    if(CCP1IF == 1) {
+        if(delay_loops == 0) {
+            delay_loops = 25;
+            toggle_cursor();
         } else {
-            joystick_pressed = 0;
+            delay_loops--;
         }
+        CCPR1 = TMR1+50000;
+        CCP1IF = 0;
+    }
+    //Move the cursor based on joystick input
+    if(joystick_x_pos > 900) {
+        if(cursor_movable) {
+            cursor_pos--;
+            update_cursor(30);
+        }
+    } else if(joystick_x_pos < 100) {
+        if(cursor_movable) {
+            cursor_pos++;
+            update_cursor(30);
+        }
+    } else if(joystick_x_pos > 600) {
+        if(cursor_movable) {
+            cursor_pos--;
+            update_cursor(60);
+        }
+    } else if(joystick_x_pos < 400) {
+        if(cursor_movable) {
+            cursor_pos++;
+            update_cursor(60);
+        }
+    } else if(joystick_y_pos > 700) {
+        if(cursor_movable) {
+            cursor_pos ^= 0x40;
+            update_cursor(62);
+        }
+    } else if(joystick_y_pos < 300) {
+        if(cursor_movable) {
+            cursor_pos ^= 0x40;
+            update_cursor(62);
+        }
+    } else {
+        cursor_movable = 1;
     }
 }
 
-void update_cursor(void) {
-    joystick_pressed = 1;
+void update_cursor(char move_delay_count) {
+    cursor_movable = 0;
+    cursor_move_delay_count = move_delay_count;
     switch(cursor_pos) {
         case 0x10:
             cursor_pos = 0x00;
@@ -159,31 +187,6 @@ void get_current_char(void) {
     }
 }
 
-//TODO delete
-void update_gameboard(void) {
-    //Catch cursor going offscreen
-    switch(cursor_pos) {
-        case 0x10:
-            cursor_pos = 0x00;
-            break;
-        case 0x50:
-            cursor_pos = 0x40;
-            break;
-        case 0xFF:
-            cursor_pos = 0x0F;
-            break;
-        case 0x3F:
-            cursor_pos = 0x4F;
-            break;
-    }
-    lcd_goto(cursor_pos, gameboard);
-    if(cursor_solid == 1) {
-        lcd_putch(0xFF, gameboard);
-        lcd_goto(cursor_pos, gameboard);
-    }
-    joystick_pressed = 1;
-}
-
 //Initialization functions
 
 void time_init(void) {
@@ -224,5 +227,12 @@ void __interrupt() interrupt_handler(void) {
             CHS1 = JOYSTICK_X;
         }
         ADIF = 0;
+    }
+    if(TMR2IF) {
+        cursor_move_delay_count--;
+        if(cursor_move_delay_count == 0) {
+            cursor_movable = 1;
+        }
+        TMR2IF = 0;
     }
 }
