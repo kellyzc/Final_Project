@@ -15,6 +15,7 @@
                    projectFiles="true">
       <itemPath>concentration.c</itemPath>
       <itemPath>lcd4bits.c</itemPath>
+      <itemPath>testing_functions.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -146,6 +147,9 @@
         <property key="program-the-device-with-default-config-words" value="true"/>
         <property key="remove-unused-sections" value="true"/>
       </HI-TECH-LINK>
+      <PICkit3PlatformTool>
+        <property key="firmware.download.all" value="false"/>
+      </PICkit3PlatformTool>
       <XC8-CO>
         <property key="coverage-enable" value=""/>
       </XC8-CO>
@@ -162,6 +166,8 @@
         <property key="stack-type" value="compiled"/>
         <property key="user-pack-device-support" value=""/>
       </XC8-config-global>
+      <item path="testing_functions.c" ex="true" overriding="false">
+      </item>
     </conf>
   </confs>
 </configurationDescriptor>
