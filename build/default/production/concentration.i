@@ -2550,6 +2550,7 @@ const char board_r2[] = "THIS IS ROW 2...";
 char cursor_move_delay_count;
 char cursor_movable;
 char cursor_fast;
+char recieved_char;
 
 void joystick_init(void);
 void time_init(void);
@@ -2569,10 +2570,29 @@ void main(void) {
     ANSEL = 0;
     lcd_init(gameboard);
     lcd_init(scoreboard);
+
     joystick_init();
     gameboard_init(0x45);
 
+    recieved_char = 0x00;
+    TRISC = 0x80;
+    TXEN = 1;
+
+    CREN = 1;
+
+    RCIE = 1;
+    SYNC = 0;
+    BRGH = 1;
+    BRG16 = 0;
+    SPBRG = 10;
+
+    lcd_putch('X', gameboard);
+    lcd_putch('X', scoreboard);
     while(1) {
+
+
+
+
         update_gameboard_from_input();
     }
 }
@@ -2740,5 +2760,9 @@ void __attribute__((picinterrupt(("")))) interrupt_handler(void) {
             cursor_movable = 1;
         }
         TMR2IF = 0;
+    }
+    if(RCIF) {
+        recieved_char = RCREG;
+        lcd_putch(recieved_char, gameboard);
     }
 }

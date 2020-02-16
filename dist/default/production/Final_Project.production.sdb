@@ -11,23 +11,23 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"57 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\concentration.c
+"58 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\concentration.c
 [v _main main `(v  1 e 1 0 ]
-"74
+"94
 [v _gameboard_init gameboard_init `(v  1 e 1 0 ]
-"93
+"113
 [v _update_gameboard_from_input update_gameboard_from_input `(v  1 e 1 0 ]
-"145
+"165
 [v _update_cursor update_cursor `(v  1 e 1 0 ]
-"171
+"191
 [v _toggle_cursor toggle_cursor `(v  1 e 1 0 ]
-"182
+"202
 [v _get_current_char get_current_char `(v  1 e 1 0 ]
-"192
+"212
 [v _time_init time_init `(v  1 e 1 0 ]
-"204
+"224
 [v _joystick_init joystick_init `(v  1 e 1 0 ]
-"220
+"240
 [v _interrupt_handler interrupt_handler `II(v  1 e 1 0 ]
 "72 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\lcd4bits.c
 [v _tmr0_init tmr0_init `(v  1 e 1 0 ]
@@ -35,14 +35,17 @@
 [v _DelayMs DelayMs `(v  1 e 1 0 ]
 "99
 [v _Delay20us Delay20us `(v  1 e 1 0 ]
+[v i1_Delay20us Delay20us `(v  1 e 1 0 ]
 "110
 [v _lcd_write lcd_write `(v  1 e 1 0 ]
+[v i1_lcd_write lcd_write `(v  1 e 1 0 ]
 "123
 [v _lcd_clear lcd_clear `(v  1 e 1 0 ]
 "129
 [v _lcd_puts lcd_puts `(v  1 e 1 0 ]
 "136
 [v _lcd_putch lcd_putch `(v  1 e 1 0 ]
+[v i1_lcd_putch lcd_putch `(v  1 e 1 0 ]
 "146
 [v _lcd_goto lcd_goto `(v  1 e 1 0 ]
 "155
@@ -61,6 +64,8 @@
 [v _T2CON T2CON `VEuc  1 e 1 @18 ]
 "920
 [v _CCPR1 CCPR1 `VEus  1 e 2 @21 ]
+"1140
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
 "1238
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
 "1245
@@ -71,12 +76,16 @@
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "2041
 [v _PR2 PR2 `VEuc  1 e 1 @146 ]
 "2346
 [v _WPUB WPUB `VEuc  1 e 1 @149 ]
+"2642
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2970
 [v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
 "2977
@@ -89,6 +98,10 @@
 [v _ADIE ADIE `VEb  1 e 0 @1126 ]
 "3587
 [v _ADIF ADIF `VEb  1 e 0 @102 ]
+"3668
+[v _BRG16 BRG16 `VEb  1 e 0 @3131 ]
+"3695
+[v _BRGH BRGH `VEb  1 e 0 @1218 ]
 "3773
 [v _CCP1IF CCP1IF `VEb  1 e 0 @98 ]
 "3776
@@ -101,14 +114,22 @@
 [v _CCP1M3 CCP1M3 `VEb  1 e 0 @187 ]
 "3821
 [v _CHS1 CHS1 `VEb  1 e 0 @251 ]
+"3836
+[v _CREN CREN `VEb  1 e 0 @196 ]
 "3896
 [v _GIE GIE `VEb  1 e 0 @95 ]
 "3899
 [v _GO GO `VEb  1 e 0 @249 ]
 "4040
 [v _PEIE PEIE `VEb  1 e 0 @94 ]
+"4172
+[v _RCIE RCIE `VEb  1 e 0 @1125 ]
+"4175
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
 "4247
 [v _SCS SCS `VEb  1 e 0 @1144 ]
+"4313
+[v _SYNC SYNC `VEb  1 e 0 @1220 ]
 "4322
 [v _T0IF T0IF `VEb  1 e 0 @90 ]
 "4328
@@ -125,9 +146,13 @@
 [v _TMR2IE TMR2IE `VEb  1 e 0 @1121 ]
 "4382
 [v _TMR2IF TMR2IF `VEb  1 e 0 @97 ]
+"4538
+[v _TXEN TXEN `VEb  1 e 0 @1221 ]
 "4664
 [v _nRBPU nRBPU `VEb  1 e 0 @1039 ]
-"36 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\concentration.c
+"34 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\concentration.c
+[v _gameboard gameboard `*.39uc  1 e 2 0 ]
+"36
 [v _joystick_x_pos joystick_x_pos `i  1 e 2 0 ]
 "37
 [v _joystick_y_pos joystick_y_pos `i  1 e 2 0 ]
@@ -147,42 +172,44 @@
 [v _cursor_move_delay_count cursor_move_delay_count `uc  1 e 1 0 ]
 "45
 [v _cursor_movable cursor_movable `uc  1 e 1 0 ]
-"57
+"47
+[v _recieved_char recieved_char `uc  1 e 1 0 ]
+"58
 [v _main main `(v  1 e 1 0 ]
 {
-"72
+"92
 } 0
-"93
+"113
 [v _update_gameboard_from_input update_gameboard_from_input `(v  1 e 1 0 ]
 {
-"143
+"163
 } 0
-"145
+"165
 [v _update_cursor update_cursor `(v  1 e 1 0 ]
 {
 [v update_cursor@move_delay_count move_delay_count `uc  1 a 1 wreg ]
 [v update_cursor@move_delay_count move_delay_count `uc  1 a 1 wreg ]
-[v update_cursor@move_delay_count move_delay_count `uc  1 a 1 6 ]
-"169
+[v update_cursor@move_delay_count move_delay_count `uc  1 a 1 18 ]
+"189
 } 0
-"171
+"191
 [v _toggle_cursor toggle_cursor `(v  1 e 1 0 ]
 {
-"180
+"200
 } 0
 "136 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\lcd4bits.c
 [v _lcd_putch lcd_putch `(v  1 e 1 0 ]
 {
 [v lcd_putch@character character `uc  1 a 1 wreg ]
 [v lcd_putch@character character `uc  1 a 1 wreg ]
-[v lcd_putch@port port `*.39uc  1 p 2 0 ]
-[v lcd_putch@character character `uc  1 a 1 3 ]
+[v lcd_putch@port port `*.39uc  1 p 2 12 ]
+[v lcd_putch@character character `uc  1 a 1 15 ]
 "138
 } 0
 "155
 [v _lcd_init lcd_init `(v  1 e 1 0 ]
 {
-[v lcd_init@port port `*.39uc  1 p 2 2 ]
+[v lcd_init@port port `*.39uc  1 p 2 14 ]
 "164
 } 0
 "72
@@ -190,31 +217,31 @@
 {
 "79
 } 0
-"204 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\concentration.c
+"224 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\concentration.c
 [v _joystick_init joystick_init `(v  1 e 1 0 ]
 {
-"218
+"238
 } 0
-"74
+"94
 [v _gameboard_init gameboard_init `(v  1 e 1 0 ]
 {
 [v gameboard_init@cursor_init_pos cursor_init_pos `uc  1 a 1 wreg ]
 [v gameboard_init@cursor_init_pos cursor_init_pos `uc  1 a 1 wreg ]
-[v gameboard_init@cursor_init_pos cursor_init_pos `uc  1 a 1 5 ]
-"91
+[v gameboard_init@cursor_init_pos cursor_init_pos `uc  1 a 1 17 ]
+"111
 } 0
-"192
+"212
 [v _time_init time_init `(v  1 e 1 0 ]
 {
-"202
+"222
 } 0
 "129 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\lcd4bits.c
 [v _lcd_puts lcd_puts `(v  1 e 1 0 ]
 {
 [v lcd_puts@string string `*.24DCuc  1 a 1 wreg ]
 [v lcd_puts@string string `*.24DCuc  1 a 1 wreg ]
-[v lcd_puts@port port `*.39uc  1 p 2 0 ]
-[v lcd_puts@string string `*.24DCuc  1 a 1 3 ]
+[v lcd_puts@port port `*.39uc  1 p 2 12 ]
+[v lcd_puts@string string `*.24DCuc  1 a 1 15 ]
 "133
 } 0
 "146
@@ -222,14 +249,14 @@
 {
 [v lcd_goto@position position `uc  1 a 1 wreg ]
 [v lcd_goto@position position `uc  1 a 1 wreg ]
-[v lcd_goto@port port `*.39uc  1 p 2 0 ]
-[v lcd_goto@position position `uc  1 a 1 3 ]
+[v lcd_goto@port port `*.39uc  1 p 2 12 ]
+[v lcd_goto@position position `uc  1 a 1 15 ]
 "150
 } 0
 "123
 [v _lcd_clear lcd_clear `(v  1 e 1 0 ]
 {
-[v lcd_clear@port port `*.39uc  1 p 2 0 ]
+[v lcd_clear@port port `*.39uc  1 p 2 12 ]
 "126
 } 0
 "110
@@ -237,31 +264,56 @@
 {
 [v lcd_write@mode mode `uc  1 a 1 wreg ]
 [v lcd_write@mode mode `uc  1 a 1 wreg ]
-[v lcd_write@CmdChar CmdChar `uc  1 p 1 4 ]
-[v lcd_write@port port `*.39uc  1 p 2 5 ]
-[v lcd_write@mode mode `uc  1 a 1 9 ]
+[v lcd_write@CmdChar CmdChar `uc  1 p 1 6 ]
+[v lcd_write@port port `*.39uc  1 p 2 7 ]
+[v lcd_write@mode mode `uc  1 a 1 11 ]
 "118
 } 0
 "99
 [v _Delay20us Delay20us `(v  1 e 1 0 ]
 {
 "100
-[v Delay20us@next next `uc  1 a 1 3 ]
+[v Delay20us@next next `uc  1 a 1 5 ]
 "102
 } 0
 "86
 [v _DelayMs DelayMs `(v  1 e 1 0 ]
 {
-[v DelayMs@millis millis `ui  1 p 2 2 ]
+[v DelayMs@millis millis `ui  1 p 2 4 ]
 "93
 } 0
-"182 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\concentration.c
+"202 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\concentration.c
 [v _get_current_char get_current_char `(v  1 e 1 0 ]
 {
-"188
+"208
 } 0
-"220
+"240
 [v _interrupt_handler interrupt_handler `II(v  1 e 1 0 ]
 {
-"238
+"262
+} 0
+"136 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\lcd4bits.c
+[v i1_lcd_putch lcd_putch `(v  1 e 1 0 ]
+{
+[v i1lcd_putch@character character `uc  1 a 1 wreg ]
+[v i1lcd_putch@character character `uc  1 a 1 wreg ]
+[v i1lcd_putch@port port `*.39uc  1 p 2 8 ]
+[v i1lcd_putch@character character `uc  1 a 1 11 ]
+"138
+} 0
+"110
+[v i1_lcd_write lcd_write `(v  1 e 1 0 ]
+{
+[v i1lcd_write@mode mode `uc  1 a 1 wreg ]
+[v i1lcd_write@mode mode `uc  1 a 1 wreg ]
+[v i1lcd_write@CmdChar CmdChar `uc  1 p 1 2 ]
+[v i1lcd_write@port port `*.39uc  1 p 2 3 ]
+[v i1lcd_write@mode mode `uc  1 a 1 7 ]
+"118
+} 0
+"99
+[v i1_Delay20us Delay20us `(v  1 e 1 0 ]
+{
+[v i1Delay20us@next Delay20us `uc  1 a 1 1 ]
+"102
 } 0

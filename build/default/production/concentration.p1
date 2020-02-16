@@ -21,17 +21,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24 ./lcd4bits.h
 [; ;./lcd4bits.h: 24: extern void lcd_init(char *);
 [v _lcd_init `(v ~T0 @X0 0 ef1`*uc ]
-"48 concentration.c
-[; ;concentration.c: 48: void joystick_init(void);
+"49 concentration.c
+[; ;concentration.c: 49: void joystick_init(void);
 [v _joystick_init `(v ~T0 @X0 0 ef ]
-"54
-[; ;concentration.c: 54: void gameboard_init(char);
-[v _gameboard_init `(v ~T0 @X0 0 ef1`uc ]
 "55
-[; ;concentration.c: 55: void update_gameboard_from_input(void);
+[; ;concentration.c: 55: void gameboard_init(char);
+[v _gameboard_init `(v ~T0 @X0 0 ef1`uc ]
+"1540 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1540: extern volatile unsigned char TRISC __attribute__((address(0x087)));
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"4538
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4538: extern volatile __bit TXEN __attribute__((address(0x4C5)));
+[v _TXEN `Vb ~T0 @X0 0 e@1221 ]
+"3836
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3836: extern volatile __bit CREN __attribute__((address(0xC4)));
+[v _CREN `Vb ~T0 @X0 0 e@196 ]
+"4172
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4172: extern volatile __bit RCIE __attribute__((address(0x465)));
+[v _RCIE `Vb ~T0 @X0 0 e@1125 ]
+"4313
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4313: extern volatile __bit SYNC __attribute__((address(0x4C4)));
+[v _SYNC `Vb ~T0 @X0 0 e@1220 ]
+"3695
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3695: extern volatile __bit BRGH __attribute__((address(0x4C2)));
+[v _BRGH `Vb ~T0 @X0 0 e@1218 ]
+"3668
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3668: extern volatile __bit BRG16 __attribute__((address(0xC3B)));
+[v _BRG16 `Vb ~T0 @X0 0 e@3131 ]
+"2642
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2642: extern volatile unsigned char SPBRG __attribute__((address(0x099)));
+[v _SPBRG `Vuc ~T0 @X0 0 e@153 ]
+"26 ./lcd4bits.h
+[; ;./lcd4bits.h: 26: extern void lcd_putch(char, char *c);
+[v _lcd_putch `(v ~T0 @X0 0 ef2`uc`*uc ]
+"56 concentration.c
+[; ;concentration.c: 56: void update_gameboard_from_input(void);
 [v _update_gameboard_from_input `(v ~T0 @X0 0 ef ]
-"49
-[; ;concentration.c: 49: void time_init(void);
+"50
+[; ;concentration.c: 50: void time_init(void);
 [v _time_init `(v ~T0 @X0 0 ef ]
 "15 ./lcd4bits.h
 [; ;./lcd4bits.h: 15: extern void lcd_clear(char *);
@@ -42,8 +69,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21
 [; ;./lcd4bits.h: 21: extern void lcd_goto(unsigned char pos, char *c);
 [v _lcd_goto `(v ~T0 @X0 0 ef2`uc`*uc ]
-"51 concentration.c
-[; ;concentration.c: 51: void get_current_char(void);
+"52 concentration.c
+[; ;concentration.c: 52: void get_current_char(void);
 [v _get_current_char `(v ~T0 @X0 0 ef ]
 "2041 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2041: extern volatile unsigned char PR2 __attribute__((address(0x092)));
@@ -63,8 +90,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3773
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3773: extern volatile __bit CCP1IF __attribute__((address(0x62)));
 [v _CCP1IF `Vb ~T0 @X0 0 e@98 ]
-"52 concentration.c
-[; ;concentration.c: 52: void toggle_cursor(void);
+"53 concentration.c
+[; ;concentration.c: 53: void toggle_cursor(void);
 [v _toggle_cursor `(v ~T0 @X0 0 ef ]
 "920 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 920: extern volatile unsigned short CCPR1 __attribute__((address(0x015)));
@@ -72,12 +99,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "650
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 650: extern volatile unsigned short TMR1 __attribute__((address(0x00E)));
 [v _TMR1 `Vus ~T0 @X0 0 e@14 ]
-"53 concentration.c
-[; ;concentration.c: 53: void update_cursor(char);
+"54 concentration.c
+[; ;concentration.c: 54: void update_cursor(char);
 [v _update_cursor `(v ~T0 @X0 0 ef1`uc ]
-"26 ./lcd4bits.h
-[; ;./lcd4bits.h: 26: extern void lcd_putch(char, char *c);
-[v _lcd_putch `(v ~T0 @X0 0 ef2`uc`*uc ]
 "3785 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3785: extern volatile __bit CCP1M3 __attribute__((address(0xBB)));
 [v _CCP1M3 `Vb ~T0 @X0 0 e@187 ]
@@ -149,6 +173,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2970
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2970: extern volatile unsigned char ADRESL __attribute__((address(0x09E)));
 [v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
+"4175
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4175: extern volatile __bit RCIF __attribute__((address(0x65)));
+[v _RCIF `Vb ~T0 @X0 0 e@101 ]
+"1140
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1140: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
+[v _RCREG `Vuc ~T0 @X0 0 e@26 ]
 "11 concentration.c
 [p x FOSC = HS ]
 "12
@@ -497,301 +527,337 @@ Version 4.0 HI-TECH Software Intermediate Code
 "46
 [; ;concentration.c: 46: char cursor_fast;
 [v _cursor_fast `uc ~T0 @X0 1 e ]
+"47
+[; ;concentration.c: 47: char recieved_char;
+[v _recieved_char `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"57
-[; ;concentration.c: 57: void main(void) {
+"58
+[; ;concentration.c: 58: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"59
-[; ;concentration.c: 59:     SCS = 0;
+"60
+[; ;concentration.c: 60:     SCS = 0;
 [e = _SCS -> -> 0 `i `b ]
-"61
-[; ;concentration.c: 61:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
 "62
-[; ;concentration.c: 62:     TRISA = 0;
-[e = _TRISA -> -> 0 `i `uc ]
+[; ;concentration.c: 62:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
 "63
-[; ;concentration.c: 63:     ANSEL = 0;
-[e = _ANSEL -> -> 0 `i `uc ]
+[; ;concentration.c: 63:     TRISA = 0;
+[e = _TRISA -> -> 0 `i `uc ]
 "64
-[; ;concentration.c: 64:     lcd_init(gameboard);
-[e ( _lcd_init (1 _gameboard ]
+[; ;concentration.c: 64:     ANSEL = 0;
+[e = _ANSEL -> -> 0 `i `uc ]
 "65
-[; ;concentration.c: 65:     lcd_init(scoreboard);
-[e ( _lcd_init (1 _scoreboard ]
+[; ;concentration.c: 65:     lcd_init(gameboard);
+[e ( _lcd_init (1 _gameboard ]
 "66
-[; ;concentration.c: 66:     joystick_init();
+[; ;concentration.c: 66:     lcd_init(scoreboard);
+[e ( _lcd_init (1 _scoreboard ]
+"68
+[; ;concentration.c: 68:     joystick_init();
 [e ( _joystick_init ..  ]
-"67
-[; ;concentration.c: 67:     gameboard_init(0x45);
-[e ( _gameboard_init (1 -> -> 69 `i `uc ]
 "69
-[; ;concentration.c: 69:     while(1) {
+[; ;concentration.c: 69:     gameboard_init(0x45);
+[e ( _gameboard_init (1 -> -> 69 `i `uc ]
+"71
+[; ;concentration.c: 71:     recieved_char = 0x00;
+[e = _recieved_char -> -> 0 `i `uc ]
+"72
+[; ;concentration.c: 72:     TRISC = 0x80;
+[e = _TRISC -> -> 128 `i `uc ]
+"73
+[; ;concentration.c: 73:     TXEN = 1;
+[e = _TXEN -> -> 1 `i `b ]
+"75
+[; ;concentration.c: 75:     CREN = 1;
+[e = _CREN -> -> 1 `i `b ]
+"77
+[; ;concentration.c: 77:     RCIE = 1;
+[e = _RCIE -> -> 1 `i `b ]
+"78
+[; ;concentration.c: 78:     SYNC = 0;
+[e = _SYNC -> -> 0 `i `b ]
+"79
+[; ;concentration.c: 79:     BRGH = 1;
+[e = _BRGH -> -> 1 `i `b ]
+"80
+[; ;concentration.c: 80:     BRG16 = 0;
+[e = _BRG16 -> -> 0 `i `b ]
+"81
+[; ;concentration.c: 81:     SPBRG = 10;
+[e = _SPBRG -> -> 10 `i `uc ]
+"83
+[; ;concentration.c: 83:     lcd_putch('X', gameboard);
+[e ( _lcd_putch (2 , -> -> 88 `ui `uc _gameboard ]
+"84
+[; ;concentration.c: 84:     lcd_putch('X', scoreboard);
+[e ( _lcd_putch (2 , -> -> 88 `ui `uc _scoreboard ]
+"85
+[; ;concentration.c: 85:     while(1) {
 [e :U 140 ]
 {
-"70
-[; ;concentration.c: 70:         update_gameboard_from_input();
+"90
+[; ;concentration.c: 90:         update_gameboard_from_input();
 [e ( _update_gameboard_from_input ..  ]
-"71
-[; ;concentration.c: 71:     }
+"91
+[; ;concentration.c: 91:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"72
-[; ;concentration.c: 72: }
+"92
+[; ;concentration.c: 92: }
 [e :UE 138 ]
 }
-"74
-[; ;concentration.c: 74: void gameboard_init(char cursor_init_pos) {
+"94
+[; ;concentration.c: 94: void gameboard_init(char cursor_init_pos) {
 [v _gameboard_init `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _gameboard_init ]
 [v _cursor_init_pos `uc ~T0 @X0 1 r1 ]
 [f ]
-"75
-[; ;concentration.c: 75:     time_init();
+"95
+[; ;concentration.c: 95:     time_init();
 [e ( _time_init ..  ]
-"76
-[; ;concentration.c: 76:     lcd_clear(gameboard);
+"96
+[; ;concentration.c: 96:     lcd_clear(gameboard);
 [e ( _lcd_clear (1 _gameboard ]
-"77
-[; ;concentration.c: 77:     lcd_puts(board_r1, gameboard);
+"97
+[; ;concentration.c: 97:     lcd_puts(board_r1, gameboard);
 [e ( _lcd_puts (2 , &U _board_r1 _gameboard ]
-"78
-[; ;concentration.c: 78:     lcd_goto(0x40, gameboard);
+"98
+[; ;concentration.c: 98:     lcd_goto(0x40, gameboard);
 [e ( _lcd_goto (2 , -> -> 64 `i `uc _gameboard ]
-"79
-[; ;concentration.c: 79:     lcd_puts(board_r2, gameboard);
+"99
+[; ;concentration.c: 99:     lcd_puts(board_r2, gameboard);
 [e ( _lcd_puts (2 , &U _board_r2 _gameboard ]
-"80
-[; ;concentration.c: 80:     cursor_pos = cursor_init_pos;
+"100
+[; ;concentration.c: 100:     cursor_pos = cursor_init_pos;
 [e = _cursor_pos _cursor_init_pos ]
-"81
-[; ;concentration.c: 81:     cursor_solid = 0;
+"101
+[; ;concentration.c: 101:     cursor_solid = 0;
 [e = _cursor_solid -> -> 0 `i `uc ]
-"82
-[; ;concentration.c: 82:     get_current_char();
+"102
+[; ;concentration.c: 102:     get_current_char();
 [e ( _get_current_char ..  ]
-"83
-[; ;concentration.c: 83:     delay_loops = 0;
+"103
+[; ;concentration.c: 103:     delay_loops = 0;
 [e = _delay_loops -> -> 0 `i `uc ]
-"84
-[; ;concentration.c: 84:     cursor_movable = 1;
+"104
+[; ;concentration.c: 104:     cursor_movable = 1;
 [e = _cursor_movable -> -> 1 `i `uc ]
-"85
-[; ;concentration.c: 85:     lcd_goto(cursor_pos, gameboard);
+"105
+[; ;concentration.c: 105:     lcd_goto(cursor_pos, gameboard);
 [e ( _lcd_goto (2 , -> _cursor_pos `uc _gameboard ]
-"86
-[; ;concentration.c: 86:     cursor_move_delay_count = 255;
+"106
+[; ;concentration.c: 106:     cursor_move_delay_count = 255;
 [e = _cursor_move_delay_count -> -> 255 `i `uc ]
-"87
-[; ;concentration.c: 87:     PR2 = 250;
+"107
+[; ;concentration.c: 107:     PR2 = 250;
 [e = _PR2 -> -> 250 `i `uc ]
-"88
-[; ;concentration.c: 88:     TMR2IF = 0;
+"108
+[; ;concentration.c: 108:     TMR2IF = 0;
 [e = _TMR2IF -> -> 0 `i `b ]
-"89
-[; ;concentration.c: 89:     TMR2IE = 1;
+"109
+[; ;concentration.c: 109:     TMR2IE = 1;
 [e = _TMR2IE -> -> 1 `i `b ]
-"90
-[; ;concentration.c: 90:     T2CON = 0x56;
+"110
+[; ;concentration.c: 110:     T2CON = 0x56;
 [e = _T2CON -> -> 86 `i `uc ]
-"91
-[; ;concentration.c: 91: }
+"111
+[; ;concentration.c: 111: }
 [e :UE 142 ]
 }
-"93
-[; ;concentration.c: 93: void update_gameboard_from_input(void) {
+"113
+[; ;concentration.c: 113: void update_gameboard_from_input(void) {
 [v _update_gameboard_from_input `(v ~T0 @X0 1 ef ]
 {
 [e :U _update_gameboard_from_input ]
 [f ]
-"95
-[; ;concentration.c: 95:     if(GO == 0) {
+"115
+[; ;concentration.c: 115:     if(GO == 0) {
 [e $ ! == -> _GO `i -> 0 `i 144  ]
 {
-"96
-[; ;concentration.c: 96:         GO = 1;
+"116
+[; ;concentration.c: 116:         GO = 1;
 [e = _GO -> -> 1 `i `b ]
-"97
-[; ;concentration.c: 97:     }
+"117
+[; ;concentration.c: 117:     }
 }
 [e :U 144 ]
-"99
-[; ;concentration.c: 99:     if(CCP1IF == 1) {
+"119
+[; ;concentration.c: 119:     if(CCP1IF == 1) {
 [e $ ! == -> _CCP1IF `i -> 1 `i 145  ]
 {
-"100
-[; ;concentration.c: 100:         if(delay_loops == 0) {
+"120
+[; ;concentration.c: 120:         if(delay_loops == 0) {
 [e $ ! == -> _delay_loops `i -> 0 `i 146  ]
 {
-"101
-[; ;concentration.c: 101:             delay_loops = 25;
+"121
+[; ;concentration.c: 121:             delay_loops = 25;
 [e = _delay_loops -> -> 25 `i `uc ]
-"102
-[; ;concentration.c: 102:             toggle_cursor();
+"122
+[; ;concentration.c: 122:             toggle_cursor();
 [e ( _toggle_cursor ..  ]
-"103
-[; ;concentration.c: 103:         } else {
+"123
+[; ;concentration.c: 123:         } else {
 }
 [e $U 147  ]
 [e :U 146 ]
 {
-"104
-[; ;concentration.c: 104:             delay_loops--;
+"124
+[; ;concentration.c: 124:             delay_loops--;
 [e -- _delay_loops -> -> 1 `i `uc ]
-"105
-[; ;concentration.c: 105:         }
+"125
+[; ;concentration.c: 125:         }
 }
 [e :U 147 ]
-"106
-[; ;concentration.c: 106:         CCPR1 = TMR1+50000;
+"126
+[; ;concentration.c: 126:         CCPR1 = TMR1+50000;
 [e = _CCPR1 -> + -> _TMR1 `l -> 50000 `l `us ]
-"107
-[; ;concentration.c: 107:         CCP1IF = 0;
+"127
+[; ;concentration.c: 127:         CCP1IF = 0;
 [e = _CCP1IF -> -> 0 `i `b ]
-"108
-[; ;concentration.c: 108:     }
+"128
+[; ;concentration.c: 128:     }
 }
 [e :U 145 ]
-"110
-[; ;concentration.c: 110:     if(joystick_x_pos > 900) {
+"130
+[; ;concentration.c: 130:     if(joystick_x_pos > 900) {
 [e $ ! > _joystick_x_pos -> 900 `i 148  ]
 {
-"111
-[; ;concentration.c: 111:         if(cursor_movable) {
+"131
+[; ;concentration.c: 131:         if(cursor_movable) {
 [e $ ! != -> _cursor_movable `i -> 0 `i 149  ]
 {
-"112
-[; ;concentration.c: 112:             cursor_pos--;
+"132
+[; ;concentration.c: 132:             cursor_pos--;
 [e -- _cursor_pos -> -> 1 `i `uc ]
-"113
-[; ;concentration.c: 113:             update_cursor(30);
+"133
+[; ;concentration.c: 133:             update_cursor(30);
 [e ( _update_cursor (1 -> -> 30 `i `uc ]
-"114
-[; ;concentration.c: 114:         }
+"134
+[; ;concentration.c: 134:         }
 }
 [e :U 149 ]
-"115
-[; ;concentration.c: 115:     } else if(joystick_x_pos < 100) {
+"135
+[; ;concentration.c: 135:     } else if(joystick_x_pos < 100) {
 }
 [e $U 150  ]
 [e :U 148 ]
 [e $ ! < _joystick_x_pos -> 100 `i 151  ]
 {
-"116
-[; ;concentration.c: 116:         if(cursor_movable) {
+"136
+[; ;concentration.c: 136:         if(cursor_movable) {
 [e $ ! != -> _cursor_movable `i -> 0 `i 152  ]
 {
-"117
-[; ;concentration.c: 117:             cursor_pos++;
+"137
+[; ;concentration.c: 137:             cursor_pos++;
 [e ++ _cursor_pos -> -> 1 `i `uc ]
-"118
-[; ;concentration.c: 118:             update_cursor(30);
+"138
+[; ;concentration.c: 138:             update_cursor(30);
 [e ( _update_cursor (1 -> -> 30 `i `uc ]
-"119
-[; ;concentration.c: 119:         }
+"139
+[; ;concentration.c: 139:         }
 }
 [e :U 152 ]
-"120
-[; ;concentration.c: 120:     } else if(joystick_x_pos > 600) {
+"140
+[; ;concentration.c: 140:     } else if(joystick_x_pos > 600) {
 }
 [e $U 153  ]
 [e :U 151 ]
 [e $ ! > _joystick_x_pos -> 600 `i 154  ]
 {
-"121
-[; ;concentration.c: 121:         if(cursor_movable) {
+"141
+[; ;concentration.c: 141:         if(cursor_movable) {
 [e $ ! != -> _cursor_movable `i -> 0 `i 155  ]
 {
-"122
-[; ;concentration.c: 122:             cursor_pos--;
+"142
+[; ;concentration.c: 142:             cursor_pos--;
 [e -- _cursor_pos -> -> 1 `i `uc ]
-"123
-[; ;concentration.c: 123:             update_cursor(60);
+"143
+[; ;concentration.c: 143:             update_cursor(60);
 [e ( _update_cursor (1 -> -> 60 `i `uc ]
-"124
-[; ;concentration.c: 124:         }
+"144
+[; ;concentration.c: 144:         }
 }
 [e :U 155 ]
-"125
-[; ;concentration.c: 125:     } else if(joystick_x_pos < 400) {
+"145
+[; ;concentration.c: 145:     } else if(joystick_x_pos < 400) {
 }
 [e $U 156  ]
 [e :U 154 ]
 [e $ ! < _joystick_x_pos -> 400 `i 157  ]
 {
-"126
-[; ;concentration.c: 126:         if(cursor_movable) {
+"146
+[; ;concentration.c: 146:         if(cursor_movable) {
 [e $ ! != -> _cursor_movable `i -> 0 `i 158  ]
 {
-"127
-[; ;concentration.c: 127:             cursor_pos++;
+"147
+[; ;concentration.c: 147:             cursor_pos++;
 [e ++ _cursor_pos -> -> 1 `i `uc ]
-"128
-[; ;concentration.c: 128:             update_cursor(60);
+"148
+[; ;concentration.c: 148:             update_cursor(60);
 [e ( _update_cursor (1 -> -> 60 `i `uc ]
-"129
-[; ;concentration.c: 129:         }
+"149
+[; ;concentration.c: 149:         }
 }
 [e :U 158 ]
-"130
-[; ;concentration.c: 130:     } else if(joystick_y_pos > 700) {
+"150
+[; ;concentration.c: 150:     } else if(joystick_y_pos > 700) {
 }
 [e $U 159  ]
 [e :U 157 ]
 [e $ ! > _joystick_y_pos -> 700 `i 160  ]
 {
-"131
-[; ;concentration.c: 131:         if(cursor_movable) {
+"151
+[; ;concentration.c: 151:         if(cursor_movable) {
 [e $ ! != -> _cursor_movable `i -> 0 `i 161  ]
 {
-"132
-[; ;concentration.c: 132:             cursor_pos ^= 0x40;
+"152
+[; ;concentration.c: 152:             cursor_pos ^= 0x40;
 [e =^ _cursor_pos -> -> 64 `i `uc ]
-"133
-[; ;concentration.c: 133:             update_cursor(62);
+"153
+[; ;concentration.c: 153:             update_cursor(62);
 [e ( _update_cursor (1 -> -> 62 `i `uc ]
-"134
-[; ;concentration.c: 134:         }
+"154
+[; ;concentration.c: 154:         }
 }
 [e :U 161 ]
-"135
-[; ;concentration.c: 135:     } else if(joystick_y_pos < 300) {
+"155
+[; ;concentration.c: 155:     } else if(joystick_y_pos < 300) {
 }
 [e $U 162  ]
 [e :U 160 ]
 [e $ ! < _joystick_y_pos -> 300 `i 163  ]
 {
-"136
-[; ;concentration.c: 136:         if(cursor_movable) {
+"156
+[; ;concentration.c: 156:         if(cursor_movable) {
 [e $ ! != -> _cursor_movable `i -> 0 `i 164  ]
 {
-"137
-[; ;concentration.c: 137:             cursor_pos ^= 0x40;
+"157
+[; ;concentration.c: 157:             cursor_pos ^= 0x40;
 [e =^ _cursor_pos -> -> 64 `i `uc ]
-"138
-[; ;concentration.c: 138:             update_cursor(62);
+"158
+[; ;concentration.c: 158:             update_cursor(62);
 [e ( _update_cursor (1 -> -> 62 `i `uc ]
-"139
-[; ;concentration.c: 139:         }
+"159
+[; ;concentration.c: 159:         }
 }
 [e :U 164 ]
-"140
-[; ;concentration.c: 140:     } else {
+"160
+[; ;concentration.c: 160:     } else {
 }
 [e $U 165  ]
 [e :U 163 ]
 {
-"141
-[; ;concentration.c: 141:         cursor_movable = 1;
+"161
+[; ;concentration.c: 161:         cursor_movable = 1;
 [e = _cursor_movable -> -> 1 `i `uc ]
-"142
-[; ;concentration.c: 142:     }
+"162
+[; ;concentration.c: 162:     }
 }
 [e :U 165 ]
 [e :U 162 ]
@@ -799,65 +865,65 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 156 ]
 [e :U 153 ]
 [e :U 150 ]
-"143
-[; ;concentration.c: 143: }
+"163
+[; ;concentration.c: 163: }
 [e :UE 143 ]
 }
-"145
-[; ;concentration.c: 145: void update_cursor(char move_delay_count) {
+"165
+[; ;concentration.c: 165: void update_cursor(char move_delay_count) {
 [v _update_cursor `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _update_cursor ]
 [v _move_delay_count `uc ~T0 @X0 1 r1 ]
 [f ]
-"146
-[; ;concentration.c: 146:     cursor_movable = 0;
+"166
+[; ;concentration.c: 166:     cursor_movable = 0;
 [e = _cursor_movable -> -> 0 `i `uc ]
-"147
-[; ;concentration.c: 147:     cursor_move_delay_count = move_delay_count;
+"167
+[; ;concentration.c: 167:     cursor_move_delay_count = move_delay_count;
 [e = _cursor_move_delay_count _move_delay_count ]
-"148
-[; ;concentration.c: 148:     switch(cursor_pos) {
+"168
+[; ;concentration.c: 168:     switch(cursor_pos) {
 [e $U 168  ]
 {
-"149
-[; ;concentration.c: 149:         case 0x10:
+"169
+[; ;concentration.c: 169:         case 0x10:
 [e :U 169 ]
-"150
-[; ;concentration.c: 150:             cursor_pos = 0x00;
+"170
+[; ;concentration.c: 170:             cursor_pos = 0x00;
 [e = _cursor_pos -> -> 0 `i `uc ]
-"151
-[; ;concentration.c: 151:             break;
+"171
+[; ;concentration.c: 171:             break;
 [e $U 167  ]
-"152
-[; ;concentration.c: 152:         case 0x50:
+"172
+[; ;concentration.c: 172:         case 0x50:
 [e :U 170 ]
-"153
-[; ;concentration.c: 153:             cursor_pos = 0x40;
+"173
+[; ;concentration.c: 173:             cursor_pos = 0x40;
 [e = _cursor_pos -> -> 64 `i `uc ]
-"154
-[; ;concentration.c: 154:             break;
+"174
+[; ;concentration.c: 174:             break;
 [e $U 167  ]
-"155
-[; ;concentration.c: 155:         case 0xFF:
+"175
+[; ;concentration.c: 175:         case 0xFF:
 [e :U 171 ]
-"156
-[; ;concentration.c: 156:             cursor_pos = 0x0F;
+"176
+[; ;concentration.c: 176:             cursor_pos = 0x0F;
 [e = _cursor_pos -> -> 15 `i `uc ]
-"157
-[; ;concentration.c: 157:             break;
+"177
+[; ;concentration.c: 177:             break;
 [e $U 167  ]
-"158
-[; ;concentration.c: 158:         case 0x3F:
+"178
+[; ;concentration.c: 178:         case 0x3F:
 [e :U 172 ]
-"159
-[; ;concentration.c: 159:             cursor_pos = 0x4F;
+"179
+[; ;concentration.c: 179:             cursor_pos = 0x4F;
 [e = _cursor_pos -> -> 79 `i `uc ]
-"160
-[; ;concentration.c: 160:             break;
+"180
+[; ;concentration.c: 180:             break;
 [e $U 167  ]
-"161
-[; ;concentration.c: 161:     }
+"181
+[; ;concentration.c: 181:     }
 }
 [e $U 167  ]
 [e :U 168 ]
@@ -867,258 +933,272 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 63 `i 172
  167 ]
 [e :U 167 ]
-"162
-[; ;concentration.c: 162:     lcd_putch(current_char, gameboard);
+"182
+[; ;concentration.c: 182:     lcd_putch(current_char, gameboard);
 [e ( _lcd_putch (2 , _current_char _gameboard ]
-"163
-[; ;concentration.c: 163:     lcd_goto(cursor_pos, gameboard);
+"183
+[; ;concentration.c: 183:     lcd_goto(cursor_pos, gameboard);
 [e ( _lcd_goto (2 , -> _cursor_pos `uc _gameboard ]
-"164
-[; ;concentration.c: 164:     get_current_char();
+"184
+[; ;concentration.c: 184:     get_current_char();
 [e ( _get_current_char ..  ]
-"165
-[; ;concentration.c: 165:     if(cursor_solid == 1) {
+"185
+[; ;concentration.c: 185:     if(cursor_solid == 1) {
 [e $ ! == -> _cursor_solid `i -> 1 `i 173  ]
 {
-"166
-[; ;concentration.c: 166:         lcd_putch(0xFF, gameboard);
+"186
+[; ;concentration.c: 186:         lcd_putch(0xFF, gameboard);
 [e ( _lcd_putch (2 , -> -> 255 `i `uc _gameboard ]
-"167
-[; ;concentration.c: 167:         lcd_goto(cursor_pos, gameboard);
+"187
+[; ;concentration.c: 187:         lcd_goto(cursor_pos, gameboard);
 [e ( _lcd_goto (2 , -> _cursor_pos `uc _gameboard ]
-"168
-[; ;concentration.c: 168:     }
+"188
+[; ;concentration.c: 188:     }
 }
 [e :U 173 ]
-"169
-[; ;concentration.c: 169: }
+"189
+[; ;concentration.c: 189: }
 [e :UE 166 ]
 }
-"171
-[; ;concentration.c: 171: void toggle_cursor(void) {
+"191
+[; ;concentration.c: 191: void toggle_cursor(void) {
 [v _toggle_cursor `(v ~T0 @X0 1 ef ]
 {
 [e :U _toggle_cursor ]
 [f ]
-"172
-[; ;concentration.c: 172:     if(cursor_solid == 0) {
+"192
+[; ;concentration.c: 192:     if(cursor_solid == 0) {
 [e $ ! == -> _cursor_solid `i -> 0 `i 175  ]
 {
-"173
-[; ;concentration.c: 173:         lcd_putch(0xFF, gameboard);
+"193
+[; ;concentration.c: 193:         lcd_putch(0xFF, gameboard);
 [e ( _lcd_putch (2 , -> -> 255 `i `uc _gameboard ]
-"174
-[; ;concentration.c: 174:         cursor_solid = 1;
+"194
+[; ;concentration.c: 194:         cursor_solid = 1;
 [e = _cursor_solid -> -> 1 `i `uc ]
-"175
-[; ;concentration.c: 175:     } else {
+"195
+[; ;concentration.c: 195:     } else {
 }
 [e $U 176  ]
 [e :U 175 ]
 {
-"176
-[; ;concentration.c: 176:         lcd_putch(current_char, gameboard);
+"196
+[; ;concentration.c: 196:         lcd_putch(current_char, gameboard);
 [e ( _lcd_putch (2 , _current_char _gameboard ]
-"177
-[; ;concentration.c: 177:         cursor_solid = 0;
+"197
+[; ;concentration.c: 197:         cursor_solid = 0;
 [e = _cursor_solid -> -> 0 `i `uc ]
-"178
-[; ;concentration.c: 178:     }
+"198
+[; ;concentration.c: 198:     }
 }
 [e :U 176 ]
-"179
-[; ;concentration.c: 179:     lcd_goto(cursor_pos, gameboard);
+"199
+[; ;concentration.c: 199:     lcd_goto(cursor_pos, gameboard);
 [e ( _lcd_goto (2 , -> _cursor_pos `uc _gameboard ]
-"180
-[; ;concentration.c: 180: }
+"200
+[; ;concentration.c: 200: }
 [e :UE 174 ]
 }
-"182
-[; ;concentration.c: 182: void get_current_char(void) {
+"202
+[; ;concentration.c: 202: void get_current_char(void) {
 [v _get_current_char `(v ~T0 @X0 1 ef ]
 {
 [e :U _get_current_char ]
 [f ]
-"183
-[; ;concentration.c: 183:     if((cursor_pos>>4) == 4) {
+"203
+[; ;concentration.c: 203:     if((cursor_pos>>4) == 4) {
 [e $ ! == >> -> _cursor_pos `i -> 4 `i -> 4 `i 178  ]
 {
-"184
-[; ;concentration.c: 184:         current_char = board_r2[cursor_pos&0x0F];
+"204
+[; ;concentration.c: 204:         current_char = board_r2[cursor_pos&0x0F];
 [e = _current_char *U + &U _board_r2 * -> -> & -> _cursor_pos `i -> 15 `i `ui `ux -> -> # *U &U _board_r2 `ui `ux ]
-"185
-[; ;concentration.c: 185:     } else {
+"205
+[; ;concentration.c: 205:     } else {
 }
 [e $U 179  ]
 [e :U 178 ]
 {
-"186
-[; ;concentration.c: 186:         current_char = board_r1[cursor_pos&0x0F];
+"206
+[; ;concentration.c: 206:         current_char = board_r1[cursor_pos&0x0F];
 [e = _current_char *U + &U _board_r1 * -> -> & -> _cursor_pos `i -> 15 `i `ui `ux -> -> # *U &U _board_r1 `ui `ux ]
-"187
-[; ;concentration.c: 187:     }
+"207
+[; ;concentration.c: 207:     }
 }
 [e :U 179 ]
-"188
-[; ;concentration.c: 188: }
+"208
+[; ;concentration.c: 208: }
 [e :UE 177 ]
 }
-"192
-[; ;concentration.c: 192: void time_init(void) {
+"212
+[; ;concentration.c: 212: void time_init(void) {
 [v _time_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _time_init ]
 [f ]
-"193
-[; ;concentration.c: 193:     CCP1M3 = 1;
+"213
+[; ;concentration.c: 213:     CCP1M3 = 1;
 [e = _CCP1M3 -> -> 1 `i `b ]
-"194
-[; ;concentration.c: 194:     CCP1M2 = 0;
+"214
+[; ;concentration.c: 214:     CCP1M2 = 0;
 [e = _CCP1M2 -> -> 0 `i `b ]
-"195
-[; ;concentration.c: 195:     CCP1M1 = 1;
+"215
+[; ;concentration.c: 215:     CCP1M1 = 1;
 [e = _CCP1M1 -> -> 1 `i `b ]
-"196
-[; ;concentration.c: 196:     CCP1M0 = 0;
+"216
+[; ;concentration.c: 216:     CCP1M0 = 0;
 [e = _CCP1M0 -> -> 0 `i `b ]
-"197
-[; ;concentration.c: 197:     TMR1CS = 0;
+"217
+[; ;concentration.c: 217:     TMR1CS = 0;
 [e = _TMR1CS -> -> 0 `i `b ]
-"198
-[; ;concentration.c: 198:     T1CKPS0 = 0;
+"218
+[; ;concentration.c: 218:     T1CKPS0 = 0;
 [e = _T1CKPS0 -> -> 0 `i `b ]
-"199
-[; ;concentration.c: 199:     T1CKPS1 = 0;
+"219
+[; ;concentration.c: 219:     T1CKPS1 = 0;
 [e = _T1CKPS1 -> -> 0 `i `b ]
-"200
-[; ;concentration.c: 200:     TMR1GE = 0;
+"220
+[; ;concentration.c: 220:     TMR1GE = 0;
 [e = _TMR1GE -> -> 0 `i `b ]
-"201
-[; ;concentration.c: 201:     TMR1ON = 1;
+"221
+[; ;concentration.c: 221:     TMR1ON = 1;
 [e = _TMR1ON -> -> 1 `i `b ]
-"202
-[; ;concentration.c: 202: }
+"222
+[; ;concentration.c: 222: }
 [e :UE 180 ]
 }
-"204
-[; ;concentration.c: 204: void joystick_init(void) {
+"224
+[; ;concentration.c: 224: void joystick_init(void) {
 [v _joystick_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _joystick_init ]
 [f ]
-"205
-[; ;concentration.c: 205:     joystick_x_pos = 512;
+"225
+[; ;concentration.c: 225:     joystick_x_pos = 512;
 [e = _joystick_x_pos -> 512 `i ]
-"206
-[; ;concentration.c: 206:     joystick_y_pos = 512;
+"226
+[; ;concentration.c: 226:     joystick_y_pos = 512;
 [e = _joystick_y_pos -> 512 `i ]
-"207
-[; ;concentration.c: 207:     PORTB = 0;
+"227
+[; ;concentration.c: 227:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"208
-[; ;concentration.c: 208:     nRBPU = 0;
+"228
+[; ;concentration.c: 228:     nRBPU = 0;
 [e = _nRBPU -> -> 0 `i `b ]
-"209
-[; ;concentration.c: 209:     WPUB = 0x20;
+"229
+[; ;concentration.c: 229:     WPUB = 0x20;
 [e = _WPUB -> -> 32 `i `uc ]
-"210
-[; ;concentration.c: 210:     TRISB = 0x38;
+"230
+[; ;concentration.c: 230:     TRISB = 0x38;
 [e = _TRISB -> -> 56 `i `uc ]
-"211
-[; ;concentration.c: 211:     ANSELH = 0x0A;
+"231
+[; ;concentration.c: 231:     ANSELH = 0x0A;
 [e = _ANSELH -> -> 10 `i `uc ]
-"212
-[; ;concentration.c: 212:     GIE = 1;
+"232
+[; ;concentration.c: 232:     GIE = 1;
 [e = _GIE -> -> 1 `i `b ]
-"213
-[; ;concentration.c: 213:     PEIE = 1;
+"233
+[; ;concentration.c: 233:     PEIE = 1;
 [e = _PEIE -> -> 1 `i `b ]
-"214
-[; ;concentration.c: 214:     ADIF = 0;
+"234
+[; ;concentration.c: 234:     ADIF = 0;
 [e = _ADIF -> -> 0 `i `b ]
-"215
-[; ;concentration.c: 215:     ADIE = 1;
+"235
+[; ;concentration.c: 235:     ADIE = 1;
 [e = _ADIE -> -> 1 `i `b ]
-"216
-[; ;concentration.c: 216:     ADCON1 = 0x80;
+"236
+[; ;concentration.c: 236:     ADCON1 = 0x80;
 [e = _ADCON1 -> -> 128 `i `uc ]
-"217
-[; ;concentration.c: 217:     ADCON0 = 0xA5;
+"237
+[; ;concentration.c: 237:     ADCON0 = 0xA5;
 [e = _ADCON0 -> -> 165 `i `uc ]
-"218
-[; ;concentration.c: 218: }
+"238
+[; ;concentration.c: 238: }
 [e :UE 181 ]
 }
 [v $root$_interrupt_handler `(v ~T0 @X0 0 e ]
-"220
-[; ;concentration.c: 220: void __attribute__((picinterrupt(("")))) interrupt_handler(void) {
+"240
+[; ;concentration.c: 240: void __attribute__((picinterrupt(("")))) interrupt_handler(void) {
 [v _interrupt_handler `(v ~T1 @X0 1 ef ]
 {
 [e :U _interrupt_handler ]
 [f ]
-"221
-[; ;concentration.c: 221:     if(ADIF) {
+"241
+[; ;concentration.c: 241:     if(ADIF) {
 [e $ ! _ADIF 183  ]
 {
-"222
-[; ;concentration.c: 222:         if(CHS1 == 1) {
+"242
+[; ;concentration.c: 242:         if(CHS1 == 1) {
 [e $ ! == -> _CHS1 `i -> 1 `i 184  ]
 {
-"223
-[; ;concentration.c: 223:             joystick_x_pos = (((int)ADRESH)<<8)+ADRESL;
+"243
+[; ;concentration.c: 243:             joystick_x_pos = (((int)ADRESH)<<8)+ADRESL;
 [e = _joystick_x_pos + << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
-"224
-[; ;concentration.c: 224:             CHS1 = 0;
+"244
+[; ;concentration.c: 244:             CHS1 = 0;
 [e = _CHS1 -> -> 0 `i `b ]
-"225
-[; ;concentration.c: 225:         } else {
+"245
+[; ;concentration.c: 245:         } else {
 }
 [e $U 185  ]
 [e :U 184 ]
 {
-"226
-[; ;concentration.c: 226:             joystick_y_pos = (((int)ADRESH)<<8)+ADRESL;
+"246
+[; ;concentration.c: 246:             joystick_y_pos = (((int)ADRESH)<<8)+ADRESL;
 [e = _joystick_y_pos + << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
-"227
-[; ;concentration.c: 227:             CHS1 = 1;
+"247
+[; ;concentration.c: 247:             CHS1 = 1;
 [e = _CHS1 -> -> 1 `i `b ]
-"228
-[; ;concentration.c: 228:         }
+"248
+[; ;concentration.c: 248:         }
 }
 [e :U 185 ]
-"229
-[; ;concentration.c: 229:         ADIF = 0;
+"249
+[; ;concentration.c: 249:         ADIF = 0;
 [e = _ADIF -> -> 0 `i `b ]
-"230
-[; ;concentration.c: 230:     }
+"250
+[; ;concentration.c: 250:     }
 }
 [e :U 183 ]
-"231
-[; ;concentration.c: 231:     if(TMR2IF) {
+"251
+[; ;concentration.c: 251:     if(TMR2IF) {
 [e $ ! _TMR2IF 186  ]
 {
-"232
-[; ;concentration.c: 232:         cursor_move_delay_count--;
+"252
+[; ;concentration.c: 252:         cursor_move_delay_count--;
 [e -- _cursor_move_delay_count -> -> 1 `i `uc ]
-"233
-[; ;concentration.c: 233:         if(cursor_move_delay_count == 0) {
+"253
+[; ;concentration.c: 253:         if(cursor_move_delay_count == 0) {
 [e $ ! == -> _cursor_move_delay_count `i -> 0 `i 187  ]
 {
-"234
-[; ;concentration.c: 234:             cursor_movable = 1;
+"254
+[; ;concentration.c: 254:             cursor_movable = 1;
 [e = _cursor_movable -> -> 1 `i `uc ]
-"235
-[; ;concentration.c: 235:         }
+"255
+[; ;concentration.c: 255:         }
 }
 [e :U 187 ]
-"236
-[; ;concentration.c: 236:         TMR2IF = 0;
+"256
+[; ;concentration.c: 256:         TMR2IF = 0;
 [e = _TMR2IF -> -> 0 `i `b ]
-"237
-[; ;concentration.c: 237:     }
+"257
+[; ;concentration.c: 257:     }
 }
 [e :U 186 ]
-"238
-[; ;concentration.c: 238: }
+"258
+[; ;concentration.c: 258:     if(RCIF) {
+[e $ ! _RCIF 188  ]
+{
+"259
+[; ;concentration.c: 259:         recieved_char = RCREG;
+[e = _recieved_char -> _RCREG `uc ]
+"260
+[; ;concentration.c: 260:         lcd_putch(recieved_char, gameboard);
+[e ( _lcd_putch (2 , _recieved_char _gameboard ]
+"261
+[; ;concentration.c: 261:     }
+}
+[e :U 188 ]
+"262
+[; ;concentration.c: 262: }
 [e :UE 182 ]
 }

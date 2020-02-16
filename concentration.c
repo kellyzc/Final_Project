@@ -44,6 +44,7 @@ const char board_r2[] = "THIS IS ROW 2...";
 char cursor_move_delay_count;
 char cursor_movable;
 char cursor_fast;
+char recieved_char;
 
 void joystick_init(void);
 void time_init(void);
@@ -55,7 +56,7 @@ void gameboard_init(char);
 void update_gameboard_from_input(void);
 
 void main(void) {
-    //Clocl Setup
+    //Clock Setup
     SCS = 0;
     //LCD Setup
     TRISD = 0;
@@ -63,10 +64,27 @@ void main(void) {
     ANSEL = 0;
     lcd_init(gameboard);
     lcd_init(scoreboard);
+    //Joystick Setup
     joystick_init();
     gameboard_init(0x45);
     //Main Loop
+    recieved_char = 0x00;
+    TRISC = 0x80;
+    TXEN = 1;
+//    TX9 = 1;
+    CREN = 1;
+//    RX9 = 1;
+    RCIE = 1;
+    SYNC = 0;
+    BRGH = 1;
+    BRG16 = 0;
+    SPBRG = 10; //115.2k Baud rate
+//    SPEN = 1;
     while(1) {
+//        if(TXIF) {
+//            TXREG = 'X';
+//        }
+//        DelayMs(1000);
         update_gameboard_from_input();
     }
 }
@@ -234,5 +252,9 @@ void __interrupt() interrupt_handler(void) {
             cursor_movable = 1;
         }
         TMR2IF = 0;
+    }
+    if(RCIF) {
+        recieved_char = RCREG;
+        lcd_putch(recieved_char, gameboard);
     }
 }
