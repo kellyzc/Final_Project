@@ -469,3 +469,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;lcd4bits.c: 164: }
 [e :UE 158 ]
 }
+"166
+[; ;lcd4bits.c: 166: void lcd_set_custom_char(const char *data, char cg_address, char* port) {
+[v _lcd_set_custom_char `(v ~T0 @X0 1 ef3`*Cuc`uc`*uc ]
+{
+[e :U _lcd_set_custom_char ]
+[v _data `*Cuc ~T0 @X0 1 r1 ]
+[v _cg_address `uc ~T0 @X0 1 r2 ]
+[v _port `*uc ~T0 @X0 1 r3 ]
+[f ]
+"167
+[; ;lcd4bits.c: 167:     char row;
+[v _row `uc ~T0 @X0 1 a ]
+"168
+[; ;lcd4bits.c: 168:     for(row = 0; row<8; row++) {
+{
+[e = _row -> -> 0 `i `uc ]
+[e $ < -> _row `i -> 8 `i 160  ]
+[e $U 161  ]
+[e :U 160 ]
+{
+"169
+[; ;lcd4bits.c: 169:         lcd_write(0x00, 0x40|(cg_address<<3)|row, port);
+[e ( _lcd_write (3 , , -> -> 0 `i `uc -> | | -> 64 `i << -> _cg_address `i -> 3 `i -> _row `i `uc _port ]
+"170
+[; ;lcd4bits.c: 170:         lcd_write(0x10, *data, port);
+[e ( _lcd_write (3 , , -> -> 16 `i `uc -> *U _data `uc _port ]
+"171
+[; ;lcd4bits.c: 171:         *data++;
+[e *U ++ _data * -> -> 1 `i `x -> -> # *U _data `i `x ]
+"172
+[; ;lcd4bits.c: 172:     }
+}
+[e ++ _row -> -> 1 `i `uc ]
+[e $ < -> _row `i -> 8 `i 160  ]
+[e :U 161 ]
+}
+"173
+[; ;lcd4bits.c: 173:     lcd_write(0x00, 0x80, port);
+[e ( _lcd_write (3 , , -> -> 0 `i `uc -> -> 128 `i `uc _port ]
+"174
+[; ;lcd4bits.c: 174: }
+[e :UE 159 ]
+}

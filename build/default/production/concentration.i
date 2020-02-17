@@ -2535,18 +2535,20 @@ extern void lcd_goto(unsigned char pos, char *c);
 extern void lcd_init(char *);
 
 extern void lcd_putch(char, char *c);
+
+extern void lcd_set_custom_char(const char *d, char, char* p);
 # 25 "concentration.c" 2
-# 34 "concentration.c"
-char *gameboard = &PORTD;
-char *scoreboard = &PORTA;
+# 37 "concentration.c"
+char *gameboard = &PORTA;
+char *scoreboard = &PORTD;
 int joystick_x_pos;
 int joystick_y_pos;
 char cursor_pos = 0x00;
 char current_char;
 char cursor_solid;
 char delay_loops;
-const char board_r1[] = "0123456789ABCDEF";
-const char board_r2[] = "THIS IS ROW 2...";
+char board[32];
+char visible[32];
 char cursor_move_delay_count;
 char cursor_movable;
 char cursor_fast;
@@ -2557,9 +2559,13 @@ void time_init(void);
 void update_gameboard(void);
 void get_current_char(void);
 void toggle_cursor(void);
-void update_cursor(char);
+void update_cursor(char, char);
 void gameboard_init(char);
 void update_gameboard_from_input(void);
+void make_custom_chars(void);
+void randomize_gameboard(void);
+void display_gameboard(void);
+char get_cursor_index(void);
 
 void main(void) {
 
@@ -2572,54 +2578,127 @@ void main(void) {
     lcd_init(scoreboard);
 
     joystick_init();
-    gameboard_init(0x45);
+    gameboard_init(0x00);
 
     recieved_char = 0x00;
     TRISC = 0x80;
     TXEN = 1;
-
+    TX9 = 1;
     CREN = 1;
-
+    RX9 = 1;
     RCIE = 1;
     SYNC = 0;
     BRGH = 1;
     BRG16 = 0;
     SPBRG = 10;
-
-    lcd_putch('X', gameboard);
-    lcd_putch('X', scoreboard);
+    SPEN = 1;
+    lcd_clear(gameboard);
+    lcd_clear(scoreboard);
+    lcd_puts(" Concentration!", scoreboard);
+    lcd_puts("Press the button", gameboard);
+    lcd_goto(0x40, gameboard);
+    lcd_puts("    to start", gameboard);
+    while(RB5);
+    DelayMs(8);
+    while(!RB5);
+    DelayMs(8);
+    lcd_clear(gameboard);
+    lcd_clear(scoreboard);
+    lcd_puts("     Score:", scoreboard);
+    lcd_goto(0x40, scoreboard);
+    lcd_puts(" P1: 00  P2: 00", scoreboard);
+    display_gameboard();
     while(1) {
-
-
-
-
         update_gameboard_from_input();
     }
 }
 
+void display_gameboard(void) {
+    lcd_clear(gameboard);
+    char i;
+    for(i=0;i<32;i++) {
+        if(i == 16) {
+            lcd_goto(0x40, gameboard);
+        }
+        lcd_putch(visible[i], gameboard);
+    }
+    lcd_goto(get_cursor_index(), gameboard);
+}
+
+void make_custom_chars(void) {
+    const char smile[] = {0x00, 0x0A, 0x0A, 0x00, 0x15, 0x11, 0x0E, 0x00};
+    lcd_set_custom_char(smile, 0x00, gameboard);
+    const char diamond[] = {0x00, 0x04, 0x0E, 0x1F, 0x0E, 0x04, 0x00, 0x00};
+    lcd_set_custom_char(diamond, 0x01, gameboard);
+    const char heart[] = {0x00, 0x00, 0x0A, 0x1F, 0x1F, 0x0E, 0x04, 0x00};
+    lcd_set_custom_char(heart, 0x02, gameboard);
+    const char spade[] = {0x00, 0x04, 0x0E, 0x1F, 0x1F, 0x0E, 0x04, 0x0E};
+    lcd_set_custom_char(spade, 0x03, gameboard);
+    const char club[] = {0x00, 0x0E, 0x0E, 0x1F, 0x1F, 0x1F, 0x04, 0x0E};
+    lcd_set_custom_char(club, 0x04, gameboard);
+    const char skull[] = {0x0E, 0x15, 0x15, 0x1F, 0x0A, 0x0E, 0x0E, 0x00};
+    lcd_set_custom_char(skull, 0x05, gameboard);
+    const char RH[] = {0x1C, 0x14, 0x18, 0x14, 0x00, 0x05, 0x07, 0x05};
+    lcd_set_custom_char(RH, 0x06, gameboard);
+    const char PIC[] = {0x18, 0x18, 0x14, 0x04, 0x04, 0x03, 0x02, 0x03};
+    lcd_set_custom_char(PIC, 0x07, gameboard);
+}
+
 void gameboard_init(char cursor_init_pos) {
     time_init();
+    make_custom_chars();
+    char i;
+    for(i = 0; i < 32; i++) {
+        visible[i] = 0xFF;
+    }
     lcd_clear(gameboard);
-    lcd_puts(board_r1, gameboard);
-    lcd_goto(0x40, gameboard);
-    lcd_puts(board_r2, gameboard);
     cursor_pos = cursor_init_pos;
     cursor_solid = 0;
     get_current_char();
     delay_loops = 0;
     cursor_movable = 1;
-    lcd_goto(cursor_pos, gameboard);
+    lcd_goto(get_cursor_index(), gameboard);
     cursor_move_delay_count = 255;
     PR2 = 250;
     TMR2IF = 0;
     TMR2IE = 1;
     T2CON = 0x56;
+    randomize_gameboard();
+}
+
+char get_cursor_index(void) {
+    if(cursor_pos < 16) {
+        return cursor_pos;
+    }
+    return cursor_pos+0x30;
+}
+
+void randomize_gameboard(void) {
+    char used[32] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    char current = 0;
+    char random;
+    while(current != 32) {
+        DelayMs(TMR2>>(2+(TMR1%4)));
+        random = TMR1 % 32;
+        if(used[random] == 0) {
+            used[random] = 1;
+            board[random] = current/4;
+            current++;
+        }
+    }
 }
 
 void update_gameboard_from_input(void) {
 
     if(GO == 0) {
         GO = 1;
+    }
+    if(RB5 == 0) {
+        if(visible[cursor_pos] == 0xFF) {
+            visible[cursor_pos] = board[cursor_pos];
+            current_char = board[cursor_pos];
+            display_gameboard();
+        }
     }
 
     if(CCP1IF == 1) {
@@ -2635,82 +2714,106 @@ void update_gameboard_from_input(void) {
 
     if(joystick_x_pos > 900) {
         if(cursor_movable) {
-            cursor_pos--;
-            update_cursor(30);
+            update_cursor(30, 2);
         }
     } else if(joystick_x_pos < 100) {
         if(cursor_movable) {
-            cursor_pos++;
-            update_cursor(30);
+            update_cursor(30, 3);
         }
     } else if(joystick_x_pos > 600) {
         if(cursor_movable) {
-            cursor_pos--;
-            update_cursor(60);
+            update_cursor(60, 2);
         }
     } else if(joystick_x_pos < 400) {
         if(cursor_movable) {
-            cursor_pos++;
-            update_cursor(60);
+            update_cursor(60, 3);
         }
     } else if(joystick_y_pos > 700) {
         if(cursor_movable) {
-            cursor_pos ^= 0x40;
-            update_cursor(62);
+            update_cursor(62, 1);
+            if(get_cursor_index() == 0x40) {
+                RB1 = 1;
+            }
+            if(get_cursor_index() == 0x00) {
+                RB2 = 1;
+            }
         }
     } else if(joystick_y_pos < 300) {
         if(cursor_movable) {
-            cursor_pos ^= 0x40;
-            update_cursor(62);
+            update_cursor(62, 1);
+            if((get_cursor_index() == 0x40)&(RB1==0)) {
+                RB1 = 1;
+            } else if((get_cursor_index() == 0x00)&(RB1==0)) {
+                RB2 = 1;
+            }
         }
     } else {
         cursor_movable = 1;
     }
 }
 
-void update_cursor(char move_delay_count) {
+void update_cursor(char move_delay_count, char direction) {
     cursor_movable = 0;
     cursor_move_delay_count = move_delay_count;
-    switch(cursor_pos) {
-        case 0x10:
-            cursor_pos = 0x00;
+    switch(direction) {
+        case 1:
+            if(cursor_pos < 16) {
+                cursor_pos += 16;
+            } else {
+                cursor_pos -= 16;
+            }
             break;
-        case 0x50:
-            cursor_pos = 0x40;
+        case 2:
+            switch(cursor_pos) {
+                case 16:
+                    cursor_pos = 31;
+                    break;
+                case 0:
+                    cursor_pos = 15;
+                    break;
+                default:
+                    cursor_pos--;
+            }
             break;
-        case 0xFF:
-            cursor_pos = 0x0F;
-            break;
-        case 0x3F:
-            cursor_pos = 0x4F;
+        case 3:
+            switch(cursor_pos) {
+                case 31:
+                    cursor_pos = 16;
+                    break;
+                case 15:
+                    cursor_pos = 0;
+                    break;
+                default:
+                    cursor_pos++;
+            }
             break;
     }
     lcd_putch(current_char, gameboard);
-    lcd_goto(cursor_pos, gameboard);
+
+
+
+
+    lcd_goto(get_cursor_index(), gameboard);
     get_current_char();
     if(cursor_solid == 1) {
-        lcd_putch(0xFF, gameboard);
-        lcd_goto(cursor_pos, gameboard);
+        lcd_putch(0x20, gameboard);
+        lcd_goto(get_cursor_index(), gameboard);
     }
 }
 
 void toggle_cursor(void) {
     if(cursor_solid == 0) {
-        lcd_putch(0xFF, gameboard);
+        lcd_putch(0x20, gameboard);
         cursor_solid = 1;
     } else {
         lcd_putch(current_char, gameboard);
         cursor_solid = 0;
     }
-    lcd_goto(cursor_pos, gameboard);
+    lcd_goto(get_cursor_index(), gameboard);
 }
 
 void get_current_char(void) {
-    if((cursor_pos>>4) == 4) {
-        current_char = board_r2[cursor_pos&0x0F];
-    } else {
-        current_char = board_r1[cursor_pos&0x0F];
-    }
+    current_char = visible[cursor_pos];
 }
 
 
@@ -2763,6 +2866,6 @@ void __attribute__((picinterrupt(("")))) interrupt_handler(void) {
     }
     if(RCIF) {
         recieved_char = RCREG;
-        lcd_putch(recieved_char, gameboard);
+
     }
 }

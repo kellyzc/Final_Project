@@ -162,3 +162,13 @@ void lcd_init(char *port) //See Section 2.2.2.2 of the Optrex LCD DMCman User Ma
     lcd_clear(port); // Clear screen
     lcd_write(CMD_MODE, LCDCMD_EMS, port); // Set entry Mode
 }
+
+void lcd_set_custom_char(const char *data, char cg_address, char* port) {
+    char row;
+    for(row = 0; row<8; row++) {
+        lcd_write(CMD_MODE, 0x40|(cg_address<<3)|row, port);
+        lcd_write(DTA_MODE, *data, port);
+        *data++;
+    }
+    lcd_write(CMD_MODE, 0x80, port);
+}
