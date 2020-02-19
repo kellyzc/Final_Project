@@ -470,7 +470,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 158 ]
 }
 "166
-[; ;lcd4bits.c: 166: void lcd_set_custom_char(const char *data, char cg_address, char* port) {
+[; ;lcd4bits.c: 166: void lcd_set_custom_char(const char *data, char cg_address, char *port) {
 [v _lcd_set_custom_char `(v ~T0 @X0 1 ef3`*Cuc`uc`*uc ]
 {
 [e :U _lcd_set_custom_char ]
@@ -511,4 +511,50 @@ Version 4.0 HI-TECH Software Intermediate Code
 "174
 [; ;lcd4bits.c: 174: }
 [e :UE 159 ]
+}
+"176
+[; ;lcd4bits.c: 176: void lcd_display_char_as_num(char number, char digits, char *port) {
+[v _lcd_display_char_as_num `(v ~T0 @X0 1 ef3`uc`uc`*uc ]
+{
+[e :U _lcd_display_char_as_num ]
+[v _number `uc ~T0 @X0 1 r1 ]
+[v _digits `uc ~T0 @X0 1 r2 ]
+[v _port `*uc ~T0 @X0 1 r3 ]
+[f ]
+"177
+[; ;lcd4bits.c: 177:     if(digits > 2) {
+[e $ ! > -> _digits `i -> 2 `i 164  ]
+{
+"178
+[; ;lcd4bits.c: 178:         lcd_putch((number/100)+0x30, port);
+[e ( _lcd_putch (2 , -> + / -> _number `i -> 100 `i -> 48 `i `uc _port ]
+"179
+[; ;lcd4bits.c: 179:     }
+}
+[e :U 164 ]
+"180
+[; ;lcd4bits.c: 180:     if(digits > 1) {
+[e $ ! > -> _digits `i -> 1 `i 165  ]
+{
+"181
+[; ;lcd4bits.c: 181:         lcd_putch(((number%100)/10)+0x30, port);
+[e ( _lcd_putch (2 , -> + / % -> _number `i -> 100 `i -> 10 `i -> 48 `i `uc _port ]
+"182
+[; ;lcd4bits.c: 182:     }
+}
+[e :U 165 ]
+"183
+[; ;lcd4bits.c: 183:     if(digits > 0) {
+[e $ ! > -> _digits `i -> 0 `i 166  ]
+{
+"184
+[; ;lcd4bits.c: 184:         lcd_putch((number%10)+0x30, port);
+[e ( _lcd_putch (2 , -> + % -> _number `i -> 10 `i -> 48 `i `uc _port ]
+"185
+[; ;lcd4bits.c: 185:     }
+}
+[e :U 166 ]
+"186
+[; ;lcd4bits.c: 186: }
+[e :UE 163 ]
 }

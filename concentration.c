@@ -33,12 +33,14 @@
 #define VERTICAL 1
 #define LEFT 2
 #define RIGHT 3
+#define PLAYER_1 0
+#define PLAYER_2 1
 
 char *gameboard = &PORTA;
 char *scoreboard = &PORTD;
 int joystick_x_pos;
 int joystick_y_pos;
-char cursor_pos = 0x00;
+char cursor_pos;
 char current_char;
 char cursor_solid;
 char delay_loops;
@@ -46,8 +48,10 @@ char board[32];
 char visible[32];
 char cursor_move_delay_count;
 char cursor_movable;
-char cursor_fast;
 char recieved_char;
+char p1_score;
+char p2_score;
+char selected_tile;
 
 void joystick_init(void);
 void time_init(void);
@@ -55,12 +59,16 @@ void update_gameboard(void);
 void get_current_char(void);
 void toggle_cursor(void);
 void update_cursor(char, char);
-void gameboard_init(char);
+void gameboard_init(void);
 void update_gameboard_from_input(void);
 void make_custom_chars(void);
 void randomize_gameboard(void);
 void display_gameboard(void);
 char get_cursor_index(void);
+void startup(void);
+void display_scoreboard(void);
+void serial_init(void);
+void check_for_match(char);
 
 void main(void) {
     //Clock Setup
@@ -73,8 +81,16 @@ void main(void) {
     lcd_init(scoreboard);
     //Joystick Setup
     joystick_init();
-    gameboard_init(0x00);
-    //Main Loop
+    gameboard_init();
+    serial_init();
+    startup();
+    //Main loop
+    while(1) {
+        update_gameboard_from_input();
+    }
+}
+
+void serial_init(void) {
     recieved_char = 0x00;
     TRISC = 0x80;
     TXEN = 1;
@@ -87,6 +103,9 @@ void main(void) {
     BRG16 = 0;
     SPBRG = 10; //115.2k Baud rate
     SPEN = 1;
+}
+
+void startup(void) {
     lcd_clear(gameboard);
     lcd_clear(scoreboard);
     lcd_puts(" Concentration!", scoreboard);
@@ -99,13 +118,19 @@ void main(void) {
     DelayMs(8);
     lcd_clear(gameboard);
     lcd_clear(scoreboard);
+    p1_score = 0;
+    p2_score = 0;
+    display_scoreboard();
+    display_gameboard();
+}
+
+void display_scoreboard(void) {
     lcd_puts("     Score:", scoreboard);
     lcd_goto(ROW_2, scoreboard);
-    lcd_puts(" P1: 00  P2: 00", scoreboard);
-    display_gameboard();
-    while(1) {
-        update_gameboard_from_input();
-    }
+    lcd_puts(" P1: ", scoreboard);
+    lcd_display_char_as_num(p1_score, 2, scoreboard);
+    lcd_puts("  P2: ", scoreboard);
+    lcd_display_char_as_num(p2_score, 2, scoreboard);
 }
 
 void display_gameboard(void) {
@@ -117,7 +142,7 @@ void display_gameboard(void) {
         }
         lcd_putch(visible[i], gameboard);
     }
-    lcd_goto(get_cursor_index(), gameboard);
+    lcd_goto(cursor_pos, gameboard);
 }
 
 void make_custom_chars(void) {
@@ -139,7 +164,8 @@ void make_custom_chars(void) {
     lcd_set_custom_char(PIC, 0x07, gameboard);
 }
 
-void gameboard_init(char cursor_init_pos) {
+void gameboard_init(void) {
+    selected_tile = 0xFF;
     time_init();
     make_custom_chars();
     char i;
@@ -147,12 +173,12 @@ void gameboard_init(char cursor_init_pos) {
         visible[i] = 0xFF;
     }
     lcd_clear(gameboard);
-    cursor_pos = cursor_init_pos;
+    cursor_pos = 0x00;
     cursor_solid = 0;
     get_current_char();
     delay_loops = 0;
     cursor_movable = 1;
-    lcd_goto(get_cursor_index(), gameboard);
+    lcd_goto(cursor_pos, gameboard);
     cursor_move_delay_count = 255;
     PR2 = 250; //TMR2IF triggered after 8ms
     TMR2IF = 0;
@@ -162,10 +188,10 @@ void gameboard_init(char cursor_init_pos) {
 }
 
 char get_cursor_index(void) {
-    if(cursor_pos < 16) {
-        return cursor_pos;
+    if(cursor_pos&0x40) {
+        return (cursor_pos-0x30);
     }
-    return cursor_pos+0x30;
+    return cursor_pos;
 }
 
 void randomize_gameboard(void) {
@@ -183,15 +209,42 @@ void randomize_gameboard(void) {
     }
 }
 
+void check_for_match(char player) {
+    if(visible[cursor_pos] != 0xFF) {
+        if(selected_tile == 0xFF) {
+            selected_tile = cursor_pos;
+        } else {
+            char temp_cursor_pos = cursor_pos;
+            char second_tile = board[get_cursor_index()];
+            cursor_pos = selected_tile;
+            if(second_tile == board[get_cursor_index()]) {
+                if(player == PLAYER_1) {
+                    p1_score++;
+                } else {
+                    p2_score++;
+                }
+                display_scoreboard();
+            }
+            visible[selected_tile] = 0xFF;
+            visible[temp_cursor_pos] = 0xFF;
+            current_char = 0xFF;
+            selected_tile = 0xFF;
+            cursor_pos = temp_cursor_pos;
+        }
+    }
+}
+
 void update_gameboard_from_input(void) {
     //Start a new joystick reading if the previous one has finished
     if(GO == 0) {
         GO = 1;
     }
     if(JOYSTICK_BUTTON == 0) {
-        if(visible[cursor_pos] == 0xFF) {
-            visible[cursor_pos] = board[cursor_pos];
-            current_char = board[cursor_pos];
+        if(visible[get_cursor_index()] == 0xFF) {
+            visible[get_cursor_index()] = board[get_cursor_index()];
+            current_char = board[get_cursor_index()];
+            //TODO player number variable
+            check_for_match(PLAYER_1);
             display_gameboard();
         }
     }
@@ -223,24 +276,13 @@ void update_gameboard_from_input(void) {
         if(cursor_movable) {
             update_cursor(60, RIGHT);
         }
-    } else if(joystick_y_pos > 700) {
+    } else if(joystick_y_pos == 1021) {
         if(cursor_movable) {
             update_cursor(62, VERTICAL);
-            if(get_cursor_index() == 0x40) {
-                RB1 = 1;
-            }
-            if(get_cursor_index() == 0x00) {
-                RB2 = 1;
-            }
         }
-    } else if(joystick_y_pos < 300) {
+    } else if(joystick_y_pos == 0) {
         if(cursor_movable) {
             update_cursor(62, VERTICAL);
-            if((get_cursor_index() == 0x40)&(RB1==0)) {
-                RB1 = 1;
-            } else if((get_cursor_index() == 0x00)&(RB1==0)) {
-                RB2 = 1;
-            }
         }
     } else {
         cursor_movable = 1;
@@ -252,19 +294,15 @@ void update_cursor(char move_delay_count, char direction) {
     cursor_move_delay_count = move_delay_count;
     switch(direction) {
         case VERTICAL:
-            if(cursor_pos < 16) {
-                cursor_pos += 16;
-            } else {
-                cursor_pos -= 16;
-            }
+            cursor_pos ^= 0x40;
             break;
         case LEFT:
             switch(cursor_pos) {
-                case 16:
-                    cursor_pos = 31;
+                case 0x00:
+                    cursor_pos = 0x0F;
                     break;
-                case 0:
-                    cursor_pos = 15;
+                case 0x40:
+                    cursor_pos = 0x4F;
                     break;
                 default:
                     cursor_pos--;
@@ -272,11 +310,11 @@ void update_cursor(char move_delay_count, char direction) {
             break;
         case RIGHT:
             switch(cursor_pos) {
-                case 31:
-                    cursor_pos = 16;
+                case 0x0F:
+                    cursor_pos = 0x00;
                     break;
-                case 15:
-                    cursor_pos = 0;
+                case 0x4F:
+                    cursor_pos = 0x40;
                     break;
                 default:
                     cursor_pos++;
@@ -284,15 +322,11 @@ void update_cursor(char move_delay_count, char direction) {
             break;
     }
     lcd_putch(current_char, gameboard);
-    //TODO
-//    if(get_cursor_index() == 0x40) {
-//        RB0 = 1;
-//    }
-    lcd_goto(get_cursor_index(), gameboard);
+    lcd_goto(cursor_pos, gameboard);
     get_current_char();
     if(cursor_solid == 1) {
         lcd_putch(0x20, gameboard);
-        lcd_goto(get_cursor_index(), gameboard);
+        lcd_goto(cursor_pos, gameboard);
     }
 }
 
@@ -304,11 +338,11 @@ void toggle_cursor(void) {
         lcd_putch(current_char, gameboard);
         cursor_solid = 0;
     }
-    lcd_goto(get_cursor_index(), gameboard);
+    lcd_goto(cursor_pos, gameboard);
 }
 
 void get_current_char(void) {
-    current_char = visible[cursor_pos];
+    current_char = visible[get_cursor_index()];
 }
 
 //Initialization functions
@@ -361,6 +395,6 @@ void __interrupt() interrupt_handler(void) {
     }
     if(RCIF) {
         recieved_char = RCREG;
-//        lcd_putch(recieved_char, gameboard);
+        lcd_putch(recieved_char, gameboard);
     }
 }

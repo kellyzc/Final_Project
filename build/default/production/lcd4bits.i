@@ -2524,6 +2524,8 @@ extern void lcd_init(char *);
 extern void lcd_putch(char, char *c);
 
 extern void lcd_set_custom_char(const char *d, char, char* p);
+
+extern void lcd_display_char_as_num(char, char, char *p);
 # 58 "lcd4bits.c" 2
 # 72 "lcd4bits.c"
 void tmr0_init() {
@@ -2620,7 +2622,7 @@ void lcd_init(char *port)
     lcd_write(0x00, 0x06, port);
 }
 
-void lcd_set_custom_char(const char *data, char cg_address, char* port) {
+void lcd_set_custom_char(const char *data, char cg_address, char *port) {
     char row;
     for(row = 0; row<8; row++) {
         lcd_write(0x00, 0x40|(cg_address<<3)|row, port);
@@ -2628,4 +2630,16 @@ void lcd_set_custom_char(const char *data, char cg_address, char* port) {
         *data++;
     }
     lcd_write(0x00, 0x80, port);
+}
+
+void lcd_display_char_as_num(char number, char digits, char *port) {
+    if(digits > 2) {
+        lcd_putch((number/100)+0x30, port);
+    }
+    if(digits > 1) {
+        lcd_putch(((number%100)/10)+0x30, port);
+    }
+    if(digits > 0) {
+        lcd_putch((number%10)+0x30, port);
+    }
 }
