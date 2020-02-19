@@ -26,5 +26,3 @@ extern void lcd_init(char *);
 extern void lcd_putch(char, char *c);
 
 extern void lcd_set_custom_char(const char *d, char, char* p);
-
-extern void lcd_display_char_as_num(char, char, char *p);

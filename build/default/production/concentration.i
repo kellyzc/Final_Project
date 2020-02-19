@@ -2537,8 +2537,6 @@ extern void lcd_init(char *);
 extern void lcd_putch(char, char *c);
 
 extern void lcd_set_custom_char(const char *d, char, char* p);
-
-extern void lcd_display_char_as_num(char, char, char *p);
 # 25 "concentration.c" 2
 # 39 "concentration.c"
 char *gameboard = &PORTA;
@@ -2557,6 +2555,7 @@ char recieved_char;
 char p1_score;
 char p2_score;
 char selected_tile;
+char joystick_pressed;
 
 void joystick_init(void);
 void time_init(void);
@@ -2569,7 +2568,7 @@ void update_gameboard_from_input(void);
 void make_custom_chars(void);
 void randomize_gameboard(void);
 void display_gameboard(void);
-char get_cursor_index(void);
+char get_cursor_index(char);
 void startup(void);
 void display_scoreboard(void);
 void serial_init(void);
@@ -2633,9 +2632,11 @@ void display_scoreboard(void) {
     lcd_puts("     Score:", scoreboard);
     lcd_goto(0x40, scoreboard);
     lcd_puts(" P1: ", scoreboard);
-    lcd_display_char_as_num(p1_score, 2, scoreboard);
+    lcd_putch(((p1_score%100)/10)+0x30, scoreboard);
+    lcd_putch((p1_score%10)+0x30, scoreboard);
     lcd_puts("  P2: ", scoreboard);
-    lcd_display_char_as_num(p2_score, 2, scoreboard);
+    lcd_putch(((p2_score%100)/10)+0x30, scoreboard);
+    lcd_putch((p2_score%10)+0x30, scoreboard);
 }
 
 void display_gameboard(void) {
@@ -2692,11 +2693,11 @@ void gameboard_init(void) {
     randomize_gameboard();
 }
 
-char get_cursor_index(void) {
-    if(cursor_pos&0x40) {
-        return (cursor_pos-0x30);
+char get_cursor_index(char cursor) {
+    if(cursor&0x40) {
+        return (cursor-0x30);
     }
-    return cursor_pos;
+    return cursor;
 }
 
 void randomize_gameboard(void) {
@@ -2715,27 +2716,24 @@ void randomize_gameboard(void) {
 }
 
 void check_for_match(char player) {
-    if(visible[cursor_pos] != 0xFF) {
-        if(selected_tile == 0xFF) {
-            selected_tile = cursor_pos;
-        } else {
-            char temp_cursor_pos = cursor_pos;
-            char second_tile = board[get_cursor_index()];
-            cursor_pos = selected_tile;
-            if(second_tile == board[get_cursor_index()]) {
-                if(player == 0) {
-                    p1_score++;
-                } else {
-                    p2_score++;
-                }
-                display_scoreboard();
+    if(selected_tile == 0xFF) {
+        selected_tile = cursor_pos;
+    } else {
+        if(board[get_cursor_index(selected_tile)] == board[get_cursor_index(cursor_pos)]) {
+            if(player == 0) {
+                p1_score++;
+            } else {
+                p2_score++;
             }
-            visible[selected_tile] = 0xFF;
-            visible[temp_cursor_pos] = 0xFF;
+            display_scoreboard();
+        } else {
+            display_gameboard();
+            DelayMs(1000);
+            visible[get_cursor_index(selected_tile)] = 0xFF;
+            visible[get_cursor_index(cursor_pos)] = 0xFF;
             current_char = 0xFF;
-            selected_tile = 0xFF;
-            cursor_pos = temp_cursor_pos;
         }
+        selected_tile = 0xFF;
     }
 }
 
@@ -2744,14 +2742,18 @@ void update_gameboard_from_input(void) {
     if(GO == 0) {
         GO = 1;
     }
-    if(RB5 == 0) {
-        if(visible[get_cursor_index()] == 0xFF) {
-            visible[get_cursor_index()] = board[get_cursor_index()];
-            current_char = board[get_cursor_index()];
+    if((RB5 == 0)&&(joystick_pressed == 1)) {
+        DelayMs(6);
+        joystick_pressed = 0;
+        if(visible[get_cursor_index(cursor_pos)] == 0xFF) {
+            visible[get_cursor_index(cursor_pos)] = board[get_cursor_index(cursor_pos)];
+            current_char = board[get_cursor_index(cursor_pos)];
 
             check_for_match(0);
             display_gameboard();
         }
+    } else if(RB5 == 1) {
+        joystick_pressed = 1;
     }
 
     if(CCP1IF == 1) {
@@ -2847,7 +2849,7 @@ void toggle_cursor(void) {
 }
 
 void get_current_char(void) {
-    current_char = visible[get_cursor_index()];
+    current_char = visible[get_cursor_index(cursor_pos)];
 }
 
 
@@ -2878,6 +2880,7 @@ void joystick_init(void) {
     ADIE = 1;
     ADCON1 = 0x80;
     ADCON0 = 0xA5;
+    joystick_pressed = 1;
 }
 
 void __attribute__((picinterrupt(("")))) interrupt_handler(void) {
