@@ -15,57 +15,52 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"74 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\concentration.c
+"78 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\concentration.c
 [v _main main `(v  1 e 1 0 ]
-"94
-[v _serial_init serial_init `(v  1 e 1 0 ]
-"109
+"97
 [v _startup startup `(v  1 e 1 0 ]
-"128
+"116
 [v _display_scoreboard display_scoreboard `(v  1 e 1 0 ]
-"139
+"127
 [v _display_gameboard display_gameboard `(v  1 e 1 0 ]
-"151
+"139
 [v _make_custom_chars make_custom_chars `(v  1 e 1 0 ]
-"170
+"158
 [v _gameboard_init gameboard_init `(v  1 e 1 0 ]
-"193
+"181
 [v _get_cursor_index get_cursor_index `(uc  1 e 1 0 ]
-"200
+"188
 [v _randomize_gameboard randomize_gameboard `(v  1 e 1 0 ]
-"215
+"203
 [v _check_for_match check_for_match `(v  1 e 1 0 ]
-"237
+"225
 [v _update_gameboard_from_input update_gameboard_from_input `(v  1 e 1 0 ]
-"296
+"285
 [v _update_cursor update_cursor `(v  1 e 1 0 ]
-"337
+"326
 [v _toggle_cursor toggle_cursor `(v  1 e 1 0 ]
-"348
+"337
 [v _get_current_char get_current_char `(v  1 e 1 0 ]
-"354
+"343
 [v _time_init time_init `(v  1 e 1 0 ]
-"366
+"355
 [v _joystick_init joystick_init `(v  1 e 1 0 ]
-"383
+"372
 [v _interrupt_handler interrupt_handler `II(v  1 e 1 0 ]
-"72 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\lcd4bits.c
+"72 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\lcd4bits.c
 [v _tmr0_init tmr0_init `(v  1 e 1 0 ]
 "86
 [v _DelayMs DelayMs `(v  1 e 1 0 ]
 "99
 [v _Delay20us Delay20us `(v  1 e 1 0 ]
-[v i1_Delay20us Delay20us `(v  1 e 1 0 ]
 "110
 [v _lcd_write lcd_write `(v  1 e 1 0 ]
-[v i1_lcd_write lcd_write `(v  1 e 1 0 ]
 "123
 [v _lcd_clear lcd_clear `(v  1 e 1 0 ]
 "129
 [v _lcd_puts lcd_puts `(v  1 e 1 0 ]
 "136
 [v _lcd_putch lcd_putch `(v  1 e 1 0 ]
-[v i1_lcd_putch lcd_putch `(v  1 e 1 0 ]
 "146
 [v _lcd_goto lcd_goto `(v  1 e 1 0 ]
 "155
@@ -88,8 +83,6 @@
 [v _T2CON T2CON `VEuc  1 e 1 @18 ]
 "920
 [v _CCPR1 CCPR1 `VEus  1 e 2 @21 ]
-"1140
-[v _RCREG RCREG `VEuc  1 e 1 @26 ]
 "1238
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
 "1245
@@ -100,16 +93,12 @@
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-"1540
-[v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "2041
 [v _PR2 PR2 `VEuc  1 e 1 @146 ]
 "2346
 [v _WPUB WPUB `VEuc  1 e 1 @149 ]
-"2642
-[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2970
 [v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
 "2977
@@ -122,10 +111,6 @@
 [v _ADIE ADIE `VEb  1 e 0 @1126 ]
 "3587
 [v _ADIF ADIF `VEb  1 e 0 @102 ]
-"3668
-[v _BRG16 BRG16 `VEb  1 e 0 @3131 ]
-"3695
-[v _BRGH BRGH `VEb  1 e 0 @1218 ]
 "3773
 [v _CCP1IF CCP1IF `VEb  1 e 0 @98 ]
 "3776
@@ -138,8 +123,6 @@
 [v _CCP1M3 CCP1M3 `VEb  1 e 0 @187 ]
 "3821
 [v _CHS1 CHS1 `VEb  1 e 0 @251 ]
-"3836
-[v _CREN CREN `VEb  1 e 0 @196 ]
 "3896
 [v _GIE GIE `VEb  1 e 0 @95 ]
 "3899
@@ -148,18 +131,8 @@
 [v _PEIE PEIE `VEb  1 e 0 @94 ]
 "4118
 [v _RB5 RB5 `VEb  1 e 0 @53 ]
-"4172
-[v _RCIE RCIE `VEb  1 e 0 @1125 ]
-"4175
-[v _RCIF RCIF `VEb  1 e 0 @101 ]
-"4229
-[v _RX9 RX9 `VEb  1 e 0 @198 ]
 "4247
 [v _SCS SCS `VEb  1 e 0 @1144 ]
-"4259
-[v _SPEN SPEN `VEb  1 e 0 @199 ]
-"4313
-[v _SYNC SYNC `VEb  1 e 0 @1220 ]
 "4322
 [v _T0IF T0IF `VEb  1 e 0 @90 ]
 "4328
@@ -176,131 +149,118 @@
 [v _TMR2IE TMR2IE `VEb  1 e 0 @1121 ]
 "4382
 [v _TMR2IF TMR2IF `VEb  1 e 0 @97 ]
-"4529
-[v _TX9 TX9 `VEb  1 e 0 @1222 ]
-"4538
-[v _TXEN TXEN `VEb  1 e 0 @1221 ]
 "4664
 [v _nRBPU nRBPU `VEb  1 e 0 @1039 ]
-"39 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\concentration.c
-[v _gameboard gameboard `*.39uc  1 e 2 0 ]
-"41
+"44 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\concentration.c
 [v _joystick_x_pos joystick_x_pos `i  1 e 2 0 ]
-"42
-[v _joystick_y_pos joystick_y_pos `i  1 e 2 0 ]
-"43
-[v _cursor_pos cursor_pos `uc  1 e 1 0 ]
-"44
-[v _current_char current_char `uc  1 e 1 0 ]
 "45
-[v _cursor_solid cursor_solid `uc  1 e 1 0 ]
+[v _joystick_y_pos joystick_y_pos `i  1 e 2 0 ]
 "46
-[v _delay_loops delay_loops `uc  1 e 1 0 ]
+[v _cursor_pos cursor_pos `uc  1 e 1 0 ]
 "47
-[v _board board `[32]uc  1 e 32 0 ]
+[v _current_char current_char `uc  1 e 1 0 ]
 "48
-[v _visible visible `[32]uc  1 e 32 0 ]
+[v _cursor_solid cursor_solid `uc  1 e 1 0 ]
 "49
-[v _cursor_move_delay_count cursor_move_delay_count `uc  1 e 1 0 ]
+[v _delay_loops delay_loops `uc  1 e 1 0 ]
 "50
-[v _cursor_movable cursor_movable `uc  1 e 1 0 ]
+[v _board board `[32]uc  1 e 32 0 ]
 "51
-[v _recieved_char recieved_char `uc  1 e 1 0 ]
+[v _visible visible `[32]uc  1 e 32 0 ]
 "52
-[v _p1_score p1_score `uc  1 e 1 0 ]
+[v _cursor_move_delay_count cursor_move_delay_count `uc  1 e 1 0 ]
 "53
-[v _p2_score p2_score `uc  1 e 1 0 ]
-"54
-[v _selected_tile selected_tile `uc  1 e 1 0 ]
+[v _cursor_movable cursor_movable `uc  1 e 1 0 ]
 "55
+[v _p1_score p1_score `uc  1 e 1 0 ]
+"56
+[v _p2_score p2_score `uc  1 e 1 0 ]
+"57
+[v _selected_tile selected_tile `uc  1 e 1 0 ]
+"58
 [v _joystick_pressed joystick_pressed `uc  1 e 1 0 ]
-"74
+"78
 [v _main main `(v  1 e 1 0 ]
 {
-"92
+"95
 } 0
-"237
+"225
 [v _update_gameboard_from_input update_gameboard_from_input `(v  1 e 1 0 ]
 {
-"294
+"283
 } 0
-"296
+"285
 [v _update_cursor update_cursor `(v  1 e 1 0 ]
 {
 [v update_cursor@move_delay_count move_delay_count `uc  1 a 1 wreg ]
 [v update_cursor@move_delay_count move_delay_count `uc  1 a 1 wreg ]
-[v update_cursor@direction direction `uc  1 p 1 24 ]
-[v update_cursor@move_delay_count move_delay_count `uc  1 a 1 27 ]
-"335
+[v update_cursor@direction direction `uc  1 p 1 12 ]
+[v update_cursor@move_delay_count move_delay_count `uc  1 a 1 15 ]
+"324
 } 0
-"337
+"326
 [v _toggle_cursor toggle_cursor `(v  1 e 1 0 ]
 {
-"346
+"335
 } 0
-"215
+"203
 [v _check_for_match check_for_match `(v  1 e 1 0 ]
 {
 [v check_for_match@player player `uc  1 a 1 wreg ]
 [v check_for_match@player player `uc  1 a 1 wreg ]
-[v check_for_match@player player `uc  1 a 1 27 ]
-"235
+[v check_for_match@player player `uc  1 a 1 15 ]
+"223
 } 0
-"109
+"97
 [v _startup startup `(v  1 e 1 0 ]
 {
-"126
+"114
 } 0
-"128
+"116
 [v _display_scoreboard display_scoreboard `(v  1 e 1 0 ]
 {
-"137
+"125
 } 0
-"129 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\lcd4bits.c
+"129 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\lcd4bits.c
 [v _lcd_puts lcd_puts `(v  1 e 1 0 ]
 {
 [v lcd_puts@string string `*.24DCuc  1 a 1 wreg ]
 [v lcd_puts@string string `*.24DCuc  1 a 1 wreg ]
-[v lcd_puts@port port `*.39uc  1 p 2 12 ]
-[v lcd_puts@string string `*.24DCuc  1 a 1 15 ]
+[v lcd_puts@port port `*.39uc  1 p 2 0 ]
+[v lcd_puts@string string `*.24DCuc  1 a 1 3 ]
 "133
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
 {
 "10
-[v ___awmod@sign sign `uc  1 a 1 10 ]
-[v ___awmod@counter counter `uc  1 a 1 9 ]
+[v ___awmod@sign sign `uc  1 a 1 8 ]
+[v ___awmod@counter counter `uc  1 a 1 7 ]
 "5
-[v ___awmod@divisor divisor `i  1 p 2 4 ]
-[v ___awmod@dividend dividend `i  1 p 2 6 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+[v ___awmod@dividend dividend `i  1 p 2 4 ]
 "34
 } 0
-"139 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\concentration.c
+"127 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\concentration.c
 [v _display_gameboard display_gameboard `(v  1 e 1 0 ]
 {
-"141
-[v display_gameboard@i i `uc  1 a 1 25 ]
-"149
+"129
+[v display_gameboard@i i `uc  1 a 1 13 ]
+"137
 } 0
-"136 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\lcd4bits.c
+"136 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\lcd4bits.c
 [v _lcd_putch lcd_putch `(v  1 e 1 0 ]
 {
 [v lcd_putch@character character `uc  1 a 1 wreg ]
 [v lcd_putch@character character `uc  1 a 1 wreg ]
-[v lcd_putch@port port `*.39uc  1 p 2 20 ]
-[v lcd_putch@character character `uc  1 a 1 23 ]
+[v lcd_putch@port port `*.39uc  1 p 2 8 ]
+[v lcd_putch@character character `uc  1 a 1 11 ]
 "138
 } 0
-"94 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\concentration.c
-[v _serial_init serial_init `(v  1 e 1 0 ]
-{
-"107
-} 0
-"155 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\lcd4bits.c
+"155
 [v _lcd_init lcd_init `(v  1 e 1 0 ]
 {
-[v lcd_init@port port `*.39uc  1 p 2 14 ]
+[v lcd_init@port port `*.39uc  1 p 2 2 ]
 "164
 } 0
 "72
@@ -308,80 +268,80 @@
 {
 "79
 } 0
-"366 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\concentration.c
+"355 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\concentration.c
 [v _joystick_init joystick_init `(v  1 e 1 0 ]
 {
-"381
+"370
 } 0
-"170
+"158
 [v _gameboard_init gameboard_init `(v  1 e 1 0 ]
 {
-"174
-[v gameboard_init@i i `uc  1 a 1 58 ]
-"191
+"162
+[v gameboard_init@i i `uc  1 a 1 46 ]
+"179
 } 0
-"354
+"343
 [v _time_init time_init `(v  1 e 1 0 ]
 {
-"364
+"353
 } 0
-"200
+"188
 [v _randomize_gameboard randomize_gameboard `(v  1 e 1 0 ]
 {
+"189
+[v randomize_gameboard@used used `[32]uc  1 a 32 11 ]
+"191
+[v randomize_gameboard@random random `uc  1 a 1 44 ]
+"190
+[v randomize_gameboard@current current `uc  1 a 1 43 ]
 "201
-[v randomize_gameboard@used used `[32]uc  1 a 32 23 ]
-"203
-[v randomize_gameboard@random random `uc  1 a 1 56 ]
-"202
-[v randomize_gameboard@current current `uc  1 a 1 55 ]
-"213
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "10
-[v ___awdiv@quotient quotient `i  1 a 2 18 ]
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
 "11
-[v ___awdiv@sign sign `uc  1 a 1 17 ]
-[v ___awdiv@counter counter `uc  1 a 1 16 ]
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
 "5
-[v ___awdiv@divisor divisor `i  1 p 2 11 ]
-[v ___awdiv@dividend dividend `i  1 p 2 13 ]
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
 } 0
-"151 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\concentration.c
+"139 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\concentration.c
 [v _make_custom_chars make_custom_chars `(v  1 e 1 0 ]
 {
-"152
+"140
 [v make_custom_chars@smile smile `DC[8]uc  1 s 8 smile ]
-"154
+"142
 [v make_custom_chars@diamond diamond `DC[8]uc  1 s 8 diamond ]
-"156
+"144
 [v make_custom_chars@heart heart `DC[8]uc  1 s 8 heart ]
-"158
+"146
 [v make_custom_chars@spade spade `DC[8]uc  1 s 8 spade ]
-"160
+"148
 [v make_custom_chars@club club `DC[8]uc  1 s 8 club ]
-"162
+"150
 [v make_custom_chars@skull skull `DC[8]uc  1 s 8 skull ]
-"164
+"152
 [v make_custom_chars@RH RH `DC[8]uc  1 s 8 RH ]
-"166
+"154
 [v make_custom_chars@PIC PIC `DC[8]uc  1 s 8 PIC ]
-"168
+"156
 } 0
-"166 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\lcd4bits.c
+"166 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\lcd4bits.c
 [v _lcd_set_custom_char lcd_set_custom_char `(v  1 e 1 0 ]
 {
 [v lcd_set_custom_char@data data `*.24DCuc  1 a 1 wreg ]
 "167
-[v lcd_set_custom_char@row row `uc  1 a 1 17 ]
+[v lcd_set_custom_char@row row `uc  1 a 1 5 ]
 "166
 [v lcd_set_custom_char@data data `*.24DCuc  1 a 1 wreg ]
-[v lcd_set_custom_char@cg_address cg_address `uc  1 p 1 12 ]
-[v lcd_set_custom_char@port port `*.39uc  1 p 2 13 ]
+[v lcd_set_custom_char@cg_address cg_address `uc  1 p 1 0 ]
+[v lcd_set_custom_char@port port `*.39uc  1 p 2 1 ]
 "168
-[v lcd_set_custom_char@data data `*.24DCuc  1 a 1 18 ]
+[v lcd_set_custom_char@data data `*.24DCuc  1 a 1 6 ]
 "174
 } 0
 "146
@@ -389,14 +349,14 @@
 {
 [v lcd_goto@position position `uc  1 a 1 wreg ]
 [v lcd_goto@position position `uc  1 a 1 wreg ]
-[v lcd_goto@port port `*.39uc  1 p 2 12 ]
-[v lcd_goto@position position `uc  1 a 1 15 ]
+[v lcd_goto@port port `*.39uc  1 p 2 0 ]
+[v lcd_goto@position position `uc  1 a 1 3 ]
 "150
 } 0
 "123
 [v _lcd_clear lcd_clear `(v  1 e 1 0 ]
 {
-[v lcd_clear@port port `*.39uc  1 p 2 12 ]
+[v lcd_clear@port port `*.39uc  1 p 2 0 ]
 "126
 } 0
 "110
@@ -404,64 +364,39 @@
 {
 [v lcd_write@mode mode `uc  1 a 1 wreg ]
 [v lcd_write@mode mode `uc  1 a 1 wreg ]
-[v lcd_write@CmdChar CmdChar `uc  1 p 1 6 ]
-[v lcd_write@port port `*.39uc  1 p 2 7 ]
-[v lcd_write@mode mode `uc  1 a 1 11 ]
+[v lcd_write@CmdChar CmdChar `uc  1 p 1 4 ]
+[v lcd_write@port port `*.39uc  1 p 2 5 ]
+[v lcd_write@mode mode `uc  1 a 1 9 ]
 "118
 } 0
 "99
 [v _Delay20us Delay20us `(v  1 e 1 0 ]
 {
 "100
-[v Delay20us@next next `uc  1 a 1 5 ]
+[v Delay20us@next next `uc  1 a 1 3 ]
 "102
 } 0
 "86
 [v _DelayMs DelayMs `(v  1 e 1 0 ]
 {
-[v DelayMs@millis millis `ui  1 p 2 4 ]
+[v DelayMs@millis millis `ui  1 p 2 2 ]
 "93
 } 0
-"348 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\concentration.c
+"337 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\concentration.c
 [v _get_current_char get_current_char `(v  1 e 1 0 ]
 {
-"350
+"339
 } 0
-"193
+"181
 [v _get_cursor_index get_cursor_index `(uc  1 e 1 0 ]
 {
 [v get_cursor_index@cursor cursor `uc  1 a 1 wreg ]
 [v get_cursor_index@cursor cursor `uc  1 a 1 wreg ]
-[v get_cursor_index@cursor cursor `uc  1 a 1 4 ]
-"198
+[v get_cursor_index@cursor cursor `uc  1 a 1 2 ]
+"186
 } 0
-"383
+"372
 [v _interrupt_handler interrupt_handler `II(v  1 e 1 0 ]
 {
-"405
-} 0
-"136 C:\Users\Zach\Documents\Rose\ECE230\Final_Project\lcd4bits.c
-[v i1_lcd_putch lcd_putch `(v  1 e 1 0 ]
-{
-[v i1lcd_putch@character character `uc  1 a 1 wreg ]
-[v i1lcd_putch@character character `uc  1 a 1 wreg ]
-[v i1lcd_putch@port port `*.39uc  1 p 2 8 ]
-[v i1lcd_putch@character character `uc  1 a 1 11 ]
-"138
-} 0
-"110
-[v i1_lcd_write lcd_write `(v  1 e 1 0 ]
-{
-[v i1lcd_write@mode mode `uc  1 a 1 wreg ]
-[v i1lcd_write@mode mode `uc  1 a 1 wreg ]
-[v i1lcd_write@CmdChar CmdChar `uc  1 p 1 2 ]
-[v i1lcd_write@port port `*.39uc  1 p 2 3 ]
-[v i1lcd_write@mode mode `uc  1 a 1 7 ]
-"118
-} 0
-"99
-[v i1_Delay20us Delay20us `(v  1 e 1 0 ]
-{
-[v i1Delay20us@next Delay20us `uc  1 a 1 1 ]
-"102
+"390
 } 0

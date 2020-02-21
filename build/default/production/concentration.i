@@ -2538,7 +2538,7 @@ extern void lcd_putch(char, char *c);
 
 extern void lcd_set_custom_char(const char *d, char, char* p);
 # 25 "concentration.c" 2
-# 39 "concentration.c"
+# 42 "concentration.c"
 char *gameboard = &PORTA;
 char *scoreboard = &PORTD;
 int joystick_x_pos;
@@ -2551,11 +2551,13 @@ char board[32];
 char visible[32];
 char cursor_move_delay_count;
 char cursor_movable;
-char recieved_char;
+char received_char;
 char p1_score;
 char p2_score;
 char selected_tile;
 char joystick_pressed;
+char id_num;
+char my_turn = 1;
 
 void joystick_init(void);
 void time_init(void);
@@ -2571,7 +2573,6 @@ void display_gameboard(void);
 char get_cursor_index(char);
 void startup(void);
 void display_scoreboard(void);
-void serial_init(void);
 void check_for_match(char);
 
 void main(void) {
@@ -2586,27 +2587,11 @@ void main(void) {
 
     joystick_init();
     gameboard_init();
-    serial_init();
     startup();
 
     while(1) {
         update_gameboard_from_input();
     }
-}
-
-void serial_init(void) {
-    recieved_char = 0x00;
-    TRISC = 0x80;
-    TXEN = 1;
-    TX9 = 1;
-    CREN = 1;
-    RX9 = 1;
-    RCIE = 1;
-    SYNC = 0;
-    BRGH = 1;
-    BRG16 = 0;
-    SPBRG = 10;
-    SPEN = 1;
 }
 
 void startup(void) {
@@ -2750,6 +2735,7 @@ void update_gameboard_from_input(void) {
             current_char = board[get_cursor_index(cursor_pos)];
 
             check_for_match(0);
+
             display_gameboard();
         }
     } else if(RB5 == 1) {
@@ -2775,11 +2761,11 @@ void update_gameboard_from_input(void) {
         if(cursor_movable) {
             update_cursor(30, 3);
         }
-    } else if(joystick_x_pos > 600) {
+    } else if(joystick_x_pos > 800) {
         if(cursor_movable) {
             update_cursor(60, 2);
         }
-    } else if(joystick_x_pos < 400) {
+    } else if(joystick_x_pos < 200) {
         if(cursor_movable) {
             update_cursor(60, 3);
         }
@@ -2900,9 +2886,5 @@ void __attribute__((picinterrupt(("")))) interrupt_handler(void) {
             cursor_movable = 1;
         }
         TMR2IF = 0;
-    }
-    if(RCIF) {
-        recieved_char = RCREG;
-        lcd_putch(recieved_char, gameboard);
     }
 }
