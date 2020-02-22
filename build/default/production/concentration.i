@@ -2538,7 +2538,7 @@ extern void lcd_putch(char, char *c);
 
 extern void lcd_set_custom_char(const char *d, char, char* p);
 # 25 "concentration.c" 2
-# 42 "concentration.c"
+# 46 "concentration.c"
 char *gameboard = &PORTA;
 char *scoreboard = &PORTD;
 int joystick_x_pos;
@@ -2558,6 +2558,9 @@ char selected_tile;
 char joystick_pressed;
 char id_num;
 char my_turn = 1;
+char current_player;
+char game_over;
+int tone_delay;
 
 void joystick_init(void);
 void time_init(void);
@@ -2574,6 +2577,8 @@ char get_cursor_index(char);
 void startup(void);
 void display_scoreboard(void);
 void check_for_match(char);
+void game_end(void);
+void play_tone(int,char);
 
 void main(void) {
 
@@ -2586,15 +2591,57 @@ void main(void) {
     lcd_init(scoreboard);
 
     joystick_init();
-    gameboard_init();
-    startup();
 
-    while(1) {
+    gameboard_init();
+
+    startup();
+    current_player = 0;
+
+    while(!game_over) {
         update_gameboard_from_input();
+    }
+    game_end();
+}
+
+void end_screen(const char *first_row, char *second_row) {
+    joystick_pressed = 1;
+    while(joystick_pressed==1) {
+        lcd_clear(gameboard);
+        lcd_puts(first_row,gameboard);
+        cursor_movable = 0;
+        cursor_move_delay_count = 120;
+        while(cursor_movable == 0) {
+            if(RB5 == 0) {
+                joystick_pressed = 0;
+            }
+        }
+        lcd_clear(gameboard);
+        lcd_goto(0x40,gameboard);
+        lcd_puts(second_row,gameboard);
+        cursor_movable = 0;
+        cursor_move_delay_count = 120;
+        while(cursor_movable == 0) {
+            if(RB5 == 0) {
+                joystick_pressed = 0;
+            }
+        }
     }
 }
 
+void game_end(void) {
+    DelayMs(1000);
+    if(p1_score>p2_score) {
+        end_screen("    WINNER!!","    PLAYER 1");
+    } else if(p1_score<p2_score) {
+        end_screen("    WINNER!!","    PLAYER 2");
+    } else {
+        end_screen("   NO WINNER!","      TIED");
+    }
+    DelayMs(1000);
+}
+
 void startup(void) {
+    game_over = 0;
     lcd_clear(gameboard);
     lcd_clear(scoreboard);
     lcd_puts(" Concentration!", scoreboard);
@@ -2710,15 +2757,23 @@ void check_for_match(char player) {
             } else {
                 p2_score++;
             }
+            if((p1_score+p2_score)==16) {
+                game_over = 1;
+            }
             display_scoreboard();
+
         } else {
             display_gameboard();
-            DelayMs(1000);
+            play_tone(5000, 125);
+            play_tone(10000, 125);
             visible[get_cursor_index(selected_tile)] = 0xFF;
             visible[get_cursor_index(cursor_pos)] = 0xFF;
             current_char = 0xFF;
         }
         selected_tile = 0xFF;
+        current_player ^= 0x01;
+        joystick_pressed = 1;
+        DelayMs(100);
     }
 }
 
@@ -2727,18 +2782,19 @@ void update_gameboard_from_input(void) {
     if(GO == 0) {
         GO = 1;
     }
-    if((RB5 == 0)&&(joystick_pressed == 1)) {
+    if((((RB5 == 0)&&(current_player == 0))||
+            ((RB2 == 0)&&(current_player == 1)))
+            &&(joystick_pressed == 1)) {
         DelayMs(6);
         joystick_pressed = 0;
         if(visible[get_cursor_index(cursor_pos)] == 0xFF) {
             visible[get_cursor_index(cursor_pos)] = board[get_cursor_index(cursor_pos)];
             current_char = board[get_cursor_index(cursor_pos)];
-
-            check_for_match(0);
-
+            check_for_match(current_player);
             display_gameboard();
         }
-    } else if(RB5 == 1) {
+    } else if((((RB5 == 1)&&(current_player == 0))||
+            ((RB2 == 1)&&(current_player == 1)))) {
         joystick_pressed = 1;
     }
 
@@ -2838,6 +2894,17 @@ void get_current_char(void) {
     current_char = visible[get_cursor_index(cursor_pos)];
 }
 
+void play_tone(int tone_period, char duration_8ms) {
+    tone_delay = tone_period;
+    CCPR2 = TMR1+tone_period;
+    CCP2IF = 0;
+    CCP2IE = 1;
+    cursor_move_delay_count = duration_8ms;
+    cursor_movable = 0;
+    while(cursor_movable == 0);
+    CCP2IE = 0;
+}
+
 
 
 void time_init(void) {
@@ -2850,6 +2917,12 @@ void time_init(void) {
     T1CKPS1 = 0;
     TMR1GE = 0;
     TMR1ON = 1;
+
+    CCP2M3 = 1;
+    CCP2M2 = 0;
+    CCP2M1 = 0;
+    CCP2M0 = 0;
+    TRISC &= 0xFD;
 }
 
 void joystick_init(void) {
@@ -2857,9 +2930,9 @@ void joystick_init(void) {
     joystick_y_pos = 512;
     PORTB = 0;
     nRBPU = 0;
-    WPUB = 0x20;
-    TRISB = 0x38;
-    ANSELH = 0x0A;
+    WPUB = 0x24;
+    TRISB = 0x3F;
+    ANSELH = 0x1E;
     GIE = 1;
     PEIE = 1;
     ADIF = 0;
@@ -2870,13 +2943,38 @@ void joystick_init(void) {
 }
 
 void __attribute__((picinterrupt(("")))) interrupt_handler(void) {
+    if((CCP2IF==1) && (CCP2IE==1)) {
+        CCPR2 += tone_delay;
+        if(CCP2M0 == 1) {
+            CCP2M0 = 0;
+        } else {
+            CCP2M0 = 1;
+        }
+        CCP2IF = 0;
+    }
     if(ADIF) {
-        if(CHS1 == 1) {
+        char current_analog = ADCON0&0x3C;
+        ADCON0 &= 0xC3;
+        if(((current_analog) == 0x2C)||((current_analog) == 0x28)) {
             joystick_x_pos = (((int)ADRESH)<<8)+ADRESL;
-            CHS1 = 0;
+            switch(current_player) {
+                case 0:
+                    ADCON0 |= 0x24;
+                    break;
+                case 1:
+                    ADCON0 |= 0x30;
+                    break;
+            }
         } else {
             joystick_y_pos = (((int)ADRESH)<<8)+ADRESL;
-            CHS1 = 1;
+            switch(current_player) {
+                case 0:
+                    ADCON0 |= 0x2C;
+                    break;
+                case 1:
+                    ADCON0 |= 0x28;
+                    break;
+            }
         }
         ADIF = 0;
     }
