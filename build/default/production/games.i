@@ -1,4 +1,4 @@
-# 1 "concentration.c"
+# 1 "games.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "concentration.c" 2
-# 11 "concentration.c"
+# 1 "games.c" 2
+# 11 "games.c"
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2506,7 +2506,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 24 "concentration.c" 2
+# 24 "games.c" 2
 
 # 1 "./lcd4bits.h" 1
 
@@ -2537,8 +2537,8 @@ extern void lcd_init(char *);
 extern void lcd_putch(char, char *c);
 
 extern void lcd_set_custom_char(const char *d, char, char* p);
-# 25 "concentration.c" 2
-# 64 "concentration.c"
+# 25 "games.c" 2
+# 70 "games.c"
 char *gameboard = &PORTA;
 char *scoreboard = &PORTD;
 int joystick_x_pos;
@@ -2561,6 +2561,7 @@ char my_turn = 1;
 char current_player;
 char game_over;
 int tone_delay;
+char simon_says_pattern[25];
 
 void joystick_init(void);
 void time_init(void);
@@ -2569,17 +2570,28 @@ void get_current_char(void);
 void toggle_cursor(void);
 void update_cursor(char, char);
 void concentration_gameboard_init(void);
-void update_gameboard_from_input(void);
+void concentration_game_loop(void);
 void make_custom_chars(void);
 void randomize_gameboard(void);
-void display_gameboard(void);
+void display_concentration_gameboard(void);
 char get_cursor_index(char);
-void startup(void);
-void display_scoreboard(void);
+void concentration_title_screen(void);
+void display_concentration_scoreboard(void);
 void check_for_match(char);
-void game_end(void);
+void concentration_game_end(void);
 void play_tone(unsigned int,char);
 void turn_on_led(char);
+void simon_says_game_loop(void);
+void countdown(void);
+void display_simon_says_scoreboard(void);
+void simon_says_title_screen(void);
+void generate_pattern(void);
+void play_pattern(void);
+char simon_says_get_input(void);
+void simon_says_game_end(void);
+void simon_says_check_input(void);
+void end_screen(const char *r1, char *r2);
+
 
 void main(void) {
 
@@ -2611,7 +2623,6 @@ void main(void) {
     GO = 1;
     while(game_selection == 0xFF) {
         if(GO == 0) {
-            RC6 = 1;
             GO = 1;
         }
         if(event_enabled) {
@@ -2639,19 +2650,252 @@ void main(void) {
             }
         }
     }
+    game_over = 0;
+    lcd_clear(gameboard);
+    lcd_clear(scoreboard);
     if(game_selection == 0x00) {
-
         concentration_gameboard_init();
-
-        startup();
-
+        concentration_title_screen();
         while(!game_over) {
-            update_gameboard_from_input();
+            concentration_game_loop();
         }
-        game_end();
+        concentration_game_end();
     } else {
-
+        simon_says_title_screen();
+        while(!game_over) {
+            simon_says_game_loop();
+        }
+        simon_says_game_end();
     }
+}
+
+void simon_says_game_end(void) {
+    if(p1_score == 0) {
+        end_screen("   Game Over!", "   You stink!");
+    } else if(p1_score <= 5) {
+        end_screen("   Game Over!", "Not very good...");
+    } else if(p1_score <= 10) {
+        end_screen("   Game Over!", "    Not bad.");
+    } else if(p1_score <= 15) {
+        end_screen("   Game Over!", "   Great job!");
+    } else if(p1_score < 20) {
+        end_screen("   Game Over!", " Almost there!!");
+    } else {
+        end_screen("   Game Over!", "   You win!!!");
+    }
+}
+
+void simon_says_game_loop(void) {
+    display_simon_says_scoreboard();
+    countdown();
+    generate_pattern();
+    play_pattern();
+    simon_says_check_input();
+}
+
+void simon_says_check_input(void) {
+    lcd_puts("    Now it's", gameboard);
+    lcd_goto(0x40, gameboard);
+    lcd_puts("   your turn!", gameboard);
+    char i;
+    char current_option;
+    for(i=0;i<(p1_score+1);i++) {
+        switch(i%4) {
+            case 0:
+                current_option = (simon_says_pattern[i/4])&0x03;
+                break;
+            case 1:
+                current_option = (((simon_says_pattern[i/4])&0x0C)>>2);
+                break;
+            case 2:
+                current_option = (((simon_says_pattern[i/4])&0x30)>>4);
+                break;
+            case 3:
+                current_option = (((simon_says_pattern[i/4])&0xC0)>>6);
+                break;
+        }
+        if(current_option != simon_says_get_input()) {
+            game_over = 1;
+            break;
+        }
+    }
+    lcd_clear(gameboard);
+    if(game_over == 0) {
+        p1_score++;
+    }
+    if(p1_score == 20) {
+        game_over = 1;
+    }
+}
+
+char simon_says_get_input(void) {
+    char current_input;
+    while(1) {
+        if(GO == 0) {
+            GO = 1;
+        }
+        if(joystick_x_pos > 1000) {
+            if(CCP2IE == 0) {
+                tone_delay = 17026;
+                CCPR2 = TMR1+17026;
+                CCP2IF = 0;
+                CCP2IE = 1;
+                turn_on_led(0);
+            }
+            if(RB5 == 0) {
+                current_input = 0;
+                break;
+            }
+        } else if(joystick_x_pos < 20) {
+            if(CCP2IE == 0) {
+                tone_delay = 8513;
+                CCPR2 = TMR1+8513;
+                CCP2IF = 0;
+                CCP2IE = 1;
+                turn_on_led(1);
+            }
+            if(RB5 == 0) {
+                current_input = 1;
+                break;
+            }
+        } else if(joystick_y_pos > 1000) {
+            if(CCP2IE == 0) {
+                tone_delay = 4257;
+                CCPR2 = TMR1+4257;
+                CCP2IF = 0;
+                CCP2IE = 1;
+                turn_on_led(2);
+            }
+            if(RB5 == 0) {
+                current_input = 2;
+                break;
+            }
+        } else if(joystick_y_pos < 20) {
+            if(CCP2IE == 0) {
+                tone_delay = 2128;
+                CCPR2 = TMR1+2128;
+                CCP2IF = 0;
+                CCP2IE = 1;
+                turn_on_led(5);
+            }
+            if(RB5 == 0) {
+                current_input = 3;
+                break;
+            }
+        } else {
+            CCP2IE = 0;
+            PORTC &= 0x1F;
+        }
+    }
+    CCP2IE = 0;
+    PORTC &= 0x1F;
+    DelayMs(8);
+    while(RB5 == 0);
+    GO = 1;
+    DelayMs(500);
+    return current_input;
+}
+
+void play_pattern(void) {
+    lcd_puts(" Simon Says....", gameboard);
+    char i;
+    char current_option;
+    for(i=0;i<(p1_score+1);i++) {
+        switch(i%4) {
+            case 0:
+                current_option = (simon_says_pattern[i/4])&0x03;
+                break;
+            case 1:
+                current_option = (((simon_says_pattern[i/4])&0x0C)>>2);
+                break;
+            case 2:
+                current_option = (((simon_says_pattern[i/4])&0x30)>>4);
+                break;
+            case 3:
+                current_option = (((simon_says_pattern[i/4])&0xC0)>>6);
+                break;
+        }
+        switch(current_option) {
+        case 0:
+            turn_on_led(0);
+            play_tone(17026, 63);
+            break;
+        case 1:
+            turn_on_led(1);
+            play_tone(8513, 63);
+            break;
+        case 2:
+            turn_on_led(2);
+            play_tone(4257, 63);
+            break;
+        case 3:
+            turn_on_led(5);
+            play_tone(2128, 63);
+            break;
+        }
+        PORTC &= 0x1F;
+        DelayMs(250);
+    }
+    lcd_clear(gameboard);
+}
+
+void generate_pattern(void) {
+    char current_byte;
+    DelayMs(TMR2>>(2+(TMR1%4)));
+    current_byte = simon_says_pattern[p1_score/4];
+    switch(p1_score%4) {
+        case 0:
+            current_byte &= 0xFC;
+            current_byte |= TMR1%4;
+            break;
+        case 1:
+            current_byte &= 0xF3;
+            current_byte |= ((TMR1%4)<<2);
+            break;
+        case 2:
+            current_byte &= 0xCF;
+            current_byte |= ((TMR1%4)<<4);
+            break;
+        case 3:
+            current_byte &= 0x3F;
+            current_byte |= ((TMR1%4)<<6);
+            break;
+    }
+    simon_says_pattern[p1_score/4] = current_byte;
+}
+
+void countdown(void) {
+    lcd_clear(gameboard);
+    signed char i;
+    for(i=3;i>=0;i--) {
+        lcd_goto(0x07, gameboard);
+        lcd_putch(i+0x30, gameboard);
+        DelayMs(1000);
+    }
+    lcd_clear(gameboard);
+}
+
+void display_simon_says_scoreboard(void) {
+    lcd_clear(scoreboard);
+    lcd_puts("     Score:", scoreboard);
+    lcd_goto(0x43, scoreboard);
+    lcd_putch(((p1_score%100)/10)+0x30, scoreboard);
+    lcd_putch((p1_score%10)+0x30, scoreboard);
+    lcd_puts("  Rounds", scoreboard);
+}
+
+void simon_says_title_screen(void) {
+    lcd_puts("   Simon Says", scoreboard);
+    lcd_puts("Press the button", gameboard);
+    lcd_goto(0x40, gameboard);
+    lcd_puts("    to start", gameboard);
+    while(RB5 == 1);
+    DelayMs(8);
+    while(RB5 == 0);
+    DelayMs(8);
+    lcd_clear(scoreboard);
+    lcd_clear(gameboard);
+    p1_score = 0;
 }
 
 void turn_on_led(char color) {
@@ -2677,6 +2921,11 @@ void turn_on_led(char color) {
         case 5:
             RC7 = 1;
             RC5 = 1;
+            break;
+        case 6:
+            RC5 = 1;
+            RC6 = 1;
+            RC7 = 1;
             break;
     }
 }
@@ -2737,7 +2986,7 @@ void end_screen(const char *first_row, char *second_row) {
     }
 }
 
-void game_end(void) {
+void concentration_game_end(void) {
     DelayMs(1000);
     if(p1_score>p2_score) {
         end_screen("    WINNER!!","    PLAYER 1");
@@ -2749,10 +2998,7 @@ void game_end(void) {
     DelayMs(1000);
 }
 
-void startup(void) {
-    game_over = 0;
-    lcd_clear(gameboard);
-    lcd_clear(scoreboard);
+void concentration_title_screen(void) {
     lcd_puts(" Concentration!", scoreboard);
     lcd_puts("Press the button", gameboard);
     lcd_goto(0x40, gameboard);
@@ -2765,11 +3011,11 @@ void startup(void) {
     lcd_clear(scoreboard);
     p1_score = 0;
     p2_score = 0;
-    display_scoreboard();
-    display_gameboard();
+    display_concentration_scoreboard();
+    display_concentration_gameboard();
 }
 
-void display_scoreboard(void) {
+void display_concentration_scoreboard(void) {
     lcd_puts("     Score:", scoreboard);
     lcd_goto(0x40, scoreboard);
     lcd_puts(" P1: ", scoreboard);
@@ -2780,7 +3026,7 @@ void display_scoreboard(void) {
     lcd_putch((p2_score%10)+0x30, scoreboard);
 }
 
-void display_gameboard(void) {
+void display_concentration_gameboard(void) {
     lcd_clear(gameboard);
     char i;
     for(i=0;i<32;i++) {
@@ -2871,10 +3117,10 @@ void check_for_match(char player) {
             if((p1_score+p2_score)==2) {
                 game_over = 1;
             }
-            display_scoreboard();
+            display_concentration_scoreboard();
 
         } else {
-            display_gameboard();
+            display_concentration_gameboard();
             turn_on_led(0);
             play_tone(36075, 30);
             RC5 = 0;
@@ -2893,7 +3139,7 @@ void check_for_match(char player) {
     }
 }
 
-void update_gameboard_from_input(void) {
+void concentration_game_loop(void) {
 
     if(GO == 0) {
         GO = 1;
@@ -2907,7 +3153,7 @@ void update_gameboard_from_input(void) {
             visible[get_cursor_index(cursor_pos)] = board[get_cursor_index(cursor_pos)];
             current_char = board[get_cursor_index(cursor_pos)];
             check_for_match(current_player);
-            display_gameboard();
+            display_concentration_gameboard();
         }
     } else if((((RB5 == 1)&&(current_player == 0))||
             ((RB2 == 1)&&(current_player == 1)))) {

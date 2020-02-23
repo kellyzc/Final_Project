@@ -15,45 +15,63 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"106 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\concentration.c
+"124 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\games.c
 [v _main main `(v  1 e 1 0 ]
-"179
+"200
+[v _simon_says_game_end simon_says_game_end `(v  1 e 1 0 ]
+"216
+[v _simon_says_game_loop simon_says_game_loop `(v  1 e 1 0 ]
+"224
+[v _simon_says_check_input simon_says_check_input `(v  1 e 1 0 ]
+"259
+[v _simon_says_get_input simon_says_get_input `(uc  1 e 1 0 ]
+"327
+[v _play_pattern play_pattern `(v  1 e 1 0 ]
+"370
+[v _generate_pattern generate_pattern `(v  1 e 1 0 ]
+"395
+[v _countdown countdown `(v  1 e 1 0 ]
+"406
+[v _display_simon_says_scoreboard display_simon_says_scoreboard `(v  1 e 1 0 ]
+"415
+[v _simon_says_title_screen simon_says_title_screen `(v  1 e 1 0 ]
+"429
 [v _turn_on_led turn_on_led `(v  1 e 1 0 ]
-"206
+"461
 [v _end_screen end_screen `(v  1 e 1 0 ]
-"262
-[v _game_end game_end `(v  1 e 1 0 ]
-"274
-[v _startup startup `(v  1 e 1 0 ]
-"294
-[v _display_scoreboard display_scoreboard `(v  1 e 1 0 ]
-"305
-[v _display_gameboard display_gameboard `(v  1 e 1 0 ]
-"317
+"517
+[v _concentration_game_end concentration_game_end `(v  1 e 1 0 ]
+"529
+[v _concentration_title_screen concentration_title_screen `(v  1 e 1 0 ]
+"546
+[v _display_concentration_scoreboard display_concentration_scoreboard `(v  1 e 1 0 ]
+"557
+[v _display_concentration_gameboard display_concentration_gameboard `(v  1 e 1 0 ]
+"569
 [v _make_custom_chars make_custom_chars `(v  1 e 1 0 ]
-"336
+"588
 [v _concentration_gameboard_init concentration_gameboard_init `(v  1 e 1 0 ]
-"352
+"604
 [v _get_cursor_index get_cursor_index `(uc  1 e 1 0 ]
-"359
+"611
 [v _randomize_gameboard randomize_gameboard `(v  1 e 1 0 ]
-"374
+"626
 [v _check_for_match check_for_match `(v  1 e 1 0 ]
-"418
-[v _update_gameboard_from_input update_gameboard_from_input `(v  1 e 1 0 ]
-"479
+"670
+[v _concentration_game_loop concentration_game_loop `(v  1 e 1 0 ]
+"731
 [v _update_cursor update_cursor `(v  1 e 1 0 ]
-"520
+"772
 [v _toggle_cursor toggle_cursor `(v  1 e 1 0 ]
-"531
+"783
 [v _get_current_char get_current_char `(v  1 e 1 0 ]
-"535
+"787
 [v _play_tone play_tone `(v  1 e 1 0 ]
-"548
+"800
 [v _time_init time_init `(v  1 e 1 0 ]
-"573
+"825
 [v _joystick_init joystick_init `(v  1 e 1 0 ]
-"590
+"842
 [v _interrupt_handler interrupt_handler `II(v  1 e 1 0 ]
 "72 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\lcd4bits.c
 [v _tmr0_init tmr0_init `(v  1 e 1 0 ]
@@ -183,108 +201,116 @@
 [v _TMR2IF TMR2IF `VEb  1 e 0 @97 ]
 "4664
 [v _nRBPU nRBPU `VEb  1 e 0 @1039 ]
-"66 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\concentration.c
+"72 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\games.c
 [v _joystick_x_pos joystick_x_pos `i  1 e 2 0 ]
-"67
-[v _joystick_y_pos joystick_y_pos `i  1 e 2 0 ]
-"68
-[v _cursor_pos cursor_pos `uc  1 e 1 0 ]
-"69
-[v _current_char current_char `uc  1 e 1 0 ]
-"70
-[v _cursor_solid cursor_solid `uc  1 e 1 0 ]
-"71
-[v _delay_loops delay_loops `uc  1 e 1 0 ]
-"72
-[v _board board `[32]uc  1 e 32 0 ]
 "73
-[v _visible visible `[32]uc  1 e 32 0 ]
+[v _joystick_y_pos joystick_y_pos `i  1 e 2 0 ]
 "74
-[v _event_delay_count event_delay_count `uc  1 e 1 0 ]
+[v _cursor_pos cursor_pos `uc  1 e 1 0 ]
 "75
-[v _event_enabled event_enabled `uc  1 e 1 0 ]
+[v _current_char current_char `uc  1 e 1 0 ]
+"76
+[v _cursor_solid cursor_solid `uc  1 e 1 0 ]
 "77
-[v _p1_score p1_score `uc  1 e 1 0 ]
+[v _delay_loops delay_loops `uc  1 e 1 0 ]
 "78
-[v _p2_score p2_score `uc  1 e 1 0 ]
+[v _board board `[32]uc  1 e 32 0 ]
 "79
-[v _selected_tile selected_tile `uc  1 e 1 0 ]
+[v _visible visible `[32]uc  1 e 32 0 ]
 "80
-[v _joystick_pressed joystick_pressed `uc  1 e 1 0 ]
+[v _event_delay_count event_delay_count `uc  1 e 1 0 ]
+"81
+[v _event_enabled event_enabled `uc  1 e 1 0 ]
 "83
-[v _current_player current_player `uc  1 e 1 0 ]
+[v _p1_score p1_score `uc  1 e 1 0 ]
 "84
-[v _game_over game_over `uc  1 e 1 0 ]
+[v _p2_score p2_score `uc  1 e 1 0 ]
 "85
+[v _selected_tile selected_tile `uc  1 e 1 0 ]
+"86
+[v _joystick_pressed joystick_pressed `uc  1 e 1 0 ]
+"89
+[v _current_player current_player `uc  1 e 1 0 ]
+"90
+[v _game_over game_over `uc  1 e 1 0 ]
+"91
 [v _tone_delay tone_delay `i  1 e 2 0 ]
-"106
+"92
+[v _simon_says_pattern simon_says_pattern `[25]uc  1 e 25 0 ]
+"124
 [v _main main `(v  1 e 1 0 ]
 {
-"132
+"150
 [v main@selector_pos selector_pos `uc  1 a 1 58 ]
-"131
+"149
 [v main@game_selection game_selection `uc  1 a 1 57 ]
-"177
+"198
 } 0
-"418
-[v _update_gameboard_from_input update_gameboard_from_input `(v  1 e 1 0 ]
-{
-"477
-} 0
-"479
-[v _update_cursor update_cursor `(v  1 e 1 0 ]
-{
-[v update_cursor@move_delay_count move_delay_count `uc  1 a 1 wreg ]
-[v update_cursor@move_delay_count move_delay_count `uc  1 a 1 wreg ]
-[v update_cursor@direction direction `uc  1 p 1 20 ]
-[v update_cursor@move_delay_count move_delay_count `uc  1 a 1 23 ]
-"518
-} 0
-"520
-[v _toggle_cursor toggle_cursor `(v  1 e 1 0 ]
-{
-"529
-} 0
-"374
-[v _check_for_match check_for_match `(v  1 e 1 0 ]
-{
-[v check_for_match@player player `uc  1 a 1 wreg ]
-[v check_for_match@player player `uc  1 a 1 wreg ]
-[v check_for_match@player player `uc  1 a 1 24 ]
-"416
-} 0
-"548
+"800
 [v _time_init time_init `(v  1 e 1 0 ]
 {
-"571
+"823
 } 0
-"274
-[v _startup startup `(v  1 e 1 0 ]
+"415
+[v _simon_says_title_screen simon_says_title_screen `(v  1 e 1 0 ]
 {
-"292
+"427
 } 0
-"294
-[v _display_scoreboard display_scoreboard `(v  1 e 1 0 ]
+"216
+[v _simon_says_game_loop simon_says_game_loop `(v  1 e 1 0 ]
 {
-"303
+"222
 } 0
-"305
-[v _display_gameboard display_gameboard `(v  1 e 1 0 ]
+"224
+[v _simon_says_check_input simon_says_check_input `(v  1 e 1 0 ]
 {
-"307
-[v display_gameboard@i i `uc  1 a 1 21 ]
-"315
+"228
+[v simon_says_check_input@i i `uc  1 a 1 21 ]
+"229
+[v simon_says_check_input@current_option current_option `uc  1 a 1 20 ]
+"257
 } 0
-"136 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\lcd4bits.c
-[v _lcd_putch lcd_putch `(v  1 e 1 0 ]
+"259
+[v _simon_says_get_input simon_says_get_input `(uc  1 e 1 0 ]
 {
-[v lcd_putch@character character `uc  1 a 1 wreg ]
-[v lcd_putch@character character `uc  1 a 1 wreg ]
-[v lcd_putch@port port `*.39uc  1 p 2 16 ]
-[v lcd_putch@character character `uc  1 a 1 19 ]
-"138
+"260
+[v simon_says_get_input@current_input current_input `uc  1 a 1 5 ]
+"325
 } 0
-"155
+"327
+[v _play_pattern play_pattern `(v  1 e 1 0 ]
+{
+"329
+[v play_pattern@i i `uc  1 a 1 21 ]
+"330
+[v play_pattern@current_option current_option `uc  1 a 1 20 ]
+"368
+} 0
+"370
+[v _generate_pattern generate_pattern `(v  1 e 1 0 ]
+{
+"371
+[v generate_pattern@current_byte current_byte `uc  1 a 1 19 ]
+"393
+} 0
+"406
+[v _display_simon_says_scoreboard display_simon_says_scoreboard `(v  1 e 1 0 ]
+{
+"413
+} 0
+"395
+[v _countdown countdown `(v  1 e 1 0 ]
+{
+"397
+[v countdown@i i `c  1 a 1 21 ]
+"404
+} 0
+"200
+[v _simon_says_game_end simon_says_game_end `(v  1 e 1 0 ]
+{
+"214
+} 0
+"155 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\lcd4bits.c
 [v _lcd_init lcd_init `(v  1 e 1 0 ]
 {
 [v lcd_init@port port `*.39uc  1 p 2 10 ]
@@ -295,82 +321,110 @@
 {
 "79
 } 0
-"573 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\concentration.c
+"825 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\games.c
 [v _joystick_init joystick_init `(v  1 e 1 0 ]
 {
-"588
+"840
 } 0
-"262
-[v _game_end game_end `(v  1 e 1 0 ]
+"529
+[v _concentration_title_screen concentration_title_screen `(v  1 e 1 0 ]
 {
-"272
-} 0
-"206
-[v _end_screen end_screen `(v  1 e 1 0 ]
-{
-"208
-[v end_screen@colors colors `[6]uc  1 a 6 20 ]
-"209
-[v end_screen@color_index color_index `uc  1 a 1 27 ]
-"210
-[v end_screen@i i `uc  1 a 1 26 ]
-"206
-[v end_screen@first_row first_row `*.25DCuc  1 p 2 13 ]
-[v end_screen@second_row second_row `*.25uc  1 p 2 15 ]
-"207
-[v end_screen@F1344 F1344 `[6]uc  1 s 6 F1344 ]
-"260
-} 0
-"179
-[v _turn_on_led turn_on_led `(v  1 e 1 0 ]
-{
-[v turn_on_led@color color `uc  1 a 1 wreg ]
-[v turn_on_led@color color `uc  1 a 1 wreg ]
-[v turn_on_led@color color `uc  1 a 1 2 ]
-"204
-} 0
-"535
-[v _play_tone play_tone `(v  1 e 1 0 ]
-{
-[v play_tone@tone_period tone_period `ui  1 p 2 0 ]
-[v play_tone@duration_8ms duration_8ms `uc  1 p 1 2 ]
 "544
 } 0
-"129 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\lcd4bits.c
-[v _lcd_puts lcd_puts `(v  1 e 1 0 ]
-{
-[v lcd_puts@string string `*.25DCuc  1 p 2 8 ]
-[v lcd_puts@port port `*.39uc  1 p 2 10 ]
-"133
-} 0
-"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-{
-"10
-[v ___awmod@sign sign `uc  1 a 1 6 ]
-[v ___awmod@counter counter `uc  1 a 1 5 ]
-"5
-[v ___awmod@divisor divisor `i  1 p 2 0 ]
-[v ___awmod@dividend dividend `i  1 p 2 2 ]
-"34
-} 0
-"336 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\concentration.c
+"588
 [v _concentration_gameboard_init concentration_gameboard_init `(v  1 e 1 0 ]
 {
-"339
+"591
 [v concentration_gameboard_init@i i `uc  1 a 1 54 ]
-"350
+"602
 } 0
-"359
+"611
 [v _randomize_gameboard randomize_gameboard `(v  1 e 1 0 ]
 {
-"360
+"612
 [v randomize_gameboard@used used `[32]uc  1 a 32 19 ]
-"362
+"614
 [v randomize_gameboard@random random `uc  1 a 1 52 ]
-"361
+"613
 [v randomize_gameboard@current current `uc  1 a 1 51 ]
-"372
+"624
+} 0
+"569
+[v _make_custom_chars make_custom_chars `(v  1 e 1 0 ]
+{
+"570
+[v make_custom_chars@smile smile `DC[8]uc  1 s 8 smile ]
+"572
+[v make_custom_chars@diamond diamond `DC[8]uc  1 s 8 diamond ]
+"574
+[v make_custom_chars@heart heart `DC[8]uc  1 s 8 heart ]
+"576
+[v make_custom_chars@spade spade `DC[8]uc  1 s 8 spade ]
+"578
+[v make_custom_chars@club club `DC[8]uc  1 s 8 club ]
+"580
+[v make_custom_chars@skull skull `DC[8]uc  1 s 8 skull ]
+"582
+[v make_custom_chars@RH RH `DC[8]uc  1 s 8 RH ]
+"584
+[v make_custom_chars@PIC PIC `DC[8]uc  1 s 8 PIC ]
+"586
+} 0
+"166 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\lcd4bits.c
+[v _lcd_set_custom_char lcd_set_custom_char `(v  1 e 1 0 ]
+{
+"167
+[v lcd_set_custom_char@row row `uc  1 a 1 15 ]
+"166
+[v lcd_set_custom_char@data data `*.25DCuc  1 p 2 8 ]
+[v lcd_set_custom_char@cg_address cg_address `uc  1 p 1 10 ]
+[v lcd_set_custom_char@port port `*.39uc  1 p 2 11 ]
+"174
+} 0
+"670 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\games.c
+[v _concentration_game_loop concentration_game_loop `(v  1 e 1 0 ]
+{
+"729
+} 0
+"731
+[v _update_cursor update_cursor `(v  1 e 1 0 ]
+{
+[v update_cursor@move_delay_count move_delay_count `uc  1 a 1 wreg ]
+[v update_cursor@move_delay_count move_delay_count `uc  1 a 1 wreg ]
+[v update_cursor@direction direction `uc  1 p 1 20 ]
+[v update_cursor@move_delay_count move_delay_count `uc  1 a 1 23 ]
+"770
+} 0
+"783
+[v _get_current_char get_current_char `(v  1 e 1 0 ]
+{
+"785
+} 0
+"772
+[v _toggle_cursor toggle_cursor `(v  1 e 1 0 ]
+{
+"781
+} 0
+"626
+[v _check_for_match check_for_match `(v  1 e 1 0 ]
+{
+[v check_for_match@player player `uc  1 a 1 wreg ]
+[v check_for_match@player player `uc  1 a 1 wreg ]
+[v check_for_match@player player `uc  1 a 1 24 ]
+"668
+} 0
+"604
+[v _get_cursor_index get_cursor_index `(uc  1 e 1 0 ]
+{
+[v get_cursor_index@cursor cursor `uc  1 a 1 wreg ]
+[v get_cursor_index@cursor cursor `uc  1 a 1 wreg ]
+[v get_cursor_index@cursor cursor `uc  1 a 1 0 ]
+"609
+} 0
+"546
+[v _display_concentration_scoreboard display_concentration_scoreboard `(v  1 e 1 0 ]
+{
+"555
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -385,37 +439,64 @@
 [v ___awdiv@dividend dividend `i  1 p 2 9 ]
 "41
 } 0
-"317 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\concentration.c
-[v _make_custom_chars make_custom_chars `(v  1 e 1 0 ]
+"557 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\games.c
+[v _display_concentration_gameboard display_concentration_gameboard `(v  1 e 1 0 ]
 {
-"318
-[v make_custom_chars@smile smile `DC[8]uc  1 s 8 smile ]
-"320
-[v make_custom_chars@diamond diamond `DC[8]uc  1 s 8 diamond ]
-"322
-[v make_custom_chars@heart heart `DC[8]uc  1 s 8 heart ]
-"324
-[v make_custom_chars@spade spade `DC[8]uc  1 s 8 spade ]
-"326
-[v make_custom_chars@club club `DC[8]uc  1 s 8 club ]
-"328
-[v make_custom_chars@skull skull `DC[8]uc  1 s 8 skull ]
-"330
-[v make_custom_chars@RH RH `DC[8]uc  1 s 8 RH ]
-"332
-[v make_custom_chars@PIC PIC `DC[8]uc  1 s 8 PIC ]
-"334
+"559
+[v display_concentration_gameboard@i i `uc  1 a 1 21 ]
+"567
 } 0
-"166 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\lcd4bits.c
-[v _lcd_set_custom_char lcd_set_custom_char `(v  1 e 1 0 ]
+"136 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\lcd4bits.c
+[v _lcd_putch lcd_putch `(v  1 e 1 0 ]
 {
-"167
-[v lcd_set_custom_char@row row `uc  1 a 1 15 ]
-"166
-[v lcd_set_custom_char@data data `*.25DCuc  1 p 2 8 ]
-[v lcd_set_custom_char@cg_address cg_address `uc  1 p 1 10 ]
-[v lcd_set_custom_char@port port `*.39uc  1 p 2 11 ]
-"174
+[v lcd_putch@character character `uc  1 a 1 wreg ]
+[v lcd_putch@character character `uc  1 a 1 wreg ]
+[v lcd_putch@port port `*.39uc  1 p 2 16 ]
+[v lcd_putch@character character `uc  1 a 1 19 ]
+"138
+} 0
+"517 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\games.c
+[v _concentration_game_end concentration_game_end `(v  1 e 1 0 ]
+{
+"527
+} 0
+"461
+[v _end_screen end_screen `(v  1 e 1 0 ]
+{
+"463
+[v end_screen@colors colors `[6]uc  1 a 6 20 ]
+"464
+[v end_screen@color_index color_index `uc  1 a 1 27 ]
+"465
+[v end_screen@i i `uc  1 a 1 26 ]
+"461
+[v end_screen@first_row first_row `*.25DCuc  1 p 2 13 ]
+[v end_screen@second_row second_row `*.25uc  1 p 2 15 ]
+"462
+[v end_screen@F1373 F1373 `[6]uc  1 s 6 F1373 ]
+"515
+} 0
+"429
+[v _turn_on_led turn_on_led `(v  1 e 1 0 ]
+{
+[v turn_on_led@color color `uc  1 a 1 wreg ]
+[v turn_on_led@color color `uc  1 a 1 wreg ]
+[v turn_on_led@color color `uc  1 a 1 2 ]
+"459
+} 0
+"787
+[v _play_tone play_tone `(v  1 e 1 0 ]
+{
+[v play_tone@tone_period tone_period `ui  1 p 2 0 ]
+[v play_tone@duration_8ms duration_8ms `uc  1 p 1 2 ]
+"796
+} 0
+"129 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\lcd4bits.c
+[v _lcd_puts lcd_puts `(v  1 e 1 0 ]
+{
+[v lcd_puts@string string `*.25DCuc  1 p 2 8 ]
+[v lcd_puts@port port `*.39uc  1 p 2 10 ]
+"133
 } 0
 "146
 [v _lcd_goto lcd_goto `(v  1 e 1 0 ]
@@ -455,23 +536,21 @@
 [v DelayMs@millis millis `ui  1 p 2 0 ]
 "93
 } 0
-"531 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\concentration.c
-[v _get_current_char get_current_char `(v  1 e 1 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 {
-"533
+"10
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"34
 } 0
-"352
-[v _get_cursor_index get_cursor_index `(uc  1 e 1 0 ]
-{
-[v get_cursor_index@cursor cursor `uc  1 a 1 wreg ]
-[v get_cursor_index@cursor cursor `uc  1 a 1 wreg ]
-[v get_cursor_index@cursor cursor `uc  1 a 1 0 ]
-"357
-} 0
-"590
+"842 C:\Users\kellyzc\Documents\Classes\2019-20\ECE230\Final_Project\games.c
 [v _interrupt_handler interrupt_handler `II(v  1 e 1 0 ]
 {
-"601
+"853
 [v interrupt_handler@current_analog current_analog `uc  1 a 1 5 ]
-"633
+"885
 } 0
