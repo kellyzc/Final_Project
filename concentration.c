@@ -1,7 +1,7 @@
 /* Concentration
  * ECE230-02 Final Project
  * Written by Zach Kelly and Tanner Brammeier
- * 2/11/20
+ * 2/23/20
  * 
  * Description:
  * This program allows two players using separate boards to play the game
@@ -42,6 +42,22 @@
 #define JY2 0x30
 #define PERIOD_5HZ 10000
 #define PERIOD_1KHZ 5000
+#define C2SHARP 36075
+#define F6SHARP 1689 
+#define A6 1420
+#define D6SHARP 2009
+#define E6 1896
+#define G6 1594
+#define C6 2389
+#define LED_RED RC5
+#define LED_GREEN RC6
+#define LED_BLUE RC7
+#define RED 0
+#define GREEN 1
+#define BLUE 2
+#define YELLOW 3
+#define CYAN 4
+#define MAGENTA 5
 
 char *gameboard = &PORTA;
 char *scoreboard = &PORTD;
@@ -82,7 +98,8 @@ void startup(void);
 void display_scoreboard(void);
 void check_for_match(char);
 void game_end(void);
-void play_tone(int,char);
+void play_tone(unsigned int,char);
+void turn_on_led(char);
 
 void main(void) {
     //Clock Setup
@@ -100,6 +117,8 @@ void main(void) {
     //Startup
     startup();
     current_player = PLAYER_1;
+    TRISC &= 0x1F;
+    PORTC = 0;
     //Main loop
     while(!game_over) {
         update_gameboard_from_input();
@@ -107,28 +126,86 @@ void main(void) {
     game_end();
 }
 
+void turn_on_led(char color) {
+    PORTC &= 0x1F;
+    switch(color) {
+        case RED:
+            LED_RED = 1;
+            break;
+        case GREEN:
+            LED_GREEN = 1;
+            break;
+        case BLUE:
+            LED_BLUE = 1;
+            break;
+        case YELLOW:
+            LED_RED = 1;
+            LED_GREEN = 1;
+            break;
+        case CYAN:
+            LED_GREEN = 1;
+            LED_BLUE = 1;
+            break;
+        case MAGENTA:
+            LED_BLUE = 1;
+            LED_RED = 1;
+            break;
+    }
+}
+
 void end_screen(const char *first_row, char *second_row) {
     joystick_pressed = RELEASED;
+    char colors[] = {RED,YELLOW,GREEN,CYAN,BLUE,MAGENTA};
+    char color_index = 0;
+    char i;
+    for(i=0;i<3;i++) {
+        turn_on_led(colors[color_index]);
+        color_index++;
+        color_index %= 6;
+        play_tone(D6SHARP, 30);
+        turn_on_led(colors[color_index]);
+        color_index++;
+        color_index %= 6;
+        play_tone(E6, 30);
+        turn_on_led(colors[color_index]);
+        color_index++;
+        color_index %= 6;
+        play_tone(G6, 30);
+        turn_on_led(colors[color_index]);
+        color_index++;
+        color_index %= 6;
+        DelayMs(250);
+    }
+    turn_on_led(colors[color_index]);
+    color_index++;
+    color_index %= 6;
+    play_tone(C6, 60);
     while(joystick_pressed==RELEASED) {
         lcd_clear(gameboard);
         lcd_puts(first_row,gameboard);
         cursor_movable = 0;
         cursor_move_delay_count = 120;
         while(cursor_movable == 0) {
-            if(JOYSTICK_BUTTON_1 == PRESSED) {
+            if((JOYSTICK_BUTTON_1 == PRESSED)||(JOYSTICK_BUTTON_2 == PRESSED)) {
                 joystick_pressed = PRESSED;
             }
         }
+        turn_on_led(colors[color_index]);
+        color_index++;
+        color_index %= 6;
         lcd_clear(gameboard);
         lcd_goto(ROW_2,gameboard);
         lcd_puts(second_row,gameboard);
         cursor_movable = 0;
         cursor_move_delay_count = 120;
         while(cursor_movable == 0) {
-            if(JOYSTICK_BUTTON_1 == PRESSED) {
+            if((JOYSTICK_BUTTON_1 == PRESSED)||(JOYSTICK_BUTTON_2 == PRESSED)) {
                 joystick_pressed = PRESSED;
             }
         }
+        turn_on_led(colors[color_index]);
+        color_index++;
+        color_index %= 6;
     }
 }
 
@@ -261,15 +338,29 @@ void check_for_match(char player) {
             } else {
                 p2_score++;
             }
-            if((p1_score+p2_score)==16) {
+            turn_on_led(GREEN);
+            play_tone(F6SHARP, 15);
+            LED_GREEN = 0;
+            play_tone(A6, 5);
+            turn_on_led(GREEN);
+            play_tone(F6SHARP, 15);
+            LED_GREEN = 0;
+            play_tone(A6, 5);
+            //TODO change back
+            if((p1_score+p2_score)==2) {
                 game_over = 1;
             }
             display_scoreboard();
             
         } else {
             display_gameboard();
-            play_tone(PERIOD_1KHZ, 125);
-            play_tone(PERIOD_5HZ, 125);
+            turn_on_led(RED);
+            play_tone(C2SHARP, 30);
+            LED_RED = 0;
+            DelayMs(100);
+            turn_on_led(RED);
+            play_tone(C2SHARP, 30);
+            LED_RED = 0;
             visible[get_cursor_index(selected_tile)] = 0xFF;
             visible[get_cursor_index(cursor_pos)] = 0xFF;
             current_char = 0xFF;
@@ -321,21 +412,21 @@ void update_gameboard_from_input(void) {
         if(cursor_movable) {
             update_cursor(30, RIGHT);
         }
-    } else if(joystick_x_pos > 800) {//600 TODO change back
+    } else if(joystick_x_pos > 700) {
         if(cursor_movable) {
             update_cursor(60, LEFT);
         }
-    } else if(joystick_x_pos < 200) {//400
+    } else if(joystick_x_pos < 300) {
         if(cursor_movable) {
             update_cursor(60, RIGHT);
         }
     } else if(joystick_y_pos == 1021) {
         if(cursor_movable) {
-            update_cursor(62, VERTICAL);
+            update_cursor(100, VERTICAL);
         }
     } else if(joystick_y_pos == 0) {
         if(cursor_movable) {
-            update_cursor(62, VERTICAL);
+            update_cursor(100, VERTICAL);
         }
     } else {
         cursor_movable = 1;
@@ -398,7 +489,7 @@ void get_current_char(void) {
     current_char = visible[get_cursor_index(cursor_pos)];
 }
 
-void play_tone(int tone_period, char duration_8ms) {
+void play_tone(unsigned int tone_period, char duration_8ms) {
     tone_delay = tone_period;
     CCPR2 = TMR1+tone_period;
     CCP2IF = 0;
