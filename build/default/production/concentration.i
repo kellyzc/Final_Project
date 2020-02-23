@@ -2538,7 +2538,7 @@ extern void lcd_putch(char, char *c);
 
 extern void lcd_set_custom_char(const char *d, char, char* p);
 # 25 "concentration.c" 2
-# 62 "concentration.c"
+# 64 "concentration.c"
 char *gameboard = &PORTA;
 char *scoreboard = &PORTD;
 int joystick_x_pos;
@@ -2549,8 +2549,8 @@ char cursor_solid;
 char delay_loops;
 char board[32];
 char visible[32];
-char cursor_move_delay_count;
-char cursor_movable;
+char event_delay_count;
+char event_enabled;
 char received_char;
 char p1_score;
 char p2_score;
@@ -2568,7 +2568,7 @@ void update_gameboard(void);
 void get_current_char(void);
 void toggle_cursor(void);
 void update_cursor(char, char);
-void gameboard_init(void);
+void concentration_gameboard_init(void);
 void update_gameboard_from_input(void);
 void make_custom_chars(void);
 void randomize_gameboard(void);
@@ -2593,17 +2593,65 @@ void main(void) {
 
     joystick_init();
 
-    gameboard_init();
-
-    startup();
-    current_player = 0;
     TRISC &= 0x1F;
     PORTC = 0;
 
-    while(!game_over) {
-        update_gameboard_from_input();
+    time_init();
+
+    current_player = 0;
+
+    lcd_puts(" Game Selection", scoreboard);
+    lcd_puts("  Concentration", gameboard);
+    lcd_goto(0x40, gameboard);
+    lcd_puts("  Simon Says", gameboard);
+    lcd_goto(0, gameboard);
+    lcd_putch(0x7E, gameboard);
+    char game_selection = 0xFF;
+    char selector_pos = 0x00;
+    GO = 1;
+    while(game_selection == 0xFF) {
+        if(GO == 0) {
+            RC6 = 1;
+            GO = 1;
+        }
+        if(event_enabled) {
+            if(RB5 == 0) {
+                game_selection = selector_pos;
+                DelayMs(8);
+                while(RB5 == 0);
+                break;
+            }
+            if((joystick_y_pos < 100)||(joystick_y_pos > 900)) {
+                lcd_goto(selector_pos, gameboard);
+                lcd_putch(0x20, gameboard);
+                switch(selector_pos) {
+                    case 0x00:
+                        selector_pos = 0x40;
+                        break;
+                    case 0x40:
+                        selector_pos = 0x00;
+                        break;
+                }
+                lcd_goto(selector_pos, gameboard);
+                lcd_putch(0x7E, gameboard);
+                event_enabled = 0;
+                event_delay_count = 62;
+            }
+        }
     }
-    game_end();
+    if(game_selection == 0x00) {
+
+        concentration_gameboard_init();
+
+        startup();
+
+        while(!game_over) {
+            update_gameboard_from_input();
+        }
+        game_end();
+    } else {
+
+    }
 }
 
 void turn_on_led(char color) {
@@ -2663,10 +2711,10 @@ void end_screen(const char *first_row, char *second_row) {
     while(joystick_pressed==1) {
         lcd_clear(gameboard);
         lcd_puts(first_row,gameboard);
-        cursor_movable = 0;
-        cursor_move_delay_count = 120;
-        while(cursor_movable == 0) {
-            if(RB5 == 0) {
+        event_enabled = 0;
+        event_delay_count = 120;
+        while(event_enabled == 0) {
+            if((RB5 == 0)||(RB2 == 0)) {
                 joystick_pressed = 0;
             }
         }
@@ -2676,10 +2724,10 @@ void end_screen(const char *first_row, char *second_row) {
         lcd_clear(gameboard);
         lcd_goto(0x40,gameboard);
         lcd_puts(second_row,gameboard);
-        cursor_movable = 0;
-        cursor_move_delay_count = 120;
-        while(cursor_movable == 0) {
-            if(RB5 == 0) {
+        event_enabled = 0;
+        event_delay_count = 120;
+        while(event_enabled == 0) {
+            if((RB5 == 0)||(RB2 == 0)) {
                 joystick_pressed = 0;
             }
         }
@@ -2763,9 +2811,8 @@ void make_custom_chars(void) {
     lcd_set_custom_char(PIC, 0x07, gameboard);
 }
 
-void gameboard_init(void) {
+void concentration_gameboard_init(void) {
     selected_tile = 0xFF;
-    time_init();
     make_custom_chars();
     char i;
     for(i = 0; i < 32; i++) {
@@ -2776,13 +2823,7 @@ void gameboard_init(void) {
     cursor_solid = 0;
     get_current_char();
     delay_loops = 0;
-    cursor_movable = 1;
     lcd_goto(cursor_pos, gameboard);
-    cursor_move_delay_count = 255;
-    PR2 = 250;
-    TMR2IF = 0;
-    TMR2IE = 1;
-    T2CON = 0x56;
     randomize_gameboard();
 }
 
@@ -2885,37 +2926,37 @@ void update_gameboard_from_input(void) {
     }
 
     if(joystick_x_pos > 900) {
-        if(cursor_movable) {
+        if(event_enabled) {
             update_cursor(30, 2);
         }
     } else if(joystick_x_pos < 100) {
-        if(cursor_movable) {
+        if(event_enabled) {
             update_cursor(30, 3);
         }
-    } else if(joystick_x_pos > 700) {
-        if(cursor_movable) {
+    } else if(joystick_x_pos > 800) {
+        if(event_enabled) {
             update_cursor(60, 2);
         }
-    } else if(joystick_x_pos < 300) {
-        if(cursor_movable) {
+    } else if(joystick_x_pos < 200) {
+        if(event_enabled) {
             update_cursor(60, 3);
         }
     } else if(joystick_y_pos == 1021) {
-        if(cursor_movable) {
+        if(event_enabled) {
             update_cursor(100, 1);
         }
     } else if(joystick_y_pos == 0) {
-        if(cursor_movable) {
+        if(event_enabled) {
             update_cursor(100, 1);
         }
     } else {
-        cursor_movable = 1;
+        event_enabled = 1;
     }
 }
 
 void update_cursor(char move_delay_count, char direction) {
-    cursor_movable = 0;
-    cursor_move_delay_count = move_delay_count;
+    event_enabled = 0;
+    event_delay_count = move_delay_count;
     switch(direction) {
         case 1:
             cursor_pos ^= 0x40;
@@ -2974,15 +3015,22 @@ void play_tone(unsigned int tone_period, char duration_8ms) {
     CCPR2 = TMR1+tone_period;
     CCP2IF = 0;
     CCP2IE = 1;
-    cursor_move_delay_count = duration_8ms;
-    cursor_movable = 0;
-    while(cursor_movable == 0);
+    event_delay_count = duration_8ms;
+    event_enabled = 0;
+    while(event_enabled == 0);
     CCP2IE = 0;
 }
 
 
 
 void time_init(void) {
+    event_delay_count = 255;
+    event_enabled = 1;
+    PR2 = 250;
+    TMR2IF = 0;
+    TMR2IE = 1;
+    T2CON = 0x56;
+
     CCP1M3 = 1;
     CCP1M2 = 0;
     CCP1M1 = 1;
@@ -3054,9 +3102,9 @@ void __attribute__((picinterrupt(("")))) interrupt_handler(void) {
         ADIF = 0;
     }
     if(TMR2IF) {
-        cursor_move_delay_count--;
-        if(cursor_move_delay_count == 0) {
-            cursor_movable = 1;
+        event_delay_count--;
+        if(event_delay_count == 0) {
+            event_enabled = 1;
         }
         TMR2IF = 0;
     }

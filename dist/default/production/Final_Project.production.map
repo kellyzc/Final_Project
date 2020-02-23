@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\Final_Project.production.sym \
   --cmf=dist/default/production\Final_Project.production.cmf -z -Q16F887 \
-  -oC:\Users\kellyzc\AppData\Local\Temp\s16f8.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\kellyzc\AppData\Local\Temp\s10tk.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Final_Project.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\kellyzc\AppData\Local\Temp\s16f8.o \
+  -DENTRY=2 -k C:\Users\kellyzc\AppData\Local\Temp\s10tk.o \
   dist/default/production\Final_Project.production.o 
 
 Object code version is 3.11
@@ -28,109 +28,111 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\kellyzc\AppData\Local\Temp\s16f8.o
+C:\Users\kellyzc\AppData\Local\Temp\s10tk.o
                 end_init                              E        E        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2     400E       0
 dist/default/production\Final_Project.production.o
-                cinit                                11       11       37        8       0
+                cinit                                11       11       44        8       0
                 intentry                              4        4        A        8       0
-                text31                              698      698       94      B9A       0
-                text30                              DE0      DE0       5B     1BC0       0
-                text29                              B1E      B1E       19     163C       0
-                text28                              4F2      4F2        E        8       0
-                text27                              CED      CED       4F     19DA       0
-                text26                              B37      B37       1A     166E       0
-                text25                              B51      B51       1E     16A2       0
-                text24                              BBC      BBC       2B     1778       0
-                text23                              B6F      B6F       26     16DE       0
-                text22                              7BF      7BF       34      B9A       0
-                text21                               48       48      1D7        8       0
-                text20                              C15      C15       45     182A       0
-                text19                              7F3      7F3        C      B9A       0
-                text18                              AD1      AD1       12     15A2       0
-                text17                              D3C      D3C       52     1A78       0
-                text16                              EFA      EFA       7C     1DF4       0
-                text15                              489      489       69        8       0
-                text14                              E3B      E3B       5F     1C76       0
-                text13                              B08      B08       16     1610       0
-                text12                              E9A      E9A       60     1D34       0
-                text11                              B95      B95       27     172A       0
-                text10                              ABD      ABD        A     157A       0
-                text9                               D8E      D8E       52     1B1C       0
-                text8                               AE3      AE3       12     15C6       0
-                text7                               C5A      C5A       45     18B4       0
-                text6                               5CD      5CD       CB      B9A       0
-                text5                               F76      F76       8A     1EEC       0
-                text4                               37A      37A      10F        8       0
-                text3                               BE7      BE7       2E     17CE       0
-                text2                               72C      72C       93      B9A       0
-                text1                               21F      21F      15B        8       0
-                maintext                            C9F      C9F       4E     193E       0
-                cstackBANK0                          20       20       37       20       1
+                text31                              ED8      ED8       94     1DB0       0
+                text30                              94E      94E        C     129C       0
+                text29                              968      968       12     12D0       0
+                text28                              98D      98D       19     131A       0
+                text27                              95A      95A        E     12B4       0
+                text26                              B99      B99       4F     1732       0
+                text25                              9A6      9A6       1A     134C       0
+                text24                              9C0      9C0       1E     1380       0
+                text23                              C3A      C3A       55     1874       0
+                text22                              F6C      F6C       94     1ED8       0
+                text21                              D49      D49       69     1A92       0
+                text20                              CEA      CEA       5F     19D4       0
+                text19                              AC1      AC1       45     1582       0
+                text18                              C8F      C8F       5B     191E       0
+                text17                              A5D      A5D       30     14BA       0
+                text16                              7DA      7DA       26      E0C       0
+                text15                              A8D      A8D       34     151A       0
+                text14                               55       55      1E8        8       0
+                text13                              B4B      B4B       4E     1696       0
+                text12                              9DE      9DE       27     13BC       0
+                text11                              944      944        A     1288       0
+                text10                              BE8      BE8       52     17D0       0
+                text9                               5EE      5EE       12        8       0
+                text8                               B06      B06       45     160C       0
+                text7                               706      706       D4      E0C       0
+                text6                               DB2      DB2       93     1B64       0
+                text5                               A05      A05       2A     140A       0
+                text4                               4DF      4DF      10F        8       0
+                text3                               A2F      A2F       2E     145E       0
+                text2                               E45      E45       93     1C8A       0
+                text1                               23D      23D      15B        8       0
+                maintext                            398      398      147        8       0
+                cstackBANK0                          20       20       3B       20       1
                 cstackCOMMON                         70       70        6       70       1
-                cstackBANK1                          E0       E0        1       A0       1
-                clrtext                             AB5      AB5        8     156A       0
-                inittext                            AF5      AF5       13     15EA       0
+                clrtext                             93C      93C        8     1278       0
+                inittext                            97A      97A       13     12F4       0
                 bssBANK3                            190      190       20      190       1
+                dataBANK1                            E0       E0        6       A0       1
                 bssBANK1                             A0       A0       40       A0       1
-                dataBANK0                            66       66        A       20       1
-                bssBANK0                             57       57        F       20       1
+                dataBANK0                            6A       6A        4       20       1
+                bssBANK0                             5B       5B        F       20       1
                 dataCOMMON                           7B       7B        1       70       1
                 bssCOMMON                            76       76        5       70       1
-                strings                             500      500       CD      A00       0
-                idataBANK0                          AC7      AC7        A     158E       0
-                idataCOMMON                         7FF      7FF        1      B9A       0
+                stringtext                          600      600      106        C       0
+                idataBANK1                          936      936        6     126C       0
+                idataBANK0                          932      932        4     1264       0
+                idataCOMMON                           3        3        1        0       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 end_init                              E        E        3         0
-                cinit                                11       11       37         0
+                cinit                                11       11       44         0
                 intentry                              4        4        A         0
                 reset_vec                             0        0        3         0
-                text31                              698      698       94         0
-                text30                              DE0      DE0       5B         0
-                text29                              B1E      B1E       19         0
-                text28                              4F2      4F2        E         0
-                text27                              CED      CED       4F         0
-                text26                              B37      B37       1A         0
-                text25                              B51      B51       1E         0
-                text24                              BBC      BBC       2B         0
-                text23                              B6F      B6F       26         0
-                text22                              7BF      7BF       34         0
-                text21                               48       48      1D7         0
-                text20                              C15      C15       45         0
-                text19                              7F3      7F3        C         0
-                text18                              AD1      AD1       12         0
-                text17                              D3C      D3C       52         0
-                text16                              EFA      EFA       7C         0
-                text15                              489      489       69         0
-                text14                              E3B      E3B       5F         0
-                text13                              B08      B08       16         0
-                text12                              E9A      E9A       60         0
-                text11                              B95      B95       27         0
-                text10                              ABD      ABD        A         0
-                text9                               D8E      D8E       52         0
-                text8                               AE3      AE3       12         0
-                text7                               C5A      C5A       45         0
-                text6                               5CD      5CD       CB         0
-                text5                               F76      F76       8A         0
-                text4                               37A      37A      10F         0
-                text3                               BE7      BE7       2E         0
-                text2                               72C      72C       93         0
-                text1                               21F      21F      15B         0
-                maintext                            C9F      C9F       4E         0
-                clrtext                             AB5      AB5        8         0
-                inittext                            AF5      AF5       13         0
-                idataBANK0                          AC7      AC7        A         0
-                idataCOMMON                         7FF      7FF        1         0
+                text31                              ED8      ED8       94         0
+                text30                              94E      94E        C         0
+                text29                              968      968       12         0
+                text28                              98D      98D       19         0
+                text27                              95A      95A        E         0
+                text26                              B99      B99       4F         0
+                text25                              9A6      9A6       1A         0
+                text24                              9C0      9C0       1E         0
+                text23                              C3A      C3A       55         0
+                text22                              F6C      F6C       94         0
+                text21                              D49      D49       69         0
+                text20                              CEA      CEA       5F         0
+                text19                              AC1      AC1       45         0
+                text18                              C8F      C8F       5B         0
+                text17                              A5D      A5D       30         0
+                text16                              7DA      7DA       26         0
+                text15                              A8D      A8D       34         0
+                text14                               55       55      1E8         0
+                text13                              B4B      B4B       4E         0
+                text12                              9DE      9DE       27         0
+                text11                              944      944        A         0
+                text10                              BE8      BE8       52         0
+                text9                               5EE      5EE       12         0
+                text8                               B06      B06       45         0
+                text7                               706      706       D4         0
+                text6                               DB2      DB2       93         0
+                text5                               A05      A05       2A         0
+                text4                               4DF      4DF      10F         0
+                text3                               A2F      A2F       2E         0
+                text2                               E45      E45       93         0
+                text1                               23D      23D      15B         0
+                maintext                            398      398      147         0
+                clrtext                             93C      93C        8         0
+                inittext                            97A      97A       13         0
+                idataBANK1                          936      936        6         0
+                idataBANK0                          932      932        4         0
+                idataCOMMON                           3        3        1         0
 
         CLASS   STRCODE        
+                stringtext                          600      600      106         0
 
         CLASS   STRING         
-                strings                             500      500       CD         0
 
         CLASS   CONST          
 
@@ -142,12 +144,12 @@ TOTAL           Name                               Link     Load   Length     Sp
                 bssCOMMON                            76       76        5         1
 
         CLASS   BANK0          
-                cstackBANK0                          20       20       37         1
-                dataBANK0                            66       66        A         1
-                bssBANK0                             57       57        F         1
+                cstackBANK0                          20       20       3B         1
+                dataBANK0                            6A       6A        4         1
+                bssBANK0                             5B       5B        F         1
 
         CLASS   BANK1          
-                cstackBANK1                          E0       E0        1         1
+                dataBANK1                            E0       E0        6         1
                 bssBANK1                             A0       A0       40         1
 
         CLASS   BANK2          
@@ -179,61 +181,64 @@ TOTAL           Name                               Link     Load   Length     Sp
 
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
-                reset_vec                      000000  000003  000003         0       0  CODE        2
-                intentry                       000004  0004FC  000500         8       0  CODE        2
-                cstackBANK0                    000020  000050  000070        20       1  BANK0       1
+                reset_vec                      000000  000004  000004         0       0  CODE        2
+                intentry                       000004  0005FC  000600         8       0  CODE        2
+                cstackBANK0                    000020  00004E  00006E        20       1  BANK0       1
                 cstackCOMMON                   000070  00000C  00007C        70       1  COMMON      1
-                bssBANK1                       0000A0  000041  0000E1        A0       1  BANK1       1
+                bssBANK1                       0000A0  000046  0000E6        A0       1  BANK1       1
                 bssBANK3                       000190  000020  0001B0       190       1  BANK3       1
-                strings                        000500  0000CD  0005CD       A00       0  STRING      2
-                text6                          0005CD  000233  000800       B9A       0  CODE        2
-                clrtext                        000AB5  000008  000ABD      156A       0  CODE        2
-                text10                         000ABD  00000A  000AC7      157A       0  CODE        2
-                idataBANK0                     000AC7  00000A  000AD1      158E       0  CODE        2
-                text18                         000AD1  000012  000AE3      15A2       0  CODE        2
-                text8                          000AE3  000012  000AF5      15C6       0  CODE        2
-                inittext                       000AF5  000013  000B08      15EA       0  CODE        2
-                text13                         000B08  000016  000B1E      1610       0  CODE        2
-                text29                         000B1E  000019  000B37      163C       0  CODE        2
-                text26                         000B37  00001A  000B51      166E       0  CODE        2
-                text25                         000B51  00001E  000B6F      16A2       0  CODE        2
-                text23                         000B6F  000026  000B95      16DE       0  CODE        2
-                text11                         000B95  000027  000BBC      172A       0  CODE        2
-                text24                         000BBC  00002B  000BE7      1778       0  CODE        2
-                text3                          000BE7  00002E  000C15      17CE       0  CODE        2
-                text20                         000C15  000045  000C5A      182A       0  CODE        2
-                text7                          000C5A  000045  000C9F      18B4       0  CODE        2
-                maintext                       000C9F  00004E  000CED      193E       0  CODE        2
-                text27                         000CED  00004F  000D3C      19DA       0  CODE        2
-                text17                         000D3C  000052  000D8E      1A78       0  CODE        2
-                text9                          000D8E  000052  000DE0      1B1C       0  CODE        2
-                text30                         000DE0  00005B  000E3B      1BC0       0  CODE        2
-                text14                         000E3B  00005F  000E9A      1C76       0  CODE        2
-                text12                         000E9A  000060  000EFA      1D34       0  CODE        2
-                text16                         000EFA  00007C  000F76      1DF4       0  CODE        2
-                text5                          000F76  00008A  001000      1EEC       0  CODE        2
+                stringtext                     000600  000106  000706         C       0  STRCODE     2
+                text7                          000706  0000FA  000800       E0C       0  CODE        2
+                idataBANK0                     000932  000004  000936      1264       0  CODE        2
+                idataBANK1                     000936  000006  00093C      126C       0  CODE        2
+                clrtext                        00093C  000008  000944      1278       0  CODE        2
+                text11                         000944  00000A  00094E      1288       0  CODE        2
+                text30                         00094E  00000C  00095A      129C       0  CODE        2
+                text27                         00095A  00000E  000968      12B4       0  CODE        2
+                text29                         000968  000012  00097A      12D0       0  CODE        2
+                inittext                       00097A  000013  00098D      12F4       0  CODE        2
+                text28                         00098D  000019  0009A6      131A       0  CODE        2
+                text25                         0009A6  00001A  0009C0      134C       0  CODE        2
+                text24                         0009C0  00001E  0009DE      1380       0  CODE        2
+                text12                         0009DE  000027  000A05      13BC       0  CODE        2
+                text5                          000A05  00002A  000A2F      140A       0  CODE        2
+                text3                          000A2F  00002E  000A5D      145E       0  CODE        2
+                text17                         000A5D  000030  000A8D      14BA       0  CODE        2
+                text15                         000A8D  000034  000AC1      151A       0  CODE        2
+                text19                         000AC1  000045  000B06      1582       0  CODE        2
+                text8                          000B06  000045  000B4B      160C       0  CODE        2
+                text13                         000B4B  00004E  000B99      1696       0  CODE        2
+                text26                         000B99  00004F  000BE8      1732       0  CODE        2
+                text10                         000BE8  000052  000C3A      17D0       0  CODE        2
+                text23                         000C3A  000055  000C8F      1874       0  CODE        2
+                text18                         000C8F  00005B  000CEA      191E       0  CODE        2
+                text20                         000CEA  00005F  000D49      19D4       0  CODE        2
+                text21                         000D49  000069  000DB2      1A92       0  CODE        2
+                text6                          000DB2  000093  000E45      1B64       0  CODE        2
+                text2                          000E45  000093  000ED8      1C8A       0  CODE        2
+                text31                         000ED8  000094  000F6C      1DB0       0  CODE        2
+                text22                         000F6C  000094  001000      1ED8       0  CODE        2
                 config                         002007  000002  002009      400E       0  CONFIG      2
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK1            00E1-00EF              F           1
+        BANK0            006E-006F              2           1
+        BANK1            00E6-00EF              A           1
         BANK2            0110-016F             60           1
         BANK3            01B0-01EF             40           1
-        CODE             0003-0003              1           2
-                         0800-0AB4            2B5
+        CODE             0800-0931            132           2
                          1000-1FFF            800
         COMMON           007C-007D              2           1
-        CONST            0003-0003              1           2
-                         0800-0AB4            100
+        CONST            0800-0931            100           2
                          1000-1FFF            100
         EEDATA           2100-21FF            100           2
-        ENTRY            0003-0003              1           2
-                         0800-0AB4            100
+        ENTRY            0800-0931            100           2
                          1000-1FFF            100
         IDLOC            2000-2003              4           2
-        RAM              00E1-00EF              F           1
+        RAM              006E-006F              2           1
+                         00E6-00EF              A
                          0110-016F             60
                          01B0-01EF             40
         SFR0             0000-001F             20           1
@@ -241,430 +246,436 @@ UNUSED ADDRESS RANGES
         SFR2             0100-010F             10           1
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
-        STRCODE          0003-0003              1           2
-                         0800-0AB4            2B5
+        STRCODE          0800-0931            132           2
                          1000-1FFF           1000
-        STRING           0003-0003              1           2
-                         0800-0AB4            100
+        STRING           0800-0931            100           2
                          1000-1FFF            100
 
                                   Symbol Table
 
-?___awdiv                             cstackBANK0  0027
-?___awmod                             cstackBANK0  0020
-Delay20us@next                        cstackBANK0  0021
-DelayMs@millis                        cstackBANK0  0020
-_ADCON0                               (abs)        001F
-_ADCON1                               (abs)        009F
-_ADIE                                 (abs)        0466
-_ADIF                                 (abs)        0066
-_ADRESH                               (abs)        001E
-_ADRESL                               (abs)        009E
-_ANSEL                                (abs)        0188
-_ANSELH                               (abs)        0189
-_CCP1IF                               (abs)        0062
-_CCP1M0                               (abs)        00B8
-_CCP1M1                               (abs)        00B9
-_CCP1M2                               (abs)        00BA
-_CCP1M3                               (abs)        00BB
-_CCP2IE                               (abs)        0468
-_CCP2IF                               (abs)        0068
-_CCP2M0                               (abs)        00E8
-_CCP2M1                               (abs)        00E9
-_CCP2M2                               (abs)        00EA
-_CCP2M3                               (abs)        00EB
-_CCPR1                                (abs)        0015
-_CCPR2                                (abs)        001B
-_Delay20us                            text28       04F2
-_DelayMs                              text29       0B1E
-_GIE                                  (abs)        005F
-_GO                                   (abs)        00F9
-_OPTION_REG                           (abs)        0081
-_PEIE                                 (abs)        005E
-_PORTA                                (abs)        0005
-_PORTB                                (abs)        0006
-_PORTC                                (abs)        0007
-_PORTD                                (abs)        0008
-_PR2                                  (abs)        0092
-_RB2                                  (abs)        0032
-_RB5                                  (abs)        0035
-_RC5                                  (abs)        003D
-_RC6                                  (abs)        003E
-_RC7                                  (abs)        003F
-_SCS                                  (abs)        0478
-_T0IF                                 (abs)        005A
-_T1CKPS0                              (abs)        0084
-_T1CKPS1                              (abs)        0085
-_T2CON                                (abs)        0012
-_TMR0                                 (abs)        0001
-_TMR1                                 (abs)        000E
-_TMR1CS                               (abs)        0081
-_TMR1GE                               (abs)        0086
-_TMR1ON                               (abs)        0080
-_TMR2                                 (abs)        0011
-_TMR2IE                               (abs)        0461
-_TMR2IF                               (abs)        0061
-_TRISA                                (abs)        0085
-_TRISB                                (abs)        0086
-_TRISC                                (abs)        0087
-_TRISD                                (abs)        0088
-_WPUB                                 (abs)        0095
-__CFG_BOR4V$BOR21V                    (abs)        0000
-__CFG_BOREN$OFF                       (abs)        0000
-__CFG_CP$OFF                          (abs)        0000
-__CFG_CPD$OFF                         (abs)        0000
-__CFG_FCMEN$OFF                       (abs)        0000
-__CFG_FOSC$HS                         (abs)        0000
-__CFG_IESO$OFF                        (abs)        0000
-__CFG_LVP$OFF                         (abs)        0000
-__CFG_MCLRE$ON                        (abs)        0000
-__CFG_PWRTE$OFF                       (abs)        0000
-__CFG_WDTE$OFF                        (abs)        0000
-__CFG_WRT$OFF                         (abs)        0000
-__Habs1                               abs1         0000
-__Hbank0                              bank0        0000
-__Hbank1                              bank1        0000
-__Hbank2                              bank2        0000
-__Hbank3                              bank3        0000
-__HbssBANK0                           bssBANK0     0000
-__HbssBANK1                           bssBANK1     0000
-__HbssBANK3                           bssBANK3     0000
-__HbssCOMMON                          bssCOMMON    0000
-__Hcinit                              cinit        0048
-__Hclrtext                            clrtext      0000
-__Hcode                               code         0000
-__Hcommon                             common       0000
-__Hconfig                             config       2009
-__HcstackBANK0                        cstackBANK0  0000
-__HcstackBANK1                        cstackBANK1  0000
-__HcstackCOMMON                       cstackCOMMON 0000
-__HdataBANK0                          dataBANK0    0000
-__HdataCOMMON                         dataCOMMON   0000
-__Heeprom_data                        eeprom_data  0000
-__Hend_init                           end_init     0011
-__Hfunctab                            functab      0000
-__HidataBANK0                         idataBANK0   0000
-__HidataCOMMON                        idataCOMMON  0000
-__Hidloc                              idloc        0000
-__Hinit                               init         000E
-__Hinittext                           inittext     0000
-__Hintentry                           intentry     000E
-__Hmaintext                           maintext     0000
-__Hpowerup                            powerup      0000
-__Hram                                ram          0000
-__Hreset_vec                          reset_vec    0003
-__Hsfr0                               sfr0         0000
-__Hsfr1                               sfr1         0000
-__Hsfr2                               sfr2         0000
-__Hsfr3                               sfr3         0000
-__Hspace_0                            (abs)        2009
-__Hspace_1                            (abs)        01B0
-__Hspace_2                            (abs)        0000
-__Hspace_3                            (abs)        0000
-__Hstack                              stack        0000
-__Hstrings                            strings      0000
-__Htext                               text         0000
-__Labs1                               abs1         0000
-__Lbank0                              bank0        0000
-__Lbank1                              bank1        0000
-__Lbank2                              bank2        0000
-__Lbank3                              bank3        0000
-__LbssBANK0                           bssBANK0     0000
-__LbssBANK1                           bssBANK1     0000
-__LbssBANK3                           bssBANK3     0000
-__LbssCOMMON                          bssCOMMON    0000
-__Lcinit                              cinit        0011
-__Lclrtext                            clrtext      0000
-__Lcode                               code         0000
-__Lcommon                             common       0000
-__Lconfig                             config       2007
-__LcstackBANK0                        cstackBANK0  0000
-__LcstackBANK1                        cstackBANK1  0000
-__LcstackCOMMON                       cstackCOMMON 0000
-__LdataBANK0                          dataBANK0    0000
-__LdataCOMMON                         dataCOMMON   0000
-__Leeprom_data                        eeprom_data  0000
-__Lend_init                           end_init     000E
-__Lfunctab                            functab      0000
-__LidataBANK0                         idataBANK0   0000
-__LidataCOMMON                        idataCOMMON  0000
-__Lidloc                              idloc        0000
-__Linit                               init         000E
-__Linittext                           inittext     0000
-__Lintentry                           intentry     0004
-__Lmaintext                           maintext     0000
-__Lpowerup                            powerup      0000
-__Lram                                ram          0000
-__Lreset_vec                          reset_vec    0000
-__Lsfr0                               sfr0         0000
-__Lsfr1                               sfr1         0000
-__Lsfr2                               sfr2         0000
-__Lsfr3                               sfr3         0000
-__Lspace_0                            (abs)        0000
-__Lspace_1                            (abs)        0000
-__Lspace_2                            (abs)        0000
-__Lspace_3                            (abs)        0000
-__Lstack                              stack        0000
-__Lstrings                            strings      0000
-__Ltext                               text         0000
-__S0                                  (abs)        2009
-__S1                                  (abs)        01B0
-__S2                                  (abs)        0000
-__S3                                  (abs)        0000
-___awdiv                              text15       0489
-___awdiv@counter                      cstackBANK0  002C
-___awdiv@dividend                     cstackBANK0  0029
-___awdiv@divisor                      cstackBANK0  0027
-___awdiv@quotient                     cstackBANK0  002E
-___awdiv@sign                         cstackBANK0  002D
-___awmod                              text30       0DE0
-___awmod@counter                      cstackBANK0  0025
-___awmod@dividend                     cstackBANK0  0022
-___awmod@divisor                      cstackBANK0  0020
-___awmod@sign                         cstackBANK0  0026
-___int_sp                             stack        0000
-___latbits                            (abs)        0002
-___sp                                 stack        0000
-___stackhi                            (abs)        0000
-___stacklo                            (abs)        0000
-__end_of_Delay20us                    text28       0500
-__end_of_DelayMs                      text29       0B37
-__end_of___awdiv                      text15       04F2
-__end_of___awmod                      text30       0E3B
-__end_of__initialization              cinit        0044
-__end_of__stringtab                   strings      0506
-__end_of_check_for_match              text4        0489
-__end_of_display_gameboard            text7        0C9F
-__end_of_display_scoreboard           text6        0698
-__end_of_end_screen                   text21       021F
-__end_of_game_end                     text20       0C5A
-__end_of_gameboard_init               text12       0EFA
-__end_of_get_current_char             text18       0AE3
-__end_of_get_cursor_index             text19       07FF
-__end_of_interrupt_handler            text31       072C
-__end_of_joystick_init                text11       0BBC
-__end_of_lcd_clear                    text26       0B51
-__end_of_lcd_goto                     text25       0B6F
-__end_of_lcd_init                     text9        0DE0
-__end_of_lcd_putch                    text8        0AF5
-__end_of_lcd_puts                     text24       0BE7
-__end_of_lcd_set_custom_char          text17       0D8E
-__end_of_lcd_write                    text27       0D3C
-__end_of_main                         maintext     0CED
-__end_of_make_custom_chars            text16       0F76
-__end_of_play_tone                    text23       0B95
-__end_of_randomize_gameboard          text14       0E9A
-__end_of_startup                      text5        1000
-__end_of_time_init                    text13       0B1E
-__end_of_tmr0_init                    text10       0AC7
-__end_of_toggle_cursor                text3        0C15
-__end_of_turn_on_led                  text22       07F3
-__end_of_update_cursor                text2        07BF
-__end_of_update_gameboard_from_input  text1        037A
-__end_ofmake_custom_chars@PIC         strings      050E
-__end_ofmake_custom_chars@RH          strings      0516
-__end_ofmake_custom_chars@club        strings      0526
-__end_ofmake_custom_chars@diamond     strings      053E
-__end_ofmake_custom_chars@heart       strings      0536
-__end_ofmake_custom_chars@skull       strings      051E
-__end_ofmake_custom_chars@smile       strings      0546
-__end_ofmake_custom_chars@spade       strings      052E
-__initialization                      cinit        0011
-__pbssBANK0                           bssBANK0     0057
-__pbssBANK1                           bssBANK1     00A0
-__pbssBANK3                           bssBANK3     0190
-__pbssCOMMON                          bssCOMMON    0076
-__pcstackBANK0                        cstackBANK0  0020
-__pcstackBANK1                        cstackBANK1  00E0
-__pcstackCOMMON                       cstackCOMMON 0070
-__pdataBANK0                          dataBANK0    0066
-__pdataCOMMON                         dataCOMMON   007B
-__pidataBANK0                         idataBANK0   0AC7
-__pidataCOMMON                        idataCOMMON  07FF
-__pintentry                           intentry     0004
-__pmaintext                           maintext     0C9F
-__pstrings                            strings      0500
-__ptext1                              text1        021F
-__ptext10                             text10       0ABD
-__ptext11                             text11       0B95
-__ptext12                             text12       0E9A
-__ptext13                             text13       0B08
-__ptext14                             text14       0E3B
-__ptext15                             text15       0489
-__ptext16                             text16       0EFA
-__ptext17                             text17       0D3C
-__ptext18                             text18       0AD1
-__ptext19                             text19       07F3
-__ptext2                              text2        072C
-__ptext20                             text20       0C15
-__ptext21                             text21       0048
-__ptext22                             text22       07BF
-__ptext23                             text23       0B6F
-__ptext24                             text24       0BBC
-__ptext25                             text25       0B51
-__ptext26                             text26       0B37
-__ptext27                             text27       0CED
-__ptext28                             text28       04F2
-__ptext29                             text29       0B1E
-__ptext3                              text3        0BE7
-__ptext30                             text30       0DE0
-__ptext31                             text31       0698
-__ptext4                              text4        037A
-__ptext5                              text5        0F76
-__ptext6                              text6        05CD
-__ptext7                              text7        0C5A
-__ptext8                              text8        0AE3
-__ptext9                              text9        0D8E
-__size_of_Delay20us                   (abs)        0000
-__size_of_DelayMs                     (abs)        0000
-__size_of___awdiv                     (abs)        0000
-__size_of___awmod                     (abs)        0000
-__size_of_check_for_match             (abs)        0000
-__size_of_display_gameboard           (abs)        0000
-__size_of_display_scoreboard          (abs)        0000
-__size_of_end_screen                  (abs)        0000
-__size_of_game_end                    (abs)        0000
-__size_of_gameboard_init              (abs)        0000
-__size_of_get_current_char            (abs)        0000
-__size_of_get_cursor_index            (abs)        0000
-__size_of_interrupt_handler           (abs)        0000
-__size_of_joystick_init               (abs)        0000
-__size_of_lcd_clear                   (abs)        0000
-__size_of_lcd_goto                    (abs)        0000
-__size_of_lcd_init                    (abs)        0000
-__size_of_lcd_putch                   (abs)        0000
-__size_of_lcd_puts                    (abs)        0000
-__size_of_lcd_set_custom_char         (abs)        0000
-__size_of_lcd_write                   (abs)        0000
-__size_of_main                        (abs)        0000
-__size_of_make_custom_chars           (abs)        0000
-__size_of_play_tone                   (abs)        0000
-__size_of_randomize_gameboard         (abs)        0000
-__size_of_startup                     (abs)        0000
-__size_of_time_init                   (abs)        0000
-__size_of_tmr0_init                   (abs)        0000
-__size_of_toggle_cursor               (abs)        0000
-__size_of_turn_on_led                 (abs)        0000
-__size_of_update_cursor               (abs)        0000
-__size_of_update_gameboard_from_input (abs)        0000
-__stringbase                          strings      0505
-__stringtab                           strings      0500
-_board                                bssBANK1     00C0
-_check_for_match                      text4        037A
-_current_char                         bssBANK0     0064
-_current_player                       bssBANK0     005C
-_cursor_movable                       bssBANK0     0061
-_cursor_move_delay_count              bssCOMMON    007A
-_cursor_pos                           bssBANK0     0065
-_cursor_solid                         bssBANK0     0063
-_delay_loops                          bssBANK0     0062
-_display_gameboard                    text7        0C5A
-_display_scoreboard                   text6        05CD
-_end_screen                           text21       0048
-_game_end                             text20       0C15
-_game_over                            bssBANK0     005B
-_gameboard_init                       text12       0E9A
-_get_current_char                     text18       0AD1
-_get_cursor_index                     text19       07F3
-_interrupt_handler                    text31       0698
-_joystick_init                        text11       0B95
-_joystick_pressed                     bssBANK0     005D
-_joystick_x_pos                       bssBANK0     0059
-_joystick_y_pos                       bssBANK0     0057
-_lcd_clear                            text26       0B37
-_lcd_goto                             text25       0B51
-_lcd_init                             text9        0D8E
-_lcd_putch                            text8        0AE3
-_lcd_puts                             text24       0BBC
-_lcd_set_custom_char                  text17       0D3C
-_lcd_write                            text27       0CED
-_main                                 maintext     0C9F
-_make_custom_chars                    text16       0EFA
-_nRBPU                                (abs)        040F
-_p1_score                             bssBANK0     0060
-_p2_score                             bssBANK0     005F
-_play_tone                            text23       0B6F
-_randomize_gameboard                  text14       0E3B
-_selected_tile                        bssBANK0     005E
-_startup                              text5        0F76
-_time_init                            text13       0B08
-_tmr0_init                            text10       0ABD
-_toggle_cursor                        text3        0BE7
-_tone_delay                           bssCOMMON    0076
-_turn_on_led                          text22       07BF
-_update_cursor                        text2        072C
-_update_gameboard_from_input          text1        021F
-_visible                              bssBANK1     00A0
-btemp                                 (abs)        007E
-check_for_match@player                cstackBANK0  0038
-clear_ram0                            clrtext      0AB5
-display_gameboard@i                   cstackBANK0  0035
-end_of_initialization                 cinit        0044
-end_screen@F1342                      dataBANK0    0066
-end_screen@color_index                cstackBANK0  0038
-end_screen@colors                     cstackBANK0  0030
-end_screen@first_row                  cstackBANK0  0036
-end_screen@i                          cstackBANK0  0037
-end_screen@second_row                 cstackBANK0  002C
-gameboard_init@i                      cstackBANK0  0056
-get_cursor_index@cursor               cstackBANK0  0020
-init_fetch0                           inittext     0AF5
-init_ram0                             inittext     0AF9
-interrupt_function                    intentry     0004
-interrupt_handler@current_analog      cstackCOMMON 0075
-intlevel0                             functab      0000
-intlevel1                             functab      0000
-intlevel2                             functab      0000
-intlevel3                             functab      0000
-intlevel4                             functab      0000
-intlevel5                             functab      0000
-lcd_clear@port                        cstackBANK0  0028
-lcd_goto@port                         cstackBANK0  0028
-lcd_goto@position                     cstackBANK0  002B
-lcd_init@port                         cstackBANK0  002A
-lcd_putch@character                   cstackBANK0  0033
-lcd_putch@port                        cstackBANK0  0030
-lcd_puts@port                         cstackBANK0  0028
-lcd_puts@string                       cstackBANK0  002B
-lcd_set_custom_char@cg_address        cstackBANK0  0028
-lcd_set_custom_char@data              cstackBANK0  002E
-lcd_set_custom_char@port              cstackBANK0  0029
-lcd_set_custom_char@row               cstackBANK0  002D
-lcd_write@CmdChar                     cstackBANK0  0022
-lcd_write@mode                        cstackBANK0  0027
-lcd_write@port                        cstackBANK0  0023
-make_custom_chars@PIC                 strings      0506
-make_custom_chars@RH                  strings      050E
-make_custom_chars@club                strings      051E
-make_custom_chars@diamond             strings      0536
-make_custom_chars@heart               strings      052E
-make_custom_chars@skull               strings      0516
-make_custom_chars@smile               strings      053E
-make_custom_chars@spade               strings      0526
-play_tone@duration_8ms                cstackBANK0  0022
-play_tone@tone_period                 cstackBANK0  0020
-randomize_gameboard@current           cstackBANK0  0053
-randomize_gameboard@random            cstackBANK0  0054
-randomize_gameboard@used              cstackBANK0  0033
-reset_vec                             reset_vec    0000
-saved_w                               (abs)        007E
-start                                 init         000E
-start_initialization                  cinit        0011
-turn_on_led@color                     cstackBANK0  0022
-update_cursor@direction               cstackBANK0  0034
-update_cursor@move_delay_count        cstackBANK0  0037
-wtemp0                                (abs)        007E
+?___awdiv                              cstackBANK0  0027
+?___awmod                              cstackBANK0  0020
+Delay20us@next                         cstackBANK0  0021
+DelayMs@millis                         cstackBANK0  0020
+_ADCON0                                (abs)        001F
+_ADCON1                                (abs)        009F
+_ADIE                                  (abs)        0466
+_ADIF                                  (abs)        0066
+_ADRESH                                (abs)        001E
+_ADRESL                                (abs)        009E
+_ANSEL                                 (abs)        0188
+_ANSELH                                (abs)        0189
+_CCP1IF                                (abs)        0062
+_CCP1M0                                (abs)        00B8
+_CCP1M1                                (abs)        00B9
+_CCP1M2                                (abs)        00BA
+_CCP1M3                                (abs)        00BB
+_CCP2IE                                (abs)        0468
+_CCP2IF                                (abs)        0068
+_CCP2M0                                (abs)        00E8
+_CCP2M1                                (abs)        00E9
+_CCP2M2                                (abs)        00EA
+_CCP2M3                                (abs)        00EB
+_CCPR1                                 (abs)        0015
+_CCPR2                                 (abs)        001B
+_Delay20us                             text27       095A
+_DelayMs                               text28       098D
+_GIE                                   (abs)        005F
+_GO                                    (abs)        00F9
+_OPTION_REG                            (abs)        0081
+_PEIE                                  (abs)        005E
+_PORTA                                 (abs)        0005
+_PORTB                                 (abs)        0006
+_PORTC                                 (abs)        0007
+_PORTD                                 (abs)        0008
+_PR2                                   (abs)        0092
+_RB2                                   (abs)        0032
+_RB5                                   (abs)        0035
+_RC5                                   (abs)        003D
+_RC6                                   (abs)        003E
+_RC7                                   (abs)        003F
+_SCS                                   (abs)        0478
+_T0IF                                  (abs)        005A
+_T1CKPS0                               (abs)        0084
+_T1CKPS1                               (abs)        0085
+_T2CON                                 (abs)        0012
+_TMR0                                  (abs)        0001
+_TMR1                                  (abs)        000E
+_TMR1CS                                (abs)        0081
+_TMR1GE                                (abs)        0086
+_TMR1ON                                (abs)        0080
+_TMR2                                  (abs)        0011
+_TMR2IE                                (abs)        0461
+_TMR2IF                                (abs)        0061
+_TRISA                                 (abs)        0085
+_TRISB                                 (abs)        0086
+_TRISC                                 (abs)        0087
+_TRISD                                 (abs)        0088
+_WPUB                                  (abs)        0095
+__CFG_BOR4V$BOR21V                     (abs)        0000
+__CFG_BOREN$OFF                        (abs)        0000
+__CFG_CP$OFF                           (abs)        0000
+__CFG_CPD$OFF                          (abs)        0000
+__CFG_FCMEN$OFF                        (abs)        0000
+__CFG_FOSC$HS                          (abs)        0000
+__CFG_IESO$OFF                         (abs)        0000
+__CFG_LVP$OFF                          (abs)        0000
+__CFG_MCLRE$ON                         (abs)        0000
+__CFG_PWRTE$OFF                        (abs)        0000
+__CFG_WDTE$OFF                         (abs)        0000
+__CFG_WRT$OFF                          (abs)        0000
+__Habs1                                abs1         0000
+__Hbank0                               bank0        0000
+__Hbank1                               bank1        0000
+__Hbank2                               bank2        0000
+__Hbank3                               bank3        0000
+__HbssBANK0                            bssBANK0     0000
+__HbssBANK1                            bssBANK1     0000
+__HbssBANK3                            bssBANK3     0000
+__HbssCOMMON                           bssCOMMON    0000
+__Hcinit                               cinit        0055
+__Hclrtext                             clrtext      0000
+__Hcode                                code         0000
+__Hcommon                              common       0000
+__Hconfig                              config       2009
+__HcstackBANK0                         cstackBANK0  0000
+__HcstackCOMMON                        cstackCOMMON 0000
+__HdataBANK0                           dataBANK0    0000
+__HdataBANK1                           dataBANK1    0000
+__HdataCOMMON                          dataCOMMON   0000
+__Heeprom_data                         eeprom_data  0000
+__Hend_init                            end_init     0011
+__Hfunctab                             functab      0000
+__HidataBANK0                          idataBANK0   0000
+__HidataBANK1                          idataBANK1   0000
+__HidataCOMMON                         idataCOMMON  0000
+__Hidloc                               idloc        0000
+__Hinit                                init         000E
+__Hinittext                            inittext     0000
+__Hintentry                            intentry     000E
+__Hmaintext                            maintext     0000
+__Hpowerup                             powerup      0000
+__Hram                                 ram          0000
+__Hreset_vec                           reset_vec    0003
+__Hsfr0                                sfr0         0000
+__Hsfr1                                sfr1         0000
+__Hsfr2                                sfr2         0000
+__Hsfr3                                sfr3         0000
+__Hspace_0                             (abs)        2009
+__Hspace_1                             (abs)        01B0
+__Hspace_2                             (abs)        0000
+__Hspace_3                             (abs)        0000
+__Hstack                               stack        0000
+__Hstrings                             strings      0000
+__Hstringtext                          stringtext   0000
+__Htext                                text         0000
+__Labs1                                abs1         0000
+__Lbank0                               bank0        0000
+__Lbank1                               bank1        0000
+__Lbank2                               bank2        0000
+__Lbank3                               bank3        0000
+__LbssBANK0                            bssBANK0     0000
+__LbssBANK1                            bssBANK1     0000
+__LbssBANK3                            bssBANK3     0000
+__LbssCOMMON                           bssCOMMON    0000
+__Lcinit                               cinit        0011
+__Lclrtext                             clrtext      0000
+__Lcode                                code         0000
+__Lcommon                              common       0000
+__Lconfig                              config       2007
+__LcstackBANK0                         cstackBANK0  0000
+__LcstackCOMMON                        cstackCOMMON 0000
+__LdataBANK0                           dataBANK0    0000
+__LdataBANK1                           dataBANK1    0000
+__LdataCOMMON                          dataCOMMON   0000
+__Leeprom_data                         eeprom_data  0000
+__Lend_init                            end_init     000E
+__Lfunctab                             functab      0000
+__LidataBANK0                          idataBANK0   0000
+__LidataBANK1                          idataBANK1   0000
+__LidataCOMMON                         idataCOMMON  0000
+__Lidloc                               idloc        0000
+__Linit                                init         000E
+__Linittext                            inittext     0000
+__Lintentry                            intentry     0004
+__Lmaintext                            maintext     0000
+__Lpowerup                             powerup      0000
+__Lram                                 ram          0000
+__Lreset_vec                           reset_vec    0000
+__Lsfr0                                sfr0         0000
+__Lsfr1                                sfr1         0000
+__Lsfr2                                sfr2         0000
+__Lsfr3                                sfr3         0000
+__Lspace_0                             (abs)        0000
+__Lspace_1                             (abs)        0000
+__Lspace_2                             (abs)        0000
+__Lspace_3                             (abs)        0000
+__Lstack                               stack        0000
+__Lstrings                             strings      0000
+__Lstringtext                          stringtext   0000
+__Ltext                                text         0000
+__S0                                   (abs)        2009
+__S1                                   (abs)        01B0
+__S2                                   (abs)        0000
+__S3                                   (abs)        0000
+___awdiv                               text21       0D49
+___awdiv@counter                       cstackBANK0  002C
+___awdiv@dividend                      cstackBANK0  0029
+___awdiv@divisor                       cstackBANK0  0027
+___awdiv@quotient                      cstackBANK0  002E
+___awdiv@sign                          cstackBANK0  002D
+___awmod                               text18       0C8F
+___awmod@counter                       cstackBANK0  0025
+___awmod@dividend                      cstackBANK0  0022
+___awmod@divisor                       cstackBANK0  0020
+___awmod@sign                          cstackBANK0  0026
+___int_sp                              stack        0000
+___latbits                             (abs)        0002
+___sp                                  stack        0000
+___stackhi                             (abs)        0000
+___stacklo                             (abs)        0000
+__end_of_Delay20us                     text27       0968
+__end_of_DelayMs                       text28       09A6
+__end_of___awdiv                       text21       0DB2
+__end_of___awmod                       text18       0CEA
+__end_of__initialization               cinit        0051
+__end_of__stringtab                    stringtext   0612
+__end_of_check_for_match               text4        05EE
+__end_of_concentration_gameboard_init  text19       0B06
+__end_of_display_gameboard             text8        0B4B
+__end_of_display_scoreboard            text7        07DA
+__end_of_end_screen                    text14       023D
+__end_of_game_end                      text13       0B99
+__end_of_get_current_char              text29       097A
+__end_of_get_cursor_index              text30       095A
+__end_of_interrupt_handler             text31       0F6C
+__end_of_joystick_init                 text12       0A05
+__end_of_lcd_clear                     text25       09C0
+__end_of_lcd_goto                      text24       09DE
+__end_of_lcd_init                      text10       0C3A
+__end_of_lcd_putch                     text9        0600
+__end_of_lcd_puts                      text17       0A8D
+__end_of_lcd_set_custom_char           text23       0C8F
+__end_of_lcd_write                     text26       0BE8
+__end_of_main                          maintext     04DF
+__end_of_make_custom_chars             text22       1000
+__end_of_play_tone                     text16       0800
+__end_of_randomize_gameboard           text20       0D49
+__end_of_startup                       text6        0E45
+__end_of_time_init                     text5        0A2F
+__end_of_tmr0_init                     text11       094E
+__end_of_toggle_cursor                 text3        0A5D
+__end_of_turn_on_led                   text15       0AC1
+__end_of_update_cursor                 text2        0ED8
+__end_of_update_gameboard_from_input   text1        0398
+__end_ofmake_custom_chars@PIC          stringtext   061A
+__end_ofmake_custom_chars@RH           stringtext   0622
+__end_ofmake_custom_chars@club         stringtext   0632
+__end_ofmake_custom_chars@diamond      stringtext   064A
+__end_ofmake_custom_chars@heart        stringtext   0642
+__end_ofmake_custom_chars@skull        stringtext   062A
+__end_ofmake_custom_chars@smile        stringtext   0652
+__end_ofmake_custom_chars@spade        stringtext   063A
+__initialization                       cinit        0011
+__pbssBANK0                            bssBANK0     005B
+__pbssBANK1                            bssBANK1     00A0
+__pbssBANK3                            bssBANK3     0190
+__pbssCOMMON                           bssCOMMON    0076
+__pcstackBANK0                         cstackBANK0  0020
+__pcstackCOMMON                        cstackCOMMON 0070
+__pdataBANK0                           dataBANK0    006A
+__pdataBANK1                           dataBANK1    00E0
+__pdataCOMMON                          dataCOMMON   007B
+__pidataBANK0                          idataBANK0   0932
+__pidataBANK1                          idataBANK1   0936
+__pidataCOMMON                         idataCOMMON  0003
+__pintentry                            intentry     0004
+__pmaintext                            maintext     0398
+__pstringtext                          stringtext   0600
+__ptext1                               text1        023D
+__ptext10                              text10       0BE8
+__ptext11                              text11       0944
+__ptext12                              text12       09DE
+__ptext13                              text13       0B4B
+__ptext14                              text14       0055
+__ptext15                              text15       0A8D
+__ptext16                              text16       07DA
+__ptext17                              text17       0A5D
+__ptext18                              text18       0C8F
+__ptext19                              text19       0AC1
+__ptext2                               text2        0E45
+__ptext20                              text20       0CEA
+__ptext21                              text21       0D49
+__ptext22                              text22       0F6C
+__ptext23                              text23       0C3A
+__ptext24                              text24       09C0
+__ptext25                              text25       09A6
+__ptext26                              text26       0B99
+__ptext27                              text27       095A
+__ptext28                              text28       098D
+__ptext29                              text29       0968
+__ptext3                               text3        0A2F
+__ptext30                              text30       094E
+__ptext31                              text31       0ED8
+__ptext4                               text4        04DF
+__ptext5                               text5        0A05
+__ptext6                               text6        0DB2
+__ptext7                               text7        0706
+__ptext8                               text8        0B06
+__ptext9                               text9        05EE
+__size_of_Delay20us                    (abs)        0000
+__size_of_DelayMs                      (abs)        0000
+__size_of___awdiv                      (abs)        0000
+__size_of___awmod                      (abs)        0000
+__size_of_check_for_match              (abs)        0000
+__size_of_concentration_gameboard_init (abs)        0000
+__size_of_display_gameboard            (abs)        0000
+__size_of_display_scoreboard           (abs)        0000
+__size_of_end_screen                   (abs)        0000
+__size_of_game_end                     (abs)        0000
+__size_of_get_current_char             (abs)        0000
+__size_of_get_cursor_index             (abs)        0000
+__size_of_interrupt_handler            (abs)        0000
+__size_of_joystick_init                (abs)        0000
+__size_of_lcd_clear                    (abs)        0000
+__size_of_lcd_goto                     (abs)        0000
+__size_of_lcd_init                     (abs)        0000
+__size_of_lcd_putch                    (abs)        0000
+__size_of_lcd_puts                     (abs)        0000
+__size_of_lcd_set_custom_char          (abs)        0000
+__size_of_lcd_write                    (abs)        0000
+__size_of_main                         (abs)        0000
+__size_of_make_custom_chars            (abs)        0000
+__size_of_play_tone                    (abs)        0000
+__size_of_randomize_gameboard          (abs)        0000
+__size_of_startup                      (abs)        0000
+__size_of_time_init                    (abs)        0000
+__size_of_tmr0_init                    (abs)        0000
+__size_of_toggle_cursor                (abs)        0000
+__size_of_turn_on_led                  (abs)        0000
+__size_of_update_cursor                (abs)        0000
+__size_of_update_gameboard_from_input  (abs)        0000
+__stringbase                           stringtext   0612
+__stringtab                            stringtext   0600
+_board                                 bssBANK1     00C0
+_check_for_match                       text4        04DF
+_concentration_gameboard_init          text19       0AC1
+_current_char                          bssBANK0     0068
+_current_player                        bssBANK0     0060
+_cursor_pos                            bssBANK0     0069
+_cursor_solid                          bssBANK0     0067
+_delay_loops                           bssBANK0     0066
+_display_gameboard                     text8        0B06
+_display_scoreboard                    text7        0706
+_end_screen                            text14       0055
+_event_delay_count                     bssCOMMON    007A
+_event_enabled                         bssBANK0     0065
+_game_end                              text13       0B4B
+_game_over                             bssBANK0     005F
+_get_current_char                      text29       0968
+_get_cursor_index                      text30       094E
+_interrupt_handler                     text31       0ED8
+_joystick_init                         text12       09DE
+_joystick_pressed                      bssBANK0     0061
+_joystick_x_pos                        bssBANK0     005D
+_joystick_y_pos                        bssBANK0     005B
+_lcd_clear                             text25       09A6
+_lcd_goto                              text24       09C0
+_lcd_init                              text10       0BE8
+_lcd_putch                             text9        05EE
+_lcd_puts                              text17       0A5D
+_lcd_set_custom_char                   text23       0C3A
+_lcd_write                             text26       0B99
+_main                                  maintext     0398
+_make_custom_chars                     text22       0F6C
+_nRBPU                                 (abs)        040F
+_p1_score                              bssBANK0     0064
+_p2_score                              bssBANK0     0063
+_play_tone                             text16       07DA
+_randomize_gameboard                   text20       0CEA
+_selected_tile                         bssBANK0     0062
+_startup                               text6        0DB2
+_time_init                             text5        0A05
+_tmr0_init                             text11       0944
+_toggle_cursor                         text3        0A2F
+_tone_delay                            bssCOMMON    0076
+_turn_on_led                           text15       0A8D
+_update_cursor                         text2        0E45
+_update_gameboard_from_input           text1        023D
+_visible                               bssBANK1     00A0
+btemp                                  (abs)        007E
+check_for_match@player                 cstackBANK0  0038
+clear_ram0                             clrtext      093C
+concentration_gameboard_init@i         cstackBANK0  0056
+display_gameboard@i                    cstackBANK0  0035
+end_of_initialization                  cinit        0051
+end_screen@F1344                       dataBANK1    00E0
+end_screen@color_index                 cstackBANK0  003B
+end_screen@colors                      cstackBANK0  0034
+end_screen@first_row                   cstackBANK0  002D
+end_screen@i                           cstackBANK0  003A
+end_screen@second_row                  cstackBANK0  002F
+get_cursor_index@cursor                cstackBANK0  0020
+init_fetch0                            inittext     097A
+init_ram0                              inittext     097E
+interrupt_function                     intentry     0004
+interrupt_handler@current_analog       cstackCOMMON 0075
+intlevel0                              functab      0000
+intlevel1                              functab      0000
+intlevel2                              functab      0000
+intlevel3                              functab      0000
+intlevel4                              functab      0000
+intlevel5                              functab      0000
+lcd_clear@port                         cstackBANK0  0028
+lcd_goto@port                          cstackBANK0  0028
+lcd_goto@position                      cstackBANK0  002B
+lcd_init@port                          cstackBANK0  002A
+lcd_putch@character                    cstackBANK0  0033
+lcd_putch@port                         cstackBANK0  0030
+lcd_puts@port                          cstackBANK0  002A
+lcd_puts@string                        cstackBANK0  0028
+lcd_set_custom_char@cg_address         cstackBANK0  002A
+lcd_set_custom_char@data               cstackBANK0  0028
+lcd_set_custom_char@port               cstackBANK0  002B
+lcd_set_custom_char@row                cstackBANK0  002F
+lcd_write@CmdChar                      cstackBANK0  0022
+lcd_write@mode                         cstackBANK0  0027
+lcd_write@port                         cstackBANK0  0023
+main@game_selection                    cstackBANK0  0059
+main@selector_pos                      cstackBANK0  005A
+make_custom_chars@PIC                  stringtext   0612
+make_custom_chars@RH                   stringtext   061A
+make_custom_chars@club                 stringtext   062A
+make_custom_chars@diamond              stringtext   0642
+make_custom_chars@heart                stringtext   063A
+make_custom_chars@skull                stringtext   0622
+make_custom_chars@smile                stringtext   064A
+make_custom_chars@spade                stringtext   0632
+play_tone@duration_8ms                 cstackBANK0  0022
+play_tone@tone_period                  cstackBANK0  0020
+randomize_gameboard@current            cstackBANK0  0053
+randomize_gameboard@random             cstackBANK0  0054
+randomize_gameboard@used               cstackBANK0  0033
+reset_vec                              reset_vec    0000
+saved_w                                (abs)        007E
+start                                  init         000E
+start_initialization                   cinit        0011
+turn_on_led@color                      cstackBANK0  0022
+update_cursor@direction                cstackBANK0  0034
+update_cursor@move_delay_count         cstackBANK0  0037
+wtemp0                                 (abs)        007E
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 104 in file "concentration.c"
+		line 106 in file "concentration.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-		None
+  selector_pos    1   58[BANK0 ] unsigned char 
+  game_selecti    1   57[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -675,17 +686,22 @@ FUNCTION INFORMATION:
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
       Params:         0       0       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          0       0       1       0       0
-      Totals:         0       0       1       0       0
-Total ram usage:        1 bytes
+      Locals:         0       2       0       0       0
+      Temps:          0       2       0       0       0
+      Totals:         0       4       0       0       0
+Total ram usage:        4 bytes
  Hardware stack levels required when called:    7
  This function calls:
+		_DelayMs
+		_concentration_gameboard_init
 		_game_end
-		_gameboard_init
 		_joystick_init
+		_lcd_goto
 		_lcd_init
+		_lcd_putch
+		_lcd_puts
 		_startup
+		_time_init
 		_update_gameboard_from_input
  This function is called by:
 		Startup code after reset
@@ -694,7 +710,7 @@ Total ram usage:        1 bytes
 
  *************** function _update_gameboard_from_input *****************
  Defined at:
-		line 375 in file "concentration.c"
+		line 418 in file "concentration.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -729,7 +745,7 @@ Total ram usage:        2 bytes
 
  *************** function _update_cursor *****************
  Defined at:
-		line 436 in file "concentration.c"
+		line 479 in file "concentration.c"
  Parameters:    Size  Location     Type
   move_delay_c    1    wreg     unsigned char 
   direction       1   20[BANK0 ] unsigned char 
@@ -762,7 +778,7 @@ Total ram usage:        4 bytes
 
  *************** function _toggle_cursor *****************
  Defined at:
-		line 477 in file "concentration.c"
+		line 520 in file "concentration.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -793,7 +809,7 @@ Total ram usage:        0 bytes
 
  *************** function _check_for_match *****************
  Defined at:
-		line 331 in file "concentration.c"
+		line 374 in file "concentration.c"
  Parameters:    Size  Location     Type
   player          1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -801,7 +817,7 @@ Total ram usage:        0 bytes
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -826,9 +842,9 @@ Total ram usage:        3 bytes
  This function uses a non-reentrant model
 
 
- *************** function _startup *****************
+ *************** function _time_init *****************
  Defined at:
-		line 224 in file "concentration.c"
+		line 548 in file "concentration.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -836,7 +852,37 @@ Total ram usage:        3 bytes
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _startup *****************
+ Defined at:
+		line 274 in file "concentration.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -863,7 +909,7 @@ Total ram usage:        0 bytes
 
  *************** function _display_scoreboard *****************
  Defined at:
-		line 244 in file "concentration.c"
+		line 294 in file "concentration.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -871,7 +917,7 @@ Total ram usage:        0 bytes
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -898,7 +944,7 @@ Total ram usage:        2 bytes
 
  *************** function _display_gameboard *****************
  Defined at:
-		line 255 in file "concentration.c"
+		line 305 in file "concentration.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -958,6 +1004,7 @@ Total ram usage:        4 bytes
  This function calls:
 		_lcd_write
  This function is called by:
+		_main
 		_display_scoreboard
 		_display_gameboard
 		_update_cursor
@@ -1031,7 +1078,7 @@ Total ram usage:        1 bytes
 
  *************** function _joystick_init *****************
  Defined at:
-		line 523 in file "concentration.c"
+		line 573 in file "concentration.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1059,9 +1106,216 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
- *************** function _gameboard_init *****************
+ *************** function _game_end *****************
  Defined at:
-		line 286 in file "concentration.c"
+		line 262 in file "concentration.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_DelayMs
+		_end_screen
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _end_screen *****************
+ Defined at:
+		line 206 in file "concentration.c"
+ Parameters:    Size  Location     Type
+  first_row       2   13[BANK0 ] PTR const unsigned char 
+		 -> STR_8(14), STR_6(13), STR_4(13), 
+  second_row      2   15[BANK0 ] PTR unsigned char 
+		 -> STR_9(11), STR_7(13), STR_5(13), 
+ Auto vars:     Size  Location     Type
+  colors          6   20[BANK0 ] unsigned char [6]
+  color_index     1   27[BANK0 ] unsigned char 
+  i               1   26[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       4       0       0       0
+      Locals:         0       8       0       0       0
+      Temps:          0       3       0       0       0
+      Totals:         0      15       0       0       0
+Total ram usage:       15 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_DelayMs
+		___awmod
+		_lcd_clear
+		_lcd_goto
+		_lcd_puts
+		_play_tone
+		_turn_on_led
+ This function is called by:
+		_game_end
+ This function uses a non-reentrant model
+
+
+ *************** function _turn_on_led *****************
+ Defined at:
+		line 179 in file "concentration.c"
+ Parameters:    Size  Location     Type
+  color           1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  color           1    2[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       1       0       0       0
+      Temps:          0       2       0       0       0
+      Totals:         0       3       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_end_screen
+		_check_for_match
+ This function uses a non-reentrant model
+
+
+ *************** function _play_tone *****************
+ Defined at:
+		line 535 in file "concentration.c"
+ Parameters:    Size  Location     Type
+  tone_period     2    0[BANK0 ] unsigned int 
+  duration_8ms    1    2[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       3       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       2       0       0       0
+      Totals:         0       5       0       0       0
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_end_screen
+		_check_for_match
+ This function uses a non-reentrant model
+
+
+ *************** function _lcd_puts *****************
+ Defined at:
+		line 129 in file "lcd4bits.c"
+ Parameters:    Size  Location     Type
+  string          2    8[BANK0 ] PTR const unsigned char 
+		 -> STR_15(7), STR_14(6), STR_13(12), STR_12(13), 
+		 -> STR_11(17), STR_10(16), STR_9(11), STR_8(14), 
+		 -> STR_7(13), STR_6(13), STR_5(13), STR_4(13), 
+		 -> STR_3(13), STR_2(16), STR_1(16), 
+  port            2   10[BANK0 ] PTR unsigned char 
+		 -> PORTD(1), PORTA(1), 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       4       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       5       0       0       0
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_lcd_write
+ This function is called by:
+		_main
+		_end_screen
+		_startup
+		_display_scoreboard
+ This function uses a non-reentrant model
+
+
+ *************** function ___awmod *****************
+ Defined at:
+		line 5 in file "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c"
+ Parameters:    Size  Location     Type
+  divisor         2    0[BANK0 ] int 
+  dividend        2    2[BANK0 ] int 
+ Auto vars:     Size  Location     Type
+  sign            1    6[BANK0 ] unsigned char 
+  counter         1    5[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  2    0[BANK0 ] int 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       4       0       0       0
+      Locals:         0       2       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       7       0       0       0
+Total ram usage:        7 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_end_screen
+		_display_scoreboard
+ This function uses a non-reentrant model
+
+
+ *************** function _concentration_gameboard_init *****************
+ Defined at:
+		line 336 in file "concentration.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1088,45 +1342,14 @@ Total ram usage:        2 bytes
 		_lcd_goto
 		_make_custom_chars
 		_randomize_gameboard
-		_time_init
  This function is called by:
 		_main
  This function uses a non-reentrant model
 
 
- *************** function _time_init *****************
- Defined at:
-		line 505 in file "concentration.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          0       1       0       0       0
-      Totals:         0       1       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		Nothing
- This function is called by:
-		_gameboard_init
- This function uses a non-reentrant model
-
-
  *************** function _randomize_gameboard *****************
  Defined at:
-		line 316 in file "concentration.c"
+		line 359 in file "concentration.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1153,7 +1376,7 @@ Total ram usage:       37 bytes
 		_DelayMs
 		___awdiv
  This function is called by:
-		_gameboard_init
+		_concentration_gameboard_init
  This function uses a non-reentrant model
 
 
@@ -1193,7 +1416,7 @@ Total ram usage:        9 bytes
 
  *************** function _make_custom_chars *****************
  Defined at:
-		line 267 in file "concentration.c"
+		line 317 in file "concentration.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1201,7 +1424,7 @@ Total ram usage:        9 bytes
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -1217,7 +1440,7 @@ Total ram usage:        1 bytes
  This function calls:
 		_lcd_set_custom_char
  This function is called by:
-		_gameboard_init
+		_concentration_gameboard_init
  This function uses a non-reentrant model
 
 
@@ -1225,277 +1448,34 @@ Total ram usage:        1 bytes
  Defined at:
 		line 166 in file "lcd4bits.c"
  Parameters:    Size  Location     Type
-  data            1    wreg     PTR const unsigned char 
+  data            2    8[BANK0 ] PTR const unsigned char 
 		 -> make_custom_chars@PIC(8), make_custom_chars@RH(8), make_custom_chars@skull(8), make_custom_chars@club(8), 
 		 -> make_custom_chars@spade(8), make_custom_chars@heart(8), make_custom_chars@diamond(8), make_custom_chars@smile(8), 
-  cg_address      1    8[BANK0 ] unsigned char 
-  port            2    9[BANK0 ] PTR unsigned char 
+  cg_address      1   10[BANK0 ] unsigned char 
+  port            2   11[BANK0 ] PTR unsigned char 
 		 -> PORTA(1), 
  Auto vars:     Size  Location     Type
-  data            1   14[BANK0 ] PTR const unsigned char 
-		 -> make_custom_chars@PIC(8), make_custom_chars@RH(8), make_custom_chars@skull(8), make_custom_chars@club(8), 
-		 -> make_custom_chars@spade(8), make_custom_chars@heart(8), make_custom_chars@diamond(8), make_custom_chars@smile(8), 
-  row             1   13[BANK0 ] unsigned char 
+  row             1   15[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       3       0       0       0
-      Locals:         0       2       0       0       0
+      Params:         0       5       0       0       0
+      Locals:         0       1       0       0       0
       Temps:          0       2       0       0       0
-      Totals:         0       7       0       0       0
-Total ram usage:        7 bytes
+      Totals:         0       8       0       0       0
+Total ram usage:        8 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    3
  This function calls:
 		_lcd_write
  This function is called by:
 		_make_custom_chars
- This function uses a non-reentrant model
-
-
- *************** function _get_current_char *****************
- Defined at:
-		line 488 in file "concentration.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          0       1       0       0       0
-      Totals:         0       1       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		_get_cursor_index
- This function is called by:
-		_gameboard_init
-		_update_cursor
- This function uses a non-reentrant model
-
-
- *************** function _get_cursor_index *****************
- Defined at:
-		line 309 in file "concentration.c"
- Parameters:    Size  Location     Type
-  cursor          1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  cursor          1    0[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
-      Locals:         0       1       0       0       0
-      Temps:          0       0       0       0       0
-      Totals:         0       1       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		Nothing
- This function is called by:
-		_check_for_match
-		_update_gameboard_from_input
-		_get_current_char
- This function uses a non-reentrant model
-
-
- *************** function _game_end *****************
- Defined at:
-		line 212 in file "concentration.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          0       1       0       0       0
-      Totals:         0       1       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		_DelayMs
-		_end_screen
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _end_screen *****************
- Defined at:
-		line 156 in file "concentration.c"
- Parameters:    Size  Location     Type
-  first_row       1    wreg     PTR const unsigned char 
-		 -> STR_5(14), STR_3(13), STR_1(13), 
-  second_row      1   12[BANK0 ] PTR unsigned char 
-		 -> STR_6(11), STR_4(13), STR_2(13), 
- Auto vars:     Size  Location     Type
-  first_row       1   22[BANK0 ] PTR const unsigned char 
-		 -> STR_5(14), STR_3(13), STR_1(13), 
-  colors          6   16[BANK0 ] unsigned char [6]
-  color_index     1   24[BANK0 ] unsigned char 
-  i               1   23[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       1       0       0       0
-      Locals:         0       9       0       0       0
-      Temps:          0       3       0       0       0
-      Totals:         0      13       0       0       0
-Total ram usage:       13 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		_DelayMs
-		___awmod
-		_lcd_clear
-		_lcd_goto
-		_lcd_puts
-		_play_tone
-		_turn_on_led
- This function is called by:
-		_game_end
- This function uses a non-reentrant model
-
-
- *************** function _turn_on_led *****************
- Defined at:
-		line 129 in file "concentration.c"
- Parameters:    Size  Location     Type
-  color           1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  color           1    2[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
-      Locals:         0       1       0       0       0
-      Temps:          0       2       0       0       0
-      Totals:         0       3       0       0       0
-Total ram usage:        3 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		Nothing
- This function is called by:
-		_end_screen
-		_check_for_match
- This function uses a non-reentrant model
-
-
- *************** function _play_tone *****************
- Defined at:
-		line 492 in file "concentration.c"
- Parameters:    Size  Location     Type
-  tone_period     2    0[BANK0 ] unsigned int 
-  duration_8ms    1    2[BANK0 ] unsigned char 
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       3       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          0       2       0       0       0
-      Totals:         0       5       0       0       0
-Total ram usage:        5 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		Nothing
- This function is called by:
-		_end_screen
-		_check_for_match
- This function uses a non-reentrant model
-
-
- *************** function _lcd_puts *****************
- Defined at:
-		line 129 in file "lcd4bits.c"
- Parameters:    Size  Location     Type
-  string          1    wreg     PTR const unsigned char 
-		 -> STR_12(7), STR_11(6), STR_10(12), STR_9(13), 
-		 -> STR_8(17), STR_7(16), STR_6(11), STR_5(14), 
-		 -> STR_4(13), STR_3(13), STR_2(13), STR_1(13), 
-  port            2    8[BANK0 ] PTR unsigned char 
-		 -> PORTD(1), PORTA(1), 
- Auto vars:     Size  Location     Type
-  string          1   11[BANK0 ] PTR const unsigned char 
-		 -> STR_12(7), STR_11(6), STR_10(12), STR_9(13), 
-		 -> STR_8(17), STR_7(16), STR_6(11), STR_5(14), 
-		 -> STR_4(13), STR_3(13), STR_2(13), STR_1(13), 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       2       0       0       0
-      Locals:         0       1       0       0       0
-      Temps:          0       1       0       0       0
-      Totals:         0       4       0       0       0
-Total ram usage:        4 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    3
- This function calls:
-		_lcd_write
- This function is called by:
-		_end_screen
-		_startup
-		_display_scoreboard
  This function uses a non-reentrant model
 
 
@@ -1528,11 +1508,12 @@ Total ram usage:        4 bytes
 		_DelayMs
 		_lcd_write
  This function is called by:
+		_main
 		_end_screen
 		_startup
 		_display_scoreboard
 		_display_gameboard
-		_gameboard_init
+		_concentration_gameboard_init
 		_update_cursor
 		_toggle_cursor
  This function uses a non-reentrant model
@@ -1569,7 +1550,7 @@ Total ram usage:        2 bytes
 		_end_screen
 		_startup
 		_display_gameboard
-		_gameboard_init
+		_concentration_gameboard_init
 		_lcd_init
  This function uses a non-reentrant model
 
@@ -1668,6 +1649,7 @@ Total ram usage:        2 bytes
  This function calls:
 		Nothing
  This function is called by:
+		_main
 		_end_screen
 		_game_end
 		_startup
@@ -1680,17 +1662,46 @@ Total ram usage:        2 bytes
  This function uses a non-reentrant model
 
 
- *************** function ___awmod *****************
+ *************** function _get_current_char *****************
  Defined at:
-		line 5 in file "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c"
+		line 531 in file "concentration.c"
  Parameters:    Size  Location     Type
-  divisor         2    0[BANK0 ] int 
-  dividend        2    2[BANK0 ] int 
+		None
  Auto vars:     Size  Location     Type
-  sign            1    6[BANK0 ] unsigned char 
-  counter         1    5[BANK0 ] unsigned char 
+		None
  Return value:  Size  Location     Type
-                  2    0[BANK0 ] int 
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		_get_cursor_index
+ This function is called by:
+		_concentration_gameboard_init
+		_update_cursor
+ This function uses a non-reentrant model
+
+
+ *************** function _get_cursor_index *****************
+ Defined at:
+		line 352 in file "concentration.c"
+ Parameters:    Size  Location     Type
+  cursor          1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  cursor          1    0[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
  Registers used:
 		wreg, status,2, status,0
  Tracked objects:
@@ -1698,24 +1709,25 @@ Total ram usage:        2 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       4       0       0       0
-      Locals:         0       2       0       0       0
-      Temps:          0       1       0       0       0
-      Totals:         0       7       0       0       0
-Total ram usage:        7 bytes
+      Params:         0       0       0       0       0
+      Locals:         0       1       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    1
  This function calls:
 		Nothing
  This function is called by:
-		_end_screen
-		_display_scoreboard
+		_check_for_match
+		_update_gameboard_from_input
+		_get_current_char
  This function uses a non-reentrant model
 
 
  *************** function _interrupt_handler *****************
  Defined at:
-		line 540 in file "concentration.c"
+		line 590 in file "concentration.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1747,64 +1759,64 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 lcd4bits.c
-		_lcd_puts      		CODE           	0BBC	0000	44
-		_lcd_putch     		CODE           	0AE3	0000	19
-		_lcd_set_custom_char		CODE           	0D3C	0000	83
-		_DelayMs       		CODE           	0B1E	0000	26
-		_lcd_clear     		CODE           	0B37	0000	27
-		_lcd_goto      		CODE           	0B51	0000	31
-		_lcd_write     		CODE           	0CED	0000	80
-		_tmr0_init     		CODE           	0ABD	0000	11
-		_lcd_init      		CODE           	0D8E	0000	83
-		_Delay20us     		CODE           	04F2	0000	15
+		_lcd_puts      		CODE           	0A5D	0000	49
+		_lcd_putch     		CODE           	05EE	0000	19
+		_lcd_set_custom_char		CODE           	0C3A	0000	86
+		_DelayMs       		CODE           	098D	0000	26
+		_lcd_clear     		CODE           	09A6	0000	27
+		_lcd_goto      		CODE           	09C0	0000	31
+		_lcd_write     		CODE           	0B99	0000	80
+		_tmr0_init     		CODE           	0944	0000	11
+		_lcd_init      		CODE           	0BE8	0000	83
+		_Delay20us     		CODE           	095A	0000	15
 
-lcd4bits.c estimated size: 419
+lcd4bits.c estimated size: 427
 
 concentration.c
-		_joystick_init 		CODE           	0B95	0000	40
-		_startup       		CODE           	0F76	0000	139
-		_check_for_match		CODE           	037A	0000	272
-		_time_init     		CODE           	0B08	0000	23
-		_end_screen    		CODE           	0048	0000	472
-		_main          		CODE           	0C9F	0000	79
-		_get_current_char		CODE           	0AD1	0000	19
-		_display_gameboard		CODE           	0C5A	0000	70
-		_game_end      		CODE           	0C15	0000	70
-		_get_cursor_index		CODE           	07F3	0000	13
-		_turn_on_led   		CODE           	07BF	0000	53
-		_randomize_gameboard		CODE           	0E3B	0000	96
-		_update_cursor 		CODE           	072C	0000	148
-		_display_scoreboard		CODE           	05CD	0000	204
-		_gameboard_init		CODE           	0E9A	0000	97
-		_play_tone     		CODE           	0B6F	0000	39
-		_toggle_cursor 		CODE           	0BE7	0000	47
-		_make_custom_chars		CODE           	0EFA	0000	125
-		_interrupt_handler		CODE           	0698	0000	149
-		_update_gameboard_from_input		CODE           	021F	0000	348
+		_joystick_init 		CODE           	09DE	0000	40
+		_startup       		CODE           	0DB2	0000	148
+		_check_for_match		CODE           	04DF	0000	272
+		_time_init     		CODE           	0A05	0000	43
+		_end_screen    		CODE           	0055	0000	489
+		_main          		CODE           	0398	0000	328
+		_get_current_char		CODE           	0968	0000	19
+		_display_gameboard		CODE           	0B06	0000	70
+		_game_end      		CODE           	0B4B	0000	79
+		_get_cursor_index		CODE           	094E	0000	13
+		_turn_on_led   		CODE           	0A8D	0000	53
+		_randomize_gameboard		CODE           	0CEA	0000	96
+		_update_cursor 		CODE           	0E45	0000	148
+		_display_scoreboard		CODE           	0706	0000	213
+		_concentration_gameboard_init		CODE           	0AC1	0000	70
+		_play_tone     		CODE           	07DA	0000	39
+		_toggle_cursor 		CODE           	0A2F	0000	47
+		_make_custom_chars		CODE           	0F6C	0000	149
+		_interrupt_handler		CODE           	0ED8	0000	149
+		_update_gameboard_from_input		CODE           	023D	0000	348
 
-concentration.c estimated size: 2503
+concentration.c estimated size: 2813
 
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-		___awdiv       		CODE           	0489	0000	106
+		___awdiv       		CODE           	0D49	0000	106
 
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c estimated size: 106
 
 shared
-		make_custom_chars@RH		STRING         	050E	0000	9
-		__stringtab    		STRING         	0500	0000	7
-		make_custom_chars@skull		STRING         	0516	0000	9
-		__initialization		CODE           	0011	0000	52
-		make_custom_chars@heart		STRING         	052E	0000	9
-		make_custom_chars@smile		STRING         	053E	0000	9
-		make_custom_chars@spade		STRING         	0526	0000	9
-		make_custom_chars@diamond		STRING         	0536	0000	9
-		make_custom_chars@PIC		STRING         	0506	0000	9
-		make_custom_chars@club		STRING         	051E	0000	9
+		make_custom_chars@RH		STRCODE        	061A	0000	9
+		__stringtab    		STRCODE        	0600	0000	19
+		make_custom_chars@skull		STRCODE        	0622	0000	9
+		__initialization		CODE           	0011	0000	65
+		make_custom_chars@heart		STRCODE        	063A	0000	9
+		make_custom_chars@smile		STRCODE        	064A	0000	9
+		make_custom_chars@spade		STRCODE        	0632	0000	9
+		make_custom_chars@diamond		STRCODE        	0642	0000	9
+		make_custom_chars@PIC		STRCODE        	0612	0000	9
+		make_custom_chars@club		STRCODE        	062A	0000	9
 
-shared estimated size: 131
+shared estimated size: 156
 
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-		___awmod       		CODE           	0DE0	0000	92
+		___awmod       		CODE           	0C8F	0000	92
 
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c estimated size: 92
 
