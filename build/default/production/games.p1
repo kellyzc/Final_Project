@@ -2657,15 +2657,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;games.c: 661:             current_char = 0xFF;
 [e = _current_char -> -> 255 `i `uc ]
 "662
-[; ;games.c: 662:         }
+[; ;games.c: 662:             current_player ^= 0x01;
+[e =^ _current_player -> -> 1 `i `uc ]
+"663
+[; ;games.c: 663:         }
 }
 [e :U 309 ]
-"663
-[; ;games.c: 663:         selected_tile = 0xFF;
-[e = _selected_tile -> -> 255 `i `uc ]
 "664
-[; ;games.c: 664:         current_player ^= 0x01;
-[e =^ _current_player -> -> 1 `i `uc ]
+[; ;games.c: 664:         selected_tile = 0xFF;
+[e = _selected_tile -> -> 255 `i `uc ]
 "665
 [; ;games.c: 665:         joystick_pressed = 1;
 [e = _joystick_pressed -> -> 1 `i `uc ]

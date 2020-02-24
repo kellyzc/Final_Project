@@ -3131,9 +3131,9 @@ void check_for_match(char player) {
             visible[get_cursor_index(selected_tile)] = 0xFF;
             visible[get_cursor_index(cursor_pos)] = 0xFF;
             current_char = 0xFF;
+            current_player ^= 0x01;
         }
         selected_tile = 0xFF;
-        current_player ^= 0x01;
         joystick_pressed = 1;
         DelayMs(100);
     }

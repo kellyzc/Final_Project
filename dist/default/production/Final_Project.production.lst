@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Sun Feb 23 16:18:40 2020
+                                                                                               Sun Feb 23 19:52:10 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	16F887
@@ -6758,7 +6758,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   6708  0BFB  120A  158A  2294  120A  158A  	fcall	_display_concentration_scoreboard
   6709                           
   6710                           ;games.c: 650:         } else {
-  6711  0C00  2C61               	goto	l4486
+  6711  0C00  2C65               	goto	l4488
   6712  0C01                     l4468:	
   6713                           
   6714                           ;games.c: 651:             display_concentration_gameboard();
@@ -6856,20 +6856,20 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   6806  0C60  00E8               	movwf	_current_char
   6807  0C61                     l4486:	
   6808                           
-  6809                           ;games.c: 663:         selected_tile = 0xFF;
-  6810  0C61  30FF               	movlw	255
-  6811  0C62  1283               	bcf	3,5	;RP0=0, select bank0
-  6812  0C63  1303               	bcf	3,6	;RP1=0, select bank0
-  6813  0C64  00B6               	movwf	??_check_for_match
-  6814  0C65  0836               	movf	??_check_for_match,w
-  6815  0C66  00E2               	movwf	_selected_tile
-  6816  0C67                     l4488:	
-  6817                           
-  6818                           ;games.c: 664:         current_player ^= 0x01;
-  6819  0C67  3001               	movlw	1
+  6809                           ;games.c: 662:             current_player ^= 0x01;
+  6810  0C61  3001               	movlw	1
+  6811  0C62  00B6               	movwf	??_check_for_match
+  6812  0C63  0836               	movf	??_check_for_match,w
+  6813  0C64  06E0               	xorwf	_current_player,f
+  6814  0C65                     l4488:	
+  6815                           
+  6816                           ;games.c: 664:         selected_tile = 0xFF;
+  6817  0C65  30FF               	movlw	255
+  6818  0C66  1283               	bcf	3,5	;RP0=0, select bank0
+  6819  0C67  1303               	bcf	3,6	;RP1=0, select bank0
   6820  0C68  00B6               	movwf	??_check_for_match
   6821  0C69  0836               	movf	??_check_for_match,w
-  6822  0C6A  06E0               	xorwf	_current_player,f
+  6822  0C6A  00E2               	movwf	_selected_tile
   6823  0C6B                     l4490:	
   6824                           
   6825                           ;games.c: 665:         joystick_pressed = 1;
@@ -10418,7 +10418,7 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Sun Feb 23 16:18:40 2020
+Symbol Table                                                                                   Sun Feb 23 19:52:10 2020
 
                          _joystick_pressed 0061                                          l9 1291  
              generate_pattern@current_byte 0033                                          pc 0002  
@@ -10631,8 +10631,8 @@ Symbol Table                                                                    
                                      l4812 04B4                                       l3870 1292  
                                      l3918 1407                                       l4750 151B  
                                      l3950 16CA                                       l3942 16BA  
-                                     l3934 07FE                                       l4478 0C3C  
-                                     l4486 0C61                                       l4494 13A6  
+                                     l3934 07FE                                       l4486 0C61  
+                                     l4478 0C3C                                       l4494 13A6  
                                      l4742 075A                                       l4734 0736  
                                      l4726 070E                                       l4718 06DE  
                                      l4646 14B0                                       l4638 149A  
@@ -10646,7 +10646,7 @@ Symbol Table                                                                    
                                      l4760 1552                                       l4752 1523  
                                      l3960 16E0                                       l3952 16CE  
                                      l3944 16BF                                       l3928 07F7  
-                                     l4488 0C67                                       l4496 13AD  
+                                     l4488 0C65                                       l4496 13AD  
                                      l4744 0760                                       l4736 0741  
                                      l4728 0715                                       l4680 0621  
                                      l4648 14B6                                       l4672 08CE  
