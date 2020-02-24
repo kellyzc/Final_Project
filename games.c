@@ -1,11 +1,11 @@
-/* Concentration
+/* Mind Games
  * ECE230-02 Final Project
  * Written by Zach Kelly and Tanner Brammeier
  * 2/23/20
  * 
  * Description:
- * This program allows two players using separate boards to play the game
- * concentration using serial communication.
+ * This program allows players to play a 2-player game of concentration or a 
+ * 1-player game of Simon Says.
  */
 
 #pragma config FOSC = HS        // Oscillator Selection bits (HS oscillator: High-speed crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
@@ -89,12 +89,11 @@ char my_turn = 1;
 char current_player;
 char game_over;
 int tone_delay;
-char simon_says_pattern[25];
+char simon_says_pattern[5];
 
 void joystick_init(void);
 void time_init(void);
 void update_gameboard(void);
-void get_current_char(void);
 void toggle_cursor(void);
 void update_cursor(char, char);
 void concentration_gameboard_init(void);
@@ -196,6 +195,8 @@ void main(void) {
         simon_says_game_end();
     }
 }
+
+//Simon Says Functions
 
 void simon_says_game_end(void) {
     if(p1_score == 0) {
@@ -426,93 +427,7 @@ void simon_says_title_screen(void) {
     p1_score = 0;
 }
 
-void turn_on_led(char color) {
-    PORTC &= 0x1F;
-    switch(color) {
-        case RED:
-            LED_RED = 1;
-            break;
-        case GREEN:
-            LED_GREEN = 1;
-            break;
-        case BLUE:
-            LED_BLUE = 1;
-            break;
-        case YELLOW:
-            LED_RED = 1;
-            LED_GREEN = 1;
-            break;
-        case CYAN:
-            LED_GREEN = 1;
-            LED_BLUE = 1;
-            break;
-        case MAGENTA:
-            LED_BLUE = 1;
-            LED_RED = 1;
-            break;
-        case WHITE:
-            LED_RED = 1;
-            LED_GREEN = 1;
-            LED_BLUE = 1;
-            break;
-    }
-}
-
-void end_screen(const char *first_row, char *second_row) {
-    joystick_pressed = RELEASED;
-    char colors[] = {RED,YELLOW,GREEN,CYAN,BLUE,MAGENTA};
-    char color_index = 0;
-    char i;
-    for(i=0;i<3;i++) {
-        turn_on_led(colors[color_index]);
-        color_index++;
-        color_index %= 6;
-        play_tone(D6SHARP, 30);
-        turn_on_led(colors[color_index]);
-        color_index++;
-        color_index %= 6;
-        play_tone(E6, 30);
-        turn_on_led(colors[color_index]);
-        color_index++;
-        color_index %= 6;
-        play_tone(G6, 30);
-        turn_on_led(colors[color_index]);
-        color_index++;
-        color_index %= 6;
-        DelayMs(250);
-    }
-    turn_on_led(colors[color_index]);
-    color_index++;
-    color_index %= 6;
-    play_tone(C6, 60);
-    while(joystick_pressed==RELEASED) {
-        lcd_clear(gameboard);
-        lcd_puts(first_row,gameboard);
-        event_enabled = 0;
-        event_delay_count = 120;
-        while(event_enabled == 0) {
-            if((JOYSTICK_BUTTON_1 == PRESSED)||(JOYSTICK_BUTTON_2 == PRESSED)) {
-                joystick_pressed = PRESSED;
-            }
-        }
-        turn_on_led(colors[color_index]);
-        color_index++;
-        color_index %= 6;
-        lcd_clear(gameboard);
-        lcd_goto(ROW_2,gameboard);
-        lcd_puts(second_row,gameboard);
-        event_enabled = 0;
-        event_delay_count = 120;
-        while(event_enabled == 0) {
-            if((JOYSTICK_BUTTON_1 == PRESSED)||(JOYSTICK_BUTTON_2 == PRESSED)) {
-                joystick_pressed = PRESSED;
-            }
-        }
-        turn_on_led(colors[color_index]);
-        color_index++;
-        color_index %= 6;
-    }
-}
+//Concentration Functions
 
 void concentration_game_end(void) {
     DelayMs(1000);
@@ -595,7 +510,7 @@ void concentration_gameboard_init(void) {
     lcd_clear(gameboard);
     cursor_pos = 0x00;
     cursor_solid = 0;
-    get_current_char();
+    current_char = visible[get_cursor_index(cursor_pos)];
     delay_loops = 0;
     lcd_goto(cursor_pos, gameboard);
     randomize_gameboard();
@@ -641,12 +556,10 @@ void check_for_match(char player) {
             play_tone(F6SHARP, 15);
             LED_GREEN = 0;
             play_tone(A6, 5);
-            //TODO change back
-            if((p1_score+p2_score)==2) {
+            if((p1_score+p2_score)==16) {
                 game_over = 1;
             }
             display_concentration_scoreboard();
-            
         } else {
             display_concentration_gameboard();
             turn_on_led(RED);
@@ -762,7 +675,7 @@ void update_cursor(char move_delay_count, char direction) {
     }
     lcd_putch(current_char, gameboard);
     lcd_goto(cursor_pos, gameboard);
-    get_current_char();
+    current_char = visible[get_cursor_index(cursor_pos)];
     if(cursor_solid == 1) {
         lcd_putch(0x20, gameboard);
         lcd_goto(cursor_pos, gameboard);
@@ -780,8 +693,62 @@ void toggle_cursor(void) {
     lcd_goto(cursor_pos, gameboard);
 }
 
-void get_current_char(void) {
-    current_char = visible[get_cursor_index(cursor_pos)];
+//General Functions
+
+void end_screen(const char *first_row, char *second_row) {
+    joystick_pressed = RELEASED;
+    char colors[] = {RED,YELLOW,GREEN,CYAN,BLUE,MAGENTA};
+    char color_index = 0;
+    char i;
+    for(i=0;i<3;i++) {
+        turn_on_led(colors[color_index]);
+        color_index++;
+        color_index %= 6;
+        play_tone(D6SHARP, 30);
+        turn_on_led(colors[color_index]);
+        color_index++;
+        color_index %= 6;
+        play_tone(E6, 30);
+        turn_on_led(colors[color_index]);
+        color_index++;
+        color_index %= 6;
+        play_tone(G6, 30);
+        turn_on_led(colors[color_index]);
+        color_index++;
+        color_index %= 6;
+        DelayMs(250);
+    }
+    turn_on_led(colors[color_index]);
+    color_index++;
+    color_index %= 6;
+    play_tone(C6, 60);
+    while(joystick_pressed==RELEASED) {
+        lcd_clear(gameboard);
+        lcd_puts(first_row,gameboard);
+        event_enabled = 0;
+        event_delay_count = 120;
+        while(event_enabled == 0) {
+            if((JOYSTICK_BUTTON_1 == PRESSED)||(JOYSTICK_BUTTON_2 == PRESSED)) {
+                joystick_pressed = PRESSED;
+            }
+        }
+        turn_on_led(colors[color_index]);
+        color_index++;
+        color_index %= 6;
+        lcd_clear(gameboard);
+        lcd_goto(ROW_2,gameboard);
+        lcd_puts(second_row,gameboard);
+        event_enabled = 0;
+        event_delay_count = 120;
+        while(event_enabled == 0) {
+            if((JOYSTICK_BUTTON_1 == PRESSED)||(JOYSTICK_BUTTON_2 == PRESSED)) {
+                joystick_pressed = PRESSED;
+            }
+        }
+        turn_on_led(colors[color_index]);
+        color_index++;
+        color_index %= 6;
+    }
 }
 
 void play_tone(unsigned int tone_period, char duration_8ms) {
@@ -795,7 +762,37 @@ void play_tone(unsigned int tone_period, char duration_8ms) {
     CCP2IE = 0;
 }
 
-//Initialization functions
+void turn_on_led(char color) {
+    PORTC &= 0x1F;
+    switch(color) {
+        case RED:
+            LED_RED = 1;
+            break;
+        case GREEN:
+            LED_GREEN = 1;
+            break;
+        case BLUE:
+            LED_BLUE = 1;
+            break;
+        case YELLOW:
+            LED_RED = 1;
+            LED_GREEN = 1;
+            break;
+        case CYAN:
+            LED_GREEN = 1;
+            LED_BLUE = 1;
+            break;
+        case MAGENTA:
+            LED_BLUE = 1;
+            LED_RED = 1;
+            break;
+        case WHITE:
+            LED_RED = 1;
+            LED_GREEN = 1;
+            LED_BLUE = 1;
+            break;
+    }
+}
 
 void time_init(void) {
     event_delay_count = 255;

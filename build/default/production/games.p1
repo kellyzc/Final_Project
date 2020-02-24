@@ -54,47 +54,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15
 [; ;./lcd4bits.h: 15: extern void lcd_clear(char *);
 [v _lcd_clear `(v ~T0 @X0 0 ef1`*uc ]
-"100 games.c
-[; ;games.c: 100: void concentration_gameboard_init(void);
+"99 games.c
+[; ;games.c: 99: void concentration_gameboard_init(void);
 [v _concentration_gameboard_init `(v ~T0 @X0 0 ef ]
-"106
-[; ;games.c: 106: void concentration_title_screen(void);
+"105
+[; ;games.c: 105: void concentration_title_screen(void);
 [v _concentration_title_screen `(v ~T0 @X0 0 ef ]
-"101
-[; ;games.c: 101: void concentration_game_loop(void);
+"100
+[; ;games.c: 100: void concentration_game_loop(void);
 [v _concentration_game_loop `(v ~T0 @X0 0 ef ]
-"109
-[; ;games.c: 109: void concentration_game_end(void);
+"108
+[; ;games.c: 108: void concentration_game_end(void);
 [v _concentration_game_end `(v ~T0 @X0 0 ef ]
-"115
-[; ;games.c: 115: void simon_says_title_screen(void);
-[v _simon_says_title_screen `(v ~T0 @X0 0 ef ]
-"112
-[; ;games.c: 112: void simon_says_game_loop(void);
-[v _simon_says_game_loop `(v ~T0 @X0 0 ef ]
-"119
-[; ;games.c: 119: void simon_says_game_end(void);
-[v _simon_says_game_end `(v ~T0 @X0 0 ef ]
-"121
-[; ;games.c: 121: void end_screen(const char *r1, char *r2);
-[v _end_screen `(v ~T0 @X0 0 ef2`*Cuc`*uc ]
 "114
-[; ;games.c: 114: void display_simon_says_scoreboard(void);
-[v _display_simon_says_scoreboard `(v ~T0 @X0 0 ef ]
-"113
-[; ;games.c: 113: void countdown(void);
-[v _countdown `(v ~T0 @X0 0 ef ]
-"116
-[; ;games.c: 116: void generate_pattern(void);
-[v _generate_pattern `(v ~T0 @X0 0 ef ]
-"117
-[; ;games.c: 117: void play_pattern(void);
-[v _play_pattern `(v ~T0 @X0 0 ef ]
-"120
-[; ;games.c: 120: void simon_says_check_input(void);
-[v _simon_says_check_input `(v ~T0 @X0 0 ef ]
+[; ;games.c: 114: void simon_says_title_screen(void);
+[v _simon_says_title_screen `(v ~T0 @X0 0 ef ]
+"111
+[; ;games.c: 111: void simon_says_game_loop(void);
+[v _simon_says_game_loop `(v ~T0 @X0 0 ef ]
 "118
-[; ;games.c: 118: char simon_says_get_input(void);
+[; ;games.c: 118: void simon_says_game_end(void);
+[v _simon_says_game_end `(v ~T0 @X0 0 ef ]
+"120
+[; ;games.c: 120: void end_screen(const char *r1, char *r2);
+[v _end_screen `(v ~T0 @X0 0 ef2`*Cuc`*uc ]
+"113
+[; ;games.c: 113: void display_simon_says_scoreboard(void);
+[v _display_simon_says_scoreboard `(v ~T0 @X0 0 ef ]
+"112
+[; ;games.c: 112: void countdown(void);
+[v _countdown `(v ~T0 @X0 0 ef ]
+"115
+[; ;games.c: 115: void generate_pattern(void);
+[v _generate_pattern `(v ~T0 @X0 0 ef ]
+"116
+[; ;games.c: 116: void play_pattern(void);
+[v _play_pattern `(v ~T0 @X0 0 ef ]
+"119
+[; ;games.c: 119: void simon_says_check_input(void);
+[v _simon_says_check_input `(v ~T0 @X0 0 ef ]
+"117
+[; ;games.c: 117: char simon_says_get_input(void);
 [v _simon_says_get_input `(uc ~T0 @X0 0 ef ]
 "3794 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3794: extern volatile __bit CCP2IE __attribute__((address(0x468)));
@@ -108,55 +108,55 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3797
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3797: extern volatile __bit CCP2IF __attribute__((address(0x68)));
 [v _CCP2IF `Vb ~T0 @X0 0 e@104 ]
-"111 games.c
-[; ;games.c: 111: void turn_on_led(char);
+"110 games.c
+[; ;games.c: 110: void turn_on_led(char);
 [v _turn_on_led `(v ~T0 @X0 0 ef1`uc ]
-"110
-[; ;games.c: 110: void play_tone(unsigned int,char);
+"109
+[; ;games.c: 109: void play_tone(unsigned int,char);
 [v _play_tone `(v ~T0 @X0 0 ef2`ui`uc ]
 "765 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 765: extern volatile unsigned char TMR2 __attribute__((address(0x011)));
 [v _TMR2 `Vuc ~T0 @X0 0 e@17 ]
-"4148
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4148: extern volatile __bit RC5 __attribute__((address(0x3D)));
-[v _RC5 `Vb ~T0 @X0 0 e@61 ]
-"4151
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4151: extern volatile __bit RC6 __attribute__((address(0x3E)));
-[v _RC6 `Vb ~T0 @X0 0 e@62 ]
-"4154
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4154: extern volatile __bit RC7 __attribute__((address(0x3F)));
-[v _RC7 `Vb ~T0 @X0 0 e@63 ]
-"4109
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4109: extern volatile __bit RB2 __attribute__((address(0x32)));
-[v _RB2 `Vb ~T0 @X0 0 e@50 ]
-"107 games.c
-[; ;games.c: 107: void display_concentration_scoreboard(void);
+"106 games.c
+[; ;games.c: 106: void display_concentration_scoreboard(void);
 [v _display_concentration_scoreboard `(v ~T0 @X0 0 ef ]
-"104
-[; ;games.c: 104: void display_concentration_gameboard(void);
+"103
+[; ;games.c: 103: void display_concentration_gameboard(void);
 [v _display_concentration_gameboard `(v ~T0 @X0 0 ef ]
 "28 ./lcd4bits.h
 [; ;./lcd4bits.h: 28: extern void lcd_set_custom_char(const char *d, char, char* p);
 [v _lcd_set_custom_char `(v ~T0 @X0 0 ef3`*Cuc`uc`*uc ]
-"97 games.c
-[; ;games.c: 97: void get_current_char(void);
-[v _get_current_char `(v ~T0 @X0 0 ef ]
-"103
-[; ;games.c: 103: void randomize_gameboard(void);
+"104 games.c
+[; ;games.c: 104: char get_cursor_index(char);
+[v _get_cursor_index `(uc ~T0 @X0 0 ef1`uc ]
+"102
+[; ;games.c: 102: void randomize_gameboard(void);
 [v _randomize_gameboard `(v ~T0 @X0 0 ef ]
-"3773 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+"4151 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4151: extern volatile __bit RC6 __attribute__((address(0x3E)));
+[v _RC6 `Vb ~T0 @X0 0 e@62 ]
+"4148
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4148: extern volatile __bit RC5 __attribute__((address(0x3D)));
+[v _RC5 `Vb ~T0 @X0 0 e@61 ]
+"4109
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4109: extern volatile __bit RB2 __attribute__((address(0x32)));
+[v _RB2 `Vb ~T0 @X0 0 e@50 ]
+"3773
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3773: extern volatile __bit CCP1IF __attribute__((address(0x62)));
 [v _CCP1IF `Vb ~T0 @X0 0 e@98 ]
-"98 games.c
-[; ;games.c: 98: void toggle_cursor(void);
+"97 games.c
+[; ;games.c: 97: void toggle_cursor(void);
 [v _toggle_cursor `(v ~T0 @X0 0 ef ]
 "920 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 920: extern volatile unsigned short CCPR1 __attribute__((address(0x015)));
 [v _CCPR1 `Vus ~T0 @X0 0 e@21 ]
-"99 games.c
-[; ;games.c: 99: void update_cursor(char, char);
+"98 games.c
+[; ;games.c: 98: void update_cursor(char, char);
 [v _update_cursor `(v ~T0 @X0 0 ef2`uc`uc ]
-"2041 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+"4154 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4154: extern volatile __bit RC7 __attribute__((address(0x3F)));
+[v _RC7 `Vb ~T0 @X0 0 e@63 ]
+"2041
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2041: extern volatile unsigned char PR2 __attribute__((address(0x092)));
 [v _PR2 `Vuc ~T0 @X0 0 e@146 ]
 "4382
@@ -582,155 +582,155 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;games.c: 91: int tone_delay;
 [v _tone_delay `i ~T0 @X0 1 e ]
 "92
-[; ;games.c: 92: char simon_says_pattern[25];
-[v _simon_says_pattern `uc ~T0 @X0 -> 25 `i e ]
+[; ;games.c: 92: char simon_says_pattern[5];
+[v _simon_says_pattern `uc ~T0 @X0 -> 5 `i e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"124
-[; ;games.c: 124: void main(void) {
+"123
+[; ;games.c: 123: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"126
-[; ;games.c: 126:     SCS = 0;
+"125
+[; ;games.c: 125:     SCS = 0;
 [e = _SCS -> -> 0 `i `b ]
-"128
-[; ;games.c: 128:     TRISD = 0;
+"127
+[; ;games.c: 127:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"129
-[; ;games.c: 129:     TRISA = 0;
+"128
+[; ;games.c: 128:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"130
-[; ;games.c: 130:     ANSEL = 0;
+"129
+[; ;games.c: 129:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"131
-[; ;games.c: 131:     lcd_init(gameboard);
+"130
+[; ;games.c: 130:     lcd_init(gameboard);
 [e ( _lcd_init (1 _gameboard ]
-"132
-[; ;games.c: 132:     lcd_init(scoreboard);
+"131
+[; ;games.c: 131:     lcd_init(scoreboard);
 [e ( _lcd_init (1 _scoreboard ]
-"134
-[; ;games.c: 134:     joystick_init();
+"133
+[; ;games.c: 133:     joystick_init();
 [e ( _joystick_init ..  ]
-"136
-[; ;games.c: 136:     TRISC &= 0x1F;
+"135
+[; ;games.c: 135:     TRISC &= 0x1F;
 [e =& _TRISC -> -> 31 `i `Vuc ]
-"137
-[; ;games.c: 137:     PORTC = 0;
+"136
+[; ;games.c: 136:     PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"139
-[; ;games.c: 139:     time_init();
+"138
+[; ;games.c: 138:     time_init();
 [e ( _time_init ..  ]
-"141
-[; ;games.c: 141:     current_player = 0;
+"140
+[; ;games.c: 140:     current_player = 0;
 [e = _current_player -> -> 0 `i `uc ]
-"143
-[; ;games.c: 143:     lcd_puts(" Game Selection", scoreboard);
+"142
+[; ;games.c: 142:     lcd_puts(" Game Selection", scoreboard);
 [e ( _lcd_puts (2 , :s 1C _scoreboard ]
-"144
-[; ;games.c: 144:     lcd_puts("  Concentration", gameboard);
+"143
+[; ;games.c: 143:     lcd_puts("  Concentration", gameboard);
 [e ( _lcd_puts (2 , :s 2C _gameboard ]
-"145
-[; ;games.c: 145:     lcd_goto(0x40, gameboard);
+"144
+[; ;games.c: 144:     lcd_goto(0x40, gameboard);
 [e ( _lcd_goto (2 , -> -> 64 `i `uc _gameboard ]
-"146
-[; ;games.c: 146:     lcd_puts("  Simon Says", gameboard);
+"145
+[; ;games.c: 145:     lcd_puts("  Simon Says", gameboard);
 [e ( _lcd_puts (2 , :s 3C _gameboard ]
-"147
-[; ;games.c: 147:     lcd_goto(0, gameboard);
+"146
+[; ;games.c: 146:     lcd_goto(0, gameboard);
 [e ( _lcd_goto (2 , -> -> 0 `i `uc _gameboard ]
-"148
-[; ;games.c: 148:     lcd_putch(0x7E, gameboard);
+"147
+[; ;games.c: 147:     lcd_putch(0x7E, gameboard);
 [e ( _lcd_putch (2 , -> -> 126 `i `uc _gameboard ]
-"149
-[; ;games.c: 149:     char game_selection = 0xFF;
+"148
+[; ;games.c: 148:     char game_selection = 0xFF;
 [v _game_selection `uc ~T0 @X0 1 a ]
 [e = _game_selection -> -> 255 `i `uc ]
-"150
-[; ;games.c: 150:     char selector_pos = 0x00;
+"149
+[; ;games.c: 149:     char selector_pos = 0x00;
 [v _selector_pos `uc ~T0 @X0 1 a ]
 [e = _selector_pos -> -> 0 `i `uc ]
-"151
-[; ;games.c: 151:     GO = 1;
+"150
+[; ;games.c: 150:     GO = 1;
 [e = _GO -> -> 1 `i `b ]
-"152
-[; ;games.c: 152:     while(game_selection == 0xFF) {
+"151
+[; ;games.c: 151:     while(game_selection == 0xFF) {
 [e $U 139  ]
 [e :U 140 ]
 {
-"153
-[; ;games.c: 153:         if(GO == 0) {
+"152
+[; ;games.c: 152:         if(GO == 0) {
 [e $ ! == -> _GO `i -> 0 `i 142  ]
 {
-"154
-[; ;games.c: 154:             GO = 1;
+"153
+[; ;games.c: 153:             GO = 1;
 [e = _GO -> -> 1 `i `b ]
-"155
-[; ;games.c: 155:         }
+"154
+[; ;games.c: 154:         }
 }
 [e :U 142 ]
-"156
-[; ;games.c: 156:         if(event_enabled) {
+"155
+[; ;games.c: 155:         if(event_enabled) {
 [e $ ! != -> _event_enabled `i -> 0 `i 143  ]
 {
-"157
-[; ;games.c: 157:             if(RB5 == 0) {
+"156
+[; ;games.c: 156:             if(RB5 == 0) {
 [e $ ! == -> _RB5 `i -> 0 `i 144  ]
 {
-"158
-[; ;games.c: 158:                 game_selection = selector_pos;
+"157
+[; ;games.c: 157:                 game_selection = selector_pos;
 [e = _game_selection _selector_pos ]
-"159
-[; ;games.c: 159:                 DelayMs(8);
+"158
+[; ;games.c: 158:                 DelayMs(8);
 [e ( _DelayMs (1 -> -> 8 `i `ui ]
-"160
-[; ;games.c: 160:                 while(RB5 == 0);
+"159
+[; ;games.c: 159:                 while(RB5 == 0);
 [e $U 145  ]
 [e :U 146 ]
 [e :U 145 ]
 [e $ == -> _RB5 `i -> 0 `i 146  ]
 [e :U 147 ]
-"161
-[; ;games.c: 161:                 break;
+"160
+[; ;games.c: 160:                 break;
 [e $U 141  ]
-"162
-[; ;games.c: 162:             }
+"161
+[; ;games.c: 161:             }
 }
 [e :U 144 ]
-"163
-[; ;games.c: 163:             if((joystick_y_pos < 100)||(joystick_y_pos > 900)) {
+"162
+[; ;games.c: 162:             if((joystick_y_pos < 100)||(joystick_y_pos > 900)) {
 [e $ ! || < _joystick_y_pos -> 100 `i > _joystick_y_pos -> 900 `i 148  ]
 {
-"164
-[; ;games.c: 164:                 lcd_goto(selector_pos, gameboard);
+"163
+[; ;games.c: 163:                 lcd_goto(selector_pos, gameboard);
 [e ( _lcd_goto (2 , -> _selector_pos `uc _gameboard ]
-"165
-[; ;games.c: 165:                 lcd_putch(0x20, gameboard);
+"164
+[; ;games.c: 164:                 lcd_putch(0x20, gameboard);
 [e ( _lcd_putch (2 , -> -> 32 `i `uc _gameboard ]
-"166
-[; ;games.c: 166:                 switch(selector_pos) {
+"165
+[; ;games.c: 165:                 switch(selector_pos) {
 [e $U 150  ]
 {
-"167
-[; ;games.c: 167:                     case 0x00:
+"166
+[; ;games.c: 166:                     case 0x00:
 [e :U 151 ]
-"168
-[; ;games.c: 168:                         selector_pos = 0x40;
+"167
+[; ;games.c: 167:                         selector_pos = 0x40;
 [e = _selector_pos -> -> 64 `i `uc ]
+"168
+[; ;games.c: 168:                         break;
+[e $U 149  ]
 "169
-[; ;games.c: 169:                         break;
-[e $U 149  ]
-"170
-[; ;games.c: 170:                     case 0x40:
+[; ;games.c: 169:                     case 0x40:
 [e :U 152 ]
-"171
-[; ;games.c: 171:                         selector_pos = 0x00;
+"170
+[; ;games.c: 170:                         selector_pos = 0x00;
 [e = _selector_pos -> -> 0 `i `uc ]
-"172
-[; ;games.c: 172:                         break;
+"171
+[; ;games.c: 171:                         break;
 [e $U 149  ]
-"173
-[; ;games.c: 173:                 }
+"172
+[; ;games.c: 172:                 }
 }
 [e $U 149  ]
 [e :U 150 ]
@@ -738,277 +738,277 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 64 `i 152
  149 ]
 [e :U 149 ]
-"174
-[; ;games.c: 174:                 lcd_goto(selector_pos, gameboard);
+"173
+[; ;games.c: 173:                 lcd_goto(selector_pos, gameboard);
 [e ( _lcd_goto (2 , -> _selector_pos `uc _gameboard ]
-"175
-[; ;games.c: 175:                 lcd_putch(0x7E, gameboard);
+"174
+[; ;games.c: 174:                 lcd_putch(0x7E, gameboard);
 [e ( _lcd_putch (2 , -> -> 126 `i `uc _gameboard ]
-"176
-[; ;games.c: 176:                 event_enabled = 0;
+"175
+[; ;games.c: 175:                 event_enabled = 0;
 [e = _event_enabled -> -> 0 `i `uc ]
-"177
-[; ;games.c: 177:                 event_delay_count = 62;
+"176
+[; ;games.c: 176:                 event_delay_count = 62;
 [e = _event_delay_count -> -> 62 `i `uc ]
-"178
-[; ;games.c: 178:             }
+"177
+[; ;games.c: 177:             }
 }
 [e :U 148 ]
-"179
-[; ;games.c: 179:         }
+"178
+[; ;games.c: 178:         }
 }
 [e :U 143 ]
-"180
-[; ;games.c: 180:     }
+"179
+[; ;games.c: 179:     }
 }
 [e :U 139 ]
-"152
-[; ;games.c: 152:     while(game_selection == 0xFF) {
+"151
+[; ;games.c: 151:     while(game_selection == 0xFF) {
 [e $ == -> _game_selection `i -> 255 `i 140  ]
 [e :U 141 ]
-"181
-[; ;games.c: 181:     game_over = 0;
+"180
+[; ;games.c: 180:     game_over = 0;
 [e = _game_over -> -> 0 `i `uc ]
-"182
-[; ;games.c: 182:     lcd_clear(gameboard);
+"181
+[; ;games.c: 181:     lcd_clear(gameboard);
 [e ( _lcd_clear (1 _gameboard ]
-"183
-[; ;games.c: 183:     lcd_clear(scoreboard);
+"182
+[; ;games.c: 182:     lcd_clear(scoreboard);
 [e ( _lcd_clear (1 _scoreboard ]
-"184
-[; ;games.c: 184:     if(game_selection == 0x00) {
+"183
+[; ;games.c: 183:     if(game_selection == 0x00) {
 [e $ ! == -> _game_selection `i -> 0 `i 153  ]
 {
-"185
-[; ;games.c: 185:         concentration_gameboard_init();
+"184
+[; ;games.c: 184:         concentration_gameboard_init();
 [e ( _concentration_gameboard_init ..  ]
-"186
-[; ;games.c: 186:         concentration_title_screen();
+"185
+[; ;games.c: 185:         concentration_title_screen();
 [e ( _concentration_title_screen ..  ]
-"187
-[; ;games.c: 187:         while(!game_over) {
+"186
+[; ;games.c: 186:         while(!game_over) {
 [e $U 154  ]
 [e :U 155 ]
 {
-"188
-[; ;games.c: 188:             concentration_game_loop();
+"187
+[; ;games.c: 187:             concentration_game_loop();
 [e ( _concentration_game_loop ..  ]
-"189
-[; ;games.c: 189:         }
+"188
+[; ;games.c: 188:         }
 }
 [e :U 154 ]
-"187
-[; ;games.c: 187:         while(!game_over) {
+"186
+[; ;games.c: 186:         while(!game_over) {
 [e $ ! != -> _game_over `i -> 0 `i 155  ]
 [e :U 156 ]
-"190
-[; ;games.c: 190:         concentration_game_end();
+"189
+[; ;games.c: 189:         concentration_game_end();
 [e ( _concentration_game_end ..  ]
-"191
-[; ;games.c: 191:     } else {
+"190
+[; ;games.c: 190:     } else {
 }
 [e $U 157  ]
 [e :U 153 ]
 {
-"192
-[; ;games.c: 192:         simon_says_title_screen();
+"191
+[; ;games.c: 191:         simon_says_title_screen();
 [e ( _simon_says_title_screen ..  ]
-"193
-[; ;games.c: 193:         while(!game_over) {
+"192
+[; ;games.c: 192:         while(!game_over) {
 [e $U 158  ]
 [e :U 159 ]
 {
-"194
-[; ;games.c: 194:             simon_says_game_loop();
+"193
+[; ;games.c: 193:             simon_says_game_loop();
 [e ( _simon_says_game_loop ..  ]
-"195
-[; ;games.c: 195:         }
+"194
+[; ;games.c: 194:         }
 }
 [e :U 158 ]
-"193
-[; ;games.c: 193:         while(!game_over) {
+"192
+[; ;games.c: 192:         while(!game_over) {
 [e $ ! != -> _game_over `i -> 0 `i 159  ]
 [e :U 160 ]
-"196
-[; ;games.c: 196:         simon_says_game_end();
+"195
+[; ;games.c: 195:         simon_says_game_end();
 [e ( _simon_says_game_end ..  ]
-"197
-[; ;games.c: 197:     }
+"196
+[; ;games.c: 196:     }
 }
 [e :U 157 ]
-"198
-[; ;games.c: 198: }
+"197
+[; ;games.c: 197: }
 [e :UE 138 ]
 }
-"200
-[; ;games.c: 200: void simon_says_game_end(void) {
+"201
+[; ;games.c: 201: void simon_says_game_end(void) {
 [v _simon_says_game_end `(v ~T0 @X0 1 ef ]
 {
 [e :U _simon_says_game_end ]
 [f ]
-"201
-[; ;games.c: 201:     if(p1_score == 0) {
+"202
+[; ;games.c: 202:     if(p1_score == 0) {
 [e $ ! == -> _p1_score `i -> 0 `i 162  ]
 {
-"202
-[; ;games.c: 202:         end_screen("   Game Over!", "   You stink!");
-[e ( _end_screen (2 , :s 4C :s 5C ]
 "203
-[; ;games.c: 203:     } else if(p1_score <= 5) {
+[; ;games.c: 203:         end_screen("   Game Over!", "   You stink!");
+[e ( _end_screen (2 , :s 4C :s 5C ]
+"204
+[; ;games.c: 204:     } else if(p1_score <= 5) {
 }
 [e $U 163  ]
 [e :U 162 ]
 [e $ ! <= -> _p1_score `i -> 5 `i 164  ]
 {
-"204
-[; ;games.c: 204:         end_screen("   Game Over!", "Not very good...");
-[e ( _end_screen (2 , :s 6C :s 7C ]
 "205
-[; ;games.c: 205:     } else if(p1_score <= 10) {
+[; ;games.c: 205:         end_screen("   Game Over!", "Not very good...");
+[e ( _end_screen (2 , :s 6C :s 7C ]
+"206
+[; ;games.c: 206:     } else if(p1_score <= 10) {
 }
 [e $U 165  ]
 [e :U 164 ]
 [e $ ! <= -> _p1_score `i -> 10 `i 166  ]
 {
-"206
-[; ;games.c: 206:         end_screen("   Game Over!", "    Not bad.");
-[e ( _end_screen (2 , :s 8C :s 9C ]
 "207
-[; ;games.c: 207:     } else if(p1_score <= 15) {
+[; ;games.c: 207:         end_screen("   Game Over!", "    Not bad.");
+[e ( _end_screen (2 , :s 8C :s 9C ]
+"208
+[; ;games.c: 208:     } else if(p1_score <= 15) {
 }
 [e $U 167  ]
 [e :U 166 ]
 [e $ ! <= -> _p1_score `i -> 15 `i 168  ]
 {
-"208
-[; ;games.c: 208:         end_screen("   Game Over!", "   Great job!");
-[e ( _end_screen (2 , :s 10C :s 11C ]
 "209
-[; ;games.c: 209:     } else if(p1_score < 20) {
+[; ;games.c: 209:         end_screen("   Game Over!", "   Great job!");
+[e ( _end_screen (2 , :s 10C :s 11C ]
+"210
+[; ;games.c: 210:     } else if(p1_score < 20) {
 }
 [e $U 169  ]
 [e :U 168 ]
 [e $ ! < -> _p1_score `i -> 20 `i 170  ]
 {
-"210
-[; ;games.c: 210:         end_screen("   Game Over!", " Almost there!!");
-[e ( _end_screen (2 , :s 12C :s 13C ]
 "211
-[; ;games.c: 211:     } else {
+[; ;games.c: 211:         end_screen("   Game Over!", " Almost there!!");
+[e ( _end_screen (2 , :s 12C :s 13C ]
+"212
+[; ;games.c: 212:     } else {
 }
 [e $U 171  ]
 [e :U 170 ]
 {
-"212
-[; ;games.c: 212:         end_screen("   Game Over!", "   You win!!!");
-[e ( _end_screen (2 , :s 14C :s 15C ]
 "213
-[; ;games.c: 213:     }
+[; ;games.c: 213:         end_screen("   Game Over!", "   You win!!!");
+[e ( _end_screen (2 , :s 14C :s 15C ]
+"214
+[; ;games.c: 214:     }
 }
 [e :U 171 ]
 [e :U 169 ]
 [e :U 167 ]
 [e :U 165 ]
 [e :U 163 ]
-"214
-[; ;games.c: 214: }
+"215
+[; ;games.c: 215: }
 [e :UE 161 ]
 }
-"216
-[; ;games.c: 216: void simon_says_game_loop(void) {
+"217
+[; ;games.c: 217: void simon_says_game_loop(void) {
 [v _simon_says_game_loop `(v ~T0 @X0 1 ef ]
 {
 [e :U _simon_says_game_loop ]
 [f ]
-"217
-[; ;games.c: 217:     display_simon_says_scoreboard();
-[e ( _display_simon_says_scoreboard ..  ]
 "218
-[; ;games.c: 218:     countdown();
-[e ( _countdown ..  ]
+[; ;games.c: 218:     display_simon_says_scoreboard();
+[e ( _display_simon_says_scoreboard ..  ]
 "219
-[; ;games.c: 219:     generate_pattern();
-[e ( _generate_pattern ..  ]
+[; ;games.c: 219:     countdown();
+[e ( _countdown ..  ]
 "220
-[; ;games.c: 220:     play_pattern();
-[e ( _play_pattern ..  ]
+[; ;games.c: 220:     generate_pattern();
+[e ( _generate_pattern ..  ]
 "221
-[; ;games.c: 221:     simon_says_check_input();
-[e ( _simon_says_check_input ..  ]
+[; ;games.c: 221:     play_pattern();
+[e ( _play_pattern ..  ]
 "222
-[; ;games.c: 222: }
+[; ;games.c: 222:     simon_says_check_input();
+[e ( _simon_says_check_input ..  ]
+"223
+[; ;games.c: 223: }
 [e :UE 172 ]
 }
-"224
-[; ;games.c: 224: void simon_says_check_input(void) {
+"225
+[; ;games.c: 225: void simon_says_check_input(void) {
 [v _simon_says_check_input `(v ~T0 @X0 1 ef ]
 {
 [e :U _simon_says_check_input ]
 [f ]
-"225
-[; ;games.c: 225:     lcd_puts("    Now it's", gameboard);
-[e ( _lcd_puts (2 , :s 16C _gameboard ]
 "226
-[; ;games.c: 226:     lcd_goto(0x40, gameboard);
-[e ( _lcd_goto (2 , -> -> 64 `i `uc _gameboard ]
+[; ;games.c: 226:     lcd_puts("    Now it's", gameboard);
+[e ( _lcd_puts (2 , :s 16C _gameboard ]
 "227
-[; ;games.c: 227:     lcd_puts("   your turn!", gameboard);
-[e ( _lcd_puts (2 , :s 17C _gameboard ]
+[; ;games.c: 227:     lcd_goto(0x40, gameboard);
+[e ( _lcd_goto (2 , -> -> 64 `i `uc _gameboard ]
 "228
-[; ;games.c: 228:     char i;
-[v _i `uc ~T0 @X0 1 a ]
+[; ;games.c: 228:     lcd_puts("   your turn!", gameboard);
+[e ( _lcd_puts (2 , :s 17C _gameboard ]
 "229
-[; ;games.c: 229:     char current_option;
-[v _current_option `uc ~T0 @X0 1 a ]
+[; ;games.c: 229:     char i;
+[v _i `uc ~T0 @X0 1 a ]
 "230
-[; ;games.c: 230:     for(i=0;i<(p1_score+1);i++) {
+[; ;games.c: 230:     char current_option;
+[v _current_option `uc ~T0 @X0 1 a ]
+"231
+[; ;games.c: 231:     for(i=0;i<(p1_score+1);i++) {
 {
 [e = _i -> -> 0 `i `uc ]
 [e $U 177  ]
 [e :U 174 ]
 {
-"231
-[; ;games.c: 231:         switch(i%4) {
+"232
+[; ;games.c: 232:         switch(i%4) {
 [e $U 179  ]
 {
-"232
-[; ;games.c: 232:             case 0:
-[e :U 180 ]
 "233
-[; ;games.c: 233:                 current_option = (simon_says_pattern[i/4])&0x03;
-[e = _current_option -> & -> *U + &U _simon_says_pattern * -> -> / -> _i `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux `i -> 3 `i `uc ]
+[; ;games.c: 233:             case 0:
+[e :U 180 ]
 "234
-[; ;games.c: 234:                 break;
-[e $U 178  ]
+[; ;games.c: 234:                 current_option = (simon_says_pattern[i/4])&0x03;
+[e = _current_option -> & -> *U + &U _simon_says_pattern * -> -> / -> _i `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux `i -> 3 `i `uc ]
 "235
-[; ;games.c: 235:             case 1:
-[e :U 181 ]
+[; ;games.c: 235:                 break;
+[e $U 178  ]
 "236
-[; ;games.c: 236:                 current_option = (((simon_says_pattern[i/4])&0x0C)>>2);
-[e = _current_option -> >> & -> *U + &U _simon_says_pattern * -> -> / -> _i `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux `i -> 12 `i -> 2 `i `uc ]
+[; ;games.c: 236:             case 1:
+[e :U 181 ]
 "237
-[; ;games.c: 237:                 break;
-[e $U 178  ]
+[; ;games.c: 237:                 current_option = (((simon_says_pattern[i/4])&0x0C)>>2);
+[e = _current_option -> >> & -> *U + &U _simon_says_pattern * -> -> / -> _i `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux `i -> 12 `i -> 2 `i `uc ]
 "238
-[; ;games.c: 238:             case 2:
-[e :U 182 ]
+[; ;games.c: 238:                 break;
+[e $U 178  ]
 "239
-[; ;games.c: 239:                 current_option = (((simon_says_pattern[i/4])&0x30)>>4);
-[e = _current_option -> >> & -> *U + &U _simon_says_pattern * -> -> / -> _i `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux `i -> 48 `i -> 4 `i `uc ]
+[; ;games.c: 239:             case 2:
+[e :U 182 ]
 "240
-[; ;games.c: 240:                 break;
-[e $U 178  ]
+[; ;games.c: 240:                 current_option = (((simon_says_pattern[i/4])&0x30)>>4);
+[e = _current_option -> >> & -> *U + &U _simon_says_pattern * -> -> / -> _i `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux `i -> 48 `i -> 4 `i `uc ]
 "241
-[; ;games.c: 241:             case 3:
-[e :U 183 ]
-"242
-[; ;games.c: 242:                 current_option = (((simon_says_pattern[i/4])&0xC0)>>6);
-[e = _current_option -> >> & -> *U + &U _simon_says_pattern * -> -> / -> _i `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux `i -> 192 `i -> 6 `i `uc ]
-"243
-[; ;games.c: 243:                 break;
+[; ;games.c: 241:                 break;
 [e $U 178  ]
+"242
+[; ;games.c: 242:             case 3:
+[e :U 183 ]
+"243
+[; ;games.c: 243:                 current_option = (((simon_says_pattern[i/4])&0xC0)>>6);
+[e = _current_option -> >> & -> *U + &U _simon_says_pattern * -> -> / -> _i `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux `i -> 192 `i -> 6 `i `uc ]
 "244
-[; ;games.c: 244:         }
+[; ;games.c: 244:                 break;
+[e $U 178  ]
+"245
+[; ;games.c: 245:         }
 }
 [e $U 178  ]
 [e :U 179 ]
@@ -1018,373 +1018,373 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 3 `i 183
  178 ]
 [e :U 178 ]
-"245
-[; ;games.c: 245:         if(current_option != simon_says_get_input()) {
+"246
+[; ;games.c: 246:         if(current_option != simon_says_get_input()) {
 [e $ ! != -> _current_option `i -> ( _simon_says_get_input ..  `i 184  ]
 {
-"246
-[; ;games.c: 246:             game_over = 1;
-[e = _game_over -> -> 1 `i `uc ]
 "247
-[; ;games.c: 247:             break;
-[e $U 175  ]
+[; ;games.c: 247:             game_over = 1;
+[e = _game_over -> -> 1 `i `uc ]
 "248
-[; ;games.c: 248:         }
+[; ;games.c: 248:             break;
+[e $U 175  ]
+"249
+[; ;games.c: 249:         }
 }
 [e :U 184 ]
-"249
-[; ;games.c: 249:     }
+"250
+[; ;games.c: 250:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 177 ]
 [e $ < -> _i `i + -> _p1_score `i -> 1 `i 174  ]
 [e :U 175 ]
 }
-"250
-[; ;games.c: 250:     lcd_clear(gameboard);
-[e ( _lcd_clear (1 _gameboard ]
 "251
-[; ;games.c: 251:     if(game_over == 0) {
+[; ;games.c: 251:     lcd_clear(gameboard);
+[e ( _lcd_clear (1 _gameboard ]
+"252
+[; ;games.c: 252:     if(game_over == 0) {
 [e $ ! == -> _game_over `i -> 0 `i 185  ]
 {
-"252
-[; ;games.c: 252:         p1_score++;
-[e ++ _p1_score -> -> 1 `i `uc ]
 "253
-[; ;games.c: 253:     }
+[; ;games.c: 253:         p1_score++;
+[e ++ _p1_score -> -> 1 `i `uc ]
+"254
+[; ;games.c: 254:     }
 }
 [e :U 185 ]
-"254
-[; ;games.c: 254:     if(p1_score == 20) {
+"255
+[; ;games.c: 255:     if(p1_score == 20) {
 [e $ ! == -> _p1_score `i -> 20 `i 186  ]
 {
-"255
-[; ;games.c: 255:         game_over = 1;
-[e = _game_over -> -> 1 `i `uc ]
 "256
-[; ;games.c: 256:     }
+[; ;games.c: 256:         game_over = 1;
+[e = _game_over -> -> 1 `i `uc ]
+"257
+[; ;games.c: 257:     }
 }
 [e :U 186 ]
-"257
-[; ;games.c: 257: }
+"258
+[; ;games.c: 258: }
 [e :UE 173 ]
 }
-"259
-[; ;games.c: 259: char simon_says_get_input(void) {
+"260
+[; ;games.c: 260: char simon_says_get_input(void) {
 [v _simon_says_get_input `(uc ~T0 @X0 1 ef ]
 {
 [e :U _simon_says_get_input ]
 [f ]
-"260
-[; ;games.c: 260:     char current_input;
-[v _current_input `uc ~T0 @X0 1 a ]
 "261
-[; ;games.c: 261:     while(1) {
+[; ;games.c: 261:     char current_input;
+[v _current_input `uc ~T0 @X0 1 a ]
+"262
+[; ;games.c: 262:     while(1) {
 [e :U 189 ]
 {
-"262
-[; ;games.c: 262:         if(GO == 0) {
+"263
+[; ;games.c: 263:         if(GO == 0) {
 [e $ ! == -> _GO `i -> 0 `i 191  ]
 {
-"263
-[; ;games.c: 263:             GO = 1;
-[e = _GO -> -> 1 `i `b ]
 "264
-[; ;games.c: 264:         }
+[; ;games.c: 264:             GO = 1;
+[e = _GO -> -> 1 `i `b ]
+"265
+[; ;games.c: 265:         }
 }
 [e :U 191 ]
-"265
-[; ;games.c: 265:         if(joystick_x_pos > 1000) {
+"266
+[; ;games.c: 266:         if(joystick_x_pos > 1000) {
 [e $ ! > _joystick_x_pos -> 1000 `i 192  ]
 {
-"266
-[; ;games.c: 266:             if(CCP2IE == 0) {
+"267
+[; ;games.c: 267:             if(CCP2IE == 0) {
 [e $ ! == -> _CCP2IE `i -> 0 `i 193  ]
 {
-"267
-[; ;games.c: 267:                 tone_delay = 17026;
-[e = _tone_delay -> 17026 `i ]
 "268
-[; ;games.c: 268:                 CCPR2 = TMR1+17026;
-[e = _CCPR2 -> + -> _TMR1 `ui -> -> 17026 `i `ui `us ]
+[; ;games.c: 268:                 tone_delay = 17026;
+[e = _tone_delay -> 17026 `i ]
 "269
-[; ;games.c: 269:                 CCP2IF = 0;
-[e = _CCP2IF -> -> 0 `i `b ]
+[; ;games.c: 269:                 CCPR2 = TMR1+17026;
+[e = _CCPR2 -> + -> _TMR1 `ui -> -> 17026 `i `ui `us ]
 "270
-[; ;games.c: 270:                 CCP2IE = 1;
-[e = _CCP2IE -> -> 1 `i `b ]
+[; ;games.c: 270:                 CCP2IF = 0;
+[e = _CCP2IF -> -> 0 `i `b ]
 "271
-[; ;games.c: 271:                 turn_on_led(0);
-[e ( _turn_on_led (1 -> -> 0 `i `uc ]
+[; ;games.c: 271:                 CCP2IE = 1;
+[e = _CCP2IE -> -> 1 `i `b ]
 "272
-[; ;games.c: 272:             }
+[; ;games.c: 272:                 turn_on_led(0);
+[e ( _turn_on_led (1 -> -> 0 `i `uc ]
+"273
+[; ;games.c: 273:             }
 }
 [e :U 193 ]
-"273
-[; ;games.c: 273:             if(RB5 == 0) {
+"274
+[; ;games.c: 274:             if(RB5 == 0) {
 [e $ ! == -> _RB5 `i -> 0 `i 194  ]
 {
-"274
-[; ;games.c: 274:                 current_input = 0;
-[e = _current_input -> -> 0 `i `uc ]
 "275
-[; ;games.c: 275:                 break;
-[e $U 190  ]
+[; ;games.c: 275:                 current_input = 0;
+[e = _current_input -> -> 0 `i `uc ]
 "276
-[; ;games.c: 276:             }
+[; ;games.c: 276:                 break;
+[e $U 190  ]
+"277
+[; ;games.c: 277:             }
 }
 [e :U 194 ]
-"277
-[; ;games.c: 277:         } else if(joystick_x_pos < 20) {
+"278
+[; ;games.c: 278:         } else if(joystick_x_pos < 20) {
 }
 [e $U 195  ]
 [e :U 192 ]
 [e $ ! < _joystick_x_pos -> 20 `i 196  ]
 {
-"278
-[; ;games.c: 278:             if(CCP2IE == 0) {
+"279
+[; ;games.c: 279:             if(CCP2IE == 0) {
 [e $ ! == -> _CCP2IE `i -> 0 `i 197  ]
 {
-"279
-[; ;games.c: 279:                 tone_delay = 8513;
-[e = _tone_delay -> 8513 `i ]
 "280
-[; ;games.c: 280:                 CCPR2 = TMR1+8513;
-[e = _CCPR2 -> + -> _TMR1 `ui -> -> 8513 `i `ui `us ]
+[; ;games.c: 280:                 tone_delay = 8513;
+[e = _tone_delay -> 8513 `i ]
 "281
-[; ;games.c: 281:                 CCP2IF = 0;
-[e = _CCP2IF -> -> 0 `i `b ]
+[; ;games.c: 281:                 CCPR2 = TMR1+8513;
+[e = _CCPR2 -> + -> _TMR1 `ui -> -> 8513 `i `ui `us ]
 "282
-[; ;games.c: 282:                 CCP2IE = 1;
-[e = _CCP2IE -> -> 1 `i `b ]
+[; ;games.c: 282:                 CCP2IF = 0;
+[e = _CCP2IF -> -> 0 `i `b ]
 "283
-[; ;games.c: 283:                 turn_on_led(1);
-[e ( _turn_on_led (1 -> -> 1 `i `uc ]
+[; ;games.c: 283:                 CCP2IE = 1;
+[e = _CCP2IE -> -> 1 `i `b ]
 "284
-[; ;games.c: 284:             }
+[; ;games.c: 284:                 turn_on_led(1);
+[e ( _turn_on_led (1 -> -> 1 `i `uc ]
+"285
+[; ;games.c: 285:             }
 }
 [e :U 197 ]
-"285
-[; ;games.c: 285:             if(RB5 == 0) {
+"286
+[; ;games.c: 286:             if(RB5 == 0) {
 [e $ ! == -> _RB5 `i -> 0 `i 198  ]
 {
-"286
-[; ;games.c: 286:                 current_input = 1;
-[e = _current_input -> -> 1 `i `uc ]
 "287
-[; ;games.c: 287:                 break;
-[e $U 190  ]
+[; ;games.c: 287:                 current_input = 1;
+[e = _current_input -> -> 1 `i `uc ]
 "288
-[; ;games.c: 288:             }
+[; ;games.c: 288:                 break;
+[e $U 190  ]
+"289
+[; ;games.c: 289:             }
 }
 [e :U 198 ]
-"289
-[; ;games.c: 289:         } else if(joystick_y_pos > 1000) {
+"290
+[; ;games.c: 290:         } else if(joystick_y_pos > 1000) {
 }
 [e $U 199  ]
 [e :U 196 ]
 [e $ ! > _joystick_y_pos -> 1000 `i 200  ]
 {
-"290
-[; ;games.c: 290:             if(CCP2IE == 0) {
+"291
+[; ;games.c: 291:             if(CCP2IE == 0) {
 [e $ ! == -> _CCP2IE `i -> 0 `i 201  ]
 {
-"291
-[; ;games.c: 291:                 tone_delay = 4257;
-[e = _tone_delay -> 4257 `i ]
 "292
-[; ;games.c: 292:                 CCPR2 = TMR1+4257;
-[e = _CCPR2 -> + -> _TMR1 `ui -> -> 4257 `i `ui `us ]
+[; ;games.c: 292:                 tone_delay = 4257;
+[e = _tone_delay -> 4257 `i ]
 "293
-[; ;games.c: 293:                 CCP2IF = 0;
-[e = _CCP2IF -> -> 0 `i `b ]
+[; ;games.c: 293:                 CCPR2 = TMR1+4257;
+[e = _CCPR2 -> + -> _TMR1 `ui -> -> 4257 `i `ui `us ]
 "294
-[; ;games.c: 294:                 CCP2IE = 1;
-[e = _CCP2IE -> -> 1 `i `b ]
+[; ;games.c: 294:                 CCP2IF = 0;
+[e = _CCP2IF -> -> 0 `i `b ]
 "295
-[; ;games.c: 295:                 turn_on_led(2);
-[e ( _turn_on_led (1 -> -> 2 `i `uc ]
+[; ;games.c: 295:                 CCP2IE = 1;
+[e = _CCP2IE -> -> 1 `i `b ]
 "296
-[; ;games.c: 296:             }
+[; ;games.c: 296:                 turn_on_led(2);
+[e ( _turn_on_led (1 -> -> 2 `i `uc ]
+"297
+[; ;games.c: 297:             }
 }
 [e :U 201 ]
-"297
-[; ;games.c: 297:             if(RB5 == 0) {
+"298
+[; ;games.c: 298:             if(RB5 == 0) {
 [e $ ! == -> _RB5 `i -> 0 `i 202  ]
 {
-"298
-[; ;games.c: 298:                 current_input = 2;
-[e = _current_input -> -> 2 `i `uc ]
 "299
-[; ;games.c: 299:                 break;
-[e $U 190  ]
+[; ;games.c: 299:                 current_input = 2;
+[e = _current_input -> -> 2 `i `uc ]
 "300
-[; ;games.c: 300:             }
+[; ;games.c: 300:                 break;
+[e $U 190  ]
+"301
+[; ;games.c: 301:             }
 }
 [e :U 202 ]
-"301
-[; ;games.c: 301:         } else if(joystick_y_pos < 20) {
+"302
+[; ;games.c: 302:         } else if(joystick_y_pos < 20) {
 }
 [e $U 203  ]
 [e :U 200 ]
 [e $ ! < _joystick_y_pos -> 20 `i 204  ]
 {
-"302
-[; ;games.c: 302:             if(CCP2IE == 0) {
+"303
+[; ;games.c: 303:             if(CCP2IE == 0) {
 [e $ ! == -> _CCP2IE `i -> 0 `i 205  ]
 {
-"303
-[; ;games.c: 303:                 tone_delay = 2128;
-[e = _tone_delay -> 2128 `i ]
 "304
-[; ;games.c: 304:                 CCPR2 = TMR1+2128;
-[e = _CCPR2 -> + -> _TMR1 `ui -> -> 2128 `i `ui `us ]
+[; ;games.c: 304:                 tone_delay = 2128;
+[e = _tone_delay -> 2128 `i ]
 "305
-[; ;games.c: 305:                 CCP2IF = 0;
-[e = _CCP2IF -> -> 0 `i `b ]
+[; ;games.c: 305:                 CCPR2 = TMR1+2128;
+[e = _CCPR2 -> + -> _TMR1 `ui -> -> 2128 `i `ui `us ]
 "306
-[; ;games.c: 306:                 CCP2IE = 1;
-[e = _CCP2IE -> -> 1 `i `b ]
+[; ;games.c: 306:                 CCP2IF = 0;
+[e = _CCP2IF -> -> 0 `i `b ]
 "307
-[; ;games.c: 307:                 turn_on_led(5);
-[e ( _turn_on_led (1 -> -> 5 `i `uc ]
+[; ;games.c: 307:                 CCP2IE = 1;
+[e = _CCP2IE -> -> 1 `i `b ]
 "308
-[; ;games.c: 308:             }
+[; ;games.c: 308:                 turn_on_led(5);
+[e ( _turn_on_led (1 -> -> 5 `i `uc ]
+"309
+[; ;games.c: 309:             }
 }
 [e :U 205 ]
-"309
-[; ;games.c: 309:             if(RB5 == 0) {
+"310
+[; ;games.c: 310:             if(RB5 == 0) {
 [e $ ! == -> _RB5 `i -> 0 `i 206  ]
 {
-"310
-[; ;games.c: 310:                 current_input = 3;
-[e = _current_input -> -> 3 `i `uc ]
 "311
-[; ;games.c: 311:                 break;
-[e $U 190  ]
+[; ;games.c: 311:                 current_input = 3;
+[e = _current_input -> -> 3 `i `uc ]
 "312
-[; ;games.c: 312:             }
+[; ;games.c: 312:                 break;
+[e $U 190  ]
+"313
+[; ;games.c: 313:             }
 }
 [e :U 206 ]
-"313
-[; ;games.c: 313:         } else {
+"314
+[; ;games.c: 314:         } else {
 }
 [e $U 207  ]
 [e :U 204 ]
 {
-"314
-[; ;games.c: 314:             CCP2IE = 0;
-[e = _CCP2IE -> -> 0 `i `b ]
 "315
-[; ;games.c: 315:             PORTC &= 0x1F;
-[e =& _PORTC -> -> 31 `i `Vuc ]
+[; ;games.c: 315:             CCP2IE = 0;
+[e = _CCP2IE -> -> 0 `i `b ]
 "316
-[; ;games.c: 316:         }
+[; ;games.c: 316:             PORTC &= 0x1F;
+[e =& _PORTC -> -> 31 `i `Vuc ]
+"317
+[; ;games.c: 317:         }
 }
 [e :U 207 ]
 [e :U 203 ]
 [e :U 199 ]
 [e :U 195 ]
-"317
-[; ;games.c: 317:     }
+"318
+[; ;games.c: 318:     }
 }
 [e :U 188 ]
 [e $U 189  ]
 [e :U 190 ]
-"318
-[; ;games.c: 318:     CCP2IE = 0;
-[e = _CCP2IE -> -> 0 `i `b ]
 "319
-[; ;games.c: 319:     PORTC &= 0x1F;
-[e =& _PORTC -> -> 31 `i `Vuc ]
+[; ;games.c: 319:     CCP2IE = 0;
+[e = _CCP2IE -> -> 0 `i `b ]
 "320
-[; ;games.c: 320:     DelayMs(8);
-[e ( _DelayMs (1 -> -> 8 `i `ui ]
+[; ;games.c: 320:     PORTC &= 0x1F;
+[e =& _PORTC -> -> 31 `i `Vuc ]
 "321
-[; ;games.c: 321:     while(RB5 == 0);
+[; ;games.c: 321:     DelayMs(8);
+[e ( _DelayMs (1 -> -> 8 `i `ui ]
+"322
+[; ;games.c: 322:     while(RB5 == 0);
 [e $U 208  ]
 [e :U 209 ]
 [e :U 208 ]
 [e $ == -> _RB5 `i -> 0 `i 209  ]
 [e :U 210 ]
-"322
-[; ;games.c: 322:     GO = 1;
-[e = _GO -> -> 1 `i `b ]
 "323
-[; ;games.c: 323:     DelayMs(500);
-[e ( _DelayMs (1 -> -> 500 `i `ui ]
+[; ;games.c: 323:     GO = 1;
+[e = _GO -> -> 1 `i `b ]
 "324
-[; ;games.c: 324:     return current_input;
+[; ;games.c: 324:     DelayMs(500);
+[e ( _DelayMs (1 -> -> 500 `i `ui ]
+"325
+[; ;games.c: 325:     return current_input;
 [e ) _current_input ]
 [e $UE 187  ]
-"325
-[; ;games.c: 325: }
+"326
+[; ;games.c: 326: }
 [e :UE 187 ]
 }
-"327
-[; ;games.c: 327: void play_pattern(void) {
+"328
+[; ;games.c: 328: void play_pattern(void) {
 [v _play_pattern `(v ~T0 @X0 1 ef ]
 {
 [e :U _play_pattern ]
 [f ]
-"328
-[; ;games.c: 328:     lcd_puts(" Simon Says....", gameboard);
-[e ( _lcd_puts (2 , :s 18C _gameboard ]
 "329
-[; ;games.c: 329:     char i;
-[v _i `uc ~T0 @X0 1 a ]
+[; ;games.c: 329:     lcd_puts(" Simon Says....", gameboard);
+[e ( _lcd_puts (2 , :s 18C _gameboard ]
 "330
-[; ;games.c: 330:     char current_option;
-[v _current_option `uc ~T0 @X0 1 a ]
+[; ;games.c: 330:     char i;
+[v _i `uc ~T0 @X0 1 a ]
 "331
-[; ;games.c: 331:     for(i=0;i<(p1_score+1);i++) {
+[; ;games.c: 331:     char current_option;
+[v _current_option `uc ~T0 @X0 1 a ]
+"332
+[; ;games.c: 332:     for(i=0;i<(p1_score+1);i++) {
 {
 [e = _i -> -> 0 `i `uc ]
 [e $U 215  ]
 [e :U 212 ]
 {
-"332
-[; ;games.c: 332:         switch(i%4) {
+"333
+[; ;games.c: 333:         switch(i%4) {
 [e $U 217  ]
 {
-"333
-[; ;games.c: 333:             case 0:
-[e :U 218 ]
 "334
-[; ;games.c: 334:                 current_option = (simon_says_pattern[i/4])&0x03;
-[e = _current_option -> & -> *U + &U _simon_says_pattern * -> -> / -> _i `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux `i -> 3 `i `uc ]
+[; ;games.c: 334:             case 0:
+[e :U 218 ]
 "335
-[; ;games.c: 335:                 break;
-[e $U 216  ]
+[; ;games.c: 335:                 current_option = (simon_says_pattern[i/4])&0x03;
+[e = _current_option -> & -> *U + &U _simon_says_pattern * -> -> / -> _i `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux `i -> 3 `i `uc ]
 "336
-[; ;games.c: 336:             case 1:
-[e :U 219 ]
+[; ;games.c: 336:                 break;
+[e $U 216  ]
 "337
-[; ;games.c: 337:                 current_option = (((simon_says_pattern[i/4])&0x0C)>>2);
-[e = _current_option -> >> & -> *U + &U _simon_says_pattern * -> -> / -> _i `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux `i -> 12 `i -> 2 `i `uc ]
+[; ;games.c: 337:             case 1:
+[e :U 219 ]
 "338
-[; ;games.c: 338:                 break;
-[e $U 216  ]
+[; ;games.c: 338:                 current_option = (((simon_says_pattern[i/4])&0x0C)>>2);
+[e = _current_option -> >> & -> *U + &U _simon_says_pattern * -> -> / -> _i `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux `i -> 12 `i -> 2 `i `uc ]
 "339
-[; ;games.c: 339:             case 2:
-[e :U 220 ]
+[; ;games.c: 339:                 break;
+[e $U 216  ]
 "340
-[; ;games.c: 340:                 current_option = (((simon_says_pattern[i/4])&0x30)>>4);
-[e = _current_option -> >> & -> *U + &U _simon_says_pattern * -> -> / -> _i `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux `i -> 48 `i -> 4 `i `uc ]
+[; ;games.c: 340:             case 2:
+[e :U 220 ]
 "341
-[; ;games.c: 341:                 break;
-[e $U 216  ]
+[; ;games.c: 341:                 current_option = (((simon_says_pattern[i/4])&0x30)>>4);
+[e = _current_option -> >> & -> *U + &U _simon_says_pattern * -> -> / -> _i `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux `i -> 48 `i -> 4 `i `uc ]
 "342
-[; ;games.c: 342:             case 3:
-[e :U 221 ]
-"343
-[; ;games.c: 343:                 current_option = (((simon_says_pattern[i/4])&0xC0)>>6);
-[e = _current_option -> >> & -> *U + &U _simon_says_pattern * -> -> / -> _i `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux `i -> 192 `i -> 6 `i `uc ]
-"344
-[; ;games.c: 344:                 break;
+[; ;games.c: 342:                 break;
 [e $U 216  ]
+"343
+[; ;games.c: 343:             case 3:
+[e :U 221 ]
+"344
+[; ;games.c: 344:                 current_option = (((simon_says_pattern[i/4])&0xC0)>>6);
+[e = _current_option -> >> & -> *U + &U _simon_says_pattern * -> -> / -> _i `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux `i -> 192 `i -> 6 `i `uc ]
 "345
-[; ;games.c: 345:         }
+[; ;games.c: 345:                 break;
+[e $U 216  ]
+"346
+[; ;games.c: 346:         }
 }
 [e $U 216  ]
 [e :U 217 ]
@@ -1394,60 +1394,60 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 3 `i 221
  216 ]
 [e :U 216 ]
-"346
-[; ;games.c: 346:         switch(current_option) {
+"347
+[; ;games.c: 347:         switch(current_option) {
 [e $U 223  ]
 {
-"347
-[; ;games.c: 347:         case 0:
-[e :U 224 ]
 "348
-[; ;games.c: 348:             turn_on_led(0);
-[e ( _turn_on_led (1 -> -> 0 `i `uc ]
+[; ;games.c: 348:         case 0:
+[e :U 224 ]
 "349
-[; ;games.c: 349:             play_tone(17026, 63);
-[e ( _play_tone (2 , -> -> 17026 `i `ui -> -> 63 `i `uc ]
+[; ;games.c: 349:             turn_on_led(0);
+[e ( _turn_on_led (1 -> -> 0 `i `uc ]
 "350
-[; ;games.c: 350:             break;
-[e $U 222  ]
+[; ;games.c: 350:             play_tone(17026, 63);
+[e ( _play_tone (2 , -> -> 17026 `i `ui -> -> 63 `i `uc ]
 "351
-[; ;games.c: 351:         case 1:
-[e :U 225 ]
+[; ;games.c: 351:             break;
+[e $U 222  ]
 "352
-[; ;games.c: 352:             turn_on_led(1);
-[e ( _turn_on_led (1 -> -> 1 `i `uc ]
+[; ;games.c: 352:         case 1:
+[e :U 225 ]
 "353
-[; ;games.c: 353:             play_tone(8513, 63);
-[e ( _play_tone (2 , -> -> 8513 `i `ui -> -> 63 `i `uc ]
+[; ;games.c: 353:             turn_on_led(1);
+[e ( _turn_on_led (1 -> -> 1 `i `uc ]
 "354
-[; ;games.c: 354:             break;
-[e $U 222  ]
+[; ;games.c: 354:             play_tone(8513, 63);
+[e ( _play_tone (2 , -> -> 8513 `i `ui -> -> 63 `i `uc ]
 "355
-[; ;games.c: 355:         case 2:
-[e :U 226 ]
+[; ;games.c: 355:             break;
+[e $U 222  ]
 "356
-[; ;games.c: 356:             turn_on_led(2);
-[e ( _turn_on_led (1 -> -> 2 `i `uc ]
+[; ;games.c: 356:         case 2:
+[e :U 226 ]
 "357
-[; ;games.c: 357:             play_tone(4257, 63);
-[e ( _play_tone (2 , -> -> 4257 `i `ui -> -> 63 `i `uc ]
+[; ;games.c: 357:             turn_on_led(2);
+[e ( _turn_on_led (1 -> -> 2 `i `uc ]
 "358
-[; ;games.c: 358:             break;
-[e $U 222  ]
+[; ;games.c: 358:             play_tone(4257, 63);
+[e ( _play_tone (2 , -> -> 4257 `i `ui -> -> 63 `i `uc ]
 "359
-[; ;games.c: 359:         case 3:
-[e :U 227 ]
-"360
-[; ;games.c: 360:             turn_on_led(5);
-[e ( _turn_on_led (1 -> -> 5 `i `uc ]
-"361
-[; ;games.c: 361:             play_tone(2128, 63);
-[e ( _play_tone (2 , -> -> 2128 `i `ui -> -> 63 `i `uc ]
-"362
-[; ;games.c: 362:             break;
+[; ;games.c: 359:             break;
 [e $U 222  ]
+"360
+[; ;games.c: 360:         case 3:
+[e :U 227 ]
+"361
+[; ;games.c: 361:             turn_on_led(5);
+[e ( _turn_on_led (1 -> -> 5 `i `uc ]
+"362
+[; ;games.c: 362:             play_tone(2128, 63);
+[e ( _play_tone (2 , -> -> 2128 `i `ui -> -> 63 `i `uc ]
 "363
-[; ;games.c: 363:         }
+[; ;games.c: 363:             break;
+[e $U 222  ]
+"364
+[; ;games.c: 364:         }
 }
 [e $U 222  ]
 [e :U 223 ]
@@ -1457,96 +1457,96 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 3 `i 227
  222 ]
 [e :U 222 ]
-"364
-[; ;games.c: 364:         PORTC &= 0x1F;
-[e =& _PORTC -> -> 31 `i `Vuc ]
 "365
-[; ;games.c: 365:         DelayMs(250);
-[e ( _DelayMs (1 -> -> 250 `i `ui ]
+[; ;games.c: 365:         PORTC &= 0x1F;
+[e =& _PORTC -> -> 31 `i `Vuc ]
 "366
-[; ;games.c: 366:     }
+[; ;games.c: 366:         DelayMs(250);
+[e ( _DelayMs (1 -> -> 250 `i `ui ]
+"367
+[; ;games.c: 367:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 215 ]
 [e $ < -> _i `i + -> _p1_score `i -> 1 `i 212  ]
 [e :U 213 ]
 }
-"367
-[; ;games.c: 367:     lcd_clear(gameboard);
-[e ( _lcd_clear (1 _gameboard ]
 "368
-[; ;games.c: 368: }
+[; ;games.c: 368:     lcd_clear(gameboard);
+[e ( _lcd_clear (1 _gameboard ]
+"369
+[; ;games.c: 369: }
 [e :UE 211 ]
 }
-"370
-[; ;games.c: 370: void generate_pattern(void) {
+"371
+[; ;games.c: 371: void generate_pattern(void) {
 [v _generate_pattern `(v ~T0 @X0 1 ef ]
 {
 [e :U _generate_pattern ]
 [f ]
-"371
-[; ;games.c: 371:     char current_byte;
-[v _current_byte `uc ~T0 @X0 1 a ]
 "372
-[; ;games.c: 372:     DelayMs(TMR2>>(2+(TMR1%4)));
-[e ( _DelayMs (1 -> >> -> _TMR2 `i + -> -> 2 `i `ui % -> _TMR1 `ui -> -> 4 `i `ui `ui ]
+[; ;games.c: 372:     char current_byte;
+[v _current_byte `uc ~T0 @X0 1 a ]
 "373
-[; ;games.c: 373:     current_byte = simon_says_pattern[p1_score/4];
-[e = _current_byte *U + &U _simon_says_pattern * -> -> / -> _p1_score `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux ]
+[; ;games.c: 373:     DelayMs(TMR2>>(2+(TMR1%4)));
+[e ( _DelayMs (1 -> >> -> _TMR2 `i + -> -> 2 `i `ui % -> _TMR1 `ui -> -> 4 `i `ui `ui ]
 "374
-[; ;games.c: 374:     switch(p1_score%4) {
+[; ;games.c: 374:     current_byte = simon_says_pattern[p1_score/4];
+[e = _current_byte *U + &U _simon_says_pattern * -> -> / -> _p1_score `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux ]
+"375
+[; ;games.c: 375:     switch(p1_score%4) {
 [e $U 230  ]
 {
-"375
-[; ;games.c: 375:         case 0:
-[e :U 231 ]
 "376
-[; ;games.c: 376:             current_byte &= 0xFC;
-[e =& _current_byte -> -> 252 `i `uc ]
+[; ;games.c: 376:         case 0:
+[e :U 231 ]
 "377
-[; ;games.c: 377:             current_byte |= TMR1%4;
-[e =| _current_byte -> % -> _TMR1 `ui -> -> 4 `i `ui `uc ]
+[; ;games.c: 377:             current_byte &= 0xFC;
+[e =& _current_byte -> -> 252 `i `uc ]
 "378
-[; ;games.c: 378:             break;
-[e $U 229  ]
+[; ;games.c: 378:             current_byte |= TMR1%4;
+[e =| _current_byte -> % -> _TMR1 `ui -> -> 4 `i `ui `uc ]
 "379
-[; ;games.c: 379:         case 1:
-[e :U 232 ]
+[; ;games.c: 379:             break;
+[e $U 229  ]
 "380
-[; ;games.c: 380:             current_byte &= 0xF3;
-[e =& _current_byte -> -> 243 `i `uc ]
+[; ;games.c: 380:         case 1:
+[e :U 232 ]
 "381
-[; ;games.c: 381:             current_byte |= ((TMR1%4)<<2);
-[e =| _current_byte -> << % -> _TMR1 `ui -> -> 4 `i `ui -> 2 `i `uc ]
+[; ;games.c: 381:             current_byte &= 0xF3;
+[e =& _current_byte -> -> 243 `i `uc ]
 "382
-[; ;games.c: 382:             break;
-[e $U 229  ]
+[; ;games.c: 382:             current_byte |= ((TMR1%4)<<2);
+[e =| _current_byte -> << % -> _TMR1 `ui -> -> 4 `i `ui -> 2 `i `uc ]
 "383
-[; ;games.c: 383:         case 2:
-[e :U 233 ]
+[; ;games.c: 383:             break;
+[e $U 229  ]
 "384
-[; ;games.c: 384:             current_byte &= 0xCF;
-[e =& _current_byte -> -> 207 `i `uc ]
+[; ;games.c: 384:         case 2:
+[e :U 233 ]
 "385
-[; ;games.c: 385:             current_byte |= ((TMR1%4)<<4);
-[e =| _current_byte -> << % -> _TMR1 `ui -> -> 4 `i `ui -> 4 `i `uc ]
+[; ;games.c: 385:             current_byte &= 0xCF;
+[e =& _current_byte -> -> 207 `i `uc ]
 "386
-[; ;games.c: 386:             break;
-[e $U 229  ]
+[; ;games.c: 386:             current_byte |= ((TMR1%4)<<4);
+[e =| _current_byte -> << % -> _TMR1 `ui -> -> 4 `i `ui -> 4 `i `uc ]
 "387
-[; ;games.c: 387:         case 3:
-[e :U 234 ]
-"388
-[; ;games.c: 388:             current_byte &= 0x3F;
-[e =& _current_byte -> -> 63 `i `uc ]
-"389
-[; ;games.c: 389:             current_byte |= ((TMR1%4)<<6);
-[e =| _current_byte -> << % -> _TMR1 `ui -> -> 4 `i `ui -> 6 `i `uc ]
-"390
-[; ;games.c: 390:             break;
+[; ;games.c: 387:             break;
 [e $U 229  ]
+"388
+[; ;games.c: 388:         case 3:
+[e :U 234 ]
+"389
+[; ;games.c: 389:             current_byte &= 0x3F;
+[e =& _current_byte -> -> 63 `i `uc ]
+"390
+[; ;games.c: 390:             current_byte |= ((TMR1%4)<<6);
+[e =| _current_byte -> << % -> _TMR1 `ui -> -> 4 `i `ui -> 6 `i `uc ]
 "391
-[; ;games.c: 391:     }
+[; ;games.c: 391:             break;
+[e $U 229  ]
+"392
+[; ;games.c: 392:     }
 }
 [e $U 229  ]
 [e :U 230 ]
@@ -1556,662 +1556,334 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 3 `i 234
  229 ]
 [e :U 229 ]
-"392
-[; ;games.c: 392:     simon_says_pattern[p1_score/4] = current_byte;
-[e = *U + &U _simon_says_pattern * -> -> / -> _p1_score `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux _current_byte ]
 "393
-[; ;games.c: 393: }
+[; ;games.c: 393:     simon_says_pattern[p1_score/4] = current_byte;
+[e = *U + &U _simon_says_pattern * -> -> / -> _p1_score `i -> 4 `i `ui `ux -> -> # *U &U _simon_says_pattern `ui `ux _current_byte ]
+"394
+[; ;games.c: 394: }
 [e :UE 228 ]
 }
-"395
-[; ;games.c: 395: void countdown(void) {
+"396
+[; ;games.c: 396: void countdown(void) {
 [v _countdown `(v ~T0 @X0 1 ef ]
 {
 [e :U _countdown ]
 [f ]
-"396
-[; ;games.c: 396:     lcd_clear(gameboard);
-[e ( _lcd_clear (1 _gameboard ]
 "397
-[; ;games.c: 397:     signed char i;
-[v _i `c ~T0 @X0 1 a ]
+[; ;games.c: 397:     lcd_clear(gameboard);
+[e ( _lcd_clear (1 _gameboard ]
 "398
-[; ;games.c: 398:     for(i=3;i>=0;i--) {
+[; ;games.c: 398:     signed char i;
+[v _i `c ~T0 @X0 1 a ]
+"399
+[; ;games.c: 399:     for(i=3;i>=0;i--) {
 {
 [e = _i -> -> 3 `i `c ]
 [e $ >= -> _i `i -> 0 `i 236  ]
 [e $U 237  ]
 [e :U 236 ]
 {
-"399
-[; ;games.c: 399:         lcd_goto(0x07, gameboard);
-[e ( _lcd_goto (2 , -> -> 7 `i `uc _gameboard ]
 "400
-[; ;games.c: 400:         lcd_putch(i+0x30, gameboard);
-[e ( _lcd_putch (2 , -> + -> _i `i -> 48 `i `uc _gameboard ]
+[; ;games.c: 400:         lcd_goto(0x07, gameboard);
+[e ( _lcd_goto (2 , -> -> 7 `i `uc _gameboard ]
 "401
-[; ;games.c: 401:         DelayMs(1000);
-[e ( _DelayMs (1 -> -> 1000 `i `ui ]
+[; ;games.c: 401:         lcd_putch(i+0x30, gameboard);
+[e ( _lcd_putch (2 , -> + -> _i `i -> 48 `i `uc _gameboard ]
 "402
-[; ;games.c: 402:     }
+[; ;games.c: 402:         DelayMs(1000);
+[e ( _DelayMs (1 -> -> 1000 `i `ui ]
+"403
+[; ;games.c: 403:     }
 }
 [e -- _i -> -> 1 `i `c ]
 [e $ >= -> _i `i -> 0 `i 236  ]
 [e :U 237 ]
 }
-"403
-[; ;games.c: 403:     lcd_clear(gameboard);
-[e ( _lcd_clear (1 _gameboard ]
 "404
-[; ;games.c: 404: }
+[; ;games.c: 404:     lcd_clear(gameboard);
+[e ( _lcd_clear (1 _gameboard ]
+"405
+[; ;games.c: 405: }
 [e :UE 235 ]
 }
-"406
-[; ;games.c: 406: void display_simon_says_scoreboard(void) {
+"407
+[; ;games.c: 407: void display_simon_says_scoreboard(void) {
 [v _display_simon_says_scoreboard `(v ~T0 @X0 1 ef ]
 {
 [e :U _display_simon_says_scoreboard ]
 [f ]
-"407
-[; ;games.c: 407:     lcd_clear(scoreboard);
-[e ( _lcd_clear (1 _scoreboard ]
 "408
-[; ;games.c: 408:     lcd_puts("     Score:", scoreboard);
-[e ( _lcd_puts (2 , :s 19C _scoreboard ]
+[; ;games.c: 408:     lcd_clear(scoreboard);
+[e ( _lcd_clear (1 _scoreboard ]
 "409
-[; ;games.c: 409:     lcd_goto(0x43, scoreboard);
-[e ( _lcd_goto (2 , -> -> 67 `i `uc _scoreboard ]
+[; ;games.c: 409:     lcd_puts("     Score:", scoreboard);
+[e ( _lcd_puts (2 , :s 19C _scoreboard ]
 "410
-[; ;games.c: 410:     lcd_putch(((p1_score%100)/10)+0x30, scoreboard);
-[e ( _lcd_putch (2 , -> + / % -> _p1_score `i -> 100 `i -> 10 `i -> 48 `i `uc _scoreboard ]
+[; ;games.c: 410:     lcd_goto(0x43, scoreboard);
+[e ( _lcd_goto (2 , -> -> 67 `i `uc _scoreboard ]
 "411
-[; ;games.c: 411:     lcd_putch((p1_score%10)+0x30, scoreboard);
-[e ( _lcd_putch (2 , -> + % -> _p1_score `i -> 10 `i -> 48 `i `uc _scoreboard ]
+[; ;games.c: 411:     lcd_putch(((p1_score%100)/10)+0x30, scoreboard);
+[e ( _lcd_putch (2 , -> + / % -> _p1_score `i -> 100 `i -> 10 `i -> 48 `i `uc _scoreboard ]
 "412
-[; ;games.c: 412:     lcd_puts("  Rounds", scoreboard);
-[e ( _lcd_puts (2 , :s 20C _scoreboard ]
+[; ;games.c: 412:     lcd_putch((p1_score%10)+0x30, scoreboard);
+[e ( _lcd_putch (2 , -> + % -> _p1_score `i -> 10 `i -> 48 `i `uc _scoreboard ]
 "413
-[; ;games.c: 413: }
+[; ;games.c: 413:     lcd_puts("  Rounds", scoreboard);
+[e ( _lcd_puts (2 , :s 20C _scoreboard ]
+"414
+[; ;games.c: 414: }
 [e :UE 239 ]
 }
-"415
-[; ;games.c: 415: void simon_says_title_screen(void) {
+"416
+[; ;games.c: 416: void simon_says_title_screen(void) {
 [v _simon_says_title_screen `(v ~T0 @X0 1 ef ]
 {
 [e :U _simon_says_title_screen ]
 [f ]
-"416
-[; ;games.c: 416:     lcd_puts("   Simon Says", scoreboard);
-[e ( _lcd_puts (2 , :s 21C _scoreboard ]
 "417
-[; ;games.c: 417:     lcd_puts("Press the button", gameboard);
-[e ( _lcd_puts (2 , :s 22C _gameboard ]
+[; ;games.c: 417:     lcd_puts("   Simon Says", scoreboard);
+[e ( _lcd_puts (2 , :s 21C _scoreboard ]
 "418
-[; ;games.c: 418:     lcd_goto(0x40, gameboard);
-[e ( _lcd_goto (2 , -> -> 64 `i `uc _gameboard ]
+[; ;games.c: 418:     lcd_puts("Press the button", gameboard);
+[e ( _lcd_puts (2 , :s 22C _gameboard ]
 "419
-[; ;games.c: 419:     lcd_puts("    to start", gameboard);
-[e ( _lcd_puts (2 , :s 23C _gameboard ]
+[; ;games.c: 419:     lcd_goto(0x40, gameboard);
+[e ( _lcd_goto (2 , -> -> 64 `i `uc _gameboard ]
 "420
-[; ;games.c: 420:     while(RB5 == 1);
+[; ;games.c: 420:     lcd_puts("    to start", gameboard);
+[e ( _lcd_puts (2 , :s 23C _gameboard ]
+"421
+[; ;games.c: 421:     while(RB5 == 1);
 [e $U 241  ]
 [e :U 242 ]
 [e :U 241 ]
 [e $ == -> _RB5 `i -> 1 `i 242  ]
 [e :U 243 ]
-"421
-[; ;games.c: 421:     DelayMs(8);
-[e ( _DelayMs (1 -> -> 8 `i `ui ]
 "422
-[; ;games.c: 422:     while(RB5 == 0);
+[; ;games.c: 422:     DelayMs(8);
+[e ( _DelayMs (1 -> -> 8 `i `ui ]
+"423
+[; ;games.c: 423:     while(RB5 == 0);
 [e $U 244  ]
 [e :U 245 ]
 [e :U 244 ]
 [e $ == -> _RB5 `i -> 0 `i 245  ]
 [e :U 246 ]
-"423
-[; ;games.c: 423:     DelayMs(8);
-[e ( _DelayMs (1 -> -> 8 `i `ui ]
 "424
-[; ;games.c: 424:     lcd_clear(scoreboard);
-[e ( _lcd_clear (1 _scoreboard ]
+[; ;games.c: 424:     DelayMs(8);
+[e ( _DelayMs (1 -> -> 8 `i `ui ]
 "425
-[; ;games.c: 425:     lcd_clear(gameboard);
-[e ( _lcd_clear (1 _gameboard ]
+[; ;games.c: 425:     lcd_clear(scoreboard);
+[e ( _lcd_clear (1 _scoreboard ]
 "426
-[; ;games.c: 426:     p1_score = 0;
-[e = _p1_score -> -> 0 `i `uc ]
+[; ;games.c: 426:     lcd_clear(gameboard);
+[e ( _lcd_clear (1 _gameboard ]
 "427
-[; ;games.c: 427: }
+[; ;games.c: 427:     p1_score = 0;
+[e = _p1_score -> -> 0 `i `uc ]
+"428
+[; ;games.c: 428: }
 [e :UE 240 ]
 }
-"429
-[; ;games.c: 429: void turn_on_led(char color) {
-[v _turn_on_led `(v ~T0 @X0 1 ef1`uc ]
-{
-[e :U _turn_on_led ]
-[v _color `uc ~T0 @X0 1 r1 ]
-[f ]
-"430
-[; ;games.c: 430:     PORTC &= 0x1F;
-[e =& _PORTC -> -> 31 `i `Vuc ]
-"431
-[; ;games.c: 431:     switch(color) {
-[e $U 249  ]
-{
 "432
-[; ;games.c: 432:         case 0:
-[e :U 250 ]
-"433
-[; ;games.c: 433:             RC5 = 1;
-[e = _RC5 -> -> 1 `i `b ]
-"434
-[; ;games.c: 434:             break;
-[e $U 248  ]
-"435
-[; ;games.c: 435:         case 1:
-[e :U 251 ]
-"436
-[; ;games.c: 436:             RC6 = 1;
-[e = _RC6 -> -> 1 `i `b ]
-"437
-[; ;games.c: 437:             break;
-[e $U 248  ]
-"438
-[; ;games.c: 438:         case 2:
-[e :U 252 ]
-"439
-[; ;games.c: 439:             RC7 = 1;
-[e = _RC7 -> -> 1 `i `b ]
-"440
-[; ;games.c: 440:             break;
-[e $U 248  ]
-"441
-[; ;games.c: 441:         case 3:
-[e :U 253 ]
-"442
-[; ;games.c: 442:             RC5 = 1;
-[e = _RC5 -> -> 1 `i `b ]
-"443
-[; ;games.c: 443:             RC6 = 1;
-[e = _RC6 -> -> 1 `i `b ]
-"444
-[; ;games.c: 444:             break;
-[e $U 248  ]
-"445
-[; ;games.c: 445:         case 4:
-[e :U 254 ]
-"446
-[; ;games.c: 446:             RC6 = 1;
-[e = _RC6 -> -> 1 `i `b ]
-"447
-[; ;games.c: 447:             RC7 = 1;
-[e = _RC7 -> -> 1 `i `b ]
-"448
-[; ;games.c: 448:             break;
-[e $U 248  ]
-"449
-[; ;games.c: 449:         case 5:
-[e :U 255 ]
-"450
-[; ;games.c: 450:             RC7 = 1;
-[e = _RC7 -> -> 1 `i `b ]
-"451
-[; ;games.c: 451:             RC5 = 1;
-[e = _RC5 -> -> 1 `i `b ]
-"452
-[; ;games.c: 452:             break;
-[e $U 248  ]
-"453
-[; ;games.c: 453:         case 6:
-[e :U 256 ]
-"454
-[; ;games.c: 454:             RC5 = 1;
-[e = _RC5 -> -> 1 `i `b ]
-"455
-[; ;games.c: 455:             RC6 = 1;
-[e = _RC6 -> -> 1 `i `b ]
-"456
-[; ;games.c: 456:             RC7 = 1;
-[e = _RC7 -> -> 1 `i `b ]
-"457
-[; ;games.c: 457:             break;
-[e $U 248  ]
-"458
-[; ;games.c: 458:     }
-}
-[e $U 248  ]
-[e :U 249 ]
-[e [\ -> _color `i , $ -> 0 `i 250
- , $ -> 1 `i 251
- , $ -> 2 `i 252
- , $ -> 3 `i 253
- , $ -> 4 `i 254
- , $ -> 5 `i 255
- , $ -> 6 `i 256
- 248 ]
-[e :U 248 ]
-"459
-[; ;games.c: 459: }
-[e :UE 247 ]
-}
-"461
-[; ;games.c: 461: void end_screen(const char *first_row, char *second_row) {
-[v _end_screen `(v ~T0 @X0 1 ef2`*Cuc`*uc ]
-{
-[e :U _end_screen ]
-[v _first_row `*Cuc ~T0 @X0 1 r1 ]
-[v _second_row `*uc ~T0 @X0 1 r2 ]
-[f ]
-"462
-[; ;games.c: 462:     joystick_pressed = 1;
-[e = _joystick_pressed -> -> 1 `i `uc ]
-[v F1373 `uc ~T0 @X0 -> 6 `i s ]
-[i F1373
-:U ..
-"463
-[; ;games.c: 463:     char colors[] = {0,3,1,4,2,5};
--> -> 0 `i `uc
--> -> 3 `i `uc
--> -> 1 `i `uc
--> -> 4 `i `uc
--> -> 2 `i `uc
--> -> 5 `i `uc
-..
-]
-[v _colors `uc ~T0 @X0 -> 6 `i a ]
-[e = _colors F1373 ]
-"464
-[; ;games.c: 464:     char color_index = 0;
-[v _color_index `uc ~T0 @X0 1 a ]
-[e = _color_index -> -> 0 `i `uc ]
-"465
-[; ;games.c: 465:     char i;
-[v _i `uc ~T0 @X0 1 a ]
-"466
-[; ;games.c: 466:     for(i=0;i<3;i++) {
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 3 `i 258  ]
-[e $U 259  ]
-[e :U 258 ]
-{
-"467
-[; ;games.c: 467:         turn_on_led(colors[color_index]);
-[e ( _turn_on_led (1 *U + &U _colors * -> _color_index `ux -> -> # *U &U _colors `ui `ux ]
-"468
-[; ;games.c: 468:         color_index++;
-[e ++ _color_index -> -> 1 `i `uc ]
-"469
-[; ;games.c: 469:         color_index %= 6;
-[e =% _color_index -> 6 `i ]
-"470
-[; ;games.c: 470:         play_tone(2009, 30);
-[e ( _play_tone (2 , -> -> 2009 `i `ui -> -> 30 `i `uc ]
-"471
-[; ;games.c: 471:         turn_on_led(colors[color_index]);
-[e ( _turn_on_led (1 *U + &U _colors * -> _color_index `ux -> -> # *U &U _colors `ui `ux ]
-"472
-[; ;games.c: 472:         color_index++;
-[e ++ _color_index -> -> 1 `i `uc ]
-"473
-[; ;games.c: 473:         color_index %= 6;
-[e =% _color_index -> 6 `i ]
-"474
-[; ;games.c: 474:         play_tone(1896, 30);
-[e ( _play_tone (2 , -> -> 1896 `i `ui -> -> 30 `i `uc ]
-"475
-[; ;games.c: 475:         turn_on_led(colors[color_index]);
-[e ( _turn_on_led (1 *U + &U _colors * -> _color_index `ux -> -> # *U &U _colors `ui `ux ]
-"476
-[; ;games.c: 476:         color_index++;
-[e ++ _color_index -> -> 1 `i `uc ]
-"477
-[; ;games.c: 477:         color_index %= 6;
-[e =% _color_index -> 6 `i ]
-"478
-[; ;games.c: 478:         play_tone(1594, 30);
-[e ( _play_tone (2 , -> -> 1594 `i `ui -> -> 30 `i `uc ]
-"479
-[; ;games.c: 479:         turn_on_led(colors[color_index]);
-[e ( _turn_on_led (1 *U + &U _colors * -> _color_index `ux -> -> # *U &U _colors `ui `ux ]
-"480
-[; ;games.c: 480:         color_index++;
-[e ++ _color_index -> -> 1 `i `uc ]
-"481
-[; ;games.c: 481:         color_index %= 6;
-[e =% _color_index -> 6 `i ]
-"482
-[; ;games.c: 482:         DelayMs(250);
-[e ( _DelayMs (1 -> -> 250 `i `ui ]
-"483
-[; ;games.c: 483:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 3 `i 258  ]
-[e :U 259 ]
-}
-"484
-[; ;games.c: 484:     turn_on_led(colors[color_index]);
-[e ( _turn_on_led (1 *U + &U _colors * -> _color_index `ux -> -> # *U &U _colors `ui `ux ]
-"485
-[; ;games.c: 485:     color_index++;
-[e ++ _color_index -> -> 1 `i `uc ]
-"486
-[; ;games.c: 486:     color_index %= 6;
-[e =% _color_index -> 6 `i ]
-"487
-[; ;games.c: 487:     play_tone(2389, 60);
-[e ( _play_tone (2 , -> -> 2389 `i `ui -> -> 60 `i `uc ]
-"488
-[; ;games.c: 488:     while(joystick_pressed==1) {
-[e $U 261  ]
-[e :U 262 ]
-{
-"489
-[; ;games.c: 489:         lcd_clear(gameboard);
-[e ( _lcd_clear (1 _gameboard ]
-"490
-[; ;games.c: 490:         lcd_puts(first_row,gameboard);
-[e ( _lcd_puts (2 , _first_row _gameboard ]
-"491
-[; ;games.c: 491:         event_enabled = 0;
-[e = _event_enabled -> -> 0 `i `uc ]
-"492
-[; ;games.c: 492:         event_delay_count = 120;
-[e = _event_delay_count -> -> 120 `i `uc ]
-"493
-[; ;games.c: 493:         while(event_enabled == 0) {
-[e $U 264  ]
-[e :U 265 ]
-{
-"494
-[; ;games.c: 494:             if((RB5 == 0)||(RB2 == 0)) {
-[e $ ! || == -> _RB5 `i -> 0 `i == -> _RB2 `i -> 0 `i 267  ]
-{
-"495
-[; ;games.c: 495:                 joystick_pressed = 0;
-[e = _joystick_pressed -> -> 0 `i `uc ]
-"496
-[; ;games.c: 496:             }
-}
-[e :U 267 ]
-"497
-[; ;games.c: 497:         }
-}
-[e :U 264 ]
-"493
-[; ;games.c: 493:         while(event_enabled == 0) {
-[e $ == -> _event_enabled `i -> 0 `i 265  ]
-[e :U 266 ]
-"498
-[; ;games.c: 498:         turn_on_led(colors[color_index]);
-[e ( _turn_on_led (1 *U + &U _colors * -> _color_index `ux -> -> # *U &U _colors `ui `ux ]
-"499
-[; ;games.c: 499:         color_index++;
-[e ++ _color_index -> -> 1 `i `uc ]
-"500
-[; ;games.c: 500:         color_index %= 6;
-[e =% _color_index -> 6 `i ]
-"501
-[; ;games.c: 501:         lcd_clear(gameboard);
-[e ( _lcd_clear (1 _gameboard ]
-"502
-[; ;games.c: 502:         lcd_goto(0x40,gameboard);
-[e ( _lcd_goto (2 , -> -> 64 `i `uc _gameboard ]
-"503
-[; ;games.c: 503:         lcd_puts(second_row,gameboard);
-[e ( _lcd_puts (2 , -> _second_row `*Cuc _gameboard ]
-"504
-[; ;games.c: 504:         event_enabled = 0;
-[e = _event_enabled -> -> 0 `i `uc ]
-"505
-[; ;games.c: 505:         event_delay_count = 120;
-[e = _event_delay_count -> -> 120 `i `uc ]
-"506
-[; ;games.c: 506:         while(event_enabled == 0) {
-[e $U 268  ]
-[e :U 269 ]
-{
-"507
-[; ;games.c: 507:             if((RB5 == 0)||(RB2 == 0)) {
-[e $ ! || == -> _RB5 `i -> 0 `i == -> _RB2 `i -> 0 `i 271  ]
-{
-"508
-[; ;games.c: 508:                 joystick_pressed = 0;
-[e = _joystick_pressed -> -> 0 `i `uc ]
-"509
-[; ;games.c: 509:             }
-}
-[e :U 271 ]
-"510
-[; ;games.c: 510:         }
-}
-[e :U 268 ]
-"506
-[; ;games.c: 506:         while(event_enabled == 0) {
-[e $ == -> _event_enabled `i -> 0 `i 269  ]
-[e :U 270 ]
-"511
-[; ;games.c: 511:         turn_on_led(colors[color_index]);
-[e ( _turn_on_led (1 *U + &U _colors * -> _color_index `ux -> -> # *U &U _colors `ui `ux ]
-"512
-[; ;games.c: 512:         color_index++;
-[e ++ _color_index -> -> 1 `i `uc ]
-"513
-[; ;games.c: 513:         color_index %= 6;
-[e =% _color_index -> 6 `i ]
-"514
-[; ;games.c: 514:     }
-}
-[e :U 261 ]
-"488
-[; ;games.c: 488:     while(joystick_pressed==1) {
-[e $ == -> _joystick_pressed `i -> 1 `i 262  ]
-[e :U 263 ]
-"515
-[; ;games.c: 515: }
-[e :UE 257 ]
-}
-"517
-[; ;games.c: 517: void concentration_game_end(void) {
+[; ;games.c: 432: void concentration_game_end(void) {
 [v _concentration_game_end `(v ~T0 @X0 1 ef ]
 {
 [e :U _concentration_game_end ]
 [f ]
-"518
-[; ;games.c: 518:     DelayMs(1000);
+"433
+[; ;games.c: 433:     DelayMs(1000);
 [e ( _DelayMs (1 -> -> 1000 `i `ui ]
-"519
-[; ;games.c: 519:     if(p1_score>p2_score) {
-[e $ ! > -> _p1_score `i -> _p2_score `i 273  ]
+"434
+[; ;games.c: 434:     if(p1_score>p2_score) {
+[e $ ! > -> _p1_score `i -> _p2_score `i 248  ]
 {
-"520
-[; ;games.c: 520:         end_screen("    WINNER!!","    PLAYER 1");
+"435
+[; ;games.c: 435:         end_screen("    WINNER!!","    PLAYER 1");
 [e ( _end_screen (2 , :s 24C :s 25C ]
-"521
-[; ;games.c: 521:     } else if(p1_score<p2_score) {
+"436
+[; ;games.c: 436:     } else if(p1_score<p2_score) {
 }
-[e $U 274  ]
-[e :U 273 ]
-[e $ ! < -> _p1_score `i -> _p2_score `i 275  ]
+[e $U 249  ]
+[e :U 248 ]
+[e $ ! < -> _p1_score `i -> _p2_score `i 250  ]
 {
-"522
-[; ;games.c: 522:         end_screen("    WINNER!!","    PLAYER 2");
+"437
+[; ;games.c: 437:         end_screen("    WINNER!!","    PLAYER 2");
 [e ( _end_screen (2 , :s 26C :s 27C ]
-"523
-[; ;games.c: 523:     } else {
+"438
+[; ;games.c: 438:     } else {
 }
-[e $U 276  ]
-[e :U 275 ]
+[e $U 251  ]
+[e :U 250 ]
 {
-"524
-[; ;games.c: 524:         end_screen("   NO WINNER!","      TIED");
+"439
+[; ;games.c: 439:         end_screen("   NO WINNER!","      TIED");
 [e ( _end_screen (2 , :s 28C :s 29C ]
-"525
-[; ;games.c: 525:     }
+"440
+[; ;games.c: 440:     }
 }
-[e :U 276 ]
-[e :U 274 ]
-"526
-[; ;games.c: 526:     DelayMs(1000);
+[e :U 251 ]
+[e :U 249 ]
+"441
+[; ;games.c: 441:     DelayMs(1000);
 [e ( _DelayMs (1 -> -> 1000 `i `ui ]
-"527
-[; ;games.c: 527: }
-[e :UE 272 ]
+"442
+[; ;games.c: 442: }
+[e :UE 247 ]
 }
-"529
-[; ;games.c: 529: void concentration_title_screen(void) {
+"444
+[; ;games.c: 444: void concentration_title_screen(void) {
 [v _concentration_title_screen `(v ~T0 @X0 1 ef ]
 {
 [e :U _concentration_title_screen ]
 [f ]
-"530
-[; ;games.c: 530:     lcd_puts(" Concentration!", scoreboard);
+"445
+[; ;games.c: 445:     lcd_puts(" Concentration!", scoreboard);
 [e ( _lcd_puts (2 , :s 30C _scoreboard ]
-"531
-[; ;games.c: 531:     lcd_puts("Press the button", gameboard);
+"446
+[; ;games.c: 446:     lcd_puts("Press the button", gameboard);
 [e ( _lcd_puts (2 , :s 31C _gameboard ]
-"532
-[; ;games.c: 532:     lcd_goto(0x40, gameboard);
+"447
+[; ;games.c: 447:     lcd_goto(0x40, gameboard);
 [e ( _lcd_goto (2 , -> -> 64 `i `uc _gameboard ]
-"533
-[; ;games.c: 533:     lcd_puts("    to start", gameboard);
+"448
+[; ;games.c: 448:     lcd_puts("    to start", gameboard);
 [e ( _lcd_puts (2 , :s 32C _gameboard ]
-"534
-[; ;games.c: 534:     while(RB5);
-[e $U 278  ]
-[e :U 279 ]
-[e :U 278 ]
-[e $ _RB5 279  ]
-[e :U 280 ]
-"535
-[; ;games.c: 535:     DelayMs(8);
+"449
+[; ;games.c: 449:     while(RB5);
+[e $U 253  ]
+[e :U 254 ]
+[e :U 253 ]
+[e $ _RB5 254  ]
+[e :U 255 ]
+"450
+[; ;games.c: 450:     DelayMs(8);
 [e ( _DelayMs (1 -> -> 8 `i `ui ]
-"536
-[; ;games.c: 536:     while(!RB5);
-[e $U 281  ]
-[e :U 282 ]
-[e :U 281 ]
-[e $ ! _RB5 282  ]
-[e :U 283 ]
-"537
-[; ;games.c: 537:     DelayMs(8);
+"451
+[; ;games.c: 451:     while(!RB5);
+[e $U 256  ]
+[e :U 257 ]
+[e :U 256 ]
+[e $ ! _RB5 257  ]
+[e :U 258 ]
+"452
+[; ;games.c: 452:     DelayMs(8);
 [e ( _DelayMs (1 -> -> 8 `i `ui ]
-"538
-[; ;games.c: 538:     lcd_clear(gameboard);
+"453
+[; ;games.c: 453:     lcd_clear(gameboard);
 [e ( _lcd_clear (1 _gameboard ]
-"539
-[; ;games.c: 539:     lcd_clear(scoreboard);
+"454
+[; ;games.c: 454:     lcd_clear(scoreboard);
 [e ( _lcd_clear (1 _scoreboard ]
-"540
-[; ;games.c: 540:     p1_score = 0;
+"455
+[; ;games.c: 455:     p1_score = 0;
 [e = _p1_score -> -> 0 `i `uc ]
-"541
-[; ;games.c: 541:     p2_score = 0;
+"456
+[; ;games.c: 456:     p2_score = 0;
 [e = _p2_score -> -> 0 `i `uc ]
-"542
-[; ;games.c: 542:     display_concentration_scoreboard();
+"457
+[; ;games.c: 457:     display_concentration_scoreboard();
 [e ( _display_concentration_scoreboard ..  ]
-"543
-[; ;games.c: 543:     display_concentration_gameboard();
+"458
+[; ;games.c: 458:     display_concentration_gameboard();
 [e ( _display_concentration_gameboard ..  ]
-"544
-[; ;games.c: 544: }
-[e :UE 277 ]
+"459
+[; ;games.c: 459: }
+[e :UE 252 ]
 }
-"546
-[; ;games.c: 546: void display_concentration_scoreboard(void) {
+"461
+[; ;games.c: 461: void display_concentration_scoreboard(void) {
 [v _display_concentration_scoreboard `(v ~T0 @X0 1 ef ]
 {
 [e :U _display_concentration_scoreboard ]
 [f ]
-"547
-[; ;games.c: 547:     lcd_puts("     Score:", scoreboard);
+"462
+[; ;games.c: 462:     lcd_puts("     Score:", scoreboard);
 [e ( _lcd_puts (2 , :s 33C _scoreboard ]
-"548
-[; ;games.c: 548:     lcd_goto(0x40, scoreboard);
+"463
+[; ;games.c: 463:     lcd_goto(0x40, scoreboard);
 [e ( _lcd_goto (2 , -> -> 64 `i `uc _scoreboard ]
-"549
-[; ;games.c: 549:     lcd_puts(" P1: ", scoreboard);
+"464
+[; ;games.c: 464:     lcd_puts(" P1: ", scoreboard);
 [e ( _lcd_puts (2 , :s 34C _scoreboard ]
-"550
-[; ;games.c: 550:     lcd_putch(((p1_score%100)/10)+0x30, scoreboard);
+"465
+[; ;games.c: 465:     lcd_putch(((p1_score%100)/10)+0x30, scoreboard);
 [e ( _lcd_putch (2 , -> + / % -> _p1_score `i -> 100 `i -> 10 `i -> 48 `i `uc _scoreboard ]
-"551
-[; ;games.c: 551:     lcd_putch((p1_score%10)+0x30, scoreboard);
+"466
+[; ;games.c: 466:     lcd_putch((p1_score%10)+0x30, scoreboard);
 [e ( _lcd_putch (2 , -> + % -> _p1_score `i -> 10 `i -> 48 `i `uc _scoreboard ]
-"552
-[; ;games.c: 552:     lcd_puts("  P2: ", scoreboard);
+"467
+[; ;games.c: 467:     lcd_puts("  P2: ", scoreboard);
 [e ( _lcd_puts (2 , :s 35C _scoreboard ]
-"553
-[; ;games.c: 553:     lcd_putch(((p2_score%100)/10)+0x30, scoreboard);
+"468
+[; ;games.c: 468:     lcd_putch(((p2_score%100)/10)+0x30, scoreboard);
 [e ( _lcd_putch (2 , -> + / % -> _p2_score `i -> 100 `i -> 10 `i -> 48 `i `uc _scoreboard ]
-"554
-[; ;games.c: 554:     lcd_putch((p2_score%10)+0x30, scoreboard);
+"469
+[; ;games.c: 469:     lcd_putch((p2_score%10)+0x30, scoreboard);
 [e ( _lcd_putch (2 , -> + % -> _p2_score `i -> 10 `i -> 48 `i `uc _scoreboard ]
-"555
-[; ;games.c: 555: }
-[e :UE 284 ]
+"470
+[; ;games.c: 470: }
+[e :UE 259 ]
 }
-"557
-[; ;games.c: 557: void display_concentration_gameboard(void) {
+"472
+[; ;games.c: 472: void display_concentration_gameboard(void) {
 [v _display_concentration_gameboard `(v ~T0 @X0 1 ef ]
 {
 [e :U _display_concentration_gameboard ]
 [f ]
-"558
-[; ;games.c: 558:     lcd_clear(gameboard);
+"473
+[; ;games.c: 473:     lcd_clear(gameboard);
 [e ( _lcd_clear (1 _gameboard ]
-"559
-[; ;games.c: 559:     char i;
+"474
+[; ;games.c: 474:     char i;
 [v _i `uc ~T0 @X0 1 a ]
-"560
-[; ;games.c: 560:     for(i=0;i<32;i++) {
+"475
+[; ;games.c: 475:     for(i=0;i<32;i++) {
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 32 `i 286  ]
-[e $U 287  ]
-[e :U 286 ]
+[e $ < -> _i `i -> 32 `i 261  ]
+[e $U 262  ]
+[e :U 261 ]
 {
-"561
-[; ;games.c: 561:         if(i == 16) {
-[e $ ! == -> _i `i -> 16 `i 289  ]
+"476
+[; ;games.c: 476:         if(i == 16) {
+[e $ ! == -> _i `i -> 16 `i 264  ]
 {
-"562
-[; ;games.c: 562:             lcd_goto(0x40, gameboard);
+"477
+[; ;games.c: 477:             lcd_goto(0x40, gameboard);
 [e ( _lcd_goto (2 , -> -> 64 `i `uc _gameboard ]
-"563
-[; ;games.c: 563:         }
+"478
+[; ;games.c: 478:         }
 }
-[e :U 289 ]
-"564
-[; ;games.c: 564:         lcd_putch(visible[i], gameboard);
+[e :U 264 ]
+"479
+[; ;games.c: 479:         lcd_putch(visible[i], gameboard);
 [e ( _lcd_putch (2 , *U + &U _visible * -> _i `ux -> -> # *U &U _visible `ui `ux _gameboard ]
-"565
-[; ;games.c: 565:     }
+"480
+[; ;games.c: 480:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 32 `i 286  ]
-[e :U 287 ]
+[e $ < -> _i `i -> 32 `i 261  ]
+[e :U 262 ]
 }
-"566
-[; ;games.c: 566:     lcd_goto(cursor_pos, gameboard);
+"481
+[; ;games.c: 481:     lcd_goto(cursor_pos, gameboard);
 [e ( _lcd_goto (2 , -> _cursor_pos `uc _gameboard ]
-"567
-[; ;games.c: 567: }
-[e :UE 285 ]
+"482
+[; ;games.c: 482: }
+[e :UE 260 ]
 }
-"569
-[; ;games.c: 569: void make_custom_chars(void) {
+"484
+[; ;games.c: 484: void make_custom_chars(void) {
 [v _make_custom_chars `(v ~T0 @X0 1 ef ]
 {
 [e :U _make_custom_chars ]
 [f ]
-"570
-[; ;games.c: 570:     const char smile[] = {0x00, 0x0A, 0x0A, 0x00, 0x15, 0x11, 0x0E, 0x00};
-[v F1383 `Cuc ~T0 @X0 -> 8 `i s smile ]
-[i F1383
+"485
+[; ;games.c: 485:     const char smile[] = {0x00, 0x0A, 0x0A, 0x00, 0x15, 0x11, 0x0E, 0x00};
+[v F1373 `Cuc ~T0 @X0 -> 8 `i s smile ]
+[i F1373
 :U ..
 -> -> 0 `i `uc
 -> -> 10 `i `uc
@@ -2223,13 +1895,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"571
-[; ;games.c: 571:     lcd_set_custom_char(smile, 0x00, gameboard);
-[e ( _lcd_set_custom_char (3 , , &U F1383 -> -> 0 `i `uc _gameboard ]
-"572
-[; ;games.c: 572:     const char diamond[] = {0x00, 0x04, 0x0E, 0x1F, 0x0E, 0x04, 0x00, 0x00};
-[v F1384 `Cuc ~T0 @X0 -> 8 `i s diamond ]
-[i F1384
+"486
+[; ;games.c: 486:     lcd_set_custom_char(smile, 0x00, gameboard);
+[e ( _lcd_set_custom_char (3 , , &U F1373 -> -> 0 `i `uc _gameboard ]
+"487
+[; ;games.c: 487:     const char diamond[] = {0x00, 0x04, 0x0E, 0x1F, 0x0E, 0x04, 0x00, 0x00};
+[v F1374 `Cuc ~T0 @X0 -> 8 `i s diamond ]
+[i F1374
 :U ..
 -> -> 0 `i `uc
 -> -> 4 `i `uc
@@ -2241,13 +1913,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"573
-[; ;games.c: 573:     lcd_set_custom_char(diamond, 0x01, gameboard);
-[e ( _lcd_set_custom_char (3 , , &U F1384 -> -> 1 `i `uc _gameboard ]
-"574
-[; ;games.c: 574:     const char heart[] = {0x00, 0x00, 0x0A, 0x1F, 0x1F, 0x0E, 0x04, 0x00};
-[v F1385 `Cuc ~T0 @X0 -> 8 `i s heart ]
-[i F1385
+"488
+[; ;games.c: 488:     lcd_set_custom_char(diamond, 0x01, gameboard);
+[e ( _lcd_set_custom_char (3 , , &U F1374 -> -> 1 `i `uc _gameboard ]
+"489
+[; ;games.c: 489:     const char heart[] = {0x00, 0x00, 0x0A, 0x1F, 0x1F, 0x0E, 0x04, 0x00};
+[v F1375 `Cuc ~T0 @X0 -> 8 `i s heart ]
+[i F1375
 :U ..
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -2259,13 +1931,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"575
-[; ;games.c: 575:     lcd_set_custom_char(heart, 0x02, gameboard);
-[e ( _lcd_set_custom_char (3 , , &U F1385 -> -> 2 `i `uc _gameboard ]
-"576
-[; ;games.c: 576:     const char spade[] = {0x00, 0x04, 0x0E, 0x1F, 0x1F, 0x0E, 0x04, 0x0E};
-[v F1386 `Cuc ~T0 @X0 -> 8 `i s spade ]
-[i F1386
+"490
+[; ;games.c: 490:     lcd_set_custom_char(heart, 0x02, gameboard);
+[e ( _lcd_set_custom_char (3 , , &U F1375 -> -> 2 `i `uc _gameboard ]
+"491
+[; ;games.c: 491:     const char spade[] = {0x00, 0x04, 0x0E, 0x1F, 0x1F, 0x0E, 0x04, 0x0E};
+[v F1376 `Cuc ~T0 @X0 -> 8 `i s spade ]
+[i F1376
 :U ..
 -> -> 0 `i `uc
 -> -> 4 `i `uc
@@ -2277,13 +1949,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 14 `i `uc
 ..
 ]
-"577
-[; ;games.c: 577:     lcd_set_custom_char(spade, 0x03, gameboard);
-[e ( _lcd_set_custom_char (3 , , &U F1386 -> -> 3 `i `uc _gameboard ]
-"578
-[; ;games.c: 578:     const char club[] = {0x00, 0x0E, 0x0E, 0x1F, 0x1F, 0x1F, 0x04, 0x0E};
-[v F1387 `Cuc ~T0 @X0 -> 8 `i s club ]
-[i F1387
+"492
+[; ;games.c: 492:     lcd_set_custom_char(spade, 0x03, gameboard);
+[e ( _lcd_set_custom_char (3 , , &U F1376 -> -> 3 `i `uc _gameboard ]
+"493
+[; ;games.c: 493:     const char club[] = {0x00, 0x0E, 0x0E, 0x1F, 0x1F, 0x1F, 0x04, 0x0E};
+[v F1377 `Cuc ~T0 @X0 -> 8 `i s club ]
+[i F1377
 :U ..
 -> -> 0 `i `uc
 -> -> 14 `i `uc
@@ -2295,13 +1967,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 14 `i `uc
 ..
 ]
-"579
-[; ;games.c: 579:     lcd_set_custom_char(club, 0x04, gameboard);
-[e ( _lcd_set_custom_char (3 , , &U F1387 -> -> 4 `i `uc _gameboard ]
-"580
-[; ;games.c: 580:     const char skull[] = {0x0E, 0x15, 0x15, 0x1F, 0x0A, 0x0E, 0x0E, 0x00};
-[v F1388 `Cuc ~T0 @X0 -> 8 `i s skull ]
-[i F1388
+"494
+[; ;games.c: 494:     lcd_set_custom_char(club, 0x04, gameboard);
+[e ( _lcd_set_custom_char (3 , , &U F1377 -> -> 4 `i `uc _gameboard ]
+"495
+[; ;games.c: 495:     const char skull[] = {0x0E, 0x15, 0x15, 0x1F, 0x0A, 0x0E, 0x0E, 0x00};
+[v F1378 `Cuc ~T0 @X0 -> 8 `i s skull ]
+[i F1378
 :U ..
 -> -> 14 `i `uc
 -> -> 21 `i `uc
@@ -2313,13 +1985,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"581
-[; ;games.c: 581:     lcd_set_custom_char(skull, 0x05, gameboard);
-[e ( _lcd_set_custom_char (3 , , &U F1388 -> -> 5 `i `uc _gameboard ]
-"582
-[; ;games.c: 582:     const char RH[] = {0x1C, 0x14, 0x18, 0x14, 0x00, 0x05, 0x07, 0x05};
-[v F1389 `Cuc ~T0 @X0 -> 8 `i s RH ]
-[i F1389
+"496
+[; ;games.c: 496:     lcd_set_custom_char(skull, 0x05, gameboard);
+[e ( _lcd_set_custom_char (3 , , &U F1378 -> -> 5 `i `uc _gameboard ]
+"497
+[; ;games.c: 497:     const char RH[] = {0x1C, 0x14, 0x18, 0x14, 0x00, 0x05, 0x07, 0x05};
+[v F1379 `Cuc ~T0 @X0 -> 8 `i s RH ]
+[i F1379
 :U ..
 -> -> 28 `i `uc
 -> -> 20 `i `uc
@@ -2331,13 +2003,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 5 `i `uc
 ..
 ]
-"583
-[; ;games.c: 583:     lcd_set_custom_char(RH, 0x06, gameboard);
-[e ( _lcd_set_custom_char (3 , , &U F1389 -> -> 6 `i `uc _gameboard ]
-"584
-[; ;games.c: 584:     const char PIC[] = {0x18, 0x18, 0x14, 0x04, 0x04, 0x03, 0x02, 0x03};
-[v F1390 `Cuc ~T0 @X0 -> 8 `i s PIC ]
-[i F1390
+"498
+[; ;games.c: 498:     lcd_set_custom_char(RH, 0x06, gameboard);
+[e ( _lcd_set_custom_char (3 , , &U F1379 -> -> 6 `i `uc _gameboard ]
+"499
+[; ;games.c: 499:     const char PIC[] = {0x18, 0x18, 0x14, 0x04, 0x04, 0x03, 0x02, 0x03};
+[v F1380 `Cuc ~T0 @X0 -> 8 `i s PIC ]
+[i F1380
 :U ..
 -> -> 24 `i `uc
 -> -> 24 `i `uc
@@ -2349,109 +2021,109 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 3 `i `uc
 ..
 ]
-"585
-[; ;games.c: 585:     lcd_set_custom_char(PIC, 0x07, gameboard);
-[e ( _lcd_set_custom_char (3 , , &U F1390 -> -> 7 `i `uc _gameboard ]
-"586
-[; ;games.c: 586: }
-[e :UE 290 ]
+"500
+[; ;games.c: 500:     lcd_set_custom_char(PIC, 0x07, gameboard);
+[e ( _lcd_set_custom_char (3 , , &U F1380 -> -> 7 `i `uc _gameboard ]
+"501
+[; ;games.c: 501: }
+[e :UE 265 ]
 }
-"588
-[; ;games.c: 588: void concentration_gameboard_init(void) {
+"503
+[; ;games.c: 503: void concentration_gameboard_init(void) {
 [v _concentration_gameboard_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _concentration_gameboard_init ]
 [f ]
-"589
-[; ;games.c: 589:     selected_tile = 0xFF;
+"504
+[; ;games.c: 504:     selected_tile = 0xFF;
 [e = _selected_tile -> -> 255 `i `uc ]
-"590
-[; ;games.c: 590:     make_custom_chars();
+"505
+[; ;games.c: 505:     make_custom_chars();
 [e ( _make_custom_chars ..  ]
-"591
-[; ;games.c: 591:     char i;
+"506
+[; ;games.c: 506:     char i;
 [v _i `uc ~T0 @X0 1 a ]
-"592
-[; ;games.c: 592:     for(i = 0; i < 32; i++) {
+"507
+[; ;games.c: 507:     for(i = 0; i < 32; i++) {
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 32 `i 292  ]
-[e $U 293  ]
-[e :U 292 ]
+[e $ < -> _i `i -> 32 `i 267  ]
+[e $U 268  ]
+[e :U 267 ]
 {
-"593
-[; ;games.c: 593:         visible[i] = 0xFF;
+"508
+[; ;games.c: 508:         visible[i] = 0xFF;
 [e = *U + &U _visible * -> _i `ux -> -> # *U &U _visible `ui `ux -> -> 255 `i `uc ]
-"594
-[; ;games.c: 594:     }
+"509
+[; ;games.c: 509:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 32 `i 292  ]
-[e :U 293 ]
+[e $ < -> _i `i -> 32 `i 267  ]
+[e :U 268 ]
 }
-"595
-[; ;games.c: 595:     lcd_clear(gameboard);
+"510
+[; ;games.c: 510:     lcd_clear(gameboard);
 [e ( _lcd_clear (1 _gameboard ]
-"596
-[; ;games.c: 596:     cursor_pos = 0x00;
+"511
+[; ;games.c: 511:     cursor_pos = 0x00;
 [e = _cursor_pos -> -> 0 `i `uc ]
-"597
-[; ;games.c: 597:     cursor_solid = 0;
+"512
+[; ;games.c: 512:     cursor_solid = 0;
 [e = _cursor_solid -> -> 0 `i `uc ]
-"598
-[; ;games.c: 598:     get_current_char();
-[e ( _get_current_char ..  ]
-"599
-[; ;games.c: 599:     delay_loops = 0;
+"513
+[; ;games.c: 513:     current_char = visible[get_cursor_index(cursor_pos)];
+[e = _current_char *U + &U _visible * -> ( _get_cursor_index (1 _cursor_pos `ux -> -> # *U &U _visible `ui `ux ]
+"514
+[; ;games.c: 514:     delay_loops = 0;
 [e = _delay_loops -> -> 0 `i `uc ]
-"600
-[; ;games.c: 600:     lcd_goto(cursor_pos, gameboard);
+"515
+[; ;games.c: 515:     lcd_goto(cursor_pos, gameboard);
 [e ( _lcd_goto (2 , -> _cursor_pos `uc _gameboard ]
-"601
-[; ;games.c: 601:     randomize_gameboard();
+"516
+[; ;games.c: 516:     randomize_gameboard();
 [e ( _randomize_gameboard ..  ]
-"602
-[; ;games.c: 602: }
-[e :UE 291 ]
+"517
+[; ;games.c: 517: }
+[e :UE 266 ]
 }
-"604
-[; ;games.c: 604: char get_cursor_index(char cursor) {
+"519
+[; ;games.c: 519: char get_cursor_index(char cursor) {
 [v _get_cursor_index `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _get_cursor_index ]
 [v _cursor `uc ~T0 @X0 1 r1 ]
 [f ]
-"605
-[; ;games.c: 605:     if(cursor&0x40) {
-[e $ ! != & -> _cursor `i -> 64 `i -> 0 `i 296  ]
+"520
+[; ;games.c: 520:     if(cursor&0x40) {
+[e $ ! != & -> _cursor `i -> 64 `i -> 0 `i 271  ]
 {
-"606
-[; ;games.c: 606:         return (cursor-0x30);
+"521
+[; ;games.c: 521:         return (cursor-0x30);
 [e ) -> - -> _cursor `i -> 48 `i `uc ]
-[e $UE 295  ]
-"607
-[; ;games.c: 607:     }
+[e $UE 270  ]
+"522
+[; ;games.c: 522:     }
 }
-[e :U 296 ]
-"608
-[; ;games.c: 608:     return cursor;
+[e :U 271 ]
+"523
+[; ;games.c: 523:     return cursor;
 [e ) _cursor ]
-[e $UE 295  ]
-"609
-[; ;games.c: 609: }
-[e :UE 295 ]
+[e $UE 270  ]
+"524
+[; ;games.c: 524: }
+[e :UE 270 ]
 }
-"611
-[; ;games.c: 611: void randomize_gameboard(void) {
+"526
+[; ;games.c: 526: void randomize_gameboard(void) {
 [v _randomize_gameboard `(v ~T0 @X0 1 ef ]
 {
 [e :U _randomize_gameboard ]
 [f ]
-[v F1396 `uc ~T0 @X0 -> 32 `i s ]
-[i F1396
+[v F1386 `uc ~T0 @X0 -> 32 `i s ]
+[i F1386
 :U ..
-"612
-[; ;games.c: 612:     char used[32] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+"527
+[; ;games.c: 527:     char used[32] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -2487,962 +2159,1277 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _used `uc ~T0 @X0 -> 32 `i a ]
-[e = _used F1396 ]
-"613
-[; ;games.c: 613:     char current = 0;
+[e = _used F1386 ]
+"528
+[; ;games.c: 528:     char current = 0;
 [v _current `uc ~T0 @X0 1 a ]
 [e = _current -> -> 0 `i `uc ]
-"614
-[; ;games.c: 614:     char random;
+"529
+[; ;games.c: 529:     char random;
 [v _random `uc ~T0 @X0 1 a ]
-"615
-[; ;games.c: 615:     while(current != 32) {
-[e $U 298  ]
-[e :U 299 ]
+"530
+[; ;games.c: 530:     while(current != 32) {
+[e $U 273  ]
+[e :U 274 ]
 {
-"616
-[; ;games.c: 616:         DelayMs(TMR2>>(2+(TMR1%4)));
+"531
+[; ;games.c: 531:         DelayMs(TMR2>>(2+(TMR1%4)));
 [e ( _DelayMs (1 -> >> -> _TMR2 `i + -> -> 2 `i `ui % -> _TMR1 `ui -> -> 4 `i `ui `ui ]
-"617
-[; ;games.c: 617:         random = TMR1 % 32;
+"532
+[; ;games.c: 532:         random = TMR1 % 32;
 [e = _random -> % -> _TMR1 `ui -> -> 32 `i `ui `uc ]
-"618
-[; ;games.c: 618:         if(used[random] == 0) {
-[e $ ! == -> *U + &U _used * -> _random `ux -> -> # *U &U _used `ui `ux `i -> 0 `i 301  ]
+"533
+[; ;games.c: 533:         if(used[random] == 0) {
+[e $ ! == -> *U + &U _used * -> _random `ux -> -> # *U &U _used `ui `ux `i -> 0 `i 276  ]
 {
-"619
-[; ;games.c: 619:             used[random] = 1;
+"534
+[; ;games.c: 534:             used[random] = 1;
 [e = *U + &U _used * -> _random `ux -> -> # *U &U _used `ui `ux -> -> 1 `i `uc ]
-"620
-[; ;games.c: 620:             board[random] = current/4;
+"535
+[; ;games.c: 535:             board[random] = current/4;
 [e = *U + &U _board * -> _random `ux -> -> # *U &U _board `ui `ux -> / -> _current `i -> 4 `i `uc ]
-"621
-[; ;games.c: 621:             current++;
+"536
+[; ;games.c: 536:             current++;
 [e ++ _current -> -> 1 `i `uc ]
-"622
-[; ;games.c: 622:         }
+"537
+[; ;games.c: 537:         }
 }
-[e :U 301 ]
-"623
-[; ;games.c: 623:     }
+[e :U 276 ]
+"538
+[; ;games.c: 538:     }
 }
-[e :U 298 ]
-"615
-[; ;games.c: 615:     while(current != 32) {
-[e $ != -> _current `i -> 32 `i 299  ]
-[e :U 300 ]
-"624
-[; ;games.c: 624: }
-[e :UE 297 ]
+[e :U 273 ]
+"530
+[; ;games.c: 530:     while(current != 32) {
+[e $ != -> _current `i -> 32 `i 274  ]
+[e :U 275 ]
+"539
+[; ;games.c: 539: }
+[e :UE 272 ]
 }
-"626
-[; ;games.c: 626: void check_for_match(char player) {
+"541
+[; ;games.c: 541: void check_for_match(char player) {
 [v _check_for_match `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _check_for_match ]
 [v _player `uc ~T0 @X0 1 r1 ]
 [f ]
-"627
-[; ;games.c: 627:     if(selected_tile == 0xFF) {
-[e $ ! == -> _selected_tile `i -> 255 `i 303  ]
+"542
+[; ;games.c: 542:     if(selected_tile == 0xFF) {
+[e $ ! == -> _selected_tile `i -> 255 `i 278  ]
 {
-"628
-[; ;games.c: 628:         selected_tile = cursor_pos;
+"543
+[; ;games.c: 543:         selected_tile = cursor_pos;
 [e = _selected_tile _cursor_pos ]
-"629
-[; ;games.c: 629:     } else {
+"544
+[; ;games.c: 544:     } else {
 }
-[e $U 304  ]
-[e :U 303 ]
+[e $U 279  ]
+[e :U 278 ]
 {
-"630
-[; ;games.c: 630:         if(board[get_cursor_index(selected_tile)] == board[get_cursor_index(cursor_pos)]) {
-[e $ ! == -> *U + &U _board * -> ( _get_cursor_index (1 _selected_tile `ux -> -> # *U &U _board `ui `ux `i -> *U + &U _board * -> ( _get_cursor_index (1 _cursor_pos `ux -> -> # *U &U _board `ui `ux `i 305  ]
+"545
+[; ;games.c: 545:         if(board[get_cursor_index(selected_tile)] == board[get_cursor_index(cursor_pos)]) {
+[e $ ! == -> *U + &U _board * -> ( _get_cursor_index (1 _selected_tile `ux -> -> # *U &U _board `ui `ux `i -> *U + &U _board * -> ( _get_cursor_index (1 _cursor_pos `ux -> -> # *U &U _board `ui `ux `i 280  ]
 {
-"631
-[; ;games.c: 631:             if(player == 0) {
-[e $ ! == -> _player `i -> 0 `i 306  ]
+"546
+[; ;games.c: 546:             if(player == 0) {
+[e $ ! == -> _player `i -> 0 `i 281  ]
 {
-"632
-[; ;games.c: 632:                 p1_score++;
+"547
+[; ;games.c: 547:                 p1_score++;
 [e ++ _p1_score -> -> 1 `i `uc ]
-"633
-[; ;games.c: 633:             } else {
+"548
+[; ;games.c: 548:             } else {
 }
-[e $U 307  ]
-[e :U 306 ]
+[e $U 282  ]
+[e :U 281 ]
 {
-"634
-[; ;games.c: 634:                 p2_score++;
+"549
+[; ;games.c: 549:                 p2_score++;
 [e ++ _p2_score -> -> 1 `i `uc ]
-"635
-[; ;games.c: 635:             }
+"550
+[; ;games.c: 550:             }
 }
-[e :U 307 ]
-"636
-[; ;games.c: 636:             turn_on_led(1);
+[e :U 282 ]
+"551
+[; ;games.c: 551:             turn_on_led(1);
 [e ( _turn_on_led (1 -> -> 1 `i `uc ]
-"637
-[; ;games.c: 637:             play_tone(1689, 15);
+"552
+[; ;games.c: 552:             play_tone(1689, 15);
 [e ( _play_tone (2 , -> -> 1689 `i `ui -> -> 15 `i `uc ]
-"638
-[; ;games.c: 638:             RC6 = 0;
+"553
+[; ;games.c: 553:             RC6 = 0;
 [e = _RC6 -> -> 0 `i `b ]
-"639
-[; ;games.c: 639:             play_tone(1420, 5);
+"554
+[; ;games.c: 554:             play_tone(1420, 5);
 [e ( _play_tone (2 , -> -> 1420 `i `ui -> -> 5 `i `uc ]
-"640
-[; ;games.c: 640:             turn_on_led(1);
+"555
+[; ;games.c: 555:             turn_on_led(1);
 [e ( _turn_on_led (1 -> -> 1 `i `uc ]
-"641
-[; ;games.c: 641:             play_tone(1689, 15);
+"556
+[; ;games.c: 556:             play_tone(1689, 15);
 [e ( _play_tone (2 , -> -> 1689 `i `ui -> -> 15 `i `uc ]
-"642
-[; ;games.c: 642:             RC6 = 0;
+"557
+[; ;games.c: 557:             RC6 = 0;
 [e = _RC6 -> -> 0 `i `b ]
-"643
-[; ;games.c: 643:             play_tone(1420, 5);
+"558
+[; ;games.c: 558:             play_tone(1420, 5);
 [e ( _play_tone (2 , -> -> 1420 `i `ui -> -> 5 `i `uc ]
-"645
-[; ;games.c: 645:             if((p1_score+p2_score)==2) {
-[e $ ! == + -> _p1_score `i -> _p2_score `i -> 2 `i 308  ]
+"559
+[; ;games.c: 559:             if((p1_score+p2_score)==16) {
+[e $ ! == + -> _p1_score `i -> _p2_score `i -> 16 `i 283  ]
 {
-"646
-[; ;games.c: 646:                 game_over = 1;
+"560
+[; ;games.c: 560:                 game_over = 1;
 [e = _game_over -> -> 1 `i `uc ]
-"647
-[; ;games.c: 647:             }
+"561
+[; ;games.c: 561:             }
 }
-[e :U 308 ]
-"648
-[; ;games.c: 648:             display_concentration_scoreboard();
+[e :U 283 ]
+"562
+[; ;games.c: 562:             display_concentration_scoreboard();
 [e ( _display_concentration_scoreboard ..  ]
-"650
-[; ;games.c: 650:         } else {
+"564
+[; ;games.c: 564:         } else {
 }
-[e $U 309  ]
-[e :U 305 ]
+[e $U 284  ]
+[e :U 280 ]
 {
-"651
-[; ;games.c: 651:             display_concentration_gameboard();
+"565
+[; ;games.c: 565:             display_concentration_gameboard();
 [e ( _display_concentration_gameboard ..  ]
-"652
-[; ;games.c: 652:             turn_on_led(0);
+"566
+[; ;games.c: 566:             turn_on_led(0);
 [e ( _turn_on_led (1 -> -> 0 `i `uc ]
-"653
-[; ;games.c: 653:             play_tone(36075, 30);
+"567
+[; ;games.c: 567:             play_tone(36075, 30);
 [e ( _play_tone (2 , -> -> 36075 `l `ui -> -> 30 `i `uc ]
-"654
-[; ;games.c: 654:             RC5 = 0;
+"568
+[; ;games.c: 568:             RC5 = 0;
 [e = _RC5 -> -> 0 `i `b ]
-"655
-[; ;games.c: 655:             DelayMs(100);
+"569
+[; ;games.c: 569:             DelayMs(100);
 [e ( _DelayMs (1 -> -> 100 `i `ui ]
-"656
-[; ;games.c: 656:             turn_on_led(0);
+"570
+[; ;games.c: 570:             turn_on_led(0);
 [e ( _turn_on_led (1 -> -> 0 `i `uc ]
-"657
-[; ;games.c: 657:             play_tone(36075, 30);
+"571
+[; ;games.c: 571:             play_tone(36075, 30);
 [e ( _play_tone (2 , -> -> 36075 `l `ui -> -> 30 `i `uc ]
-"658
-[; ;games.c: 658:             RC5 = 0;
+"572
+[; ;games.c: 572:             RC5 = 0;
 [e = _RC5 -> -> 0 `i `b ]
-"659
-[; ;games.c: 659:             visible[get_cursor_index(selected_tile)] = 0xFF;
+"573
+[; ;games.c: 573:             visible[get_cursor_index(selected_tile)] = 0xFF;
 [e = *U + &U _visible * -> ( _get_cursor_index (1 _selected_tile `ux -> -> # *U &U _visible `ui `ux -> -> 255 `i `uc ]
-"660
-[; ;games.c: 660:             visible[get_cursor_index(cursor_pos)] = 0xFF;
+"574
+[; ;games.c: 574:             visible[get_cursor_index(cursor_pos)] = 0xFF;
 [e = *U + &U _visible * -> ( _get_cursor_index (1 _cursor_pos `ux -> -> # *U &U _visible `ui `ux -> -> 255 `i `uc ]
-"661
-[; ;games.c: 661:             current_char = 0xFF;
+"575
+[; ;games.c: 575:             current_char = 0xFF;
 [e = _current_char -> -> 255 `i `uc ]
-"662
-[; ;games.c: 662:             current_player ^= 0x01;
+"576
+[; ;games.c: 576:             current_player ^= 0x01;
 [e =^ _current_player -> -> 1 `i `uc ]
-"663
-[; ;games.c: 663:         }
+"577
+[; ;games.c: 577:         }
 }
-[e :U 309 ]
-"664
-[; ;games.c: 664:         selected_tile = 0xFF;
+[e :U 284 ]
+"578
+[; ;games.c: 578:         selected_tile = 0xFF;
 [e = _selected_tile -> -> 255 `i `uc ]
-"665
-[; ;games.c: 665:         joystick_pressed = 1;
+"579
+[; ;games.c: 579:         joystick_pressed = 1;
 [e = _joystick_pressed -> -> 1 `i `uc ]
-"666
-[; ;games.c: 666:         DelayMs(100);
+"580
+[; ;games.c: 580:         DelayMs(100);
 [e ( _DelayMs (1 -> -> 100 `i `ui ]
-"667
-[; ;games.c: 667:     }
+"581
+[; ;games.c: 581:     }
 }
-[e :U 304 ]
-"668
-[; ;games.c: 668: }
-[e :UE 302 ]
+[e :U 279 ]
+"582
+[; ;games.c: 582: }
+[e :UE 277 ]
 }
-"670
-[; ;games.c: 670: void concentration_game_loop(void) {
+"584
+[; ;games.c: 584: void concentration_game_loop(void) {
 [v _concentration_game_loop `(v ~T0 @X0 1 ef ]
 {
 [e :U _concentration_game_loop ]
 [f ]
-"672
-[; ;games.c: 672:     if(GO == 0) {
-[e $ ! == -> _GO `i -> 0 `i 311  ]
+"586
+[; ;games.c: 586:     if(GO == 0) {
+[e $ ! == -> _GO `i -> 0 `i 286  ]
 {
-"673
-[; ;games.c: 673:         GO = 1;
+"587
+[; ;games.c: 587:         GO = 1;
 [e = _GO -> -> 1 `i `b ]
-"674
-[; ;games.c: 674:     }
+"588
+[; ;games.c: 588:     }
+}
+[e :U 286 ]
+"589
+[; ;games.c: 589:     if((((RB5 == 0)&&(current_player == 0))||
+[e $ ! && || && == -> _RB5 `i -> 0 `i == -> _current_player `i -> 0 `i && == -> _RB2 `i -> 0 `i == -> _current_player `i -> 1 `i == -> _joystick_pressed `i -> 1 `i 287  ]
+"591
+[; ;games.c: 591:             &&(joystick_pressed == 1)) {
+{
+"592
+[; ;games.c: 592:         DelayMs(6);
+[e ( _DelayMs (1 -> -> 6 `i `ui ]
+"593
+[; ;games.c: 593:         joystick_pressed = 0;
+[e = _joystick_pressed -> -> 0 `i `uc ]
+"594
+[; ;games.c: 594:         if(visible[get_cursor_index(cursor_pos)] == 0xFF) {
+[e $ ! == -> *U + &U _visible * -> ( _get_cursor_index (1 _cursor_pos `ux -> -> # *U &U _visible `ui `ux `i -> 255 `i 288  ]
+{
+"595
+[; ;games.c: 595:             visible[get_cursor_index(cursor_pos)] = board[get_cursor_index(cursor_pos)];
+[e = *U + &U _visible * -> ( _get_cursor_index (1 _cursor_pos `ux -> -> # *U &U _visible `ui `ux *U + &U _board * -> ( _get_cursor_index (1 _cursor_pos `ux -> -> # *U &U _board `ui `ux ]
+"596
+[; ;games.c: 596:             current_char = board[get_cursor_index(cursor_pos)];
+[e = _current_char *U + &U _board * -> ( _get_cursor_index (1 _cursor_pos `ux -> -> # *U &U _board `ui `ux ]
+"597
+[; ;games.c: 597:             check_for_match(current_player);
+[e ( _check_for_match (1 _current_player ]
+"598
+[; ;games.c: 598:             display_concentration_gameboard();
+[e ( _display_concentration_gameboard ..  ]
+"599
+[; ;games.c: 599:         }
+}
+[e :U 288 ]
+"600
+[; ;games.c: 600:     } else if((((RB5 == 1)&&(current_player == 0))||
+}
+[e $U 289  ]
+[e :U 287 ]
+[e $ ! || && == -> _RB5 `i -> 1 `i == -> _current_player `i -> 0 `i && == -> _RB2 `i -> 1 `i == -> _current_player `i -> 1 `i 290  ]
+"601
+[; ;games.c: 601:             ((RB2 == 1)&&(current_player == 1)))) {
+{
+"602
+[; ;games.c: 602:         joystick_pressed = 1;
+[e = _joystick_pressed -> -> 1 `i `uc ]
+"603
+[; ;games.c: 603:     }
+}
+[e :U 290 ]
+[e :U 289 ]
+"605
+[; ;games.c: 605:     if(CCP1IF == 1) {
+[e $ ! == -> _CCP1IF `i -> 1 `i 291  ]
+{
+"606
+[; ;games.c: 606:         if(delay_loops == 0) {
+[e $ ! == -> _delay_loops `i -> 0 `i 292  ]
+{
+"607
+[; ;games.c: 607:             delay_loops = 25;
+[e = _delay_loops -> -> 25 `i `uc ]
+"608
+[; ;games.c: 608:             toggle_cursor();
+[e ( _toggle_cursor ..  ]
+"609
+[; ;games.c: 609:         } else {
+}
+[e $U 293  ]
+[e :U 292 ]
+{
+"610
+[; ;games.c: 610:             delay_loops--;
+[e -- _delay_loops -> -> 1 `i `uc ]
+"611
+[; ;games.c: 611:         }
+}
+[e :U 293 ]
+"612
+[; ;games.c: 612:         CCPR1 = TMR1+50000;
+[e = _CCPR1 -> + -> _TMR1 `l -> 50000 `l `us ]
+"613
+[; ;games.c: 613:         CCP1IF = 0;
+[e = _CCP1IF -> -> 0 `i `b ]
+"614
+[; ;games.c: 614:     }
+}
+[e :U 291 ]
+"616
+[; ;games.c: 616:     if(joystick_x_pos > 900) {
+[e $ ! > _joystick_x_pos -> 900 `i 294  ]
+{
+"617
+[; ;games.c: 617:         if(event_enabled) {
+[e $ ! != -> _event_enabled `i -> 0 `i 295  ]
+{
+"618
+[; ;games.c: 618:             update_cursor(30, 2);
+[e ( _update_cursor (2 , -> -> 30 `i `uc -> -> 2 `i `uc ]
+"619
+[; ;games.c: 619:         }
+}
+[e :U 295 ]
+"620
+[; ;games.c: 620:     } else if(joystick_x_pos < 100) {
+}
+[e $U 296  ]
+[e :U 294 ]
+[e $ ! < _joystick_x_pos -> 100 `i 297  ]
+{
+"621
+[; ;games.c: 621:         if(event_enabled) {
+[e $ ! != -> _event_enabled `i -> 0 `i 298  ]
+{
+"622
+[; ;games.c: 622:             update_cursor(30, 3);
+[e ( _update_cursor (2 , -> -> 30 `i `uc -> -> 3 `i `uc ]
+"623
+[; ;games.c: 623:         }
+}
+[e :U 298 ]
+"624
+[; ;games.c: 624:     } else if(joystick_x_pos > 800) {
+}
+[e $U 299  ]
+[e :U 297 ]
+[e $ ! > _joystick_x_pos -> 800 `i 300  ]
+{
+"625
+[; ;games.c: 625:         if(event_enabled) {
+[e $ ! != -> _event_enabled `i -> 0 `i 301  ]
+{
+"626
+[; ;games.c: 626:             update_cursor(60, 2);
+[e ( _update_cursor (2 , -> -> 60 `i `uc -> -> 2 `i `uc ]
+"627
+[; ;games.c: 627:         }
+}
+[e :U 301 ]
+"628
+[; ;games.c: 628:     } else if(joystick_x_pos < 200) {
+}
+[e $U 302  ]
+[e :U 300 ]
+[e $ ! < _joystick_x_pos -> 200 `i 303  ]
+{
+"629
+[; ;games.c: 629:         if(event_enabled) {
+[e $ ! != -> _event_enabled `i -> 0 `i 304  ]
+{
+"630
+[; ;games.c: 630:             update_cursor(60, 3);
+[e ( _update_cursor (2 , -> -> 60 `i `uc -> -> 3 `i `uc ]
+"631
+[; ;games.c: 631:         }
+}
+[e :U 304 ]
+"632
+[; ;games.c: 632:     } else if(joystick_y_pos == 1021) {
+}
+[e $U 305  ]
+[e :U 303 ]
+[e $ ! == _joystick_y_pos -> 1021 `i 306  ]
+{
+"633
+[; ;games.c: 633:         if(event_enabled) {
+[e $ ! != -> _event_enabled `i -> 0 `i 307  ]
+{
+"634
+[; ;games.c: 634:             update_cursor(100, 1);
+[e ( _update_cursor (2 , -> -> 100 `i `uc -> -> 1 `i `uc ]
+"635
+[; ;games.c: 635:         }
+}
+[e :U 307 ]
+"636
+[; ;games.c: 636:     } else if(joystick_y_pos == 0) {
+}
+[e $U 308  ]
+[e :U 306 ]
+[e $ ! == _joystick_y_pos -> 0 `i 309  ]
+{
+"637
+[; ;games.c: 637:         if(event_enabled) {
+[e $ ! != -> _event_enabled `i -> 0 `i 310  ]
+{
+"638
+[; ;games.c: 638:             update_cursor(100, 1);
+[e ( _update_cursor (2 , -> -> 100 `i `uc -> -> 1 `i `uc ]
+"639
+[; ;games.c: 639:         }
+}
+[e :U 310 ]
+"640
+[; ;games.c: 640:     } else {
+}
+[e $U 311  ]
+[e :U 309 ]
+{
+"641
+[; ;games.c: 641:         event_enabled = 1;
+[e = _event_enabled -> -> 1 `i `uc ]
+"642
+[; ;games.c: 642:     }
 }
 [e :U 311 ]
-"675
-[; ;games.c: 675:     if((((RB5 == 0)&&(current_player == 0))||
-[e $ ! && || && == -> _RB5 `i -> 0 `i == -> _current_player `i -> 0 `i && == -> _RB2 `i -> 0 `i == -> _current_player `i -> 1 `i == -> _joystick_pressed `i -> 1 `i 312  ]
-"677
-[; ;games.c: 677:             &&(joystick_pressed == 1)) {
-{
-"678
-[; ;games.c: 678:         DelayMs(6);
-[e ( _DelayMs (1 -> -> 6 `i `ui ]
-"679
-[; ;games.c: 679:         joystick_pressed = 0;
-[e = _joystick_pressed -> -> 0 `i `uc ]
-"680
-[; ;games.c: 680:         if(visible[get_cursor_index(cursor_pos)] == 0xFF) {
-[e $ ! == -> *U + &U _visible * -> ( _get_cursor_index (1 _cursor_pos `ux -> -> # *U &U _visible `ui `ux `i -> 255 `i 313  ]
-{
-"681
-[; ;games.c: 681:             visible[get_cursor_index(cursor_pos)] = board[get_cursor_index(cursor_pos)];
-[e = *U + &U _visible * -> ( _get_cursor_index (1 _cursor_pos `ux -> -> # *U &U _visible `ui `ux *U + &U _board * -> ( _get_cursor_index (1 _cursor_pos `ux -> -> # *U &U _board `ui `ux ]
-"682
-[; ;games.c: 682:             current_char = board[get_cursor_index(cursor_pos)];
-[e = _current_char *U + &U _board * -> ( _get_cursor_index (1 _cursor_pos `ux -> -> # *U &U _board `ui `ux ]
-"683
-[; ;games.c: 683:             check_for_match(current_player);
-[e ( _check_for_match (1 _current_player ]
-"684
-[; ;games.c: 684:             display_concentration_gameboard();
-[e ( _display_concentration_gameboard ..  ]
-"685
-[; ;games.c: 685:         }
+[e :U 308 ]
+[e :U 305 ]
+[e :U 302 ]
+[e :U 299 ]
+[e :U 296 ]
+"643
+[; ;games.c: 643: }
+[e :UE 285 ]
 }
-[e :U 313 ]
-"686
-[; ;games.c: 686:     } else if((((RB5 == 1)&&(current_player == 0))||
-}
-[e $U 314  ]
-[e :U 312 ]
-[e $ ! || && == -> _RB5 `i -> 1 `i == -> _current_player `i -> 0 `i && == -> _RB2 `i -> 1 `i == -> _current_player `i -> 1 `i 315  ]
-"687
-[; ;games.c: 687:             ((RB2 == 1)&&(current_player == 1)))) {
-{
-"688
-[; ;games.c: 688:         joystick_pressed = 1;
-[e = _joystick_pressed -> -> 1 `i `uc ]
-"689
-[; ;games.c: 689:     }
-}
-[e :U 315 ]
-[e :U 314 ]
-"691
-[; ;games.c: 691:     if(CCP1IF == 1) {
-[e $ ! == -> _CCP1IF `i -> 1 `i 316  ]
-{
-"692
-[; ;games.c: 692:         if(delay_loops == 0) {
-[e $ ! == -> _delay_loops `i -> 0 `i 317  ]
-{
-"693
-[; ;games.c: 693:             delay_loops = 25;
-[e = _delay_loops -> -> 25 `i `uc ]
-"694
-[; ;games.c: 694:             toggle_cursor();
-[e ( _toggle_cursor ..  ]
-"695
-[; ;games.c: 695:         } else {
-}
-[e $U 318  ]
-[e :U 317 ]
-{
-"696
-[; ;games.c: 696:             delay_loops--;
-[e -- _delay_loops -> -> 1 `i `uc ]
-"697
-[; ;games.c: 697:         }
-}
-[e :U 318 ]
-"698
-[; ;games.c: 698:         CCPR1 = TMR1+50000;
-[e = _CCPR1 -> + -> _TMR1 `l -> 50000 `l `us ]
-"699
-[; ;games.c: 699:         CCP1IF = 0;
-[e = _CCP1IF -> -> 0 `i `b ]
-"700
-[; ;games.c: 700:     }
-}
-[e :U 316 ]
-"702
-[; ;games.c: 702:     if(joystick_x_pos > 900) {
-[e $ ! > _joystick_x_pos -> 900 `i 319  ]
-{
-"703
-[; ;games.c: 703:         if(event_enabled) {
-[e $ ! != -> _event_enabled `i -> 0 `i 320  ]
-{
-"704
-[; ;games.c: 704:             update_cursor(30, 2);
-[e ( _update_cursor (2 , -> -> 30 `i `uc -> -> 2 `i `uc ]
-"705
-[; ;games.c: 705:         }
-}
-[e :U 320 ]
-"706
-[; ;games.c: 706:     } else if(joystick_x_pos < 100) {
-}
-[e $U 321  ]
-[e :U 319 ]
-[e $ ! < _joystick_x_pos -> 100 `i 322  ]
-{
-"707
-[; ;games.c: 707:         if(event_enabled) {
-[e $ ! != -> _event_enabled `i -> 0 `i 323  ]
-{
-"708
-[; ;games.c: 708:             update_cursor(30, 3);
-[e ( _update_cursor (2 , -> -> 30 `i `uc -> -> 3 `i `uc ]
-"709
-[; ;games.c: 709:         }
-}
-[e :U 323 ]
-"710
-[; ;games.c: 710:     } else if(joystick_x_pos > 800) {
-}
-[e $U 324  ]
-[e :U 322 ]
-[e $ ! > _joystick_x_pos -> 800 `i 325  ]
-{
-"711
-[; ;games.c: 711:         if(event_enabled) {
-[e $ ! != -> _event_enabled `i -> 0 `i 326  ]
-{
-"712
-[; ;games.c: 712:             update_cursor(60, 2);
-[e ( _update_cursor (2 , -> -> 60 `i `uc -> -> 2 `i `uc ]
-"713
-[; ;games.c: 713:         }
-}
-[e :U 326 ]
-"714
-[; ;games.c: 714:     } else if(joystick_x_pos < 200) {
-}
-[e $U 327  ]
-[e :U 325 ]
-[e $ ! < _joystick_x_pos -> 200 `i 328  ]
-{
-"715
-[; ;games.c: 715:         if(event_enabled) {
-[e $ ! != -> _event_enabled `i -> 0 `i 329  ]
-{
-"716
-[; ;games.c: 716:             update_cursor(60, 3);
-[e ( _update_cursor (2 , -> -> 60 `i `uc -> -> 3 `i `uc ]
-"717
-[; ;games.c: 717:         }
-}
-[e :U 329 ]
-"718
-[; ;games.c: 718:     } else if(joystick_y_pos == 1021) {
-}
-[e $U 330  ]
-[e :U 328 ]
-[e $ ! == _joystick_y_pos -> 1021 `i 331  ]
-{
-"719
-[; ;games.c: 719:         if(event_enabled) {
-[e $ ! != -> _event_enabled `i -> 0 `i 332  ]
-{
-"720
-[; ;games.c: 720:             update_cursor(100, 1);
-[e ( _update_cursor (2 , -> -> 100 `i `uc -> -> 1 `i `uc ]
-"721
-[; ;games.c: 721:         }
-}
-[e :U 332 ]
-"722
-[; ;games.c: 722:     } else if(joystick_y_pos == 0) {
-}
-[e $U 333  ]
-[e :U 331 ]
-[e $ ! == _joystick_y_pos -> 0 `i 334  ]
-{
-"723
-[; ;games.c: 723:         if(event_enabled) {
-[e $ ! != -> _event_enabled `i -> 0 `i 335  ]
-{
-"724
-[; ;games.c: 724:             update_cursor(100, 1);
-[e ( _update_cursor (2 , -> -> 100 `i `uc -> -> 1 `i `uc ]
-"725
-[; ;games.c: 725:         }
-}
-[e :U 335 ]
-"726
-[; ;games.c: 726:     } else {
-}
-[e $U 336  ]
-[e :U 334 ]
-{
-"727
-[; ;games.c: 727:         event_enabled = 1;
-[e = _event_enabled -> -> 1 `i `uc ]
-"728
-[; ;games.c: 728:     }
-}
-[e :U 336 ]
-[e :U 333 ]
-[e :U 330 ]
-[e :U 327 ]
-[e :U 324 ]
-[e :U 321 ]
-"729
-[; ;games.c: 729: }
-[e :UE 310 ]
-}
-"731
-[; ;games.c: 731: void update_cursor(char move_delay_count, char direction) {
+"645
+[; ;games.c: 645: void update_cursor(char move_delay_count, char direction) {
 [v _update_cursor `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _update_cursor ]
 [v _move_delay_count `uc ~T0 @X0 1 r1 ]
 [v _direction `uc ~T0 @X0 1 r2 ]
 [f ]
-"732
-[; ;games.c: 732:     event_enabled = 0;
+"646
+[; ;games.c: 646:     event_enabled = 0;
 [e = _event_enabled -> -> 0 `i `uc ]
-"733
-[; ;games.c: 733:     event_delay_count = move_delay_count;
+"647
+[; ;games.c: 647:     event_delay_count = move_delay_count;
 [e = _event_delay_count _move_delay_count ]
-"734
-[; ;games.c: 734:     switch(direction) {
-[e $U 339  ]
+"648
+[; ;games.c: 648:     switch(direction) {
+[e $U 314  ]
 {
-"735
-[; ;games.c: 735:         case 1:
-[e :U 340 ]
-"736
-[; ;games.c: 736:             cursor_pos ^= 0x40;
+"649
+[; ;games.c: 649:         case 1:
+[e :U 315 ]
+"650
+[; ;games.c: 650:             cursor_pos ^= 0x40;
 [e =^ _cursor_pos -> -> 64 `i `uc ]
-"737
-[; ;games.c: 737:             break;
-[e $U 338  ]
-"738
-[; ;games.c: 738:         case 2:
-[e :U 341 ]
-"739
-[; ;games.c: 739:             switch(cursor_pos) {
-[e $U 343  ]
+"651
+[; ;games.c: 651:             break;
+[e $U 313  ]
+"652
+[; ;games.c: 652:         case 2:
+[e :U 316 ]
+"653
+[; ;games.c: 653:             switch(cursor_pos) {
+[e $U 318  ]
 {
-"740
-[; ;games.c: 740:                 case 0x00:
-[e :U 344 ]
-"741
-[; ;games.c: 741:                     cursor_pos = 0x0F;
+"654
+[; ;games.c: 654:                 case 0x00:
+[e :U 319 ]
+"655
+[; ;games.c: 655:                     cursor_pos = 0x0F;
 [e = _cursor_pos -> -> 15 `i `uc ]
-"742
-[; ;games.c: 742:                     break;
-[e $U 342  ]
-"743
-[; ;games.c: 743:                 case 0x40:
-[e :U 345 ]
-"744
-[; ;games.c: 744:                     cursor_pos = 0x4F;
+"656
+[; ;games.c: 656:                     break;
+[e $U 317  ]
+"657
+[; ;games.c: 657:                 case 0x40:
+[e :U 320 ]
+"658
+[; ;games.c: 658:                     cursor_pos = 0x4F;
 [e = _cursor_pos -> -> 79 `i `uc ]
-"745
-[; ;games.c: 745:                     break;
-[e $U 342  ]
-"746
-[; ;games.c: 746:                 default:
-[e :U 346 ]
-"747
-[; ;games.c: 747:                     cursor_pos--;
+"659
+[; ;games.c: 659:                     break;
+[e $U 317  ]
+"660
+[; ;games.c: 660:                 default:
+[e :U 321 ]
+"661
+[; ;games.c: 661:                     cursor_pos--;
 [e -- _cursor_pos -> -> 1 `i `uc ]
-"748
-[; ;games.c: 748:             }
+"662
+[; ;games.c: 662:             }
 }
-[e $U 342  ]
-[e :U 343 ]
-[e [\ -> _cursor_pos `i , $ -> 0 `i 344
- , $ -> 64 `i 345
- 346 ]
-[e :U 342 ]
-"749
-[; ;games.c: 749:             break;
-[e $U 338  ]
-"750
-[; ;games.c: 750:         case 3:
-[e :U 347 ]
-"751
-[; ;games.c: 751:             switch(cursor_pos) {
-[e $U 349  ]
+[e $U 317  ]
+[e :U 318 ]
+[e [\ -> _cursor_pos `i , $ -> 0 `i 319
+ , $ -> 64 `i 320
+ 321 ]
+[e :U 317 ]
+"663
+[; ;games.c: 663:             break;
+[e $U 313  ]
+"664
+[; ;games.c: 664:         case 3:
+[e :U 322 ]
+"665
+[; ;games.c: 665:             switch(cursor_pos) {
+[e $U 324  ]
 {
-"752
-[; ;games.c: 752:                 case 0x0F:
-[e :U 350 ]
-"753
-[; ;games.c: 753:                     cursor_pos = 0x00;
+"666
+[; ;games.c: 666:                 case 0x0F:
+[e :U 325 ]
+"667
+[; ;games.c: 667:                     cursor_pos = 0x00;
 [e = _cursor_pos -> -> 0 `i `uc ]
-"754
-[; ;games.c: 754:                     break;
-[e $U 348  ]
-"755
-[; ;games.c: 755:                 case 0x4F:
-[e :U 351 ]
-"756
-[; ;games.c: 756:                     cursor_pos = 0x40;
+"668
+[; ;games.c: 668:                     break;
+[e $U 323  ]
+"669
+[; ;games.c: 669:                 case 0x4F:
+[e :U 326 ]
+"670
+[; ;games.c: 670:                     cursor_pos = 0x40;
 [e = _cursor_pos -> -> 64 `i `uc ]
-"757
-[; ;games.c: 757:                     break;
-[e $U 348  ]
-"758
-[; ;games.c: 758:                 default:
-[e :U 352 ]
-"759
-[; ;games.c: 759:                     cursor_pos++;
+"671
+[; ;games.c: 671:                     break;
+[e $U 323  ]
+"672
+[; ;games.c: 672:                 default:
+[e :U 327 ]
+"673
+[; ;games.c: 673:                     cursor_pos++;
 [e ++ _cursor_pos -> -> 1 `i `uc ]
-"760
-[; ;games.c: 760:             }
+"674
+[; ;games.c: 674:             }
 }
-[e $U 348  ]
-[e :U 349 ]
-[e [\ -> _cursor_pos `i , $ -> 15 `i 350
- , $ -> 79 `i 351
- 352 ]
-[e :U 348 ]
-"761
-[; ;games.c: 761:             break;
-[e $U 338  ]
-"762
-[; ;games.c: 762:     }
+[e $U 323  ]
+[e :U 324 ]
+[e [\ -> _cursor_pos `i , $ -> 15 `i 325
+ , $ -> 79 `i 326
+ 327 ]
+[e :U 323 ]
+"675
+[; ;games.c: 675:             break;
+[e $U 313  ]
+"676
+[; ;games.c: 676:     }
 }
-[e $U 338  ]
-[e :U 339 ]
-[e [\ -> _direction `i , $ -> 1 `i 340
- , $ -> 2 `i 341
- , $ -> 3 `i 347
- 338 ]
-[e :U 338 ]
-"763
-[; ;games.c: 763:     lcd_putch(current_char, gameboard);
+[e $U 313  ]
+[e :U 314 ]
+[e [\ -> _direction `i , $ -> 1 `i 315
+ , $ -> 2 `i 316
+ , $ -> 3 `i 322
+ 313 ]
+[e :U 313 ]
+"677
+[; ;games.c: 677:     lcd_putch(current_char, gameboard);
 [e ( _lcd_putch (2 , _current_char _gameboard ]
-"764
-[; ;games.c: 764:     lcd_goto(cursor_pos, gameboard);
+"678
+[; ;games.c: 678:     lcd_goto(cursor_pos, gameboard);
 [e ( _lcd_goto (2 , -> _cursor_pos `uc _gameboard ]
-"765
-[; ;games.c: 765:     get_current_char();
-[e ( _get_current_char ..  ]
-"766
-[; ;games.c: 766:     if(cursor_solid == 1) {
-[e $ ! == -> _cursor_solid `i -> 1 `i 353  ]
+"679
+[; ;games.c: 679:     current_char = visible[get_cursor_index(cursor_pos)];
+[e = _current_char *U + &U _visible * -> ( _get_cursor_index (1 _cursor_pos `ux -> -> # *U &U _visible `ui `ux ]
+"680
+[; ;games.c: 680:     if(cursor_solid == 1) {
+[e $ ! == -> _cursor_solid `i -> 1 `i 328  ]
 {
-"767
-[; ;games.c: 767:         lcd_putch(0x20, gameboard);
+"681
+[; ;games.c: 681:         lcd_putch(0x20, gameboard);
 [e ( _lcd_putch (2 , -> -> 32 `i `uc _gameboard ]
-"768
-[; ;games.c: 768:         lcd_goto(cursor_pos, gameboard);
+"682
+[; ;games.c: 682:         lcd_goto(cursor_pos, gameboard);
 [e ( _lcd_goto (2 , -> _cursor_pos `uc _gameboard ]
-"769
-[; ;games.c: 769:     }
+"683
+[; ;games.c: 683:     }
 }
-[e :U 353 ]
-"770
-[; ;games.c: 770: }
-[e :UE 337 ]
+[e :U 328 ]
+"684
+[; ;games.c: 684: }
+[e :UE 312 ]
 }
-"772
-[; ;games.c: 772: void toggle_cursor(void) {
+"686
+[; ;games.c: 686: void toggle_cursor(void) {
 [v _toggle_cursor `(v ~T0 @X0 1 ef ]
 {
 [e :U _toggle_cursor ]
 [f ]
-"773
-[; ;games.c: 773:     if(cursor_solid == 0) {
-[e $ ! == -> _cursor_solid `i -> 0 `i 355  ]
+"687
+[; ;games.c: 687:     if(cursor_solid == 0) {
+[e $ ! == -> _cursor_solid `i -> 0 `i 330  ]
 {
-"774
-[; ;games.c: 774:         lcd_putch(0x20, gameboard);
+"688
+[; ;games.c: 688:         lcd_putch(0x20, gameboard);
 [e ( _lcd_putch (2 , -> -> 32 `i `uc _gameboard ]
-"775
-[; ;games.c: 775:         cursor_solid = 1;
+"689
+[; ;games.c: 689:         cursor_solid = 1;
 [e = _cursor_solid -> -> 1 `i `uc ]
-"776
-[; ;games.c: 776:     } else {
+"690
+[; ;games.c: 690:     } else {
 }
-[e $U 356  ]
-[e :U 355 ]
+[e $U 331  ]
+[e :U 330 ]
 {
-"777
-[; ;games.c: 777:         lcd_putch(current_char, gameboard);
+"691
+[; ;games.c: 691:         lcd_putch(current_char, gameboard);
 [e ( _lcd_putch (2 , _current_char _gameboard ]
-"778
-[; ;games.c: 778:         cursor_solid = 0;
+"692
+[; ;games.c: 692:         cursor_solid = 0;
 [e = _cursor_solid -> -> 0 `i `uc ]
-"779
-[; ;games.c: 779:     }
+"693
+[; ;games.c: 693:     }
 }
-[e :U 356 ]
-"780
-[; ;games.c: 780:     lcd_goto(cursor_pos, gameboard);
+[e :U 331 ]
+"694
+[; ;games.c: 694:     lcd_goto(cursor_pos, gameboard);
 [e ( _lcd_goto (2 , -> _cursor_pos `uc _gameboard ]
-"781
-[; ;games.c: 781: }
-[e :UE 354 ]
+"695
+[; ;games.c: 695: }
+[e :UE 329 ]
 }
-"783
-[; ;games.c: 783: void get_current_char(void) {
-[v _get_current_char `(v ~T0 @X0 1 ef ]
+"699
+[; ;games.c: 699: void end_screen(const char *first_row, char *second_row) {
+[v _end_screen `(v ~T0 @X0 1 ef2`*Cuc`*uc ]
 {
-[e :U _get_current_char ]
+[e :U _end_screen ]
+[v _first_row `*Cuc ~T0 @X0 1 r1 ]
+[v _second_row `*uc ~T0 @X0 1 r2 ]
 [f ]
-"784
-[; ;games.c: 784:     current_char = visible[get_cursor_index(cursor_pos)];
-[e = _current_char *U + &U _visible * -> ( _get_cursor_index (1 _cursor_pos `ux -> -> # *U &U _visible `ui `ux ]
-"785
-[; ;games.c: 785: }
-[e :UE 357 ]
+"700
+[; ;games.c: 700:     joystick_pressed = 1;
+[e = _joystick_pressed -> -> 1 `i `uc ]
+[v F1400 `uc ~T0 @X0 -> 6 `i s ]
+[i F1400
+:U ..
+"701
+[; ;games.c: 701:     char colors[] = {0,3,1,4,2,5};
+-> -> 0 `i `uc
+-> -> 3 `i `uc
+-> -> 1 `i `uc
+-> -> 4 `i `uc
+-> -> 2 `i `uc
+-> -> 5 `i `uc
+..
+]
+[v _colors `uc ~T0 @X0 -> 6 `i a ]
+[e = _colors F1400 ]
+"702
+[; ;games.c: 702:     char color_index = 0;
+[v _color_index `uc ~T0 @X0 1 a ]
+[e = _color_index -> -> 0 `i `uc ]
+"703
+[; ;games.c: 703:     char i;
+[v _i `uc ~T0 @X0 1 a ]
+"704
+[; ;games.c: 704:     for(i=0;i<3;i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 3 `i 333  ]
+[e $U 334  ]
+[e :U 333 ]
+{
+"705
+[; ;games.c: 705:         turn_on_led(colors[color_index]);
+[e ( _turn_on_led (1 *U + &U _colors * -> _color_index `ux -> -> # *U &U _colors `ui `ux ]
+"706
+[; ;games.c: 706:         color_index++;
+[e ++ _color_index -> -> 1 `i `uc ]
+"707
+[; ;games.c: 707:         color_index %= 6;
+[e =% _color_index -> 6 `i ]
+"708
+[; ;games.c: 708:         play_tone(2009, 30);
+[e ( _play_tone (2 , -> -> 2009 `i `ui -> -> 30 `i `uc ]
+"709
+[; ;games.c: 709:         turn_on_led(colors[color_index]);
+[e ( _turn_on_led (1 *U + &U _colors * -> _color_index `ux -> -> # *U &U _colors `ui `ux ]
+"710
+[; ;games.c: 710:         color_index++;
+[e ++ _color_index -> -> 1 `i `uc ]
+"711
+[; ;games.c: 711:         color_index %= 6;
+[e =% _color_index -> 6 `i ]
+"712
+[; ;games.c: 712:         play_tone(1896, 30);
+[e ( _play_tone (2 , -> -> 1896 `i `ui -> -> 30 `i `uc ]
+"713
+[; ;games.c: 713:         turn_on_led(colors[color_index]);
+[e ( _turn_on_led (1 *U + &U _colors * -> _color_index `ux -> -> # *U &U _colors `ui `ux ]
+"714
+[; ;games.c: 714:         color_index++;
+[e ++ _color_index -> -> 1 `i `uc ]
+"715
+[; ;games.c: 715:         color_index %= 6;
+[e =% _color_index -> 6 `i ]
+"716
+[; ;games.c: 716:         play_tone(1594, 30);
+[e ( _play_tone (2 , -> -> 1594 `i `ui -> -> 30 `i `uc ]
+"717
+[; ;games.c: 717:         turn_on_led(colors[color_index]);
+[e ( _turn_on_led (1 *U + &U _colors * -> _color_index `ux -> -> # *U &U _colors `ui `ux ]
+"718
+[; ;games.c: 718:         color_index++;
+[e ++ _color_index -> -> 1 `i `uc ]
+"719
+[; ;games.c: 719:         color_index %= 6;
+[e =% _color_index -> 6 `i ]
+"720
+[; ;games.c: 720:         DelayMs(250);
+[e ( _DelayMs (1 -> -> 250 `i `ui ]
+"721
+[; ;games.c: 721:     }
 }
-"787
-[; ;games.c: 787: void play_tone(unsigned int tone_period, char duration_8ms) {
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 3 `i 333  ]
+[e :U 334 ]
+}
+"722
+[; ;games.c: 722:     turn_on_led(colors[color_index]);
+[e ( _turn_on_led (1 *U + &U _colors * -> _color_index `ux -> -> # *U &U _colors `ui `ux ]
+"723
+[; ;games.c: 723:     color_index++;
+[e ++ _color_index -> -> 1 `i `uc ]
+"724
+[; ;games.c: 724:     color_index %= 6;
+[e =% _color_index -> 6 `i ]
+"725
+[; ;games.c: 725:     play_tone(2389, 60);
+[e ( _play_tone (2 , -> -> 2389 `i `ui -> -> 60 `i `uc ]
+"726
+[; ;games.c: 726:     while(joystick_pressed==1) {
+[e $U 336  ]
+[e :U 337 ]
+{
+"727
+[; ;games.c: 727:         lcd_clear(gameboard);
+[e ( _lcd_clear (1 _gameboard ]
+"728
+[; ;games.c: 728:         lcd_puts(first_row,gameboard);
+[e ( _lcd_puts (2 , _first_row _gameboard ]
+"729
+[; ;games.c: 729:         event_enabled = 0;
+[e = _event_enabled -> -> 0 `i `uc ]
+"730
+[; ;games.c: 730:         event_delay_count = 120;
+[e = _event_delay_count -> -> 120 `i `uc ]
+"731
+[; ;games.c: 731:         while(event_enabled == 0) {
+[e $U 339  ]
+[e :U 340 ]
+{
+"732
+[; ;games.c: 732:             if((RB5 == 0)||(RB2 == 0)) {
+[e $ ! || == -> _RB5 `i -> 0 `i == -> _RB2 `i -> 0 `i 342  ]
+{
+"733
+[; ;games.c: 733:                 joystick_pressed = 0;
+[e = _joystick_pressed -> -> 0 `i `uc ]
+"734
+[; ;games.c: 734:             }
+}
+[e :U 342 ]
+"735
+[; ;games.c: 735:         }
+}
+[e :U 339 ]
+"731
+[; ;games.c: 731:         while(event_enabled == 0) {
+[e $ == -> _event_enabled `i -> 0 `i 340  ]
+[e :U 341 ]
+"736
+[; ;games.c: 736:         turn_on_led(colors[color_index]);
+[e ( _turn_on_led (1 *U + &U _colors * -> _color_index `ux -> -> # *U &U _colors `ui `ux ]
+"737
+[; ;games.c: 737:         color_index++;
+[e ++ _color_index -> -> 1 `i `uc ]
+"738
+[; ;games.c: 738:         color_index %= 6;
+[e =% _color_index -> 6 `i ]
+"739
+[; ;games.c: 739:         lcd_clear(gameboard);
+[e ( _lcd_clear (1 _gameboard ]
+"740
+[; ;games.c: 740:         lcd_goto(0x40,gameboard);
+[e ( _lcd_goto (2 , -> -> 64 `i `uc _gameboard ]
+"741
+[; ;games.c: 741:         lcd_puts(second_row,gameboard);
+[e ( _lcd_puts (2 , -> _second_row `*Cuc _gameboard ]
+"742
+[; ;games.c: 742:         event_enabled = 0;
+[e = _event_enabled -> -> 0 `i `uc ]
+"743
+[; ;games.c: 743:         event_delay_count = 120;
+[e = _event_delay_count -> -> 120 `i `uc ]
+"744
+[; ;games.c: 744:         while(event_enabled == 0) {
+[e $U 343  ]
+[e :U 344 ]
+{
+"745
+[; ;games.c: 745:             if((RB5 == 0)||(RB2 == 0)) {
+[e $ ! || == -> _RB5 `i -> 0 `i == -> _RB2 `i -> 0 `i 346  ]
+{
+"746
+[; ;games.c: 746:                 joystick_pressed = 0;
+[e = _joystick_pressed -> -> 0 `i `uc ]
+"747
+[; ;games.c: 747:             }
+}
+[e :U 346 ]
+"748
+[; ;games.c: 748:         }
+}
+[e :U 343 ]
+"744
+[; ;games.c: 744:         while(event_enabled == 0) {
+[e $ == -> _event_enabled `i -> 0 `i 344  ]
+[e :U 345 ]
+"749
+[; ;games.c: 749:         turn_on_led(colors[color_index]);
+[e ( _turn_on_led (1 *U + &U _colors * -> _color_index `ux -> -> # *U &U _colors `ui `ux ]
+"750
+[; ;games.c: 750:         color_index++;
+[e ++ _color_index -> -> 1 `i `uc ]
+"751
+[; ;games.c: 751:         color_index %= 6;
+[e =% _color_index -> 6 `i ]
+"752
+[; ;games.c: 752:     }
+}
+[e :U 336 ]
+"726
+[; ;games.c: 726:     while(joystick_pressed==1) {
+[e $ == -> _joystick_pressed `i -> 1 `i 337  ]
+[e :U 338 ]
+"753
+[; ;games.c: 753: }
+[e :UE 332 ]
+}
+"755
+[; ;games.c: 755: void play_tone(unsigned int tone_period, char duration_8ms) {
 [v _play_tone `(v ~T0 @X0 1 ef2`ui`uc ]
 {
 [e :U _play_tone ]
 [v _tone_period `ui ~T0 @X0 1 r1 ]
 [v _duration_8ms `uc ~T0 @X0 1 r2 ]
 [f ]
-"788
-[; ;games.c: 788:     tone_delay = tone_period;
+"756
+[; ;games.c: 756:     tone_delay = tone_period;
 [e = _tone_delay -> _tone_period `i ]
-"789
-[; ;games.c: 789:     CCPR2 = TMR1+tone_period;
+"757
+[; ;games.c: 757:     CCPR2 = TMR1+tone_period;
 [e = _CCPR2 -> + -> _TMR1 `ui _tone_period `us ]
-"790
-[; ;games.c: 790:     CCP2IF = 0;
+"758
+[; ;games.c: 758:     CCP2IF = 0;
 [e = _CCP2IF -> -> 0 `i `b ]
-"791
-[; ;games.c: 791:     CCP2IE = 1;
+"759
+[; ;games.c: 759:     CCP2IE = 1;
 [e = _CCP2IE -> -> 1 `i `b ]
-"792
-[; ;games.c: 792:     event_delay_count = duration_8ms;
+"760
+[; ;games.c: 760:     event_delay_count = duration_8ms;
 [e = _event_delay_count _duration_8ms ]
-"793
-[; ;games.c: 793:     event_enabled = 0;
+"761
+[; ;games.c: 761:     event_enabled = 0;
 [e = _event_enabled -> -> 0 `i `uc ]
-"794
-[; ;games.c: 794:     while(event_enabled == 0);
-[e $U 359  ]
-[e :U 360 ]
-[e :U 359 ]
-[e $ == -> _event_enabled `i -> 0 `i 360  ]
-[e :U 361 ]
-"795
-[; ;games.c: 795:     CCP2IE = 0;
+"762
+[; ;games.c: 762:     while(event_enabled == 0);
+[e $U 348  ]
+[e :U 349 ]
+[e :U 348 ]
+[e $ == -> _event_enabled `i -> 0 `i 349  ]
+[e :U 350 ]
+"763
+[; ;games.c: 763:     CCP2IE = 0;
 [e = _CCP2IE -> -> 0 `i `b ]
+"764
+[; ;games.c: 764: }
+[e :UE 347 ]
+}
+"766
+[; ;games.c: 766: void turn_on_led(char color) {
+[v _turn_on_led `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _turn_on_led ]
+[v _color `uc ~T0 @X0 1 r1 ]
+[f ]
+"767
+[; ;games.c: 767:     PORTC &= 0x1F;
+[e =& _PORTC -> -> 31 `i `Vuc ]
+"768
+[; ;games.c: 768:     switch(color) {
+[e $U 353  ]
+{
+"769
+[; ;games.c: 769:         case 0:
+[e :U 354 ]
+"770
+[; ;games.c: 770:             RC5 = 1;
+[e = _RC5 -> -> 1 `i `b ]
+"771
+[; ;games.c: 771:             break;
+[e $U 352  ]
+"772
+[; ;games.c: 772:         case 1:
+[e :U 355 ]
+"773
+[; ;games.c: 773:             RC6 = 1;
+[e = _RC6 -> -> 1 `i `b ]
+"774
+[; ;games.c: 774:             break;
+[e $U 352  ]
+"775
+[; ;games.c: 775:         case 2:
+[e :U 356 ]
+"776
+[; ;games.c: 776:             RC7 = 1;
+[e = _RC7 -> -> 1 `i `b ]
+"777
+[; ;games.c: 777:             break;
+[e $U 352  ]
+"778
+[; ;games.c: 778:         case 3:
+[e :U 357 ]
+"779
+[; ;games.c: 779:             RC5 = 1;
+[e = _RC5 -> -> 1 `i `b ]
+"780
+[; ;games.c: 780:             RC6 = 1;
+[e = _RC6 -> -> 1 `i `b ]
+"781
+[; ;games.c: 781:             break;
+[e $U 352  ]
+"782
+[; ;games.c: 782:         case 4:
+[e :U 358 ]
+"783
+[; ;games.c: 783:             RC6 = 1;
+[e = _RC6 -> -> 1 `i `b ]
+"784
+[; ;games.c: 784:             RC7 = 1;
+[e = _RC7 -> -> 1 `i `b ]
+"785
+[; ;games.c: 785:             break;
+[e $U 352  ]
+"786
+[; ;games.c: 786:         case 5:
+[e :U 359 ]
+"787
+[; ;games.c: 787:             RC7 = 1;
+[e = _RC7 -> -> 1 `i `b ]
+"788
+[; ;games.c: 788:             RC5 = 1;
+[e = _RC5 -> -> 1 `i `b ]
+"789
+[; ;games.c: 789:             break;
+[e $U 352  ]
+"790
+[; ;games.c: 790:         case 6:
+[e :U 360 ]
+"791
+[; ;games.c: 791:             RC5 = 1;
+[e = _RC5 -> -> 1 `i `b ]
+"792
+[; ;games.c: 792:             RC6 = 1;
+[e = _RC6 -> -> 1 `i `b ]
+"793
+[; ;games.c: 793:             RC7 = 1;
+[e = _RC7 -> -> 1 `i `b ]
+"794
+[; ;games.c: 794:             break;
+[e $U 352  ]
+"795
+[; ;games.c: 795:     }
+}
+[e $U 352  ]
+[e :U 353 ]
+[e [\ -> _color `i , $ -> 0 `i 354
+ , $ -> 1 `i 355
+ , $ -> 2 `i 356
+ , $ -> 3 `i 357
+ , $ -> 4 `i 358
+ , $ -> 5 `i 359
+ , $ -> 6 `i 360
+ 352 ]
+[e :U 352 ]
 "796
 [; ;games.c: 796: }
-[e :UE 358 ]
+[e :UE 351 ]
 }
-"800
-[; ;games.c: 800: void time_init(void) {
+"798
+[; ;games.c: 798: void time_init(void) {
 [v _time_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _time_init ]
 [f ]
-"801
-[; ;games.c: 801:     event_delay_count = 255;
+"799
+[; ;games.c: 799:     event_delay_count = 255;
 [e = _event_delay_count -> -> 255 `i `uc ]
-"802
-[; ;games.c: 802:     event_enabled = 1;
+"800
+[; ;games.c: 800:     event_enabled = 1;
 [e = _event_enabled -> -> 1 `i `uc ]
-"803
-[; ;games.c: 803:     PR2 = 250;
+"801
+[; ;games.c: 801:     PR2 = 250;
 [e = _PR2 -> -> 250 `i `uc ]
-"804
-[; ;games.c: 804:     TMR2IF = 0;
+"802
+[; ;games.c: 802:     TMR2IF = 0;
 [e = _TMR2IF -> -> 0 `i `b ]
-"805
-[; ;games.c: 805:     TMR2IE = 1;
+"803
+[; ;games.c: 803:     TMR2IE = 1;
 [e = _TMR2IE -> -> 1 `i `b ]
-"806
-[; ;games.c: 806:     T2CON = 0x56;
+"804
+[; ;games.c: 804:     T2CON = 0x56;
 [e = _T2CON -> -> 86 `i `uc ]
-"808
-[; ;games.c: 808:     CCP1M3 = 1;
+"806
+[; ;games.c: 806:     CCP1M3 = 1;
 [e = _CCP1M3 -> -> 1 `i `b ]
-"809
-[; ;games.c: 809:     CCP1M2 = 0;
+"807
+[; ;games.c: 807:     CCP1M2 = 0;
 [e = _CCP1M2 -> -> 0 `i `b ]
-"810
-[; ;games.c: 810:     CCP1M1 = 1;
+"808
+[; ;games.c: 808:     CCP1M1 = 1;
 [e = _CCP1M1 -> -> 1 `i `b ]
-"811
-[; ;games.c: 811:     CCP1M0 = 0;
+"809
+[; ;games.c: 809:     CCP1M0 = 0;
 [e = _CCP1M0 -> -> 0 `i `b ]
-"812
-[; ;games.c: 812:     TMR1CS = 0;
+"810
+[; ;games.c: 810:     TMR1CS = 0;
 [e = _TMR1CS -> -> 0 `i `b ]
-"813
-[; ;games.c: 813:     T1CKPS0 = 0;
+"811
+[; ;games.c: 811:     T1CKPS0 = 0;
 [e = _T1CKPS0 -> -> 0 `i `b ]
-"814
-[; ;games.c: 814:     T1CKPS1 = 0;
+"812
+[; ;games.c: 812:     T1CKPS1 = 0;
 [e = _T1CKPS1 -> -> 0 `i `b ]
-"815
-[; ;games.c: 815:     TMR1GE = 0;
+"813
+[; ;games.c: 813:     TMR1GE = 0;
 [e = _TMR1GE -> -> 0 `i `b ]
-"816
-[; ;games.c: 816:     TMR1ON = 1;
+"814
+[; ;games.c: 814:     TMR1ON = 1;
 [e = _TMR1ON -> -> 1 `i `b ]
-"818
-[; ;games.c: 818:     CCP2M3 = 1;
+"816
+[; ;games.c: 816:     CCP2M3 = 1;
 [e = _CCP2M3 -> -> 1 `i `b ]
-"819
-[; ;games.c: 819:     CCP2M2 = 0;
+"817
+[; ;games.c: 817:     CCP2M2 = 0;
 [e = _CCP2M2 -> -> 0 `i `b ]
-"820
-[; ;games.c: 820:     CCP2M1 = 0;
+"818
+[; ;games.c: 818:     CCP2M1 = 0;
 [e = _CCP2M1 -> -> 0 `i `b ]
-"821
-[; ;games.c: 821:     CCP2M0 = 0;
+"819
+[; ;games.c: 819:     CCP2M0 = 0;
 [e = _CCP2M0 -> -> 0 `i `b ]
-"822
-[; ;games.c: 822:     TRISC &= 0xFD;
+"820
+[; ;games.c: 820:     TRISC &= 0xFD;
 [e =& _TRISC -> -> 253 `i `Vuc ]
-"823
-[; ;games.c: 823: }
-[e :UE 362 ]
+"821
+[; ;games.c: 821: }
+[e :UE 361 ]
 }
-"825
-[; ;games.c: 825: void joystick_init(void) {
+"823
+[; ;games.c: 823: void joystick_init(void) {
 [v _joystick_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _joystick_init ]
 [f ]
-"826
-[; ;games.c: 826:     joystick_x_pos = 512;
+"824
+[; ;games.c: 824:     joystick_x_pos = 512;
 [e = _joystick_x_pos -> 512 `i ]
-"827
-[; ;games.c: 827:     joystick_y_pos = 512;
+"825
+[; ;games.c: 825:     joystick_y_pos = 512;
 [e = _joystick_y_pos -> 512 `i ]
-"828
-[; ;games.c: 828:     PORTB = 0;
+"826
+[; ;games.c: 826:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"829
-[; ;games.c: 829:     nRBPU = 0;
+"827
+[; ;games.c: 827:     nRBPU = 0;
 [e = _nRBPU -> -> 0 `i `b ]
-"830
-[; ;games.c: 830:     WPUB = 0x24;
+"828
+[; ;games.c: 828:     WPUB = 0x24;
 [e = _WPUB -> -> 36 `i `uc ]
-"831
-[; ;games.c: 831:     TRISB = 0x3F;
+"829
+[; ;games.c: 829:     TRISB = 0x3F;
 [e = _TRISB -> -> 63 `i `uc ]
-"832
-[; ;games.c: 832:     ANSELH = 0x1E;
+"830
+[; ;games.c: 830:     ANSELH = 0x1E;
 [e = _ANSELH -> -> 30 `i `uc ]
-"833
-[; ;games.c: 833:     GIE = 1;
+"831
+[; ;games.c: 831:     GIE = 1;
 [e = _GIE -> -> 1 `i `b ]
-"834
-[; ;games.c: 834:     PEIE = 1;
+"832
+[; ;games.c: 832:     PEIE = 1;
 [e = _PEIE -> -> 1 `i `b ]
-"835
-[; ;games.c: 835:     ADIF = 0;
+"833
+[; ;games.c: 833:     ADIF = 0;
 [e = _ADIF -> -> 0 `i `b ]
-"836
-[; ;games.c: 836:     ADIE = 1;
+"834
+[; ;games.c: 834:     ADIE = 1;
 [e = _ADIE -> -> 1 `i `b ]
-"837
-[; ;games.c: 837:     ADCON1 = 0x80;
+"835
+[; ;games.c: 835:     ADCON1 = 0x80;
 [e = _ADCON1 -> -> 128 `i `uc ]
-"838
-[; ;games.c: 838:     ADCON0 = 0xA5;
+"836
+[; ;games.c: 836:     ADCON0 = 0xA5;
 [e = _ADCON0 -> -> 165 `i `uc ]
-"839
-[; ;games.c: 839:     joystick_pressed = 1;
+"837
+[; ;games.c: 837:     joystick_pressed = 1;
 [e = _joystick_pressed -> -> 1 `i `uc ]
-"840
-[; ;games.c: 840: }
-[e :UE 363 ]
+"838
+[; ;games.c: 838: }
+[e :UE 362 ]
 }
 [v $root$_interrupt_handler `(v ~T0 @X0 0 e ]
-"842
-[; ;games.c: 842: void __attribute__((picinterrupt(("")))) interrupt_handler(void) {
+"840
+[; ;games.c: 840: void __attribute__((picinterrupt(("")))) interrupt_handler(void) {
 [v _interrupt_handler `(v ~T1 @X0 1 ef ]
 {
 [e :U _interrupt_handler ]
 [f ]
+"841
+[; ;games.c: 841:     if((CCP2IF==1) && (CCP2IE==1)) {
+[e $ ! && == -> _CCP2IF `i -> 1 `i == -> _CCP2IE `i -> 1 `i 364  ]
+{
+"842
+[; ;games.c: 842:         CCPR2 += tone_delay;
+[e =+ _CCPR2 -> _tone_delay `Vus ]
 "843
-[; ;games.c: 843:     if((CCP2IF==1) && (CCP2IE==1)) {
-[e $ ! && == -> _CCP2IF `i -> 1 `i == -> _CCP2IE `i -> 1 `i 365  ]
+[; ;games.c: 843:         if(CCP2M0 == 1) {
+[e $ ! == -> _CCP2M0 `i -> 1 `i 365  ]
 {
 "844
-[; ;games.c: 844:         CCPR2 += tone_delay;
-[e =+ _CCPR2 -> _tone_delay `Vus ]
+[; ;games.c: 844:             CCP2M0 = 0;
+[e = _CCP2M0 -> -> 0 `i `b ]
 "845
-[; ;games.c: 845:         if(CCP2M0 == 1) {
-[e $ ! == -> _CCP2M0 `i -> 1 `i 366  ]
+[; ;games.c: 845:         } else {
+}
+[e $U 366  ]
+[e :U 365 ]
 {
 "846
-[; ;games.c: 846:             CCP2M0 = 0;
-[e = _CCP2M0 -> -> 0 `i `b ]
-"847
-[; ;games.c: 847:         } else {
-}
-[e $U 367  ]
-[e :U 366 ]
-{
-"848
-[; ;games.c: 848:             CCP2M0 = 1;
+[; ;games.c: 846:             CCP2M0 = 1;
 [e = _CCP2M0 -> -> 1 `i `b ]
-"849
-[; ;games.c: 849:         }
+"847
+[; ;games.c: 847:         }
 }
-[e :U 367 ]
-"850
-[; ;games.c: 850:         CCP2IF = 0;
+[e :U 366 ]
+"848
+[; ;games.c: 848:         CCP2IF = 0;
 [e = _CCP2IF -> -> 0 `i `b ]
-"851
-[; ;games.c: 851:     }
+"849
+[; ;games.c: 849:     }
 }
-[e :U 365 ]
-"852
-[; ;games.c: 852:     if(ADIF) {
-[e $ ! _ADIF 368  ]
+[e :U 364 ]
+"850
+[; ;games.c: 850:     if(ADIF) {
+[e $ ! _ADIF 367  ]
 {
-"853
-[; ;games.c: 853:         char current_analog = ADCON0&0x3C;
+"851
+[; ;games.c: 851:         char current_analog = ADCON0&0x3C;
 [v _current_analog `uc ~T0 @X0 1 a ]
 [e = _current_analog -> & -> _ADCON0 `i -> 60 `i `uc ]
-"854
-[; ;games.c: 854:         ADCON0 &= 0xC3;
+"852
+[; ;games.c: 852:         ADCON0 &= 0xC3;
 [e =& _ADCON0 -> -> 195 `i `Vuc ]
+"853
+[; ;games.c: 853:         if(((current_analog) == 0x2C)||((current_analog) == 0x28)) {
+[e $ ! || == -> _current_analog `i -> 44 `i == -> _current_analog `i -> 40 `i 368  ]
+{
+"854
+[; ;games.c: 854:             joystick_x_pos = (((int)ADRESH)<<8)+ADRESL;
+[e = _joystick_x_pos + << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
 "855
-[; ;games.c: 855:         if(((current_analog) == 0x2C)||((current_analog) == 0x28)) {
-[e $ ! || == -> _current_analog `i -> 44 `i == -> _current_analog `i -> 40 `i 369  ]
+[; ;games.c: 855:             switch(current_player) {
+[e $U 370  ]
 {
 "856
-[; ;games.c: 856:             joystick_x_pos = (((int)ADRESH)<<8)+ADRESL;
-[e = _joystick_x_pos + << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
-"857
-[; ;games.c: 857:             switch(current_player) {
-[e $U 371  ]
-{
-"858
-[; ;games.c: 858:                 case 0:
-[e :U 372 ]
-"859
-[; ;games.c: 859:                     ADCON0 |= 0x24;
-[e =| _ADCON0 -> -> 36 `i `Vuc ]
-"860
-[; ;games.c: 860:                     break;
-[e $U 370  ]
-"861
-[; ;games.c: 861:                 case 1:
-[e :U 373 ]
-"862
-[; ;games.c: 862:                     ADCON0 |= 0x30;
-[e =| _ADCON0 -> -> 48 `i `Vuc ]
-"863
-[; ;games.c: 863:                     break;
-[e $U 370  ]
-"864
-[; ;games.c: 864:             }
-}
-[e $U 370  ]
+[; ;games.c: 856:                 case 0:
 [e :U 371 ]
-[e [\ -> _current_player `i , $ -> 0 `i 372
- , $ -> 1 `i 373
- 370 ]
-[e :U 370 ]
-"865
-[; ;games.c: 865:         } else {
+"857
+[; ;games.c: 857:                     ADCON0 |= 0x24;
+[e =| _ADCON0 -> -> 36 `i `Vuc ]
+"858
+[; ;games.c: 858:                     break;
+[e $U 369  ]
+"859
+[; ;games.c: 859:                 case 1:
+[e :U 372 ]
+"860
+[; ;games.c: 860:                     ADCON0 |= 0x30;
+[e =| _ADCON0 -> -> 48 `i `Vuc ]
+"861
+[; ;games.c: 861:                     break;
+[e $U 369  ]
+"862
+[; ;games.c: 862:             }
 }
-[e $U 374  ]
+[e $U 369  ]
+[e :U 370 ]
+[e [\ -> _current_player `i , $ -> 0 `i 371
+ , $ -> 1 `i 372
+ 369 ]
 [e :U 369 ]
+"863
+[; ;games.c: 863:         } else {
+}
+[e $U 373  ]
+[e :U 368 ]
+{
+"864
+[; ;games.c: 864:             joystick_y_pos = (((int)ADRESH)<<8)+ADRESL;
+[e = _joystick_y_pos + << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
+"865
+[; ;games.c: 865:             switch(current_player) {
+[e $U 375  ]
 {
 "866
-[; ;games.c: 866:             joystick_y_pos = (((int)ADRESH)<<8)+ADRESL;
-[e = _joystick_y_pos + << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
-"867
-[; ;games.c: 867:             switch(current_player) {
-[e $U 376  ]
-{
-"868
-[; ;games.c: 868:                 case 0:
-[e :U 377 ]
-"869
-[; ;games.c: 869:                     ADCON0 |= 0x2C;
-[e =| _ADCON0 -> -> 44 `i `Vuc ]
-"870
-[; ;games.c: 870:                     break;
-[e $U 375  ]
-"871
-[; ;games.c: 871:                 case 1:
-[e :U 378 ]
-"872
-[; ;games.c: 872:                     ADCON0 |= 0x28;
-[e =| _ADCON0 -> -> 40 `i `Vuc ]
-"873
-[; ;games.c: 873:                     break;
-[e $U 375  ]
-"874
-[; ;games.c: 874:             }
-}
-[e $U 375  ]
+[; ;games.c: 866:                 case 0:
 [e :U 376 ]
-[e [\ -> _current_player `i , $ -> 0 `i 377
- , $ -> 1 `i 378
- 375 ]
+"867
+[; ;games.c: 867:                     ADCON0 |= 0x2C;
+[e =| _ADCON0 -> -> 44 `i `Vuc ]
+"868
+[; ;games.c: 868:                     break;
+[e $U 374  ]
+"869
+[; ;games.c: 869:                 case 1:
+[e :U 377 ]
+"870
+[; ;games.c: 870:                     ADCON0 |= 0x28;
+[e =| _ADCON0 -> -> 40 `i `Vuc ]
+"871
+[; ;games.c: 871:                     break;
+[e $U 374  ]
+"872
+[; ;games.c: 872:             }
+}
+[e $U 374  ]
 [e :U 375 ]
-"875
-[; ;games.c: 875:         }
-}
+[e [\ -> _current_player `i , $ -> 0 `i 376
+ , $ -> 1 `i 377
+ 374 ]
 [e :U 374 ]
-"876
-[; ;games.c: 876:         ADIF = 0;
-[e = _ADIF -> -> 0 `i `b ]
-"877
-[; ;games.c: 877:     }
+"873
+[; ;games.c: 873:         }
 }
-[e :U 368 ]
+[e :U 373 ]
+"874
+[; ;games.c: 874:         ADIF = 0;
+[e = _ADIF -> -> 0 `i `b ]
+"875
+[; ;games.c: 875:     }
+}
+[e :U 367 ]
+"876
+[; ;games.c: 876:     if(TMR2IF) {
+[e $ ! _TMR2IF 378  ]
+{
+"877
+[; ;games.c: 877:         event_delay_count--;
+[e -- _event_delay_count -> -> 1 `i `uc ]
 "878
-[; ;games.c: 878:     if(TMR2IF) {
-[e $ ! _TMR2IF 379  ]
+[; ;games.c: 878:         if(event_delay_count == 0) {
+[e $ ! == -> _event_delay_count `i -> 0 `i 379  ]
 {
 "879
-[; ;games.c: 879:         event_delay_count--;
-[e -- _event_delay_count -> -> 1 `i `uc ]
-"880
-[; ;games.c: 880:         if(event_delay_count == 0) {
-[e $ ! == -> _event_delay_count `i -> 0 `i 380  ]
-{
-"881
-[; ;games.c: 881:             event_enabled = 1;
+[; ;games.c: 879:             event_enabled = 1;
 [e = _event_enabled -> -> 1 `i `uc ]
-"882
-[; ;games.c: 882:         }
-}
-[e :U 380 ]
-"883
-[; ;games.c: 883:         TMR2IF = 0;
-[e = _TMR2IF -> -> 0 `i `b ]
-"884
-[; ;games.c: 884:     }
+"880
+[; ;games.c: 880:         }
 }
 [e :U 379 ]
-"885
-[; ;games.c: 885: }
-[e :UE 364 ]
+"881
+[; ;games.c: 881:         TMR2IF = 0;
+[e = _TMR2IF -> -> 0 `i `b ]
+"882
+[; ;games.c: 882:     }
+}
+[e :U 378 ]
+"883
+[; ;games.c: 883: }
+[e :UE 363 ]
 }
 [a 23C 32 32 32 32 116 111 32 115 116 97 114 116 0 ]
 [a 32C 32 32 32 32 116 111 32 115 116 97 114 116 0 ]

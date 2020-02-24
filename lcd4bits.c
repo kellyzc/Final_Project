@@ -111,7 +111,6 @@ void lcd_write(unsigned char mode, unsigned char CmdChar, char *port) {
     *port = (mode|((CmdChar>>4)+LCD_EN));    //Sets port to send lower nibble, mode, and enable
     Delay20us();
     *port = (*port)&(~LCD_EN);  //Clears enable
-    //TODO make sure data is upper 4 bits
     *port = (mode|((CmdChar&0x0F)+LCD_EN));  //Sets port to send upper nibble, mode, and enable
     Delay20us();
     *port = (*port)&(~LCD_EN);  //Clears enable

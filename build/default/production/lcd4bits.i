@@ -2568,7 +2568,6 @@ void lcd_write(unsigned char mode, unsigned char CmdChar, char *port) {
     *port = (mode|((CmdChar>>4)+0x20));
     Delay20us();
     *port = (*port)&(~0x20);
-
     *port = (mode|((CmdChar&0x0F)+0x20));
     Delay20us();
     *port = (*port)&(~0x20);

@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\Final_Project.production.sym \
   --cmf=dist/default/production\Final_Project.production.cmf -z -Q16F887 \
-  -oC:\Users\kellyzc\AppData\Local\Temp\sqlo.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\Zach\AppData\Local\Temp\sj9s.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Final_Project.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\kellyzc\AppData\Local\Temp\sqlo.o \
+  -DENTRY=2 -k C:\Users\Zach\AppData\Local\Temp\sj9s.o \
   dist/default/production\Final_Project.production.o 
 
 Object code version is 3.11
@@ -28,124 +28,123 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\kellyzc\AppData\Local\Temp\sqlo.o
+C:\Users\Zach\AppData\Local\Temp\sj9s.o
                 end_init                              E        E        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2     400E       0
 dist/default/production\Final_Project.production.o
-                cinit                                11       11       44        8       0
+                cinit                                11       11       43        8       0
                 intentry                              4        4        A        8       0
-                text40                              96C      96C       94     12D8       0
-                text39                              802      802       5B     1004       0
-                text38                             12C4     12C4       19     2588       0
-                text37                             1292     1292        E     2524       0
-                text36                             155E     155E       4F     2ABC       0
-                text35                             12DD     12DD       1A     25BA       0
-                text34                             1311     1311       1E     2622       0
-                text33                             13D4     13D4       30     27A8       0
-                text32                             132F     132F       26     265E       0
-                text31                             1404     1404       3B     2808       0
-                text30                               55       55      1E8        8       0
-                text29                             1510     1510       4E     2A20       0
-                text28                             12A0     12A0       12     2540       0
-                text27                             143F     143F       45     287E       0
-                text26                             16B3     16B3       69     2D66       0
-                text25                              A94      A94       D4     1528       0
-                text24                              7F4      7F4        C      942       0
-                text23                              B68      B68      10F     16D0       0
-                text22                             13A6     13A6       2E     274C       0
-                text21                             12B2     12B2       12     2564       0
-                text20                              8D9      8D9       93     11B2       0
-                text19                              616      616      15B      942       0
-                text18                             15FF     15FF       55     2BFE       0
-                text17                              A00      A00       94     1400       0
-                text16                             1654     1654       5F     2CA8       0
-                text15                             1484     1484       45     2908       0
-                text14                              85D      85D       7C     10BA       0
-                text13                             1355     1355       27     26AA       0
-                text12                             1288     1288        A     2510       0
-                text11                             15AD     15AD       52     2B5A       0
-                text10                             178D     178D       73     2F1A       0
-                text9                              14C9     14C9       47     2992       0
-                text8                               771      771       83      942       0
-                text7                               23D      23D       AC        8       0
+                text39                              8CF      8CF       94     119E       0
+                text38                             15F0     15F0       5B     2BE0       0
+                text37                             129F     129F       19     253E       0
+                text36                             127F     127F        E     24FE       0
+                text35                             14FA     14FA       4F     29F4       0
+                text34                             12B8     12B8       1A     2570       0
+                text33                             12EC     12EC       1E     25D8       0
+                text32                             13AF     13AF       30     275E       0
+                text31                             130A     130A       26     2614       0
+                text30                             13DF     13DF       3B     27BE       0
+                text29                               54       54      1E8        8       0
+                text28                             14AC     14AC       4E     2958       0
+                text27                             128D     128D       12     251A       0
+                text26                             141A     141A       45     2834       0
+                text25                             16AA     16AA       69     2D54       0
+                text24                              A94      A94       D4     1528       0
+                text23                             1273     1273        C     24E6       0
+                text22                              B68      B68      10F     16D0       0
+                text21                             1381     1381       2E     2702       0
+                text20                              9F7      9F7       9D     13EE       0
+                text19                              630      630      15B      942       0
+                text18                             159B     159B       55     2B36       0
+                text17                              963      963       94     12C6       0
+                text16                             164B     164B       5F     2C96       0
+                text15                             145F     145F       4D     28BE       0
+                text14                             1784     1784       7C     2F08       0
+                text13                             1330     1330       27     2660       0
+                text12                             1269     1269        A     24D2       0
+                text11                             1549     1549       52     2A92       0
+                text10                              78B      78B       73      942       0
+                text9                               805      805       47     100A       0
+                text8                               84C      84C       83     1098       0
+                text7                               23C      23C       AC        8       0
                 text6                               EAB      EAB      155     1D56       0
                 text5                               D8A      D8A      121     1B14       0
                 text4                               C77      C77      113     18EE       0
-                text3                              12F7     12F7       1A     25EE       0
-                text2                              171C     171C       71     2E38       0
-                text1                              137C     137C       2A     26F8       0
-                maintext                            4A1      4A1      175      942       0
-                cstackBANK0                          20       20       3B       20       1
+                text3                              12D2     12D2       1A     25A4       0
+                text2                              1713     1713       71     2E26       0
+                text1                              1357     1357       2A     26AE       0
+                maintext                            4A1      4A1      18F      942       0
+                cstackBANK0                          20       20       39       20       1
                 cstackCOMMON                         70       70        6       70       1
-                clrtext                            1280     1280        8     2500       0
-                inittext                            2E9      2E9       13        8       0
-                bssBANK3                            190      190       40      190       1
-                dataBANK1                            D9       D9        6       A0       1
-                bssBANK1                             A0       A0       39       A0       1
-                dataBANK0                            6A       6A        4       20       1
-                bssBANK0                             5B       5B        F       20       1
+                cstackBANK1                          E8       E8        2       A0       1
+                clrtext                            1259     1259        8     24B2       0
+                inittext                            2E8      2E8       13        8       0
+                bssBANK3                            190      190       20      190       1
+                dataBANK1                            E0       E0        8       A0       1
+                bssBANK1                             A0       A0       40       A0       1
+                dataBANK0                            6D       6D        2       20       1
+                bssBANK0                             59       59       14       20       1
                 dataCOMMON                           7B       7B        1       70       1
                 bssCOMMON                            76       76        5       70       1
                 stringtext                          300      300      1A1        6       0
-                idataBANK1                         127A     127A        6     24F4       0
-                idataBANK0                          2FC      2FC        4        8       0
-                idataCOMMON                           3        3        1        0       0
+                idataBANK1                         1261     1261        8     24C2       0
+                idataBANK0                          7FE      7FE        2      942       0
+                idataCOMMON                         2FB      2FB        1        8       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 end_init                              E        E        3         0
-                cinit                                11       11       44         0
+                cinit                                11       11       43         0
                 intentry                              4        4        A         0
                 reset_vec                             0        0        3         0
-                text40                              96C      96C       94         0
-                text39                              802      802       5B         0
-                text38                             12C4     12C4       19         0
-                text37                             1292     1292        E         0
-                text36                             155E     155E       4F         0
-                text35                             12DD     12DD       1A         0
-                text34                             1311     1311       1E         0
-                text33                             13D4     13D4       30         0
-                text32                             132F     132F       26         0
-                text31                             1404     1404       3B         0
-                text30                               55       55      1E8         0
-                text29                             1510     1510       4E         0
-                text28                             12A0     12A0       12         0
-                text27                             143F     143F       45         0
-                text26                             16B3     16B3       69         0
-                text25                              A94      A94       D4         0
-                text24                              7F4      7F4        C         0
-                text23                              B68      B68      10F         0
-                text22                             13A6     13A6       2E         0
-                text21                             12B2     12B2       12         0
-                text20                              8D9      8D9       93         0
-                text19                              616      616      15B         0
-                text18                             15FF     15FF       55         0
-                text17                              A00      A00       94         0
-                text16                             1654     1654       5F         0
-                text15                             1484     1484       45         0
-                text14                              85D      85D       7C         0
-                text13                             1355     1355       27         0
-                text12                             1288     1288        A         0
-                text11                             15AD     15AD       52         0
-                text10                             178D     178D       73         0
-                text9                              14C9     14C9       47         0
-                text8                               771      771       83         0
-                text7                               23D      23D       AC         0
+                text39                              8CF      8CF       94         0
+                text38                             15F0     15F0       5B         0
+                text37                             129F     129F       19         0
+                text36                             127F     127F        E         0
+                text35                             14FA     14FA       4F         0
+                text34                             12B8     12B8       1A         0
+                text33                             12EC     12EC       1E         0
+                text32                             13AF     13AF       30         0
+                text31                             130A     130A       26         0
+                text30                             13DF     13DF       3B         0
+                text29                               54       54      1E8         0
+                text28                             14AC     14AC       4E         0
+                text27                             128D     128D       12         0
+                text26                             141A     141A       45         0
+                text25                             16AA     16AA       69         0
+                text24                              A94      A94       D4         0
+                text23                             1273     1273        C         0
+                text22                              B68      B68      10F         0
+                text21                             1381     1381       2E         0
+                text20                              9F7      9F7       9D         0
+                text19                              630      630      15B         0
+                text18                             159B     159B       55         0
+                text17                              963      963       94         0
+                text16                             164B     164B       5F         0
+                text15                             145F     145F       4D         0
+                text14                             1784     1784       7C         0
+                text13                             1330     1330       27         0
+                text12                             1269     1269        A         0
+                text11                             1549     1549       52         0
+                text10                              78B      78B       73         0
+                text9                               805      805       47         0
+                text8                               84C      84C       83         0
+                text7                               23C      23C       AC         0
                 text6                               EAB      EAB      155         0
                 text5                               D8A      D8A      121         0
                 text4                               C77      C77      113         0
-                text3                              12F7     12F7       1A         0
-                text2                              171C     171C       71         0
-                text1                              137C     137C       2A         0
-                maintext                            4A1      4A1      175         0
-                clrtext                            1280     1280        8         0
-                inittext                            2E9      2E9       13         0
-                idataBANK1                         127A     127A        6         0
-                idataBANK0                          2FC      2FC        4         0
-                idataCOMMON                           3        3        1         0
+                text3                              12D2     12D2       1A         0
+                text2                              1713     1713       71         0
+                text1                              1357     1357       2A         0
+                maintext                            4A1      4A1      18F         0
+                clrtext                            1259     1259        8         0
+                inittext                            2E8      2E8       13         0
+                idataBANK1                         1261     1261        8         0
+                idataBANK0                          7FE      7FE        2         0
+                idataCOMMON                         2FB      2FB        1         0
 
         CLASS   STRCODE        
                 stringtext                          300      300      1A1         0
@@ -162,18 +161,19 @@ TOTAL           Name                               Link     Load   Length     Sp
                 bssCOMMON                            76       76        5         1
 
         CLASS   BANK0          
-                cstackBANK0                          20       20       3B         1
-                dataBANK0                            6A       6A        4         1
-                bssBANK0                             5B       5B        F         1
+                cstackBANK0                          20       20       39         1
+                dataBANK0                            6D       6D        2         1
+                bssBANK0                             59       59       14         1
 
         CLASS   BANK1          
-                dataBANK1                            D9       D9        6         1
-                bssBANK1                             A0       A0       39         1
+                cstackBANK1                          E8       E8        2         1
+                dataBANK1                            E0       E0        8         1
+                bssBANK1                             A0       A0       40         1
 
         CLASS   BANK2          
 
         CLASS   BANK3          
-                bssBANK3                            190      190       40         1
+                bssBANK3                            190      190       20         1
 
         CLASS   RAM            
 
@@ -199,87 +199,97 @@ TOTAL           Name                               Link     Load   Length     Sp
 
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
-                reset_vec                      000000  000004  000004         0       0  CODE        2
-                intentry                       000004  0002FC  000300         8       0  CODE        2
-                cstackBANK0                    000020  00004E  00006E        20       1  BANK0       1
+                reset_vec                      000000  000003  000003         0       0  CODE        2
+                intentry                       000004  0002F8  0002FC         8       0  CODE        2
+                cstackBANK0                    000020  00004F  00006F        20       1  BANK0       1
                 cstackCOMMON                   000070  00000C  00007C        70       1  COMMON      1
-                bssBANK1                       0000A0  00003F  0000DF        A0       1  BANK1       1
-                bssBANK3                       000190  000040  0001D0       190       1  BANK3       1
+                bssBANK1                       0000A0  00004A  0000EA        A0       1  BANK1       1
+                bssBANK3                       000190  000020  0001B0       190       1  BANK3       1
                 stringtext                     000300  0001A1  0004A1         6       0  STRCODE     2
                 maintext                       0004A1  00035F  000800       942       0  CODE        2
-                text39                         000802  00005B  00085D      1004       0  CODE        2
-                text14                         00085D  00007C  0008D9      10BA       0  CODE        2
-                text20                         0008D9  000093  00096C      11B2       0  CODE        2
-                text40                         00096C  000094  000A00      12D8       0  CODE        2
-                text17                         000A00  000094  000A94      1400       0  CODE        2
-                text25                         000A94  0000D4  000B68      1528       0  CODE        2
-                text23                         000B68  00010F  000C77      16D0       0  CODE        2
+                text9                          000805  000047  00084C      100A       0  CODE        2
+                text8                          00084C  000083  0008CF      1098       0  CODE        2
+                text39                         0008CF  000094  000963      119E       0  CODE        2
+                text17                         000963  000094  0009F7      12C6       0  CODE        2
+                text20                         0009F7  00009D  000A94      13EE       0  CODE        2
+                text24                         000A94  0000D4  000B68      1528       0  CODE        2
+                text22                         000B68  00010F  000C77      16D0       0  CODE        2
                 text4                          000C77  000113  000D8A      18EE       0  CODE        2
                 text5                          000D8A  000121  000EAB      1B14       0  CODE        2
                 text6                          000EAB  000155  001000      1D56       0  CODE        2
-                idataBANK1                     00127A  000006  001280      24F4       0  CODE        2
-                clrtext                        001280  000008  001288      2500       0  CODE        2
-                text12                         001288  00000A  001292      2510       0  CODE        2
-                text37                         001292  00000E  0012A0      2524       0  CODE        2
-                text28                         0012A0  000012  0012B2      2540       0  CODE        2
-                text21                         0012B2  000012  0012C4      2564       0  CODE        2
-                text38                         0012C4  000019  0012DD      2588       0  CODE        2
-                text35                         0012DD  00001A  0012F7      25BA       0  CODE        2
-                text3                          0012F7  00001A  001311      25EE       0  CODE        2
-                text34                         001311  00001E  00132F      2622       0  CODE        2
-                text32                         00132F  000026  001355      265E       0  CODE        2
-                text13                         001355  000027  00137C      26AA       0  CODE        2
-                text1                          00137C  00002A  0013A6      26F8       0  CODE        2
-                text22                         0013A6  00002E  0013D4      274C       0  CODE        2
-                text33                         0013D4  000030  001404      27A8       0  CODE        2
-                text31                         001404  00003B  00143F      2808       0  CODE        2
-                text27                         00143F  000045  001484      287E       0  CODE        2
-                text15                         001484  000045  0014C9      2908       0  CODE        2
-                text9                          0014C9  000047  001510      2992       0  CODE        2
-                text29                         001510  00004E  00155E      2A20       0  CODE        2
-                text36                         00155E  00004F  0015AD      2ABC       0  CODE        2
-                text11                         0015AD  000052  0015FF      2B5A       0  CODE        2
-                text18                         0015FF  000055  001654      2BFE       0  CODE        2
-                text16                         001654  00005F  0016B3      2CA8       0  CODE        2
-                text26                         0016B3  000069  00171C      2D66       0  CODE        2
-                text2                          00171C  000071  00178D      2E38       0  CODE        2
-                text10                         00178D  000073  001800      2F1A       0  CODE        2
+                clrtext                        001259  000008  001261      24B2       0  CODE        2
+                idataBANK1                     001261  000008  001269      24C2       0  CODE        2
+                text12                         001269  00000A  001273      24D2       0  CODE        2
+                text23                         001273  00000C  00127F      24E6       0  CODE        2
+                text36                         00127F  00000E  00128D      24FE       0  CODE        2
+                text27                         00128D  000012  00129F      251A       0  CODE        2
+                text37                         00129F  000019  0012B8      253E       0  CODE        2
+                text34                         0012B8  00001A  0012D2      2570       0  CODE        2
+                text3                          0012D2  00001A  0012EC      25A4       0  CODE        2
+                text33                         0012EC  00001E  00130A      25D8       0  CODE        2
+                text31                         00130A  000026  001330      2614       0  CODE        2
+                text13                         001330  000027  001357      2660       0  CODE        2
+                text1                          001357  00002A  001381      26AE       0  CODE        2
+                text21                         001381  00002E  0013AF      2702       0  CODE        2
+                text32                         0013AF  000030  0013DF      275E       0  CODE        2
+                text30                         0013DF  00003B  00141A      27BE       0  CODE        2
+                text26                         00141A  000045  00145F      2834       0  CODE        2
+                text15                         00145F  00004D  0014AC      28BE       0  CODE        2
+                text28                         0014AC  00004E  0014FA      2958       0  CODE        2
+                text35                         0014FA  00004F  001549      29F4       0  CODE        2
+                text11                         001549  000052  00159B      2A92       0  CODE        2
+                text18                         00159B  000055  0015F0      2B36       0  CODE        2
+                text38                         0015F0  00005B  00164B      2BE0       0  CODE        2
+                text16                         00164B  00005F  0016AA      2C96       0  CODE        2
+                text25                         0016AA  000069  001713      2D54       0  CODE        2
+                text2                          001713  000071  001784      2E26       0  CODE        2
+                text14                         001784  00007C  001800      2F08       0  CODE        2
                 config                         002007  000002  002009      400E       0  CONFIG      2
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            006E-006F              2           1
-        BANK1            00DF-00EF             11           1
+        BANK0            006F-006F              1           1
+        BANK1            00EA-00EF              6           1
         BANK2            0110-016F             60           1
-        BANK3            01D0-01EF             20           1
-        CODE             0800-0801              2           2
-                         1000-1279            27A
+        BANK3            01B0-01EF             40           1
+        CODE             0003-0003              1           2
+                         02FC-02FF              4
+                         0800-0804              5
+                         1000-1258            259
                          1800-1FFF            800
         COMMON           007C-007D              2           1
-        CONST            0800-0801              2           2
-                         1000-1279            100
+        CONST            0003-0003              1           2
+                         02FC-02FF              4
+                         0800-0804              5
+                         1000-1258            100
                          1800-1FFF            100
         EEDATA           2100-21FF            100           2
-        ENTRY            0800-0801              2           2
-                         1000-1279            100
+        ENTRY            0003-0003              1           2
+                         02FC-02FF              4
+                         0800-0804              5
+                         1000-1258            100
                          1800-1FFF            100
         IDLOC            2000-2003              4           2
-        RAM              006E-006F              2           1
-                         00DF-00EF             11
+        RAM              006F-006F              1           1
+                         00EA-00EF              6
                          0110-016F             60
-                         01D0-01EF             20
+                         01B0-01EF             40
         SFR0             0000-001F             20           1
         SFR1             0080-009F             20           1
         SFR2             0100-010F             10           1
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
-        STRCODE          0800-0801              2           2
-                         1000-1279            27A
+        STRCODE          0003-0003              1           2
+                         02FC-02FF              4
+                         0800-0804              5
+                         1000-1258            259
                          1800-1FFF            800
-        STRING           0800-0801              2           2
-                         1000-1279            100
+        STRING           0003-0003              1           2
+                         02FC-02FF              4
+                         0800-0804              5
+                         1000-1258            100
                          1800-1FFF            100
 
                                   Symbol Table
@@ -309,8 +319,8 @@ _CCP2M2                                    (abs)        00EA
 _CCP2M3                                    (abs)        00EB
 _CCPR1                                     (abs)        0015
 _CCPR2                                     (abs)        001B
-_Delay20us                                 text37       1292
-_DelayMs                                   text38       12C4
+_Delay20us                                 text36       127F
+_DelayMs                                   text37       129F
 _GIE                                       (abs)        005F
 _GO                                        (abs)        00F9
 _OPTION_REG                                (abs)        0081
@@ -364,12 +374,13 @@ __HbssBANK0                                bssBANK0     0000
 __HbssBANK1                                bssBANK1     0000
 __HbssBANK3                                bssBANK3     0000
 __HbssCOMMON                               bssCOMMON    0000
-__Hcinit                                   cinit        0055
+__Hcinit                                   cinit        0054
 __Hclrtext                                 clrtext      0000
 __Hcode                                    code         0000
 __Hcommon                                  common       0000
 __Hconfig                                  config       2009
 __HcstackBANK0                             cstackBANK0  0000
+__HcstackBANK1                             cstackBANK1  0000
 __HcstackCOMMON                            cstackCOMMON 0000
 __HdataBANK0                               dataBANK0    0000
 __HdataBANK1                               dataBANK1    0000
@@ -393,7 +404,7 @@ __Hsfr1                                    sfr1         0000
 __Hsfr2                                    sfr2         0000
 __Hsfr3                                    sfr3         0000
 __Hspace_0                                 (abs)        2009
-__Hspace_1                                 (abs)        01D0
+__Hspace_1                                 (abs)        01B0
 __Hspace_2                                 (abs)        0000
 __Hspace_3                                 (abs)        0000
 __Hstack                                   stack        0000
@@ -415,6 +426,7 @@ __Lcode                                    code         0000
 __Lcommon                                  common       0000
 __Lconfig                                  config       2007
 __LcstackBANK0                             cstackBANK0  0000
+__LcstackBANK1                             cstackBANK1  0000
 __LcstackCOMMON                            cstackCOMMON 0000
 __LdataBANK0                               dataBANK0    0000
 __LdataBANK1                               dataBANK1    0000
@@ -446,16 +458,16 @@ __Lstrings                                 strings      0000
 __Lstringtext                              stringtext   0000
 __Ltext                                    text         0000
 __S0                                       (abs)        2009
-__S1                                       (abs)        01D0
+__S1                                       (abs)        01B0
 __S2                                       (abs)        0000
 __S3                                       (abs)        0000
-___awdiv                                   text26       16B3
+___awdiv                                   text25       16AA
 ___awdiv@counter                           cstackBANK0  002C
 ___awdiv@dividend                          cstackBANK0  0029
 ___awdiv@divisor                           cstackBANK0  0027
 ___awdiv@quotient                          cstackBANK0  002E
 ___awdiv@sign                              cstackBANK0  002D
-___awmod                                   text39       0802
+___awmod                                   text38       15F0
 ___awmod@counter                           cstackBANK0  0025
 ___awmod@dividend                          cstackBANK0  0022
 ___awmod@divisor                           cstackBANK0  0020
@@ -465,49 +477,48 @@ ___latbits                                 (abs)        0002
 ___sp                                      stack        0000
 ___stackhi                                 (abs)        0000
 ___stacklo                                 (abs)        0000
-__end_of_Delay20us                         text37       12A0
-__end_of_DelayMs                           text38       12DD
-__end_of___awdiv                           text26       171C
-__end_of___awmod                           text39       085D
-__end_of__initialization                   cinit        0051
+__end_of_Delay20us                         text36       128D
+__end_of_DelayMs                           text37       12B8
+__end_of___awdiv                           text25       1713
+__end_of___awmod                           text38       164B
+__end_of__initialization                   cinit        0050
 __end_of__stringtab                        stringtext   0312
-__end_of_check_for_match                   text23       0C77
-__end_of_concentration_game_end            text29       155E
-__end_of_concentration_game_loop           text19       0771
-__end_of_concentration_gameboard_init      text15       14C9
-__end_of_concentration_title_screen        text14       08D9
-__end_of_countdown                         text9        1510
-__end_of_display_concentration_gameboard   text27       1484
-__end_of_display_concentration_scoreboard  text25       0B68
-__end_of_display_simon_says_scoreboard     text8        07F4
-__end_of_end_screen                        text30       023D
-__end_of_generate_pattern                  text7        02E9
-__end_of_get_current_char                  text21       12C4
-__end_of_get_cursor_index                  text24       0800
-__end_of_interrupt_handler                 text40       0A00
-__end_of_joystick_init                     text13       137C
-__end_of_lcd_clear                         text35       12F7
-__end_of_lcd_goto                          text34       132F
-__end_of_lcd_init                          text11       15FF
-__end_of_lcd_putch                         text28       12B2
-__end_of_lcd_puts                          text33       1404
-__end_of_lcd_set_custom_char               text18       1654
-__end_of_lcd_write                         text36       15AD
-__end_of_main                              maintext     0616
-__end_of_make_custom_chars                 text17       0A94
+__end_of_check_for_match                   text22       0C77
+__end_of_concentration_game_end            text28       14FA
+__end_of_concentration_game_loop           text19       078B
+__end_of_concentration_gameboard_init      text15       14AC
+__end_of_concentration_title_screen        text14       1800
+__end_of_countdown                         text9        084C
+__end_of_display_concentration_gameboard   text26       145F
+__end_of_display_concentration_scoreboard  text24       0B68
+__end_of_display_simon_says_scoreboard     text8        08CF
+__end_of_end_screen                        text29       023C
+__end_of_generate_pattern                  text7        02E8
+__end_of_get_cursor_index                  text23       127F
+__end_of_interrupt_handler                 text39       0963
+__end_of_joystick_init                     text13       1357
+__end_of_lcd_clear                         text34       12D2
+__end_of_lcd_goto                          text33       130A
+__end_of_lcd_init                          text11       159B
+__end_of_lcd_putch                         text27       129F
+__end_of_lcd_puts                          text32       13DF
+__end_of_lcd_set_custom_char               text18       15F0
+__end_of_lcd_write                         text35       1549
+__end_of_main                              maintext     0630
+__end_of_make_custom_chars                 text17       09F7
 __end_of_play_pattern                      text6        1000
-__end_of_play_tone                         text32       1355
-__end_of_randomize_gameboard               text16       16B3
+__end_of_play_tone                         text31       1330
+__end_of_randomize_gameboard               text16       16AA
 __end_of_simon_says_check_input            text4        0D8A
-__end_of_simon_says_game_end               text10       1800
-__end_of_simon_says_game_loop              text3        1311
+__end_of_simon_says_game_end               text10       07FE
+__end_of_simon_says_game_loop              text3        12EC
 __end_of_simon_says_get_input              text5        0EAB
-__end_of_simon_says_title_screen           text2        178D
-__end_of_time_init                         text1        13A6
-__end_of_tmr0_init                         text12       1292
-__end_of_toggle_cursor                     text22       13D4
-__end_of_turn_on_led                       text31       143F
-__end_of_update_cursor                     text20       096C
+__end_of_simon_says_title_screen           text2        1784
+__end_of_time_init                         text1        1381
+__end_of_tmr0_init                         text12       1273
+__end_of_toggle_cursor                     text21       13AF
+__end_of_turn_on_led                       text30       141A
+__end_of_update_cursor                     text20       0A94
 __end_ofmake_custom_chars@PIC              stringtext   031A
 __end_ofmake_custom_chars@RH               stringtext   0322
 __end_ofmake_custom_chars@club             stringtext   0332
@@ -517,61 +528,61 @@ __end_ofmake_custom_chars@skull            stringtext   032A
 __end_ofmake_custom_chars@smile            stringtext   0352
 __end_ofmake_custom_chars@spade            stringtext   033A
 __initialization                           cinit        0011
-__pbssBANK0                                bssBANK0     005B
+__pbssBANK0                                bssBANK0     0059
 __pbssBANK1                                bssBANK1     00A0
 __pbssBANK3                                bssBANK3     0190
 __pbssCOMMON                               bssCOMMON    0076
 __pcstackBANK0                             cstackBANK0  0020
+__pcstackBANK1                             cstackBANK1  00E8
 __pcstackCOMMON                            cstackCOMMON 0070
-__pdataBANK0                               dataBANK0    006A
-__pdataBANK1                               dataBANK1    00D9
+__pdataBANK0                               dataBANK0    006D
+__pdataBANK1                               dataBANK1    00E0
 __pdataCOMMON                              dataCOMMON   007B
-__pidataBANK0                              idataBANK0   02FC
-__pidataBANK1                              idataBANK1   127A
-__pidataCOMMON                             idataCOMMON  0003
+__pidataBANK0                              idataBANK0   07FE
+__pidataBANK1                              idataBANK1   1261
+__pidataCOMMON                             idataCOMMON  02FB
 __pintentry                                intentry     0004
 __pmaintext                                maintext     04A1
 __pstringtext                              stringtext   0300
-__ptext1                                   text1        137C
-__ptext10                                  text10       178D
-__ptext11                                  text11       15AD
-__ptext12                                  text12       1288
-__ptext13                                  text13       1355
-__ptext14                                  text14       085D
-__ptext15                                  text15       1484
-__ptext16                                  text16       1654
-__ptext17                                  text17       0A00
-__ptext18                                  text18       15FF
-__ptext19                                  text19       0616
-__ptext2                                   text2        171C
-__ptext20                                  text20       08D9
-__ptext21                                  text21       12B2
-__ptext22                                  text22       13A6
-__ptext23                                  text23       0B68
-__ptext24                                  text24       07F4
-__ptext25                                  text25       0A94
-__ptext26                                  text26       16B3
-__ptext27                                  text27       143F
-__ptext28                                  text28       12A0
-__ptext29                                  text29       1510
-__ptext3                                   text3        12F7
-__ptext30                                  text30       0055
-__ptext31                                  text31       1404
-__ptext32                                  text32       132F
-__ptext33                                  text33       13D4
-__ptext34                                  text34       1311
-__ptext35                                  text35       12DD
-__ptext36                                  text36       155E
-__ptext37                                  text37       1292
-__ptext38                                  text38       12C4
-__ptext39                                  text39       0802
+__ptext1                                   text1        1357
+__ptext10                                  text10       078B
+__ptext11                                  text11       1549
+__ptext12                                  text12       1269
+__ptext13                                  text13       1330
+__ptext14                                  text14       1784
+__ptext15                                  text15       145F
+__ptext16                                  text16       164B
+__ptext17                                  text17       0963
+__ptext18                                  text18       159B
+__ptext19                                  text19       0630
+__ptext2                                   text2        1713
+__ptext20                                  text20       09F7
+__ptext21                                  text21       1381
+__ptext22                                  text22       0B68
+__ptext23                                  text23       1273
+__ptext24                                  text24       0A94
+__ptext25                                  text25       16AA
+__ptext26                                  text26       141A
+__ptext27                                  text27       128D
+__ptext28                                  text28       14AC
+__ptext29                                  text29       0054
+__ptext3                                   text3        12D2
+__ptext30                                  text30       13DF
+__ptext31                                  text31       130A
+__ptext32                                  text32       13AF
+__ptext33                                  text33       12EC
+__ptext34                                  text34       12B8
+__ptext35                                  text35       14FA
+__ptext36                                  text36       127F
+__ptext37                                  text37       129F
+__ptext38                                  text38       15F0
+__ptext39                                  text39       08CF
 __ptext4                                   text4        0C77
-__ptext40                                  text40       096C
 __ptext5                                   text5        0D8A
 __ptext6                                   text6        0EAB
-__ptext7                                   text7        023D
-__ptext8                                   text8        0771
-__ptext9                                   text9        14C9
+__ptext7                                   text7        023C
+__ptext8                                   text8        084C
+__ptext9                                   text9        0805
 __size_of_Delay20us                        (abs)        0000
 __size_of_DelayMs                          (abs)        0000
 __size_of___awdiv                          (abs)        0000
@@ -587,7 +598,6 @@ __size_of_display_concentration_scoreboard (abs)        0000
 __size_of_display_simon_says_scoreboard    (abs)        0000
 __size_of_end_screen                       (abs)        0000
 __size_of_generate_pattern                 (abs)        0000
-__size_of_get_current_char                 (abs)        0000
 __size_of_get_cursor_index                 (abs)        0000
 __size_of_interrupt_handler                (abs)        0000
 __size_of_joystick_init                    (abs)        0000
@@ -615,70 +625,69 @@ __size_of_turn_on_led                      (abs)        0000
 __size_of_update_cursor                    (abs)        0000
 __stringbase                               stringtext   0312
 __stringtab                                stringtext   0300
-_board                                     bssBANK3     01B0
-_check_for_match                           text23       0B68
-_concentration_game_end                    text29       1510
-_concentration_game_loop                   text19       0616
-_concentration_gameboard_init              text15       1484
-_concentration_title_screen                text14       085D
-_countdown                                 text9        14C9
-_current_char                              bssBANK0     0068
-_current_player                            bssBANK0     0060
-_cursor_pos                                bssBANK0     0069
-_cursor_solid                              bssBANK0     0067
-_delay_loops                               bssBANK0     0066
-_display_concentration_gameboard           text27       143F
-_display_concentration_scoreboard          text25       0A94
-_display_simon_says_scoreboard             text8        0771
-_end_screen                                text30       0055
+_board                                     bssBANK1     00C0
+_check_for_match                           text22       0B68
+_concentration_game_end                    text28       14AC
+_concentration_game_loop                   text19       0630
+_concentration_gameboard_init              text15       145F
+_concentration_title_screen                text14       1784
+_countdown                                 text9        0805
+_current_char                              bssBANK0     006B
+_current_player                            bssBANK0     0063
+_cursor_pos                                bssBANK0     006C
+_cursor_solid                              bssBANK0     006A
+_delay_loops                               bssBANK0     0069
+_display_concentration_gameboard           text26       141A
+_display_concentration_scoreboard          text24       0A94
+_display_simon_says_scoreboard             text8        084C
+_end_screen                                text29       0054
 _event_delay_count                         bssCOMMON    007A
-_event_enabled                             bssBANK0     0065
-_game_over                                 bssBANK0     005F
-_generate_pattern                          text7        023D
-_get_current_char                          text21       12B2
-_get_cursor_index                          text24       07F4
-_interrupt_handler                         text40       096C
-_joystick_init                             text13       1355
-_joystick_pressed                          bssBANK0     0061
-_joystick_x_pos                            bssBANK0     005D
-_joystick_y_pos                            bssBANK0     005B
-_lcd_clear                                 text35       12DD
-_lcd_goto                                  text34       1311
-_lcd_init                                  text11       15AD
-_lcd_putch                                 text28       12A0
-_lcd_puts                                  text33       13D4
-_lcd_set_custom_char                       text18       15FF
-_lcd_write                                 text36       155E
+_event_enabled                             bssBANK0     0068
+_game_over                                 bssBANK0     0062
+_generate_pattern                          text7        023C
+_get_cursor_index                          text23       1273
+_interrupt_handler                         text39       08CF
+_joystick_init                             text13       1330
+_joystick_pressed                          bssBANK0     0064
+_joystick_x_pos                            bssBANK0     0060
+_joystick_y_pos                            bssBANK0     005E
+_lcd_clear                                 text34       12B8
+_lcd_goto                                  text33       12EC
+_lcd_init                                  text11       1549
+_lcd_putch                                 text27       128D
+_lcd_puts                                  text32       13AF
+_lcd_set_custom_char                       text18       159B
+_lcd_write                                 text35       14FA
 _main                                      maintext     04A1
-_make_custom_chars                         text17       0A00
+_make_custom_chars                         text17       0963
 _nRBPU                                     (abs)        040F
-_p1_score                                  bssBANK0     0064
-_p2_score                                  bssBANK0     0063
+_p1_score                                  bssBANK0     0067
+_p2_score                                  bssBANK0     0066
 _play_pattern                              text6        0EAB
-_play_tone                                 text32       132F
-_randomize_gameboard                       text16       1654
-_selected_tile                             bssBANK0     0062
+_play_tone                                 text31       130A
+_randomize_gameboard                       text16       164B
+_selected_tile                             bssBANK0     0065
 _simon_says_check_input                    text4        0C77
-_simon_says_game_end                       text10       178D
-_simon_says_game_loop                      text3        12F7
+_simon_says_game_end                       text10       078B
+_simon_says_game_loop                      text3        12D2
 _simon_says_get_input                      text5        0D8A
-_simon_says_pattern                        bssBANK1     00C0
-_simon_says_title_screen                   text2        171C
-_time_init                                 text1        137C
-_tmr0_init                                 text12       1288
-_toggle_cursor                             text22       13A6
+_simon_says_pattern                        bssBANK0     0059
+_simon_says_title_screen                   text2        1713
+_time_init                                 text1        1357
+_tmr0_init                                 text12       1269
+_toggle_cursor                             text21       1381
 _tone_delay                                bssCOMMON    0076
-_turn_on_led                               text31       1404
-_update_cursor                             text20       08D9
+_turn_on_led                               text30       13DF
+_update_cursor                             text20       09F7
 _visible                                   bssBANK1     00A0
 btemp                                      (abs)        007E
 check_for_match@player                     cstackBANK0  0038
-clear_ram0                                 clrtext      1280
+clear_ram0                                 clrtext      1259
 concentration_gameboard_init@i             cstackBANK0  0056
 countdown@i                                cstackBANK0  0035
 display_concentration_gameboard@i          cstackBANK0  0035
-end_of_initialization                      cinit        0051
-end_screen@F1373                           dataBANK1    00D9
+end_of_initialization                      cinit        0050
+end_screen@F1400                           dataBANK1    00E0
 end_screen@color_index                     cstackBANK0  003B
 end_screen@colors                          cstackBANK0  0034
 end_screen@first_row                       cstackBANK0  002D
@@ -686,8 +695,8 @@ end_screen@i                               cstackBANK0  003A
 end_screen@second_row                      cstackBANK0  002F
 generate_pattern@current_byte              cstackBANK0  0033
 get_cursor_index@cursor                    cstackBANK0  0020
-init_fetch0                                inittext     02E9
-init_ram0                                  inittext     02ED
+init_fetch0                                inittext     02E8
+init_ram0                                  inittext     02EC
 interrupt_function                         intentry     0004
 interrupt_handler@current_analog           cstackCOMMON 0075
 intlevel0                                  functab      0000
@@ -711,8 +720,8 @@ lcd_set_custom_char@row                    cstackBANK0  002F
 lcd_write@CmdChar                          cstackBANK0  0022
 lcd_write@mode                             cstackBANK0  0027
 lcd_write@port                             cstackBANK0  0023
-main@game_selection                        cstackBANK0  0059
-main@selector_pos                          cstackBANK0  005A
+main@game_selection                        cstackBANK1  00E8
+main@selector_pos                          cstackBANK1  00E9
 make_custom_chars@PIC                      stringtext   0312
 make_custom_chars@RH                       stringtext   031A
 make_custom_chars@club                     stringtext   032A
@@ -745,12 +754,12 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 124 in file "games.c"
+		line 123 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  selector_pos    1   58[BANK0 ] unsigned char 
-  game_selecti    1   57[BANK0 ] unsigned char 
+  selector_pos    1    1[BANK1 ] unsigned char 
+  game_selecti    1    0[BANK1 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -761,9 +770,9 @@ FUNCTION INFORMATION:
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
       Params:         0       0       0       0       0
-      Locals:         0       2       0       0       0
+      Locals:         0       0       2       0       0
       Temps:          0       2       0       0       0
-      Totals:         0       4       0       0       0
+      Totals:         0       2       2       0       0
 Total ram usage:        4 bytes
  Hardware stack levels required when called:    7
  This function calls:
@@ -789,7 +798,7 @@ Total ram usage:        4 bytes
 
  *************** function _time_init *****************
  Defined at:
-		line 800 in file "games.c"
+		line 798 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -819,7 +828,7 @@ Total ram usage:        1 bytes
 
  *************** function _simon_says_title_screen *****************
  Defined at:
-		line 415 in file "games.c"
+		line 416 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -852,7 +861,7 @@ Total ram usage:        0 bytes
 
  *************** function _simon_says_game_loop *****************
  Defined at:
-		line 216 in file "games.c"
+		line 217 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -886,7 +895,7 @@ Total ram usage:        0 bytes
 
  *************** function _simon_says_check_input *****************
  Defined at:
-		line 224 in file "games.c"
+		line 225 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -921,7 +930,7 @@ Total ram usage:        6 bytes
 
  *************** function _simon_says_get_input *****************
  Defined at:
-		line 259 in file "games.c"
+		line 260 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -952,7 +961,7 @@ Total ram usage:        3 bytes
 
  *************** function _play_pattern *****************
  Defined at:
-		line 327 in file "games.c"
+		line 328 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -988,7 +997,7 @@ Total ram usage:        6 bytes
 
  *************** function _generate_pattern *****************
  Defined at:
-		line 370 in file "games.c"
+		line 371 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1019,7 +1028,7 @@ Total ram usage:        4 bytes
 
  *************** function _display_simon_says_scoreboard *****************
  Defined at:
-		line 406 in file "games.c"
+		line 407 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1054,7 +1063,7 @@ Total ram usage:        2 bytes
 
  *************** function _countdown *****************
  Defined at:
-		line 395 in file "games.c"
+		line 396 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1087,7 +1096,7 @@ Total ram usage:        2 bytes
 
  *************** function _simon_says_game_end *****************
  Defined at:
-		line 200 in file "games.c"
+		line 201 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1117,7 +1126,7 @@ Total ram usage:        0 bytes
 
  *************** function _lcd_init *****************
  Defined at:
-		line 155 in file "lcd4bits.c"
+		line 154 in file "lcd4bits.c"
  Parameters:    Size  Location     Type
   port            2   10[BANK0 ] PTR unsigned char 
 		 -> PORTD(1), PORTA(1), 
@@ -1181,7 +1190,7 @@ Total ram usage:        1 bytes
 
  *************** function _joystick_init *****************
  Defined at:
-		line 825 in file "games.c"
+		line 823 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1211,7 +1220,7 @@ Total ram usage:        0 bytes
 
  *************** function _concentration_title_screen *****************
  Defined at:
-		line 529 in file "games.c"
+		line 444 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1246,7 +1255,7 @@ Total ram usage:        0 bytes
 
  *************** function _concentration_gameboard_init *****************
  Defined at:
-		line 588 in file "games.c"
+		line 503 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1268,7 +1277,7 @@ Total ram usage:        2 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    5
  This function calls:
-		_get_current_char
+		_get_cursor_index
 		_lcd_clear
 		_lcd_goto
 		_make_custom_chars
@@ -1280,7 +1289,7 @@ Total ram usage:        2 bytes
 
  *************** function _randomize_gameboard *****************
  Defined at:
-		line 611 in file "games.c"
+		line 526 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1313,7 +1322,7 @@ Total ram usage:       37 bytes
 
  *************** function _make_custom_chars *****************
  Defined at:
-		line 569 in file "games.c"
+		line 484 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1343,7 +1352,7 @@ Total ram usage:        1 bytes
 
  *************** function _lcd_set_custom_char *****************
  Defined at:
-		line 166 in file "lcd4bits.c"
+		line 165 in file "lcd4bits.c"
  Parameters:    Size  Location     Type
   data            2    8[BANK0 ] PTR const unsigned char 
 		 -> make_custom_chars@PIC(8), make_custom_chars@RH(8), make_custom_chars@skull(8), make_custom_chars@club(8), 
@@ -1378,7 +1387,7 @@ Total ram usage:        8 bytes
 
  *************** function _concentration_game_loop *****************
  Defined at:
-		line 670 in file "games.c"
+		line 584 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1413,7 +1422,7 @@ Total ram usage:        2 bytes
 
  *************** function _update_cursor *****************
  Defined at:
-		line 731 in file "games.c"
+		line 645 in file "games.c"
  Parameters:    Size  Location     Type
   move_delay_c    1    wreg     unsigned char 
   direction       1   20[BANK0 ] unsigned char 
@@ -1436,7 +1445,7 @@ Total ram usage:        4 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
  This function calls:
-		_get_current_char
+		_get_cursor_index
 		_lcd_goto
 		_lcd_putch
  This function is called by:
@@ -1444,40 +1453,9 @@ Total ram usage:        4 bytes
  This function uses a non-reentrant model
 
 
- *************** function _get_current_char *****************
- Defined at:
-		line 783 in file "games.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          0       1       0       0       0
-      Totals:         0       1       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		_get_cursor_index
- This function is called by:
-		_concentration_gameboard_init
-		_update_cursor
- This function uses a non-reentrant model
-
-
  *************** function _toggle_cursor *****************
  Defined at:
-		line 772 in file "games.c"
+		line 686 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1508,7 +1486,7 @@ Total ram usage:        0 bytes
 
  *************** function _check_for_match *****************
  Defined at:
-		line 626 in file "games.c"
+		line 541 in file "games.c"
  Parameters:    Size  Location     Type
   player          1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1543,7 +1521,7 @@ Total ram usage:        3 bytes
 
  *************** function _get_cursor_index *****************
  Defined at:
-		line 604 in file "games.c"
+		line 519 in file "games.c"
  Parameters:    Size  Location     Type
   cursor          1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1567,15 +1545,16 @@ Total ram usage:        1 bytes
  This function calls:
 		Nothing
  This function is called by:
+		_concentration_gameboard_init
 		_check_for_match
 		_concentration_game_loop
-		_get_current_char
+		_update_cursor
  This function uses a non-reentrant model
 
 
  *************** function _display_concentration_scoreboard *****************
  Defined at:
-		line 546 in file "games.c"
+		line 461 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1648,7 +1627,7 @@ Total ram usage:        9 bytes
 
  *************** function _display_concentration_gameboard *****************
  Defined at:
-		line 557 in file "games.c"
+		line 472 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1682,7 +1661,7 @@ Total ram usage:        2 bytes
 
  *************** function _lcd_putch *****************
  Defined at:
-		line 136 in file "lcd4bits.c"
+		line 135 in file "lcd4bits.c"
  Parameters:    Size  Location     Type
   character       1    wreg     unsigned char 
   port            2   16[BANK0 ] PTR unsigned char 
@@ -1720,7 +1699,7 @@ Total ram usage:        4 bytes
 
  *************** function _concentration_game_end *****************
  Defined at:
-		line 517 in file "games.c"
+		line 432 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1751,7 +1730,7 @@ Total ram usage:        0 bytes
 
  *************** function _end_screen *****************
  Defined at:
-		line 461 in file "games.c"
+		line 699 in file "games.c"
  Parameters:    Size  Location     Type
   first_row       2   13[BANK0 ] PTR const unsigned char 
 		 -> STR_28(14), STR_26(13), STR_24(13), STR_14(14), 
@@ -1797,7 +1776,7 @@ Total ram usage:       15 bytes
 
  *************** function _turn_on_led *****************
  Defined at:
-		line 429 in file "games.c"
+		line 766 in file "games.c"
  Parameters:    Size  Location     Type
   color           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1823,14 +1802,14 @@ Total ram usage:        3 bytes
  This function is called by:
 		_simon_says_get_input
 		_play_pattern
-		_end_screen
 		_check_for_match
+		_end_screen
  This function uses a non-reentrant model
 
 
  *************** function _play_tone *****************
  Defined at:
-		line 787 in file "games.c"
+		line 755 in file "games.c"
  Parameters:    Size  Location     Type
   tone_period     2    0[BANK0 ] unsigned int 
   duration_8ms    1    2[BANK0 ] unsigned char 
@@ -1856,14 +1835,14 @@ Total ram usage:        5 bytes
 		Nothing
  This function is called by:
 		_play_pattern
-		_end_screen
 		_check_for_match
+		_end_screen
  This function uses a non-reentrant model
 
 
  *************** function _lcd_puts *****************
  Defined at:
-		line 129 in file "lcd4bits.c"
+		line 128 in file "lcd4bits.c"
  Parameters:    Size  Location     Type
   string          2    8[BANK0 ] PTR const unsigned char 
 		 -> STR_35(7), STR_34(6), STR_33(12), STR_32(13), 
@@ -1903,15 +1882,15 @@ Total ram usage:        5 bytes
 		_play_pattern
 		_display_simon_says_scoreboard
 		_simon_says_title_screen
-		_end_screen
 		_concentration_title_screen
 		_display_concentration_scoreboard
+		_end_screen
  This function uses a non-reentrant model
 
 
  *************** function _lcd_goto *****************
  Defined at:
-		line 146 in file "lcd4bits.c"
+		line 145 in file "lcd4bits.c"
  Parameters:    Size  Location     Type
   position        1    wreg     unsigned char 
   port            2    8[BANK0 ] PTR unsigned char 
@@ -1943,19 +1922,19 @@ Total ram usage:        4 bytes
 		_countdown
 		_display_simon_says_scoreboard
 		_simon_says_title_screen
-		_end_screen
 		_concentration_title_screen
 		_display_concentration_scoreboard
 		_display_concentration_gameboard
 		_concentration_gameboard_init
 		_update_cursor
 		_toggle_cursor
+		_end_screen
  This function uses a non-reentrant model
 
 
  *************** function _lcd_clear *****************
  Defined at:
-		line 123 in file "lcd4bits.c"
+		line 122 in file "lcd4bits.c"
  Parameters:    Size  Location     Type
   port            2    8[BANK0 ] PTR unsigned char 
 		 -> PORTD(1), PORTA(1), 
@@ -1988,10 +1967,10 @@ Total ram usage:        2 bytes
 		_countdown
 		_display_simon_says_scoreboard
 		_simon_says_title_screen
-		_end_screen
 		_concentration_title_screen
 		_display_concentration_gameboard
 		_concentration_gameboard_init
+		_end_screen
  This function uses a non-reentrant model
 
 
@@ -2098,12 +2077,12 @@ Total ram usage:        2 bytes
 		_generate_pattern
 		_countdown
 		_simon_says_title_screen
-		_end_screen
 		_concentration_game_end
 		_concentration_title_screen
 		_randomize_gameboard
 		_check_for_match
 		_concentration_game_loop
+		_end_screen
  This function uses a non-reentrant model
 
 
@@ -2136,14 +2115,14 @@ Total ram usage:        7 bytes
 		Nothing
  This function is called by:
 		_display_simon_says_scoreboard
-		_end_screen
 		_display_concentration_scoreboard
+		_end_screen
  This function uses a non-reentrant model
 
 
  *************** function _interrupt_handler *****************
  Defined at:
-		line 842 in file "games.c"
+		line 840 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2175,62 +2154,61 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 lcd4bits.c
-		_lcd_puts      		CODE           	13D4	0000	49
-		_lcd_putch     		CODE           	12A0	0000	19
-		_lcd_set_custom_char		CODE           	15FF	0000	86
-		_DelayMs       		CODE           	12C4	0000	26
-		_lcd_clear     		CODE           	12DD	0000	27
-		_lcd_goto      		CODE           	1311	0000	31
-		_lcd_write     		CODE           	155E	0000	80
-		_tmr0_init     		CODE           	1288	0000	11
-		_lcd_init      		CODE           	15AD	0000	83
-		_Delay20us     		CODE           	1292	0000	15
+		_lcd_puts      		CODE           	13AF	0000	49
+		_lcd_putch     		CODE           	128D	0000	19
+		_lcd_set_custom_char		CODE           	159B	0000	86
+		_DelayMs       		CODE           	129F	0000	26
+		_lcd_clear     		CODE           	12B8	0000	27
+		_lcd_goto      		CODE           	12EC	0000	31
+		_lcd_write     		CODE           	14FA	0000	80
+		_tmr0_init     		CODE           	1269	0000	11
+		_lcd_init      		CODE           	1549	0000	83
+		_Delay20us     		CODE           	127F	0000	15
 
 lcd4bits.c estimated size: 427
 
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-		___awdiv       		CODE           	16B3	0000	106
+		___awdiv       		CODE           	16AA	0000	106
 
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c estimated size: 106
 
 games.c
-		_joystick_init 		CODE           	1355	0000	40
+		_joystick_init 		CODE           	1330	0000	40
 		_check_for_match		CODE           	0B68	0000	272
-		_time_init     		CODE           	137C	0000	43
+		_time_init     		CODE           	1357	0000	43
 		_simon_says_get_input		CODE           	0D8A	0000	290
-		_end_screen    		CODE           	0055	0000	489
-		_concentration_game_end		CODE           	1510	0000	79
-		_concentration_title_screen		CODE           	085D	0000	125
+		_end_screen    		CODE           	0054	0000	489
+		_concentration_game_end		CODE           	14AC	0000	79
+		_concentration_title_screen		CODE           	1784	0000	125
 		_simon_says_check_input		CODE           	0C77	0000	276
-		_main          		CODE           	04A1	0000	374
-		_simon_says_game_end		CODE           	178D	0000	116
-		_get_current_char		CODE           	12B2	0000	19
-		_get_cursor_index		CODE           	07F4	0000	13
-		_turn_on_led   		CODE           	1404	0000	60
-		_randomize_gameboard		CODE           	1654	0000	96
-		_simon_says_game_loop		CODE           	12F7	0000	27
-		_update_cursor 		CODE           	08D9	0000	148
-		_concentration_gameboard_init		CODE           	1484	0000	70
-		_generate_pattern		CODE           	023D	0000	173
-		_countdown     		CODE           	14C9	0000	72
-		_play_tone     		CODE           	132F	0000	39
-		_display_simon_says_scoreboard		CODE           	0771	0000	132
+		_main          		CODE           	04A1	0000	400
+		_simon_says_game_end		CODE           	078B	0000	116
+		_get_cursor_index		CODE           	1273	0000	13
+		_turn_on_led   		CODE           	13DF	0000	60
+		_randomize_gameboard		CODE           	164B	0000	96
+		_simon_says_game_loop		CODE           	12D2	0000	27
+		_update_cursor 		CODE           	09F7	0000	158
+		_concentration_gameboard_init		CODE           	145F	0000	78
+		_generate_pattern		CODE           	023C	0000	173
+		_countdown     		CODE           	0805	0000	72
+		_play_tone     		CODE           	130A	0000	39
+		_display_simon_says_scoreboard		CODE           	084C	0000	132
 		_display_concentration_scoreboard		CODE           	0A94	0000	213
-		_toggle_cursor 		CODE           	13A6	0000	47
+		_toggle_cursor 		CODE           	1381	0000	47
 		_play_pattern  		CODE           	0EAB	0000	342
-		_make_custom_chars		CODE           	0A00	0000	149
-		_interrupt_handler		CODE           	096C	0000	149
-		_concentration_game_loop		CODE           	0616	0000	348
-		_display_concentration_gameboard		CODE           	143F	0000	70
-		_simon_says_title_screen		CODE           	171C	0000	114
+		_make_custom_chars		CODE           	0963	0000	149
+		_interrupt_handler		CODE           	08CF	0000	149
+		_concentration_game_loop		CODE           	0630	0000	348
+		_display_concentration_gameboard		CODE           	141A	0000	70
+		_simon_says_title_screen		CODE           	1713	0000	114
 
-games.c estimated size: 4385
+games.c estimated size: 4410
 
 shared
 		make_custom_chars@RH		STRCODE        	031A	0000	9
 		__stringtab    		STRCODE        	0300	0000	19
 		make_custom_chars@skull		STRCODE        	0322	0000	9
-		__initialization		CODE           	0011	0000	65
+		__initialization		CODE           	0011	0000	64
 		make_custom_chars@heart		STRCODE        	033A	0000	9
 		make_custom_chars@smile		STRCODE        	034A	0000	9
 		make_custom_chars@spade		STRCODE        	0332	0000	9
@@ -2238,10 +2216,10 @@ shared
 		make_custom_chars@PIC		STRCODE        	0312	0000	9
 		make_custom_chars@club		STRCODE        	032A	0000	9
 
-shared estimated size: 156
+shared estimated size: 155
 
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-		___awmod       		CODE           	0802	0000	92
+		___awmod       		CODE           	15F0	0000	92
 
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c estimated size: 92
 
