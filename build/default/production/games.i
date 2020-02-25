@@ -2538,14 +2538,14 @@ extern void lcd_putch(char, char *c);
 
 extern void lcd_set_custom_char(const char *d, char, char* p);
 # 25 "games.c" 2
-# 70 "games.c"
+# 91 "games.c"
 char *gameboard = &PORTA;
 char *scoreboard = &PORTD;
 int joystick_x_pos;
 int joystick_y_pos;
 char cursor_pos;
 char current_char;
-char cursor_solid;
+char cursor_blank;
 char delay_loops;
 char board[32];
 char visible[32];
@@ -2698,21 +2698,24 @@ void simon_says_check_input(void) {
     lcd_puts("    Now it's", gameboard);
     lcd_goto(0x40, gameboard);
     lcd_puts("   your turn!", gameboard);
-    char i;
+    char pattern_part;
     char current_option;
-    for(i=0;i<(p1_score+1);i++) {
-        switch(i%4) {
+    for(pattern_part=0;pattern_part<(p1_score+1);pattern_part++) {
+
+
+
+        switch(pattern_part%4) {
             case 0:
-                current_option = (simon_says_pattern[i/4])&0x03;
+                current_option = (simon_says_pattern[pattern_part/4])&0x03;
                 break;
             case 1:
-                current_option = (((simon_says_pattern[i/4])&0x0C)>>2);
+                current_option = (((simon_says_pattern[pattern_part/4])&0x0C)>>2);
                 break;
             case 2:
-                current_option = (((simon_says_pattern[i/4])&0x30)>>4);
+                current_option = (((simon_says_pattern[pattern_part/4])&0x30)>>4);
                 break;
             case 3:
-                current_option = (((simon_says_pattern[i/4])&0xC0)>>6);
+                current_option = (((simon_says_pattern[pattern_part/4])&0xC0)>>6);
                 break;
         }
         if(current_option != simon_says_get_input()) {
@@ -2799,39 +2802,41 @@ char simon_says_get_input(void) {
 
 void play_pattern(void) {
     lcd_puts(" Simon Says....", gameboard);
-    char i;
+    char pattern_part;
     char current_option;
-    for(i=0;i<(p1_score+1);i++) {
-        switch(i%4) {
+    for(pattern_part=0;pattern_part<(p1_score+1);pattern_part++) {
+
+
+        switch(pattern_part%4) {
             case 0:
-                current_option = (simon_says_pattern[i/4])&0x03;
+                current_option = (simon_says_pattern[pattern_part/4])&0x03;
                 break;
             case 1:
-                current_option = (((simon_says_pattern[i/4])&0x0C)>>2);
+                current_option = (((simon_says_pattern[pattern_part/4])&0x0C)>>2);
                 break;
             case 2:
-                current_option = (((simon_says_pattern[i/4])&0x30)>>4);
+                current_option = (((simon_says_pattern[pattern_part/4])&0x30)>>4);
                 break;
             case 3:
-                current_option = (((simon_says_pattern[i/4])&0xC0)>>6);
+                current_option = (((simon_says_pattern[pattern_part/4])&0xC0)>>6);
                 break;
         }
         switch(current_option) {
         case 0:
             turn_on_led(0);
-            play_tone(17026, 63);
+            play_tone(17026, 62);
             break;
         case 1:
             turn_on_led(1);
-            play_tone(8513, 63);
+            play_tone(8513, 62);
             break;
         case 2:
             turn_on_led(2);
-            play_tone(4257, 63);
+            play_tone(4257, 62);
             break;
         case 3:
             turn_on_led(5);
-            play_tone(2128, 63);
+            play_tone(2128, 62);
             break;
         }
         PORTC &= 0x1F;
@@ -2841,6 +2846,9 @@ void play_pattern(void) {
 }
 
 void generate_pattern(void) {
+
+
+
     char current_byte;
     DelayMs(TMR2>>(2+(TMR1%4)));
     current_byte = simon_says_pattern[p1_score/4];
@@ -2880,6 +2888,7 @@ void display_simon_says_scoreboard(void) {
     lcd_clear(scoreboard);
     lcd_puts("     Score:", scoreboard);
     lcd_goto(0x43, scoreboard);
+
     lcd_putch(((p1_score%100)/10)+0x30, scoreboard);
     lcd_putch((p1_score%10)+0x30, scoreboard);
     lcd_puts("  Rounds", scoreboard);
@@ -2934,6 +2943,7 @@ void display_concentration_scoreboard(void) {
     lcd_puts("     Score:", scoreboard);
     lcd_goto(0x40, scoreboard);
     lcd_puts(" P1: ", scoreboard);
+
     lcd_putch(((p1_score%100)/10)+0x30, scoreboard);
     lcd_putch((p1_score%10)+0x30, scoreboard);
     lcd_puts("  P2: ", scoreboard);
@@ -2943,12 +2953,12 @@ void display_concentration_scoreboard(void) {
 
 void display_concentration_gameboard(void) {
     lcd_clear(gameboard);
-    char i;
-    for(i=0;i<32;i++) {
-        if(i == 16) {
+    char tile;
+    for(tile=0;tile<32;tile++) {
+        if(tile == 16) {
             lcd_goto(0x40, gameboard);
         }
-        lcd_putch(visible[i], gameboard);
+        lcd_putch(visible[tile], gameboard);
     }
     lcd_goto(cursor_pos, gameboard);
 }
@@ -2975,13 +2985,13 @@ void make_custom_chars(void) {
 void concentration_gameboard_init(void) {
     selected_tile = 0xFF;
     make_custom_chars();
-    char i;
-    for(i = 0; i < 32; i++) {
-        visible[i] = 0xFF;
+    char tile;
+    for(tile = 0; tile < 32; tile++) {
+        visible[tile] = 0xFF;
     }
     lcd_clear(gameboard);
     cursor_pos = 0x00;
-    cursor_solid = 0;
+    cursor_blank = 0;
     current_char = visible[get_cursor_index(cursor_pos)];
     delay_loops = 0;
     lcd_goto(cursor_pos, gameboard);
@@ -2989,6 +2999,8 @@ void concentration_gameboard_init(void) {
 }
 
 char get_cursor_index(char cursor) {
+
+
     if(cursor&0x40) {
         return (cursor-0x30);
     }
@@ -3032,7 +3044,6 @@ void check_for_match(char player) {
                 game_over = 1;
             }
             display_concentration_scoreboard();
-
         } else {
             display_concentration_gameboard();
             turn_on_led(0);
@@ -3087,27 +3098,27 @@ void concentration_game_loop(void) {
 
     if(joystick_x_pos > 900) {
         if(event_enabled) {
-            update_cursor(30, 2);
+            update_cursor(31, 2);
         }
     } else if(joystick_x_pos < 100) {
         if(event_enabled) {
-            update_cursor(30, 3);
+            update_cursor(31, 3);
         }
     } else if(joystick_x_pos > 800) {
         if(event_enabled) {
-            update_cursor(60, 2);
+            update_cursor(62, 2);
         }
     } else if(joystick_x_pos < 200) {
         if(event_enabled) {
-            update_cursor(60, 3);
+            update_cursor(62, 3);
         }
     } else if(joystick_y_pos == 1021) {
         if(event_enabled) {
-            update_cursor(100, 1);
+            update_cursor(62, 1);
         }
     } else if(joystick_y_pos == 0) {
         if(event_enabled) {
-            update_cursor(100, 1);
+            update_cursor(62, 1);
         }
     } else {
         event_enabled = 1;
@@ -3119,9 +3130,11 @@ void update_cursor(char move_delay_count, char direction) {
     event_delay_count = move_delay_count;
     switch(direction) {
         case 1:
+
             cursor_pos ^= 0x40;
             break;
         case 2:
+
             switch(cursor_pos) {
                 case 0x00:
                     cursor_pos = 0x0F;
@@ -3134,6 +3147,7 @@ void update_cursor(char move_delay_count, char direction) {
             }
             break;
         case 3:
+
             switch(cursor_pos) {
                 case 0x0F:
                     cursor_pos = 0x00;
@@ -3149,19 +3163,19 @@ void update_cursor(char move_delay_count, char direction) {
     lcd_putch(current_char, gameboard);
     lcd_goto(cursor_pos, gameboard);
     current_char = visible[get_cursor_index(cursor_pos)];
-    if(cursor_solid == 1) {
+    if(cursor_blank == 1) {
         lcd_putch(0x20, gameboard);
         lcd_goto(cursor_pos, gameboard);
     }
 }
 
 void toggle_cursor(void) {
-    if(cursor_solid == 0) {
+    if(cursor_blank == 0) {
         lcd_putch(0x20, gameboard);
-        cursor_solid = 1;
+        cursor_blank = 1;
     } else {
         lcd_putch(current_char, gameboard);
-        cursor_solid = 0;
+        cursor_blank = 0;
     }
     lcd_goto(cursor_pos, gameboard);
 }
@@ -3177,15 +3191,15 @@ void end_screen(const char *first_row, char *second_row) {
         turn_on_led(colors[color_index]);
         color_index++;
         color_index %= 6;
-        play_tone(2009, 30);
+        play_tone(2009, 31);
         turn_on_led(colors[color_index]);
         color_index++;
         color_index %= 6;
-        play_tone(1896, 30);
+        play_tone(1896, 31);
         turn_on_led(colors[color_index]);
         color_index++;
         color_index %= 6;
-        play_tone(1594, 30);
+        play_tone(1594, 31);
         turn_on_led(colors[color_index]);
         color_index++;
         color_index %= 6;
@@ -3194,12 +3208,12 @@ void end_screen(const char *first_row, char *second_row) {
     turn_on_led(colors[color_index]);
     color_index++;
     color_index %= 6;
-    play_tone(2389, 60);
+    play_tone(2389, 62);
     while(joystick_pressed==1) {
         lcd_clear(gameboard);
         lcd_puts(first_row,gameboard);
         event_enabled = 0;
-        event_delay_count = 120;
+        event_delay_count = 124;
         while(event_enabled == 0) {
             if((RB5 == 0)||(RB2 == 0)) {
                 joystick_pressed = 0;
@@ -3212,7 +3226,7 @@ void end_screen(const char *first_row, char *second_row) {
         lcd_goto(0x40,gameboard);
         lcd_puts(second_row,gameboard);
         event_enabled = 0;
-        event_delay_count = 120;
+        event_delay_count = 124;
         while(event_enabled == 0) {
             if((RB5 == 0)||(RB2 == 0)) {
                 joystick_pressed = 0;

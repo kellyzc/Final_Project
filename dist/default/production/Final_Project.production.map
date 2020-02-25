@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\Final_Project.production.sym \
   --cmf=dist/default/production\Final_Project.production.cmf -z -Q16F887 \
-  -oC:\Users\Zach\AppData\Local\Temp\sj9s.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\kellyzc\AppData\Local\Temp\sug4.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Final_Project.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\Zach\AppData\Local\Temp\sj9s.o \
+  -DENTRY=2 -k C:\Users\kellyzc\AppData\Local\Temp\sug4.o \
   dist/default/production\Final_Project.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Zach\AppData\Local\Temp\sj9s.o
+C:\Users\kellyzc\AppData\Local\Temp\sug4.o
                 end_init                              E        E        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2     400E       0
@@ -634,8 +634,8 @@ _concentration_title_screen                text14       1784
 _countdown                                 text9        0805
 _current_char                              bssBANK0     006B
 _current_player                            bssBANK0     0063
+_cursor_blank                              bssBANK0     006A
 _cursor_pos                                bssBANK0     006C
-_cursor_solid                              bssBANK0     006A
 _delay_loops                               bssBANK0     0069
 _display_concentration_gameboard           text26       141A
 _display_concentration_scoreboard          text24       0A94
@@ -683,9 +683,9 @@ _visible                                   bssBANK1     00A0
 btemp                                      (abs)        007E
 check_for_match@player                     cstackBANK0  0038
 clear_ram0                                 clrtext      1259
-concentration_gameboard_init@i             cstackBANK0  0056
+concentration_gameboard_init@tile          cstackBANK0  0056
 countdown@i                                cstackBANK0  0035
-display_concentration_gameboard@i          cstackBANK0  0035
+display_concentration_gameboard@tile       cstackBANK0  0035
 end_of_initialization                      cinit        0050
 end_screen@F1400                           dataBANK1    00E0
 end_screen@color_index                     cstackBANK0  003B
@@ -731,7 +731,7 @@ make_custom_chars@skull                    stringtext   0322
 make_custom_chars@smile                    stringtext   034A
 make_custom_chars@spade                    stringtext   0332
 play_pattern@current_option                cstackBANK0  0034
-play_pattern@i                             cstackBANK0  0035
+play_pattern@pattern_part                  cstackBANK0  0035
 play_tone@duration_8ms                     cstackBANK0  0022
 play_tone@tone_period                      cstackBANK0  0020
 randomize_gameboard@current                cstackBANK0  0053
@@ -740,7 +740,7 @@ randomize_gameboard@used                   cstackBANK0  0033
 reset_vec                                  reset_vec    0000
 saved_w                                    (abs)        007E
 simon_says_check_input@current_option      cstackBANK0  0034
-simon_says_check_input@i                   cstackBANK0  0035
+simon_says_check_input@pattern_part        cstackBANK0  0035
 simon_says_get_input@current_input         cstackBANK0  0025
 start                                      init         000E
 start_initialization                       cinit        0011
@@ -754,7 +754,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 123 in file "games.c"
+		line 144 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -798,7 +798,7 @@ Total ram usage:        4 bytes
 
  *************** function _time_init *****************
  Defined at:
-		line 798 in file "games.c"
+		line 833 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -828,7 +828,7 @@ Total ram usage:        1 bytes
 
  *************** function _simon_says_title_screen *****************
  Defined at:
-		line 416 in file "games.c"
+		line 446 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -861,7 +861,7 @@ Total ram usage:        0 bytes
 
  *************** function _simon_says_game_loop *****************
  Defined at:
-		line 217 in file "games.c"
+		line 238 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -895,11 +895,11 @@ Total ram usage:        0 bytes
 
  *************** function _simon_says_check_input *****************
  Defined at:
-		line 225 in file "games.c"
+		line 246 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  i               1   21[BANK0 ] unsigned char 
+  pattern_part    1   21[BANK0 ] unsigned char 
   current_opti    1   20[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
@@ -930,7 +930,7 @@ Total ram usage:        6 bytes
 
  *************** function _simon_says_get_input *****************
  Defined at:
-		line 260 in file "games.c"
+		line 284 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -961,11 +961,11 @@ Total ram usage:        3 bytes
 
  *************** function _play_pattern *****************
  Defined at:
-		line 328 in file "games.c"
+		line 352 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  i               1   21[BANK0 ] unsigned char 
+  pattern_part    1   21[BANK0 ] unsigned char 
   current_opti    1   20[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
@@ -997,7 +997,7 @@ Total ram usage:        6 bytes
 
  *************** function _generate_pattern *****************
  Defined at:
-		line 371 in file "games.c"
+		line 397 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1028,7 +1028,7 @@ Total ram usage:        4 bytes
 
  *************** function _display_simon_says_scoreboard *****************
  Defined at:
-		line 407 in file "games.c"
+		line 436 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1063,7 +1063,7 @@ Total ram usage:        2 bytes
 
  *************** function _countdown *****************
  Defined at:
-		line 396 in file "games.c"
+		line 425 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1096,7 +1096,7 @@ Total ram usage:        2 bytes
 
  *************** function _simon_says_game_end *****************
  Defined at:
-		line 201 in file "games.c"
+		line 222 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1190,7 +1190,7 @@ Total ram usage:        1 bytes
 
  *************** function _joystick_init *****************
  Defined at:
-		line 823 in file "games.c"
+		line 858 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1220,7 +1220,7 @@ Total ram usage:        0 bytes
 
  *************** function _concentration_title_screen *****************
  Defined at:
-		line 444 in file "games.c"
+		line 474 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1255,11 +1255,11 @@ Total ram usage:        0 bytes
 
  *************** function _concentration_gameboard_init *****************
  Defined at:
-		line 503 in file "games.c"
+		line 534 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  i               1   54[BANK0 ] unsigned char 
+  tile            1   54[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -1289,7 +1289,7 @@ Total ram usage:        2 bytes
 
  *************** function _randomize_gameboard *****************
  Defined at:
-		line 526 in file "games.c"
+		line 559 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1322,7 +1322,7 @@ Total ram usage:       37 bytes
 
  *************** function _make_custom_chars *****************
  Defined at:
-		line 484 in file "games.c"
+		line 515 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1387,7 +1387,7 @@ Total ram usage:        8 bytes
 
  *************** function _concentration_game_loop *****************
  Defined at:
-		line 584 in file "games.c"
+		line 616 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1422,7 +1422,7 @@ Total ram usage:        2 bytes
 
  *************** function _update_cursor *****************
  Defined at:
-		line 645 in file "games.c"
+		line 677 in file "games.c"
  Parameters:    Size  Location     Type
   move_delay_c    1    wreg     unsigned char 
   direction       1   20[BANK0 ] unsigned char 
@@ -1455,7 +1455,7 @@ Total ram usage:        4 bytes
 
  *************** function _toggle_cursor *****************
  Defined at:
-		line 686 in file "games.c"
+		line 721 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1486,7 +1486,7 @@ Total ram usage:        0 bytes
 
  *************** function _check_for_match *****************
  Defined at:
-		line 541 in file "games.c"
+		line 574 in file "games.c"
  Parameters:    Size  Location     Type
   player          1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1521,7 +1521,7 @@ Total ram usage:        3 bytes
 
  *************** function _get_cursor_index *****************
  Defined at:
-		line 519 in file "games.c"
+		line 550 in file "games.c"
  Parameters:    Size  Location     Type
   cursor          1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1554,7 +1554,7 @@ Total ram usage:        1 bytes
 
  *************** function _display_concentration_scoreboard *****************
  Defined at:
-		line 461 in file "games.c"
+		line 491 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1627,11 +1627,11 @@ Total ram usage:        9 bytes
 
  *************** function _display_concentration_gameboard *****************
  Defined at:
-		line 472 in file "games.c"
+		line 503 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  i               1   21[BANK0 ] unsigned char 
+  tile            1   21[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -1699,7 +1699,7 @@ Total ram usage:        4 bytes
 
  *************** function _concentration_game_end *****************
  Defined at:
-		line 432 in file "games.c"
+		line 462 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1730,7 +1730,7 @@ Total ram usage:        0 bytes
 
  *************** function _end_screen *****************
  Defined at:
-		line 699 in file "games.c"
+		line 734 in file "games.c"
  Parameters:    Size  Location     Type
   first_row       2   13[BANK0 ] PTR const unsigned char 
 		 -> STR_28(14), STR_26(13), STR_24(13), STR_14(14), 
@@ -1776,7 +1776,7 @@ Total ram usage:       15 bytes
 
  *************** function _turn_on_led *****************
  Defined at:
-		line 766 in file "games.c"
+		line 801 in file "games.c"
  Parameters:    Size  Location     Type
   color           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1809,7 +1809,7 @@ Total ram usage:        3 bytes
 
  *************** function _play_tone *****************
  Defined at:
-		line 755 in file "games.c"
+		line 790 in file "games.c"
  Parameters:    Size  Location     Type
   tone_period     2    0[BANK0 ] unsigned int 
   duration_8ms    1    2[BANK0 ] unsigned char 
@@ -2122,7 +2122,7 @@ Total ram usage:        7 bytes
 
  *************** function _interrupt_handler *****************
  Defined at:
-		line 840 in file "games.c"
+		line 875 in file "games.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
